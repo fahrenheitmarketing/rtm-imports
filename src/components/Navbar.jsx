@@ -33,9 +33,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 border border-primary rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-300">
-              <span className="font-display text-primary text-sm font-semibold group-hover:text-primary-foreground transition-colors duration-300">R</span>
-            </div>
+            <img
+              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/20c15384b_Gemini_Generated_Image_ge06m0ge06m0ge06.png"
+              alt="RTM Imports Logo"
+              className="h-9 w-auto"
+            />
             <span className="font-display text-lg text-foreground tracking-wide hidden sm:block">
               RTM Imports
             </span>
