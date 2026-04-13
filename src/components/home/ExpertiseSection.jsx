@@ -9,19 +9,19 @@ const SERVICES = [
     number: '01',
     title: 'Asian Beverage',
     description: 'A leader within the fastest-growing spirits category. From premium distilled products to craft beer and wine-based RTDs, we position your brand for success across the Gen Z demographic and beyond.',
-    image: '/__generating__/img_fe34159e76d5.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png',
   },
   {
     number: '02',
     title: 'Custom Labels',
     description: 'Curated relationships with established European producers offer our customers core selections of quality products. Differentiation and brand loyalty through exclusive private-label programs.',
-    image: '/__generating__/img_923af50453de.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
   },
   {
     number: '03',
     title: 'Compliance & Licensing',
     description: 'A comprehensive network of licenses and wholesaler relationships nationwide. We offer this infrastructure to select producers and national retailers looking to bring their brands to market.',
-    image: '/__generating__/img_acc9271550c8.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/bf0be4185_generated_ed6f371b.png',
   },
 ];
 

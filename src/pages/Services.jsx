@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, Palette, FileCheck, TrendingUp, Users, BarChart3 } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 
-const SERVICES_HERO = '/__generating__/img_d214354e5d2b.png';
+const SERVICES_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/1743d0189_generated_69eaa272.png';
 
 const SERVICES = [
   {
@@ -12,7 +12,7 @@ const SERVICES = [
     icon: Globe,
     title: 'Asian Beverage',
     subtitle: 'Leading the fastest-growing category',
-    image: '/__generating__/img_fe34159e76d5.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png',
     description: 'Asian beverage is one of the few categories showing significant growth, specifically within the Gen Z age demographic. RTM has become a leader within this trend with national brands that span this diverse category.',
     features: [
       'Premium distilled spirits (sake, soju, shochu)',
@@ -26,7 +26,7 @@ const SERVICES = [
     icon: Palette,
     title: 'Custom Labels',
     subtitle: 'Private label programs built on quality',
-    image: '/__generating__/img_923af50453de.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
     description: 'As competition increases, so does the need for differentiation and brand loyalty. Our curated relationships with established producers in Europe offer our customers a core selection of products to meet the majority of their needs.',
     features: [
       'Established European producer relationships',
@@ -40,7 +40,7 @@ const SERVICES = [
     icon: FileCheck,
     title: 'Compliance & Licensing',
     subtitle: 'Nationwide regulatory infrastructure',
-    image: '/__generating__/img_acc9271550c8.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/bf0be4185_generated_ed6f371b.png',
     description: 'Working with national wholesalers and retailers requires a comprehensive setup of licenses and wholesaler relationships nationwide. We offer this network to select producers and national retailers looking to create their own brands.',
     features: [
       'Comprehensive license network across 50+ states',

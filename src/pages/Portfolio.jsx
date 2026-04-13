@@ -4,28 +4,28 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Wine, Beer, GlassWater } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 
-const PORTFOLIO_HERO = '/__generating__/img_ca684eb4ace1.png';
+const PORTFOLIO_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/635a9f96e_generated_16b3013c.png';
 
 const CATEGORIES = [
   {
     icon: GlassWater,
     title: 'Asian Spirits',
     description: 'Premium sake, soju, shochu, and Japanese whisky from artisan producers across Asia. Authentic, high-quality spirits that resonate with modern consumers.',
-    image: '/__generating__/img_fe34159e76d5.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png',
     tags: ['Sake', 'Soju', 'Shochu', 'Japanese Whisky'],
   },
   {
     icon: Wine,
     title: 'European Wines',
     description: 'Curated selections from established producers in France, Italy, Spain, and beyond. Quality-first private-label and branded wines for discerning palates.',
-    image: '/__generating__/img_43ba4e720ce2.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/a02300f19_generated_8b23f0b1.png',
     tags: ['French', 'Italian', 'Spanish', 'Portuguese'],
   },
   {
     icon: Beer,
     title: 'Craft & RTD',
     description: 'Wine-based ready-to-drink beverages and craft beer selections that capture the attention of new-generation consumers seeking premium, convenient options.',
-    image: '/__generating__/img_923af50453de.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
     tags: ['Ready-to-Drink', 'Craft Beer', 'Flavored', 'Wine-Based'],
   },
 ];

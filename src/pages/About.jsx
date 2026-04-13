@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Zap, Shield } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 
-const ABOUT_HERO = '/__generating__/img_dfab64bbbd21.png';
+const ABOUT_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/0f2f100f9_generated_631bcf9a.png';
 
 const VALUES = [
   {

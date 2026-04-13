@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-const NETWORK_IMAGE = '/__generating__/img_667ff018c064.png';
+const NETWORK_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/33f99e170_generated_db9c9aed.png';
 
 export default function CTASection() {
   return (
