@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <img
-              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/20c15384b_Gemini_Generated_Image_ge06m0ge06m0ge06.png"
+              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/a64353cd8_Gemini_Generated_Image_xsx6f9xsx6f9xsx6.png"
               alt="RTM Imports Logo"
               className="h-20 w-auto mb-6"
             />
