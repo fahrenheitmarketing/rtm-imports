@@ -36,7 +36,7 @@ export default function Navbar() {
             <img
               src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/a64353cd8_Gemini_Generated_Image_xsx6f9xsx6f9xsx6.png"
               alt="RTM Imports Logo"
-              className="h-20 w-auto"
+              className="h-50 w-auto"
             />
           </Link>
 
