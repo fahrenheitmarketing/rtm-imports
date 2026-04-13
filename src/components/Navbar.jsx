@@ -32,15 +32,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center">
             <img
               src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/20c15384b_Gemini_Generated_Image_ge06m0ge06m0ge06.png"
               alt="RTM Imports Logo"
-              className="h-9 w-auto"
+              className="h-20 w-auto"
             />
-            <span className="font-display text-lg text-foreground tracking-wide hidden sm:block">
-              RTM Imports
-            </span>
           </Link>
 
           {/* Desktop Nav */}

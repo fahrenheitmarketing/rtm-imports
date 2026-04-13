@@ -9,14 +9,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <img
-                src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/20c15384b_Gemini_Generated_Image_ge06m0ge06m0ge06.png"
-                alt="RTM Imports Logo"
-                className="h-9 w-auto"
-              />
-              <span className="font-display text-lg text-foreground tracking-wide">RTM Imports</span>
-            </div>
+            <img
+              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/20c15384b_Gemini_Generated_Image_ge06m0ge06m0ge06.png"
+              alt="RTM Imports Logo"
+              className="h-20 w-auto mb-6"
+            />
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-xs">
               Your streamlined route to market. Simple, efficient, and singularly focused on delivering results for our wholesale partners.
             </p>
