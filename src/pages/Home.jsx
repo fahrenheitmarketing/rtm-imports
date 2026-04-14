@@ -9,21 +9,8 @@ import QuoteSection from '../components/home/QuoteSection';
 import CTASection from '../components/home/CTASection';
 
 export default function Home() {
-  const [ageVerified, setAgeVerified] = useState(false);
-
-  useEffect(() => {
-    const verified = sessionStorage.getItem('rtm_age_verified');
-    if (verified === 'true') setAgeVerified(true);
-  }, []);
-
-  const handleConfirm = () => {
-    sessionStorage.setItem('rtm_age_verified', 'true');
-    setAgeVerified(true);
-  };
-
-  if (!ageVerified) {
-    return <AgeGate onConfirm={handleConfirm} />;
-  }
+  // Age gate temporarily disabled
+  // const [ageVerified, setAgeVerified] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
