@@ -90,6 +90,14 @@
   }
 }
 
+/* Icon bounce on hover */
+svg:not([data-no-bounce]) {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+svg:not([data-no-bounce]):hover {
+  transform: scale(1.5);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
