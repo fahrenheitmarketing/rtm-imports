@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Globe, Palette, FileCheck, TrendingUp, Users, BarChart3 } from 'lucide-react';
+import { ArrowRight, Globe, Palette, FileCheck } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 
 const SERVICES_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/1743d0189_generated_69eaa272.png';
@@ -9,52 +9,34 @@ const SERVICES_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb
 const SERVICES = [
   {
     id: 'asian-beverage',
+    path: '/services/asian-beverage',
     icon: Globe,
-    title: 'Asian Beverage',
-    subtitle: 'Leading the fastest-growing category',
+    label: 'Asian Beverages',
+    title: 'Leading the fastest-growing category in America',
+    description: 'Asian beverage is one of the few categories showing significant, sustained growth — specifically within the Gen Z demographic. RTM has become a national leader in this trend with brands that span sake, soju, shochu, Japanese whisky, and wine-based RTD.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png',
-    description: 'Asian beverage is one of the few categories showing significant growth, specifically within the Gen Z age demographic. RTM has become a leader within this trend with national brands that span this diverse category.',
-    features: [
-      'Premium distilled spirits (sake, soju, shochu)',
-      'Craft beer and specialty brews',
-      'Wine-based ready-to-drink brands',
-      'Market positioning and brand strategy',
-    ],
+    cta: 'Explore Asian Beverages',
   },
   {
     id: 'custom-labels',
+    path: '/services/custom-labels',
     icon: Palette,
-    title: 'Custom Labels',
-    subtitle: 'Private label programs built on quality',
+    label: 'Custom Labels',
+    title: 'Your brand. Our expertise. Their shelf.',
+    description: 'As competition intensifies, the brands that win own the relationship with the consumer. Our private label program leverages curated producer relationships across Europe and Asia to build proprietary brands from concept to shelf — fully compliant, fully differentiated.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
-    description: 'As competition increases, so does the need for differentiation and brand loyalty. Our curated relationships with established producers in Europe offer our customers a core selection of products to meet the majority of their needs.',
-    features: [
-      'Established European producer relationships',
-      'Quality-focused curation over volume',
-      'Exclusive private-label development',
-      'Brand differentiation strategy',
-    ],
+    cta: 'Explore Custom Labels',
   },
   {
     id: 'compliance',
+    path: '/services/compliance',
     icon: FileCheck,
-    title: 'Compliance & Licensing',
-    subtitle: 'Nationwide regulatory infrastructure',
+    label: 'Compliance & Licensing',
+    title: 'The infrastructure that makes national distribution possible',
+    description: 'The U.S. three-tier system is complex. Our active license network across 50+ states, wholesaler relationships, and TTB expertise give your brand a compliant path to market — without spending years building the infrastructure yourself.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/bf0be4185_generated_ed6f371b.png',
-    description: 'Working with national wholesalers and retailers requires a comprehensive setup of licenses and wholesaler relationships nationwide. We offer this network to select producers and national retailers looking to create their own brands.',
-    features: [
-      'Comprehensive license network across 50+ states',
-      'Wholesaler relationship management',
-      'Regulatory compliance consulting',
-      'Market entry support for new brands',
-    ],
+    cta: 'Explore Compliance',
   },
-];
-
-const ADVANTAGES = [
-  { icon: TrendingUp, title: 'Speed to Market', description: 'Lean processes mean faster timelines from concept to shelf.' },
-  { icon: Users, title: 'Partner-Centric', description: 'We serve your goals, not our own product agenda.' },
-  { icon: BarChart3, title: 'Data-Driven', description: 'Market intelligence informs every strategic recommendation.' },
 ];
 
 export default function Services() {
@@ -63,7 +45,7 @@ export default function Services() {
       {/* Hero */}
       <section className="relative pt-20 min-h-[50vh] flex items-end pb-20">
         <div className="absolute inset-0">
-          <img src={SERVICES_HERO} alt="Premium spirits being poured" className="w-full h-full object-cover" />
+          <img src={SERVICES_HERO} alt="Premium spirits" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
@@ -76,8 +58,23 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Detail */}
-      <section className="py-24 md:py-32 bg-background">
+      {/* Overview intro */}
+      <section className="py-20 bg-background">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-body text-lg text-muted-foreground leading-relaxed"
+          >
+            RTM Imports operates across three interconnected service areas. Each one stands alone — and together, they form the most complete route to market in the industry.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="pb-24 md:pb-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-32">
           {SERVICES.map((service, idx) => (
             <motion.div
@@ -86,17 +83,11 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.6 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
-                idx % 2 === 1 ? 'lg:direction-rtl' : ''
-              }`}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
             >
               <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
                 <div className="relative overflow-hidden aspect-[4/3]">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={service.image} alt={service.label} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
                 </div>
               </div>
@@ -104,57 +95,27 @@ export default function Services() {
               <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
                 <div className="flex items-center gap-3 mb-4">
                   <service.icon className="w-5 h-5 text-primary" />
-                  <span className="font-body text-xs tracking-widest uppercase text-primary">{service.subtitle}</span>
+                  <span className="font-body text-xs tracking-widest uppercase text-primary">{service.label}</span>
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">{service.title}</h2>
                 <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
                   {service.description}
                 </p>
-                <ul className="space-y-3">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="font-body text-sm text-secondary-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                <Link
+                  to={service.path}
+                  className="inline-flex items-center gap-3 font-body text-sm tracking-widest uppercase text-primary hover:text-foreground transition-colors duration-300 group"
+                >
+                  {service.cta}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
               </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Advantages */}
-      <section className="py-24 md:py-32 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <SectionHeading
-            label="The RTM Advantage"
-            title="Why partner with us"
-            align="center"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {ADVANTAGES.map((adv, idx) => (
-              <motion.div
-                key={adv.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="text-center p-8"
-              >
-                <div className="w-14 h-14 mx-auto mb-6 border border-primary/30 rounded-full flex items-center justify-center">
-                  <adv.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-display text-xl text-foreground mb-3">{adv.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{adv.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="py-24 md:py-32 bg-background text-center">
+      <section className="py-24 md:py-32 bg-card border-t border-border text-center">
         <div className="max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">

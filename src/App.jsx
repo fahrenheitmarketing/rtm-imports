@@ -10,6 +10,9 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import AsianBeverage from './pages/services/AsianBeverage';
+import CustomLabels from './pages/services/CustomLabels';
+import Compliance from './pages/services/Compliance';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 
@@ -45,6 +48,9 @@ const AuthenticatedApp = () => {
       <Route element={<Layout />}>
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/asian-beverage" element={<AsianBeverage />} />
+        <Route path="/services/custom-labels" element={<CustomLabels />} />
+        <Route path="/services/compliance" element={<Compliance />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
