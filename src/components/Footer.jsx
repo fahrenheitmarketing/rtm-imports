@@ -12,7 +12,7 @@ export default function Footer() {
             <img
               src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/84c21a157_LION-LOGO.png"
               alt="RTM Imports Logo"
-              className="h-32 w-auto mb-6"
+              className="h-40 w-auto mb-6"
               style={{ mixBlendMode: 'screen' }}
             />
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-xs">

@@ -36,7 +36,7 @@ export default function Navbar() {
             <img
               src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/84c21a157_LION-LOGO.png"
               alt="RTM Imports Logo"
-              className="h-32 w-auto"
+              className="h-40 w-auto"
               style={{ mixBlendMode: 'screen' }}
             />
           </Link>
