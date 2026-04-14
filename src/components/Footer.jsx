@@ -10,9 +10,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <img
-              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/5de48045b_generated_image.png"
+              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/a64353cd8_Gemini_Generated_Image_xsx6f9xsx6f9xsx6.png"
               alt="RTM Imports Logo"
               className="h-16 w-auto mb-6"
+              style={{ mixBlendMode: 'lighten' }}
             />
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-xs">
               Your streamlined route to market. Simple, efficient, and singularly focused on delivering results for our wholesale partners.
