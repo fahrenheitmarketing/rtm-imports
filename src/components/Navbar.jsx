@@ -34,7 +34,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
-              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/7a15c8efd_image.png"
+              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/84c21a157_LION-LOGO.png"
               alt="RTM Imports Logo"
               className="h-16 w-auto"
               style={{ mixBlendMode: 'screen' }}
