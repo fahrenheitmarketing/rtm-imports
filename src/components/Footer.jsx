@@ -13,6 +13,7 @@ export default function Footer() {
               src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/53254326d_image.png"
               alt="RTM Imports Logo"
               className="h-16 w-auto mb-6"
+              style={{ mixBlendMode: 'screen' }}
             />
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-xs">
               Your streamlined route to market. Simple, efficient, and singularly focused on delivering results for our wholesale partners.

@@ -37,6 +37,7 @@ export default function Navbar() {
               src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/53254326d_image.png"
               alt="RTM Imports Logo"
               className="h-16 w-auto"
+              style={{ mixBlendMode: 'screen' }}
             />
           </Link>
 
