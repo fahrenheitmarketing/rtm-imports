@@ -20,12 +20,12 @@ export default function AgeGate({ onConfirm }) {
         >
           {/* Logo mark */}
           <div className="mb-10">
-            <div className="w-16 h-16 mx-auto border border-primary rounded-full flex items-center justify-center mb-6">
-              <span className="font-display text-primary text-xl font-semibold">R</span>
-            </div>
-            <h1 className="font-display text-2xl text-foreground tracking-wide">
-              RTM Imports
-            </h1>
+            <img
+              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/84c21a157_LION-LOGO.png"
+              alt="RTM Imports Logo"
+              className="h-40 w-auto mx-auto"
+              style={{ mixBlendMode: 'screen' }}
+            />
           </div>
 
           <p className="font-display text-3xl md:text-4xl text-foreground mb-2">
