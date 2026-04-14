@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, FileCheck, MapPin, Network, BookOpen, ClipboardList, ShieldCheck } from 'lucide-react';
 import SectionHeading from '../../components/SectionHeading';
+import GoldUnderline from '../../components/GoldUnderline';
 
 const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/bf0be4185_generated_ed6f371b.png';
 
@@ -74,7 +75,7 @@ export default function Compliance() {
             </Link>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Compliance & Licensing</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-3xl">
-              The infrastructure that makes <span className="italic text-primary">national distribution possible.</span>
+              The infrastructure that makes <GoldUnderline className="italic">national distribution possible.</GoldUnderline>
             </h1>
           </motion.div>
         </div>
@@ -181,7 +182,7 @@ export default function Compliance() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <FileCheck className="w-10 h-10 text-primary mx-auto mb-6" />
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              Don't let compliance <span className="italic text-primary">slow you down.</span>
+              Don't let compliance <GoldUnderline className="italic">slow you down.</GoldUnderline>
             </h2>
             <p className="font-body text-base text-muted-foreground leading-relaxed mb-10">
               We've built the infrastructure. We've cultivated the relationships. We know the rules in every state. Let us put that to work for your brand — so you can focus on what you do best: making great beverages.

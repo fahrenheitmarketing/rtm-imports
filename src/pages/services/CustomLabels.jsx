@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Palette, CheckCircle, Layers, Brush, Package, ShieldCheck } from 'lucide-react';
 import SectionHeading from '../../components/SectionHeading';
+import GoldUnderline from '../../components/GoldUnderline';
 
 const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png';
 
@@ -78,7 +79,7 @@ export default function CustomLabels() {
             </Link>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Custom Labels</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-3xl">
-              Your brand. <span className="italic text-primary">Our expertise. Their shelf.</span>
+              Your brand. <GoldUnderline className="italic">Our expertise. Their shelf.</GoldUnderline>
             </h1>
           </motion.div>
         </div>
@@ -193,7 +194,7 @@ export default function CustomLabels() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <Palette className="w-10 h-10 text-primary mx-auto mb-6" />
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              Ready to build a brand <span className="italic text-primary">worth owning?</span>
+              Ready to build a brand <GoldUnderline className="italic">worth owning?</GoldUnderline>
             </h2>
             <p className="font-body text-base text-muted-foreground leading-relaxed mb-10">
               Whether you're a retailer exploring your first private label or a hospitality group building a proprietary portfolio, let's talk about what's possible. We'll start with a no-obligation discovery call to assess fit and scope.

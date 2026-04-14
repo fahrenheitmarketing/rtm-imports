@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Zap, Shield } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
+import GoldUnderline from '../components/GoldUnderline';
 
 const ABOUT_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/0f2f100f9_generated_631bcf9a.png';
 
@@ -45,7 +46,7 @@ export default function About() {
           >
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">About Us</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
-              Built for <span className="italic text-primary">partners,</span> not portfolios.
+              Built for <GoldUnderline className="italic">partners,</GoldUnderline> not portfolios.
             </h1>
           </motion.div>
         </div>
@@ -139,7 +140,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              Let's find your <span className="italic text-primary">route.</span>
+              Let's find your <GoldUnderline className="italic">route.</GoldUnderline>
             </h2>
             <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
               Whether you're an established producer or an emerging brand, we'd love to hear about your project.

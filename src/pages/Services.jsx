@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, Palette, FileCheck } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
+import GoldUnderline from '../components/GoldUnderline';
 
 const SERVICES_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/1743d0189_generated_69eaa272.png';
 
@@ -52,7 +53,7 @@ export default function Services() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Our Services</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
-              Three disciplines. <span className="italic text-primary">One focus.</span>
+              Three disciplines. <GoldUnderline className="italic">One focus.</GoldUnderline>
             </h1>
           </motion.div>
         </div>
@@ -119,7 +120,7 @@ export default function Services() {
         <div className="max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              Have a project <span className="italic text-primary">in mind?</span>
+              Have a project <GoldUnderline className="italic">in mind?</GoldUnderline>
             </h2>
             <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
               We'd love to learn about your brand and explore how our services can serve your goals.

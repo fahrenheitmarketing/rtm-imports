@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import GoldUnderline from '../GoldUnderline';
 
 const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/f30f4272b_generated_3941d6fd.png';
 
@@ -30,8 +31,8 @@ export default function HeroSection() {
             Route to Market Imports
           </span>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-6">
-            Your brand's
-            <span className="italic text-primary block">route to market.</span>
+          Your brand's
+          <GoldUnderline className="italic block">route to market.</GoldUnderline>
           </h1>
           <p className="font-body text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
             Simple, efficient, and singularly focused. We exist to serve the needs of our wholesale partners — not to promote our own agenda.

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Wine, Beer, GlassWater } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
+import GoldUnderline from '../components/GoldUnderline';
 
 const PORTFOLIO_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/635a9f96e_generated_16b3013c.png';
 
@@ -52,7 +53,7 @@ export default function Portfolio() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Our Portfolio</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
-              Curated, <span className="italic text-primary">not collected.</span>
+              Curated, <GoldUnderline className="italic">not collected.</GoldUnderline>
             </h1>
           </motion.div>
         </div>
@@ -157,7 +158,7 @@ export default function Portfolio() {
         <div className="max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              Interested in <span className="italic text-primary">our brands?</span>
+              Interested in <GoldUnderline className="italic">our brands?</GoldUnderline>
             </h2>
             <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
               Contact us to learn more about our current portfolio or to discuss bringing your brand to market.

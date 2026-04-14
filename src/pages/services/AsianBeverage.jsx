@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, TrendingUp, Users, Star, ShoppingBag, Award } from 'lucide-react';
 import SectionHeading from '../../components/SectionHeading';
+import GoldUnderline from '../../components/GoldUnderline';
 
 const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png';
 
@@ -55,7 +56,7 @@ export default function AsianBeverage() {
             </Link>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Asian Beverages</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-3xl">
-              Leading the fastest-growing <span className="italic text-primary">category in America.</span>
+              Leading the fastest-growing <GoldUnderline className="italic">category in America.</GoldUnderline>
             </h1>
           </motion.div>
         </div>
@@ -161,7 +162,7 @@ export default function AsianBeverage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <Award className="w-10 h-10 text-primary mx-auto mb-6" />
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              Ready to bring your Asian <span className="italic text-primary">brand to America?</span>
+              Ready to bring your Asian <GoldUnderline className="italic">brand to America?</GoldUnderline>
             </h2>
             <p className="font-body text-base text-muted-foreground leading-relaxed mb-10">
               Whether you're a producer seeking U.S. market entry or a wholesaler looking to strengthen your Asian beverage portfolio, we have the infrastructure, relationships, and expertise to make it happen.
