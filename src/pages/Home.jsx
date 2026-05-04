@@ -7,6 +7,7 @@ import ExpertiseSection from '../components/home/ExpertiseSection';
 import StatsSection from '../components/home/StatsSection';
 import QuoteSection from '../components/home/QuoteSection';
 import CTASection from '../components/home/CTASection';
+import NewsSection from '../components/home/NewsSection';
 
 export default function Home() {
   // Age gate temporarily disabled
@@ -20,6 +21,7 @@ export default function Home() {
         <StatsSection />
         <ExpertiseSection />
         <QuoteSection />
+        <NewsSection />
         <CTASection />
       </main>
       <Footer />

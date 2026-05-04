@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { label: 'About', path: '/about' },
   { label: 'Services', path: '/services', hasDropdown: true },
   { label: 'Portfolio', path: '/portfolio' },
+  { label: 'News', path: '/news' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -203,6 +204,14 @@ export default function Navbar() {
                 }`}
               >
                 Portfolio
+              </Link>
+              <Link
+                to="/news"
+                className={`block font-body text-sm tracking-widest uppercase transition-colors duration-300 ${
+                  location.pathname === '/news' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                News
               </Link>
               <Link
                 to="/contact"

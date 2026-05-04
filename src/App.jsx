@@ -15,6 +15,8 @@ import CustomLabels from './pages/services/CustomLabels';
 import Compliance from './pages/services/Compliance';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import News from './pages/News';
+import NewsDashboard from './pages/admin/NewsDashboard';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -53,6 +55,8 @@ const AuthenticatedApp = () => {
         <Route path="/services/compliance" element={<Compliance />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/admin/news" element={<NewsDashboard />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
