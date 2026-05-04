@@ -31,11 +31,11 @@ export default function HeroSection() {
             Route to Market Imports
           </span>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-6">
-          Your brand's
-          <GoldUnderline className="italic block">route to market.</GoldUnderline>
+          America's dedicated
+          <GoldUnderline className="italic block">Asian beverage specialist.</GoldUnderline>
           </h1>
           <p className="font-body text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
-            Simple, efficient, and singularly focused. We exist to serve the needs of our wholesale partners — not to promote our own agenda.
+            More than 30 years of category depth. A national wholesale network. And a singular focus on the brands and markets that are driving the next chapter of beverage alcohol in the U.S.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link

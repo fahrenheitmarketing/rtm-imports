@@ -29,11 +29,11 @@ export default function CTASection() {
               Let's Work Together
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight mb-6">
-              Ready to bring your
-              <span className="italic text-primary"> product to market?</span>
+              A specialist partner
+              <span className="italic text-primary"> for serious brands.</span>
             </h2>
             <p className="font-body text-base text-muted-foreground leading-relaxed mb-10">
-              Drop us a line to discover how RTM can take your project from concept to shelf. Our streamlined processes and national network are ready to work for you.
+              RTM operates exclusively in the B2B wholesale channel, working with the largest national beverage wholesalers across on- and off-premise. If you are a producer seeking U.S. market entry, or a wholesaler evaluating your Asian beverage portfolio, we'd like to hear from you.
             </p>
             <Link
               to="/contact"

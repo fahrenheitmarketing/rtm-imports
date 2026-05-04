@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import useCountUp from '../../hooks/useCountUp';
 
 const STATS = [
-  { value: '50', suffix: '+', label: 'States Served' },
-  { value: '100', suffix: '+', label: 'Wholesale Partners' },
-  { value: '3', suffix: '', label: 'Core Disciplines' },
+  { value: '30', suffix: '+', label: 'Years in Category' },
+  { value: '25', suffix: '+', label: 'Wholesale Partners' },
+  { value: '5', suffix: '', label: 'Sourcing Countries' },
   { value: '1', suffix: '', label: 'Singular Focus' },
 ];
 

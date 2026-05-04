@@ -10,18 +10,18 @@ const ABOUT_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908
 const VALUES = [
   {
     icon: Target,
-    title: 'Singular Focus',
-    description: 'We only exist to serve the needs of our customers. No competing agendas, no conflicting priorities — just your brand\'s success.',
+    title: 'Fearless Creativity',
+    description: 'We pursue categories and producers that others overlook. Asian beverage alcohol was a niche before it was a trend — we were already there.',
   },
   {
     icon: Zap,
-    title: 'Streamlined Efficiency',
-    description: 'Our advantage is speed and simplicity. We cut through the complexity of beverage imports with lean, proven processes.',
+    title: 'Aggressive Adaptability',
+    description: 'The U.S. wholesale landscape is consolidating rapidly. Our independence and lean operating model mean we move faster than any generalist importer.',
   },
   {
     icon: Shield,
-    title: 'Compliance First',
-    description: 'A nationwide network of licenses and wholesaler relationships means your brand meets every regulatory requirement, every time.',
+    title: 'Relationship-First Execution',
+    description: 'Long-term partnerships — with Asian producers and national wholesalers alike — are the foundation of everything we do. Trust is built over decades, not campaigns.',
   },
 ];
 
@@ -46,7 +46,8 @@ export default function About() {
           >
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">About Us</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
-              Built for <GoldUnderline className="italic">partners,</GoldUnderline> not portfolios.
+              Thirty years in the category.
+              <GoldUnderline className="italic block"> Now standing alone.</GoldUnderline>
             </h1>
           </motion.div>
         </div>
@@ -63,10 +64,13 @@ export default function About() {
               />
               <div className="space-y-6 font-body text-base text-muted-foreground leading-relaxed">
                 <p>
-                  RTM Imports is what its name defines it as: a <strong className="text-foreground">Route to Market.</strong> We are not a traditional importer seeking to build the largest portfolio or the widest distribution footprint. We are a focused, efficient partner for brands that need a clear path from production to shelf.
+                  RTM Imports is a San Antonio-based importer of Asian beverage alcohol with more than <strong className="text-foreground">30 years of operational history</strong> in the category. Originally established in the early 1990s alongside one of the largest wholesale networks in the country, RTM was formally structured as an independent LLC and has been led by Benjamin Roberts since 2016.
                 </p>
                 <p>
-                  Our focus is on developing and importing products for the adult beverage industry per the demands of our wholesale partners. Our advantage is our streamlined processes and our singular focus.
+                  We operate exclusively in the <strong className="text-foreground">B2B wholesale channel</strong> — working with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. We do not sell to consumers. We do not chase broad portfolios. We exist to serve our wholesale partners.
+                </p>
+                <p>
+                  Our specialization spans South Korea, Japan, China, Thailand, and Taiwan — covering the most significant growth segments in the U.S. market: soju, sake, shochu, Korean beer, Japanese whisky, and Asian RTDs. We were building relationships in these markets long before the mainstream conversation arrived.
                 </p>
                 <p>
                   We stick to what we know we do well. No filler, no noise — just results.
@@ -84,12 +88,12 @@ export default function About() {
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-card border border-border p-6 text-center">
-                  <div className="font-display text-3xl text-primary mb-2">50+</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">States</p>
+                  <div className="font-display text-3xl text-primary mb-2">30+</div>
+                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Years in Category</p>
                 </div>
                 <div className="bg-card border border-border p-6 text-center">
-                  <div className="font-display text-3xl text-primary mb-2">100+</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Partners</p>
+                  <div className="font-display text-3xl text-primary mb-2">25+</div>
+                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Wholesale Partners</p>
                 </div>
               </div>
             </div>
@@ -143,7 +147,7 @@ export default function About() {
               Let's find your <GoldUnderline className="italic">route.</GoldUnderline>
             </h2>
             <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
-              Whether you're an established producer or an emerging brand, we'd love to hear about your project.
+              Whether you're an Asian producer evaluating U.S. market entry, or a wholesaler looking to strengthen your portfolio in the fastest-growing beverage category, we'd like to hear from you.
             </p>
             <Link
               to="/contact"

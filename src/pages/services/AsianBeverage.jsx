@@ -35,9 +35,9 @@ const CATEGORIES = [
 ];
 
 const STATS = [
-  { value: '2x', label: 'Category growth vs. total spirits market' },
-  { value: 'Gen Z', label: 'Primary growth demographic for Asian beverages' },
-  { value: '#1', label: 'RTM ranking among Asian beverage importers by wholesaler network' },
+  { value: '$935M', label: 'U.S. soju market value in 2024, more than doubled in 5 years' },
+  { value: 'Gen Z', label: 'Primary growth demographic driving soju, sake, and Asian RTD demand' },
+  { value: '30+', label: 'Years RTM has operated in Asian beverage alcohol' },
 ];
 
 export default function AsianBeverage() {
@@ -73,13 +73,13 @@ export default function AsianBeverage() {
               />
               <div className="space-y-5 font-body text-base text-muted-foreground leading-relaxed">
                 <p>
-                  Asian beverage is one of the few categories showing <strong className="text-foreground">consistent, significant growth</strong> in a flat-to-declining overall market — specifically within the Gen Z and millennial demographic, the most influential purchasing group shaping on- and off-premise trends.
+                  Soju has <strong className="text-foreground">more than doubled in the U.S. over the past five years</strong>, reaching approximately $935 million in 2024. Growth is driven by Gen Z demand, the global reach of K-culture, and accessible pricing — validated by major mainstream players now entering the space. Spirit of Gallo's 2024 partnership with Lotte Chilsung reportedly delivered a 700% surge in volume for Lotte's brands in the year ending March 2025.
                 </p>
                 <p>
-                  Cultural fluency, global media, and a genuine curiosity for authentic international experiences have created demand that U.S. importers have been slow to meet. RTM has moved deliberately and strategically to become a <strong className="text-foreground">trusted national leader</strong> in this space.
+                  Parallel momentum is visible across the broader portfolio. Sake is seeing consistent double-digit growth as it moves beyond sushi restaurants into fine dining and general retail. Japanese whisky continues to lead at the premium end. Korean beer and Asian RTDs are gaining significant traction across on- and off-premise accounts.
                 </p>
                 <p>
-                  Our advantage isn't just knowing the products — it's understanding the consumers, the wholesalers, and the retail environments where these brands will succeed. We don't import everything. We import the right things.
+                  RTM has operated in these markets for <strong className="text-foreground">more than 30 years</strong> — sourcing from South Korea, Japan, China, Thailand, and Taiwan. We built producer relationships and wholesaler advocacy long before the current mainstream conversation began. That depth of experience is not replicable quickly, and it is the foundation of everything we bring to a partner.
                 </p>
               </div>
             </div>

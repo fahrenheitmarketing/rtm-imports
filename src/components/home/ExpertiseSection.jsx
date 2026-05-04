@@ -8,19 +8,19 @@ const SERVICES = [
   {
     number: '01',
     title: 'Asian Beverage',
-    description: 'A leader within the fastest-growing spirits category. From premium distilled products to craft beer and wine-based RTDs, we position your brand for success across the Gen Z demographic and beyond.',
+    description: 'Three decades of dedicated sourcing across South Korea, Japan, China, Thailand, and Taiwan. Soju, sake, shochu, Korean beer, Japanese whisky, and Asian RTDs — the highest-growth segments in the U.S. market, covered by a specialist who was there before the mainstream arrived.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png',
   },
   {
     number: '02',
     title: 'Custom Labels',
-    description: 'Curated relationships with established European producers offer our customers core selections of quality products. Differentiation and brand loyalty through exclusive private-label programs.',
+    description: 'Curated relationships with quality producers across Europe and Asia, available to retailers and operators building proprietary brands. From liquid development to label approval to wholesaler onboarding — end-to-end, no catalog required.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
   },
   {
     number: '03',
     title: 'Compliance & Licensing',
-    description: 'A comprehensive network of licenses and wholesaler relationships nationwide. We offer this infrastructure to select producers and national retailers looking to bring their brands to market.',
+    description: 'An active importer and wholesaler license network covering all 50 states, built over 30+ years of operating in the U.S. market. We make this infrastructure available to select producers and retailers — so you don\'t have to build it from scratch.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/bf0be4185_generated_ed6f371b.png',
   },
 ];

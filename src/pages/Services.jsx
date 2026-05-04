@@ -69,7 +69,7 @@ export default function Services() {
             transition={{ duration: 0.6 }}
             className="font-body text-lg text-muted-foreground leading-relaxed"
           >
-            RTM Imports operates across three interconnected service areas. Each one stands alone — and together, they form the most complete route to market in the industry.
+            RTM Imports is a B2B-only specialist. We do not sell to consumers. Our three service areas reflect 30+ years of operating experience in the U.S. wholesale channel — each one a discipline we have built deliberately, and each one available to the right partner.
           </motion.p>
         </div>
       </section>

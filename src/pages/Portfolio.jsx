@@ -32,12 +32,14 @@ const CATEGORIES = [
 ];
 
 const REGIONS = [
-  { name: 'Japan', specialty: 'Sake, Whisky, Shochu' },
-  { name: 'South Korea', specialty: 'Soju, Rice Wine, Craft Spirits' },
-  { name: 'France', specialty: 'Wine, Champagne, Cognac' },
+  { name: 'South Korea', specialty: 'Soju, Korean Beer, Rice Wine, RTD' },
+  { name: 'Japan', specialty: 'Sake, Whisky, Shochu, Craft Beer' },
+  { name: 'China', specialty: 'Baijiu, Craft Spirits, Wine-Based RTD' },
+  { name: 'Thailand', specialty: 'Spirits, RTD, Craft Beer' },
+  { name: 'Taiwan', specialty: 'Whisky, Craft Beer, Spirits' },
+  { name: 'France', specialty: 'Wine, Champagne, Sparkling' },
   { name: 'Italy', specialty: 'Wine, Prosecco, Amaro' },
-  { name: 'Spain', specialty: 'Wine, Cava, Sherry' },
-  { name: 'Portugal', specialty: 'Wine, Port, Vinho Verde' },
+  { name: 'Spain & Portugal', specialty: 'Wine, Cava, Sherry, Port' },
 ];
 
 export default function Portfolio() {

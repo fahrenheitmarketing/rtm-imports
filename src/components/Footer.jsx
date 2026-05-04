@@ -16,7 +16,7 @@ export default function Footer() {
               style={{ mixBlendMode: 'screen' }}
             />
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Your streamlined route to market. Simple, efficient, and singularly focused on delivering results for our wholesale partners.
+              America's dedicated Asian beverage alcohol specialist. More than 30 years of category depth, producer relationships, and national wholesale infrastructure — focused exclusively on the B2B channel.
             </p>
           </div>
 
