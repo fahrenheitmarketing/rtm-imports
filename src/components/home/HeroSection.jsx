@@ -32,7 +32,7 @@ export default function HeroSection() {
           </span>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-6">
           America's dedicated
-          <GoldUnderline className="italic block">Asian beverage specialist.</GoldUnderline>
+          <span className="italic block">Asian beverage <GoldUnderline>specialist.</GoldUnderline></span>
           </h1>
           <p className="font-body text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
             More than 30 years of category depth. A national wholesale network. And a singular focus on the brands and markets that are driving the next chapter of beverage alcohol in the U.S.
