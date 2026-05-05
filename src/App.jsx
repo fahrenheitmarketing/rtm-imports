@@ -18,6 +18,7 @@ import Contact from './pages/Contact';
 import News from './pages/News';
 import NewsDashboard from './pages/admin/NewsDashboard';
 import Wireframe from './pages/Wireframe';
+import ContentDoc from './pages/ContentDoc';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -59,6 +60,7 @@ const AuthenticatedApp = () => {
         <Route path="/news" element={<News />} />
         <Route path="/admin/news" element={<NewsDashboard />} />
         <Route path="/wireframe" element={<Wireframe />} />
+        <Route path="/content-doc" element={<ContentDoc />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
