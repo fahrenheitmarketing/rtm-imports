@@ -79,13 +79,6 @@ export default function About() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-card border border-border p-8">
-                <span className="font-display text-6xl text-primary/20 block mb-2">"</span>
-                <p className="font-display text-xl text-foreground italic leading-relaxed -mt-6">
-                  We only exist to serve the needs of our customers, not to promote our own agenda, products or market positions.
-                </p>
-              </div>
-
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-card border border-border p-6 text-center">
                   <div className="font-display text-3xl text-primary mb-2">30+</div>
