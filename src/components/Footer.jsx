@@ -10,10 +10,9 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <img
-              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/84c21a157_LION-LOGO.png"
+              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/71e10e810_image.png"
               alt="RTM Imports Logo"
-              className="h-40 w-auto mb-6"
-              style={{ mixBlendMode: 'screen' }}
+              className="h-24 w-auto mb-6"
             />
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-xs">
               America's dedicated Asian beverage alcohol specialist. More than 30 years of category depth, producer relationships, and national wholesale infrastructure — focused exclusively on the B2B channel.
