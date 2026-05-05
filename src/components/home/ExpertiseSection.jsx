@@ -8,7 +8,7 @@ const SERVICES = [
   {
     number: '01',
     title: 'Asian Beverage',
-    description: 'Three decades of dedicated sourcing across South Korea, Japan, China, Thailand, and Taiwan. Soju, sake, shochu, Korean beer, Japanese whisky, and Asian RTDs — the highest-growth segments in the U.S. market, covered by a specialist who was there before the mainstream arrived.',
+    description: 'Three decades of dedicated sourcing across South Korea, Japan, China, Thailand, and Taiwan. Soju and wine-based RTDs are our primary category — the highest-growth segments in the U.S. market, covered by a specialist who was building producer relationships long before the mainstream arrived.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png',
   },
   {
