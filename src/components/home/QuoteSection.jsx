@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Fireflies from './Fireflies';
 
 export default function QuoteSection() {
   return (
-    <section className="py-24 md:py-32 bg-background overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+    <section className="relative py-24 md:py-32 bg-background overflow-hidden">
+      <Fireflies />
+      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 text-center">
         <motion.div
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
