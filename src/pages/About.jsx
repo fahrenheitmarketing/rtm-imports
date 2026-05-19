@@ -79,19 +79,12 @@ export default function About() {
             </div>
 
             <div className="space-y-6">
-              <div
-                className="grid grid-cols-2 gap-6"
-                style={{
-                  backgroundImage: `url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/6eb369566_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)`,
-                  backgroundRepeat: 'repeat',
-                  backgroundSize: '400px 400px',
-                }}
-              >
-                <div className="bg-background/70 backdrop-blur-sm border border-border p-6 text-center">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-card border border-border p-6 text-center">
                   <div className="font-display text-3xl text-primary mb-2">30+</div>
                   <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Years in Category</p>
                 </div>
-                <div className="bg-background/70 backdrop-blur-sm border border-border p-6 text-center">
+                <div className="bg-card border border-border p-6 text-center">
                   <div className="font-display text-3xl text-primary mb-2">25+</div>
                   <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Wholesale Partners</p>
                 </div>
