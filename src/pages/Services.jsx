@@ -60,17 +60,15 @@ export default function Services() {
       </section>
 
       {/* Overview intro */}
-      <section className="py-20 bg-background">
-        <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-body text-lg text-foreground/80 leading-relaxed"
-          >
-            RTM Imports is a B2B-only specialist. We do not sell to consumers. Our three service areas reflect 30+ years of operating experience in the U.S. wholesale channel — each one a discipline we have built deliberately, and each one available to the right partner.
-          </motion.p>
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+              <p className="font-display text-2xl md:text-3xl text-foreground leading-relaxed italic">
+                RTM Imports is a B2B-only specialist. We do not sell to consumers. Our three service areas reflect 30+ years of operating experience in the U.S. wholesale channel — each one a discipline we have built deliberately, and each one available to the right partner.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
