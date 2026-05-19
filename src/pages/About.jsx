@@ -112,7 +112,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="bg-background border border-border p-8 rounded-sm shadow-md hover:border-primary/40 hover:shadow-lg transition-all duration-300"
+                className="bg-background border border-primary/30 p-8 rounded-sm shadow-md hover:border-primary/60 hover:shadow-lg transition-all duration-300"
               >
                 <div className="w-14 h-14 mx-auto mb-6 border border-primary/30 rounded-full flex items-center justify-center">
                   <value.icon className="w-6 h-6 text-primary" />
