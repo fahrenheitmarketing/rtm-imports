@@ -4,7 +4,15 @@ import Fireflies from './Fireflies';
 
 export default function QuoteSection() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundColor: 'hsl(218 73% 12%)' }}>
+    <section className="relative py-24 md:py-32 overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/6511b041e_Gemini_Generated_Image_vqlwikvqlwikvqlw.png"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: 'hsl(218 73% 12% / 0.82)' }} />
+      </div>
       <Fireflies />
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 text-center">
         <motion.div
