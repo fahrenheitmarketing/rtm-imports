@@ -129,7 +129,7 @@ export default function Portfolio() {
       </section>
 
       {/* Regions */}
-      <section className="py-24 md:py-32 bg-card border-y border-border">
+      <section className="py-24 md:py-32 bg-background border-y border-border">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Sourcing Regions"
