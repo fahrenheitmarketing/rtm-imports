@@ -54,7 +54,7 @@ export default function About() {
       </section>
 
       {/* Story */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -62,12 +62,12 @@ export default function About() {
                 label="Our Story"
                 title="What RTM stands for"
               />
-              <div className="space-y-6 font-body text-base text-muted-foreground leading-relaxed">
+              <div className="space-y-6 font-body text-base text-slate-600 leading-relaxed">
                 <p>
-                  RTM Imports is a San Antonio-based importer of Asian beverage alcohol with more than <strong className="text-foreground">30 years of operational history</strong> in the category. Originally established in the early 1990s alongside one of the largest wholesale networks in the country, RTM was formally structured as an independent LLC and has been led by Benjamin Roberts since 2016.
+                  RTM Imports is a San Antonio-based importer of Asian beverage alcohol with more than <strong className="text-slate-900">30 years of operational history</strong> in the category. Originally established in the early 1990s alongside one of the largest wholesale networks in the country, RTM was formally structured as an independent LLC and has been led by Benjamin Roberts since 2016.
                 </p>
                 <p>
-                  We operate exclusively in the <strong className="text-foreground">B2B wholesale channel</strong> — working with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. We do not sell to consumers. We do not chase broad portfolios. We exist to serve our wholesale partners.
+                  We operate exclusively in the <strong className="text-slate-900">B2B wholesale channel</strong> — working with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. We do not sell to consumers. We do not chase broad portfolios. We exist to serve our wholesale partners.
                 </p>
                 <p>
                   Our specialization spans South Korea, Japan, China, Thailand, and Taiwan — covering the most significant growth segments in the U.S. market: soju, sake, shochu, Korean beer, Japanese whisky, and Asian RTDs. We were building relationships in these markets long before the mainstream conversation arrived.
@@ -80,13 +80,13 @@ export default function About() {
 
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-card border border-border p-6 text-center">
+                <div className="bg-slate-50 border border-slate-200 p-6 text-center">
                   <div className="font-display text-3xl text-primary mb-2">30+</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Years in Category</p>
+                  <p className="font-body text-xs tracking-widest uppercase text-slate-500">Years in Category</p>
                 </div>
-                <div className="bg-card border border-border p-6 text-center">
+                <div className="bg-slate-50 border border-slate-200 p-6 text-center">
                   <div className="font-display text-3xl text-primary mb-2">25+</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Wholesale Partners</p>
+                  <p className="font-body text-xs tracking-widest uppercase text-slate-500">Wholesale Partners</p>
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function About() {
 
       {/* CTA */}
       <section className="py-24 md:py-32 text-center relative" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/291358c6a_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
-        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-white/80" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -137,10 +137,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
+            <h2 className="font-display text-3xl md:text-4xl text-slate-900 mb-6">
               Let's find your <GoldUnderline className="italic">route.</GoldUnderline>
             </h2>
-            <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
+            <p className="font-body text-base text-slate-600 leading-relaxed mb-8">
               Whether you're an Asian producer evaluating U.S. market entry, or a wholesaler looking to strengthen your portfolio in the fastest-growing beverage category, we'd like to hear from you.
             </p>
             <Link
