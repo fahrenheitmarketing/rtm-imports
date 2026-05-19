@@ -112,3 +112,11 @@ svg:not([data-no-bounce]):hover {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(38 65% 52%);
 }
+
+/* Italic text in headings uses brand yellow */
+h1 i, h2 i, h3 i, h4 i, h5 i, h6 i,
+.font-display i,
+.font-display em {
+  color: hsl(var(--primary));
+  font-style: italic;
+}

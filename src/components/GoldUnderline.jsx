@@ -10,7 +10,7 @@ export default function GoldUnderline({ children, className = '', delay = 0.2 })
   const inView = useInView(ref, { once: true, margin: '-40px' });
 
   return (
-    <span ref={ref} className={`relative inline-block ${className}`}>
+    <span ref={ref} className={`relative inline-block text-primary ${className}`}>
       {children}
       <motion.span
         className="absolute left-0 bottom-0 h-px bg-primary block"
