@@ -4,7 +4,7 @@ import Fireflies from './Fireflies';
 
 export default function QuoteSection() {
   return (
-    <section className="relative py-24 md:py-32 bg-background overflow-hidden">
+    <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundColor: 'hsl(218 73% 12%)' }}>
       <Fireflies />
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 text-center">
         <motion.div
