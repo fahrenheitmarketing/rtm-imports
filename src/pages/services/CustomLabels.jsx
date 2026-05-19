@@ -179,7 +179,7 @@ export default function CustomLabels() {
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
                 className="relative p-8 border border-border"
               >
-                <span className="font-display text-5xl text-primary/25 block mb-4">{item.step}</span>
+                <span className="font-display text-5xl text-primary/50 block mb-4">{item.step}</span>
                 <h3 className="font-display text-lg text-foreground mb-3 -mt-6">{item.title}</h3>
                 <p className="font-body text-sm text-foreground/80 leading-relaxed">{item.description}</p>
               </motion.div>
