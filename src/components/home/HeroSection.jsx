@@ -31,18 +31,18 @@ export default function HeroSection() {
             Route to Market Imports
           </span>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-6">
-          America's dedicated
-          <span className="italic block">Asian beverage <GoldUnderline>specialist.</GoldUnderline></span>
+          America's specialist
+          <span className="italic block">beverage <GoldUnderline>importer.</GoldUnderline></span>
           </h1>
           <p className="font-body text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
-            More than 30 years of category depth. A national wholesale network. And a singular focus on the brands and markets that are driving the next chapter of beverage alcohol in the U.S.
+            A thirty-year track record across wine, spirits, and emerging categories. A national wholesale network and the instinct to find the brands and markets driving the next chapter of beverage alcohol in the U.S.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              to="/services"
+              to="/products"
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-body text-sm tracking-widest uppercase hover:bg-primary/90 transition-all duration-300 group"
             >
-              Our Services
+              Our Products
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <Link

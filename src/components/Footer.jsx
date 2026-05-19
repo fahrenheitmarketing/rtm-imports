@@ -25,8 +25,9 @@ export default function Footer() {
             <div className="space-y-3">
               {[
                 { label: 'About', path: '/about' },
-                { label: 'Services', path: '/services' },
+                { label: 'Products', path: '/products' },
                 { label: 'Portfolio', path: '/portfolio' },
+                { label: 'Wholesalers', path: '/wholesalers' },
                 { label: 'Contact', path: '/contact' },
               ].map((link) => (
                 <Link

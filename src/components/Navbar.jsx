@@ -4,15 +4,16 @@ import { Menu, X, ChevronDown, Globe, Palette, FileCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const SERVICE_LINKS = [
-  { label: 'Asian Beverages', path: '/services/asian-beverage', icon: Globe },
-  { label: 'Custom Labels', path: '/services/custom-labels', icon: Palette },
-  { label: 'Compliance & Licensing', path: '/services/compliance', icon: FileCheck },
+  { label: 'Asian Beverages', path: '/products/asian-beverage', icon: Globe },
+  { label: 'Custom Labels', path: '/products/custom-labels', icon: Palette },
+  { label: 'Compliance & Licensing', path: '/products/compliance', icon: FileCheck },
 ];
 
 const NAV_LINKS = [
   { label: 'About', path: '/about' },
-  { label: 'Services', path: '/services', hasDropdown: true },
+  { label: 'Products', path: '/products', hasDropdown: true },
   { label: 'Portfolio', path: '/portfolio' },
+  { label: 'Wholesalers', path: '/wholesalers' },
   { label: 'News', path: '/news' },
   { label: 'Contact', path: '/contact' },
 ];
@@ -47,7 +48,7 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const isServicesActive = location.pathname.startsWith('/services');
+  const isServicesActive = location.pathname.startsWith('/products');
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
@@ -90,10 +91,10 @@ export default function Navbar() {
                       >
                         <div className="py-2">
                           <Link
-                            to="/services"
+                            to="/products"
                             className="block px-5 py-3 font-body text-xs tracking-widest uppercase text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-200 border-b border-border"
                           >
-                            All Services
+                            All Products
                           </Link>
                           {SERVICE_LINKS.map((sl) => (
                             <Link
@@ -176,8 +177,8 @@ export default function Navbar() {
                       exit={{ opacity: 0, height: 0 }}
                       className="mt-3 ml-4 space-y-3 overflow-hidden"
                     >
-                      <Link to="/services" className="block font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
-                        All Services
+                      <Link to="/products" className="block font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
+                        All Products
                       </Link>
                       {SERVICE_LINKS.map((sl) => (
                         <Link
@@ -203,6 +204,14 @@ export default function Navbar() {
                 }`}
               >
                 Portfolio
+              </Link>
+              <Link
+                to="/wholesalers"
+                className={`block font-body text-sm tracking-widest uppercase transition-colors duration-300 ${
+                  location.pathname === '/wholesalers' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Wholesalers
               </Link>
               <Link
                 to="/news"

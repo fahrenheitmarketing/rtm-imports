@@ -10,7 +10,7 @@ const SERVICES_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb
 const SERVICES = [
   {
     id: 'asian-beverage',
-    path: '/services/asian-beverage',
+    path: '/products/asian-beverage',
     icon: Globe,
     label: 'Asian Beverages',
     title: 'Leading the fastest-growing category in America',
@@ -20,7 +20,7 @@ const SERVICES = [
   },
   {
     id: 'custom-labels',
-    path: '/services/custom-labels',
+    path: '/products/custom-labels',
     icon: Palette,
     label: 'Custom Labels',
     title: 'Your brand. Our expertise. Their shelf.',
@@ -30,7 +30,7 @@ const SERVICES = [
   },
   {
     id: 'compliance',
-    path: '/services/compliance',
+    path: '/products/compliance',
     icon: FileCheck,
     label: 'Compliance & Licensing',
     title: 'The infrastructure that makes national distribution possible',
@@ -51,7 +51,7 @@ export default function Services() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Our Services</span>
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Our Products</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
               Three disciplines. <GoldUnderline className="italic">One focus.</GoldUnderline>
             </h1>

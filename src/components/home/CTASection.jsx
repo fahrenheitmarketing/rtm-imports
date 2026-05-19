@@ -33,7 +33,7 @@ export default function CTASection() {
               <span className="italic text-primary"> for serious brands.</span>
             </h2>
             <p className="font-body text-base text-muted-foreground leading-relaxed mb-10">
-              RTM operates exclusively in the B2B wholesale channel, working with the largest national beverage wholesalers across on- and off-premise. If you are a producer seeking U.S. market entry, or a wholesaler evaluating your Asian beverage portfolio, we'd like to hear from you.
+              RTM operates exclusively in the B2B wholesale channel, working with the largest national beverage wholesalers across on- and off-premise. If you are a producer seeking U.S. market entry or a wholesale partner evaluating your beverage portfolio, we would like to hear from you.
             </p>
             <Link
               to="/contact"

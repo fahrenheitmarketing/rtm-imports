@@ -11,17 +11,17 @@ const VALUES = [
   {
     icon: Target,
     title: 'Fearless Creativity',
-    description: 'We pursue categories and producers that others overlook. Asian beverage alcohol was a niche before it was a trend — we were already there.',
+    description: 'We pursue categories and producers that others overlook. Asian beverage alcohol was a niche before it was a trend — we were already there, and we are already looking at what comes next.',
   },
   {
     icon: Zap,
     title: 'Aggressive Adaptability',
-    description: 'The U.S. wholesale landscape is consolidating rapidly. Our independence and lean operating model mean we move faster than any generalist importer.',
+    description: 'The U.S. wholesale landscape is consolidating fast. Our independence and lean operating model mean we move faster than any generalist importer — and we have the track record to prove it.',
   },
   {
     icon: Shield,
     title: 'Relationship-First Execution',
-    description: 'Long-term partnerships — with Asian producers and national wholesalers alike — are the foundation of everything we do. Trust is built over decades, not campaigns.',
+    description: 'The relationships we hold with producers and wholesale partners have been built over years, not quarters. We invest in the people behind the brands as much as the brands themselves, and that personal commitment is what keeps those relationships intact when the market shifts.',
   },
 ];
 
@@ -46,7 +46,7 @@ export default function About() {
           >
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">About Us</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
-              Thirty years in the space.
+              Thirty years in the industry.
               <GoldUnderline className="italic block"> Built to move first.</GoldUnderline>
             </h1>
           </motion.div>
@@ -64,16 +64,16 @@ export default function About() {
               />
               <div className="space-y-6 font-body text-base text-foreground/80 leading-relaxed">
                 <p>
-                  RTM Imports is a San Antonio-based importer of Asian beverage alcohol with more than <strong className="text-foreground">30 years of operational history</strong> in the category. Originally established in the early 1990s alongside one of the largest wholesale networks in the country, RTM was formally structured as an independent LLC and has been led by Benjamin Roberts since 2016.
+                  RTM Imports is a San Antonio-based <strong className="text-foreground">specialist beverage importer</strong> with more than 30 years of operational history. Founded in the early 1990s, RTM was formally structured as an independent LLC and has been led by Benjamin Roberts since 2016.
                 </p>
                 <p>
-                  We operate exclusively in the <strong className="text-foreground">B2B wholesale channel</strong> — working with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. We do not sell to consumers. We do not chase broad portfolios. We exist to serve our wholesale partners.
+                  We operate exclusively in the <strong className="text-foreground">B2B wholesale channel</strong> — working with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. We do not sell to consumers. We build the infrastructure, the relationships, and the programs that get brands to shelf.
                 </p>
                 <p>
-                  Our specialization spans South Korea, Japan, China, Thailand, and Taiwan — covering the most significant growth segments in the U.S. market: soju, sake, shochu, Korean beer, Japanese whisky, and Asian RTDs. We were building relationships in these markets long before the mainstream conversation arrived.
+                  Our history spans fine wine, spirits, and emerging categories. Asian beverage is the newest addition — soju, wine-based RTDs, and craft beer, sourced from South Korea, Japan, China, Thailand, and Taiwan — and the fastest-growing segment we represent. We identified the opportunity before the mainstream arrived, moved quickly to build the right producer relationships and wholesale infrastructure, and the results speak for themselves.
                 </p>
                 <p>
-                  We stick to what we know we do well. No filler, no noise — just results.
+                  What defines RTM is adaptability. Over 30 years, the business has navigated shifting consumer tastes, distribution consolidation, regulatory change, and market disruption, and has grown through it all. We move toward change rather than away from it. That is how we identified the Asian beverage opportunity before the mainstream arrived. That is how we will find the next category before it peaks.
                 </p>
               </div>
             </div>
@@ -86,7 +86,15 @@ export default function About() {
                 </div>
                 <div className="bg-card border border-border p-6 text-center">
                   <div className="font-display text-3xl text-primary mb-2">25+</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Wholesale Partners</p>
+                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Active Wholesale Partners</p>
+                </div>
+                <div className="bg-card border border-border p-6 text-center">
+                  <div className="font-display text-3xl text-primary mb-2">1,000+</div>
+                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Brands Represented</p>
+                </div>
+                <div className="bg-card border border-border p-6 text-center">
+                  <div className="font-display text-3xl text-primary mb-2">All 50</div>
+                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">States Served</p>
                 </div>
               </div>
             </div>
@@ -98,9 +106,9 @@ export default function About() {
       <section className="py-24 md:py-32 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
-            label="Our Approach"
+            label="How We Work"
             title="Why RTM"
-            description="While our competitors build massive portfolios and chase scale, we build focused partnerships and chase results."
+            description="Three principles define how we work."
             align="center"
           />
 

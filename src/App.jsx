@@ -13,6 +13,7 @@ import Services from './pages/Services';
 import AsianBeverage from './pages/services/AsianBeverage';
 import CustomLabels from './pages/services/CustomLabels';
 import Compliance from './pages/services/Compliance';
+import Wholesalers from './pages/Wholesalers.jsx';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import News from './pages/News';
@@ -52,9 +53,14 @@ const AuthenticatedApp = () => {
       <Route element={<Layout />}>
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/products" element={<Services />} />
         <Route path="/services/asian-beverage" element={<AsianBeverage />} />
         <Route path="/services/custom-labels" element={<CustomLabels />} />
         <Route path="/services/compliance" element={<Compliance />} />
+        <Route path="/products/asian-beverage" element={<AsianBeverage />} />
+        <Route path="/products/custom-labels" element={<CustomLabels />} />
+        <Route path="/products/compliance" element={<Compliance />} />
+        <Route path="/wholesalers" element={<Wholesalers />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/news" element={<News />} />

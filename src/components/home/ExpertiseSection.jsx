@@ -7,21 +7,24 @@ import SectionHeading from '../SectionHeading';
 const SERVICES = [
   {
     number: '01',
-    title: 'Asian Beverage',
-    description: 'Three decades of dedicated sourcing across South Korea, Japan, China, Thailand, and Taiwan. Soju and wine-based RTDs are our primary category — the highest-growth segments in the U.S. market, covered by a specialist who was building producer relationships long before the mainstream arrived.',
+    title: 'Products We Represent',
+    description: 'Thirty years of representing beverages at both ends of the spectrum, from the world\'s finest wine and spirit producers to the fastest-emerging categories in the market. Our producer relationships and wholesale infrastructure span categories and continents. Asian beverage is the newest addition to our portfolio and currently the highest-growth segment in the US market.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png',
+    path: '/products/asian-beverage',
   },
   {
     number: '02',
     title: 'Custom Labels',
-    description: 'Curated relationships with quality producers across Europe and Asia, available to retailers and operators building proprietary brands. From liquid development to label approval to wholesaler onboarding — end-to-end, no catalog required.',
+    description: 'Producer relationships across all major producing regions are available to retailers and operators building proprietary brands. From liquid development to label approval to wholesaler onboarding, end-to-end, without the catalog.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
+    path: '/products/custom-labels',
   },
   {
     number: '03',
     title: 'Compliance & Licensing',
-    description: 'An active importer and wholesaler license network covering all 50 states, built over 30+ years of operating in the U.S. market. We make this infrastructure available to select producers and retailers — so you don\'t have to build it from scratch.',
+    description: 'An active importer and wholesaler license network covering all 50 states. We handle both federal TTB compliance and state-level registration, making this infrastructure available to select producers and retailers so you don\'t have to build it from scratch.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/bf0be4185_generated_ed6f371b.png',
+    path: '/products/compliance',
   },
 ];
 
@@ -30,9 +33,9 @@ export default function ExpertiseSection() {
     <section className="py-24 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <SectionHeading
-          label="Areas of Expertise"
-          title="What we do best"
-          description="Three core disciplines. One singular focus: getting your product to market."
+          label="What We Do"
+          title="What we do"
+          description="Three disciplines. One focus: getting your product to market."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -61,7 +64,7 @@ export default function ExpertiseSection() {
                 {service.description}
               </p>
               <Link
-                to="/services"
+                to={service.path}
                 className="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-primary hover:text-foreground transition-colors duration-300 group/link"
               >
                 Learn More
