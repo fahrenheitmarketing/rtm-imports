@@ -71,7 +71,7 @@ export default function AsianBeverage() {
                 label="The Opportunity"
                 title="Why Asian beverages, why now"
               />
-              <div className="space-y-5 font-body text-base text-muted-foreground leading-relaxed">
+              <div className="space-y-5 font-body text-base text-foreground/80 leading-relaxed">
                 <p>
                   Soju has <strong className="text-foreground">more than doubled in the U.S. over the past five years</strong>, reaching approximately $935 million in 2024. Growth is driven by Gen Z demand, the global reach of K-culture, and accessible pricing — validated by major mainstream players now entering the space. Spirit of Gallo's 2024 partnership with Lotte Chilsung reportedly delivered a 700% surge in volume for Lotte's brands in the year ending March 2025.
                 </p>
@@ -88,7 +88,7 @@ export default function AsianBeverage() {
               {STATS.map((stat) => (
                 <div key={stat.value} className="bg-card border border-border p-6 flex items-center gap-6">
                   <div className="font-display text-4xl text-primary min-w-[80px]">{stat.value}</div>
-                  <p className="font-body text-sm text-muted-foreground">{stat.label}</p>
+                  <p className="font-body text-sm text-foreground/80">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -116,7 +116,7 @@ export default function AsianBeverage() {
                 className="bg-background border border-border p-8 hover:border-primary/40 transition-colors duration-300"
               >
                 <h3 className="font-display text-xl text-foreground mb-3">{cat.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{cat.description}</p>
+                <p className="font-body text-sm text-foreground/80 leading-relaxed">{cat.description}</p>
               </motion.div>
             ))}
           </div>
@@ -149,7 +149,7 @@ export default function AsianBeverage() {
                   <item.icon className="w-5 h-5 text-primary" />
                   <h3 className="font-display text-xl text-foreground">{item.title}</h3>
                 </div>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                <p className="font-body text-sm text-foreground/80 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -164,7 +164,7 @@ export default function AsianBeverage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Ready to bring your Asian <GoldUnderline className="italic">brand to America?</GoldUnderline>
             </h2>
-            <p className="font-body text-base text-muted-foreground leading-relaxed mb-10">
+            <p className="font-body text-base text-foreground/80 leading-relaxed mb-10">
               Whether you're a producer seeking U.S. market entry or a wholesaler looking to strengthen your Asian beverage portfolio, we have the infrastructure, relationships, and expertise to make it happen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

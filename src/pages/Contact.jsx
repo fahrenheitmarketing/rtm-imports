@@ -50,7 +50,7 @@ export default function Contact() {
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
               Let's start the <span className="italic text-primary">conversation.</span>
             </h1>
-            <p className="font-body text-lg text-muted-foreground mt-6 max-w-xl leading-relaxed">
+            <p className="font-body text-lg text-foreground/80 mt-6 max-w-xl leading-relaxed">
               Whether you're a producer seeking U.S. market entry or a retailer exploring private-label options, we're here to help.
             </p>
           </motion.div>
@@ -72,7 +72,7 @@ export default function Contact() {
                 <div className="bg-card border border-border p-12 text-center">
                   <CheckCircle className="w-12 h-12 text-primary mx-auto mb-6" />
                   <h3 className="font-display text-2xl text-foreground mb-3">Message Sent</h3>
-                  <p className="font-body text-base text-muted-foreground">
+                  <p className="font-body text-base text-foreground/80">
                     Thank you for reaching out. We'll get back to you shortly.
                   </p>
                 </div>
@@ -163,7 +163,7 @@ export default function Contact() {
               <div className="bg-card border border-border p-8 space-y-8">
                 <div>
                   <h3 className="font-display text-xl text-foreground mb-6">Get in Touch</h3>
-                  <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                  <p className="font-body text-sm text-foreground/80 leading-relaxed">
                     We respond to all inquiries within 24 business hours. For urgent matters, don't hesitate to reach out directly via email.
                   </p>
                 </div>
@@ -175,7 +175,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-body text-sm text-foreground font-medium mb-1">Office</h4>
-                      <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                      <p className="font-body text-sm text-foreground/80 leading-relaxed">
                         755 East Mulberry Ave.<br />
                         San Antonio, TX 78212
                       </p>

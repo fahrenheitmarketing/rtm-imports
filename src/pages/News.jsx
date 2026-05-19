@@ -35,7 +35,7 @@ export default function News() {
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
               The Asian beverage <GoldUnderline className="italic">category, covered.</GoldUnderline>
             </h1>
-            <p className="font-body text-lg text-muted-foreground mt-6 max-w-xl leading-relaxed">
+            <p className="font-body text-lg text-foreground/80 mt-6 max-w-xl leading-relaxed">
               Industry trends, partnership announcements, market data, and perspectives from RTM's 30+ years in the category.
             </p>
           </motion.div>
@@ -69,7 +69,7 @@ export default function News() {
                     </span>
                   </div>
                   <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4 leading-tight">{featured.title}</h2>
-                  <p className="font-body text-base text-muted-foreground leading-relaxed">{featured.summary}</p>
+                  <p className="font-body text-base text-foreground/80 leading-relaxed">{featured.summary}</p>
                 </div>
                 <div className="flex items-center gap-2 mt-8 font-body text-sm tracking-widest uppercase text-primary group-hover:text-foreground transition-colors duration-300">
                   {featured.external_url ? (

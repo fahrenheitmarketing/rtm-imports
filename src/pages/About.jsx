@@ -62,7 +62,7 @@ export default function About() {
                 label="Our Story"
                 title="What RTM stands for"
               />
-              <div className="space-y-6 font-body text-base text-muted-foreground leading-relaxed">
+              <div className="space-y-6 font-body text-base text-foreground/80 leading-relaxed">
                 <p>
                   RTM Imports is a San Antonio-based importer of Asian beverage alcohol with more than <strong className="text-foreground">30 years of operational history</strong> in the category. Originally established in the early 1990s alongside one of the largest wholesale networks in the country, RTM was formally structured as an independent LLC and has been led by Benjamin Roberts since 2016.
                 </p>
@@ -118,7 +118,7 @@ export default function About() {
                   <value.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-display text-xl text-foreground mb-3">{value.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                <p className="font-body text-sm text-foreground/80 leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>

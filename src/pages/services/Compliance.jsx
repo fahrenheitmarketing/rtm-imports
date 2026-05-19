@@ -90,7 +90,7 @@ export default function Compliance() {
                 label="The Regulatory Reality"
                 title="Why compliance is a strategic asset"
               />
-              <div className="space-y-5 font-body text-base text-muted-foreground leading-relaxed">
+              <div className="space-y-5 font-body text-base text-foreground/80 leading-relaxed">
                 <p>
                   The U.S. beverage alcohol market is governed by a <strong className="text-foreground">three-tier system</strong> with federal oversight from the TTB and individual regulatory frameworks in all 50 states. For a foreign producer or a new domestic brand, navigating this landscape is one of the single greatest barriers to market entry.
                 </p>
@@ -112,7 +112,7 @@ export default function Compliance() {
               ].map((stat) => (
                 <div key={stat.label} className="bg-card border border-border p-8 text-center">
                   <div className="font-display text-3xl text-primary mb-2">{stat.value}</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">{stat.label}</p>
+                  <p className="font-body text-xs tracking-widest uppercase text-foreground/80">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -143,7 +143,7 @@ export default function Compliance() {
                   <item.icon className="w-4 h-4 text-primary" />
                 </div>
                 <h3 className="font-display text-lg text-foreground mb-3">{item.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                <p className="font-body text-sm text-foreground/80 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -169,7 +169,7 @@ export default function Compliance() {
                 className="border border-border p-8"
               >
                 <h4 className="font-display text-lg text-foreground mb-3">{faq.q}</h4>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                <p className="font-body text-sm text-foreground/80 leading-relaxed">{faq.a}</p>
               </motion.div>
             ))}
           </div>
@@ -184,7 +184,7 @@ export default function Compliance() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Don't let compliance <GoldUnderline className="italic">slow you down.</GoldUnderline>
             </h2>
-            <p className="font-body text-base text-muted-foreground leading-relaxed mb-10">
+            <p className="font-body text-base text-foreground/80 leading-relaxed mb-10">
               We've built the infrastructure. We've cultivated the relationships. We know the rules in every state. Let us put that to work for your brand — so you can focus on what you do best: making great beverages.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

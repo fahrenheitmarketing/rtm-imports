@@ -70,7 +70,7 @@ export default function Portfolio() {
               <p className="font-display text-2xl md:text-3xl text-foreground leading-relaxed italic">
                 Due to the stringency of our wholesaler partner demands, our focus has and will continue to be on a selection of quality producers rather than a comprehensive portfolio.
               </p>
-              <p className="font-body text-base text-muted-foreground mt-6">
+              <p className="font-body text-base text-foreground/80 mt-6">
                 In other words — we stick to what we know we do well.
               </p>
             </motion.div>
@@ -108,7 +108,7 @@ export default function Portfolio() {
                     <cat.icon className="w-5 h-5 text-primary" />
                     <h3 className="font-display text-2xl text-foreground">{cat.title}</h3>
                   </div>
-                  <p className="font-body text-base text-muted-foreground leading-relaxed mb-5">
+                  <p className="font-body text-base text-foreground/80 leading-relaxed mb-5">
                     {cat.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -148,7 +148,7 @@ export default function Portfolio() {
                 className="border border-border p-6 hover:border-primary/40 transition-colors duration-300"
               >
                 <h4 className="font-display text-xl text-foreground mb-2">{region.name}</h4>
-                <p className="font-body text-sm text-muted-foreground">{region.specialty}</p>
+                <p className="font-body text-sm text-foreground/80">{region.specialty}</p>
               </motion.div>
             ))}
           </div>
@@ -162,7 +162,7 @@ export default function Portfolio() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Interested in <GoldUnderline className="italic">our brands?</GoldUnderline>
             </h2>
-            <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
+            <p className="font-body text-base text-foreground/80 leading-relaxed mb-8">
               Contact us to learn more about our current portfolio or to discuss bringing your brand to market.
             </p>
             <Link

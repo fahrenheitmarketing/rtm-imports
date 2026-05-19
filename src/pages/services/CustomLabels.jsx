@@ -94,7 +94,7 @@ export default function CustomLabels() {
                 label="Private Label Programs"
                 title="Built on relationships, not catalogs"
               />
-              <div className="space-y-5 font-body text-base text-muted-foreground leading-relaxed">
+              <div className="space-y-5 font-body text-base text-foreground/80 leading-relaxed">
                 <p>
                   As competition intensifies across every beverage category, the brands that win are the ones that own the relationship with the consumer. <strong className="text-foreground">A private label is not a shortcut — it's a strategic asset.</strong>
                 </p>
@@ -153,7 +153,7 @@ export default function CustomLabels() {
                 </div>
                 <div>
                   <h3 className="font-display text-xl text-foreground mb-2">{item.title}</h3>
-                  <p className="font-body text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                  <p className="font-body text-sm text-foreground/80 leading-relaxed">{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -181,7 +181,7 @@ export default function CustomLabels() {
               >
                 <span className="font-display text-5xl text-primary/15 block mb-4">{item.step}</span>
                 <h3 className="font-display text-lg text-foreground mb-3 -mt-6">{item.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                <p className="font-body text-sm text-foreground/80 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -196,7 +196,7 @@ export default function CustomLabels() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Ready to build a brand <GoldUnderline className="italic">worth owning?</GoldUnderline>
             </h2>
-            <p className="font-body text-base text-muted-foreground leading-relaxed mb-10">
+            <p className="font-body text-base text-foreground/80 leading-relaxed mb-10">
               Whether you're a retailer exploring your first private label or a hospitality group building a proprietary portfolio, let's talk about what's possible. We'll start with a no-obligation discovery call to assess fit and scope.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -14,7 +14,7 @@ export default function Footer() {
               alt="RTM Imports Logo"
               className="h-24 w-auto mb-6"
             />
-            <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-xs">
+            <p className="font-body text-sm text-foreground/80 leading-relaxed max-w-xs">
               America's dedicated Asian beverage alcohol specialist. More than 30 years of category depth, producer relationships, and national wholesale infrastructure — focused exclusively on the B2B channel.
             </p>
           </div>
@@ -32,7 +32,7 @@ export default function Footer() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="block font-body text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                  className="block font-body text-sm text-foreground/80 hover:text-foreground transition-colors duration-300"
                 >
                   {link.label}
                 </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                <p className="font-body text-sm text-foreground/80 leading-relaxed">
                   755 East Mulberry Ave.<br />
                   San Antonio, TX 78212
                 </p>
@@ -55,7 +55,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                 <a
                   href="mailto:contact@rtm-imports.com"
-                  className="font-body text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+                  className="font-body text-sm text-foreground/80 hover:text-primary transition-colors duration-300"
                 >
                   contact@rtm-imports.com
                 </a>
@@ -65,10 +65,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-body text-xs text-muted-foreground">
+          <p className="font-body text-xs text-foreground/80">
             © {new Date().getFullYear()} RTM Imports, LLC. All rights reserved.
           </p>
-          <p className="font-body text-xs text-muted-foreground">
+          <p className="font-body text-xs text-foreground/80">
             Please drink responsibly. Must be 21+.
           </p>
         </div>
