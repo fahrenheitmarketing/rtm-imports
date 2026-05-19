@@ -9,7 +9,7 @@ export default function QuoteSection() {
         <img
           src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/6511b041e_Gemini_Generated_Image_vqlwikvqlwikvqlw.png"
           alt=""
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-bottom"
         />
         <div className="absolute inset-0" style={{ backgroundColor: 'hsl(218 73% 12% / 0.55)' }} />
       </div>
