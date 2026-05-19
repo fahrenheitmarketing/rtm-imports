@@ -145,7 +145,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-card border border-border p-6 rounded-sm shadow-md hover:border-primary/40 hover:shadow-lg transition-all duration-300"
+                className="bg-card border border-border/60 p-6 rounded-sm shadow-md hover:border-primary/40 hover:shadow-lg transition-all duration-300"
               >
                 <h4 className="font-display text-xl text-foreground mb-2">{region.name}</h4>
                 <p className="font-body text-sm text-foreground/80">{region.specialty}</p>
