@@ -1,9 +1,77 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Target, Zap, Shield } from 'lucide-react';
+import { ArrowRight, Target, Zap, Shield, Plus, Minus } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
+
+const FAQS = [
+  {
+    q: 'How long has RTM Imports been in operation?',
+    a: 'RTM Imports has more than 30 years of operational history in the US beverage alcohol import business, with roots going back to the early 1990s. Benjamin Roberts has led the company since 2016, during which time RTM has grown from a regional operator to a nationally active importer selling into markets across the United States.',
+  },
+  {
+    q: 'Where is RTM Imports based?',
+    a: 'RTM Imports is headquartered in San Antonio, Texas, and operates nationwide.',
+  },
+  {
+    q: 'Is RTM Imports affiliated with a larger distribution company?',
+    a: 'RTM Imports is an independent LLC. The company was originally established in connection with a major US wholesale network and draws on 30 years of relationships built within that framework. RTM now operates fully independently, which allows it to work with wholesale partners across the country without the constraints of a single distribution affiliation.',
+  },
+  {
+    q: 'What makes RTM different from other importers?',
+    a: 'Three things set RTM apart: category instinct, relationship depth, and speed. RTM has a long track record of identifying emerging categories before they go mainstream, then building the producer relationships and wholesale infrastructure to capitalize on them. The company maintains a focused portfolio, so every brand receives dedicated attention, and, as an independent operator, RTM moves faster than generalist importers when opportunities arise.',
+  },
+];
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": FAQS.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+
+function FAQItem({ item, idx }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: idx * 0.08 }}
+      className="border-b border-border"
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-start justify-between gap-6 py-7 text-left group"
+      >
+        <span className="font-display text-lg md:text-xl text-foreground leading-snug group-hover:text-primary transition-colors duration-200">
+          {item.q}
+        </span>
+        <span className="mt-1 flex-shrink-0 text-primary">
+          {open ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+        </span>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="answer"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <p className="font-body text-base text-foreground/80 leading-relaxed pb-7 pr-10">{item.a}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
 
 const ABOUT_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/0f2f100f9_generated_631bcf9a.png';
 
@@ -26,6 +94,17 @@ const VALUES = [
 ];
 
 export default function About() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(FAQ_SCHEMA);
+    script.id = 'about-faq-schema';
+    if (!document.getElementById('about-faq-schema')) {
+      document.head.appendChild(script);
+    }
+    return () => { const el = document.getElementById('about-faq-schema'); if (el) el.remove(); };
+  }, []);
+
   return (
     <>
       {/* Hero */}
@@ -130,6 +209,49 @@ export default function About() {
                   {value.description}
                 </p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pull Quote */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+          <motion.blockquote
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className="block font-display text-3xl md:text-4xl text-primary mb-2">&ldquo;</span>
+            <p className="font-display text-2xl md:text-3xl text-foreground leading-relaxed italic mb-6">
+              We spend more time with our partners personally than professionally. That is not a policy. It is how we operate.
+            </p>
+            <footer className="font-body text-xs tracking-widest uppercase text-muted-foreground">
+              Benjamin Roberts, President, RTM Imports
+            </footer>
+          </motion.blockquote>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 md:py-32 bg-card border-t border-border">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">FAQ</span>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground leading-tight">
+              Frequently asked <em>questions</em>
+            </h2>
+          </motion.div>
+          <div className="border-t border-border">
+            {FAQS.map((item, idx) => (
+              <FAQItem key={idx} item={item} idx={idx} />
             ))}
           </div>
         </div>
