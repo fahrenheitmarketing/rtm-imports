@@ -33,10 +33,10 @@ export default function News() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">News & Insights</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
-              The Asian beverage <GoldUnderline className="italic">category, covered.</GoldUnderline>
+              The beverage import industry, <GoldUnderline className="italic">covered.</GoldUnderline>
             </h1>
             <p className="font-body text-lg text-foreground/80 mt-6 max-w-xl leading-relaxed">
-              Industry trends, partnership announcements, market data, and perspectives from RTM's 30+ years in the category.
+              Industry trends, partnership announcements, market data, and perspectives from RTM's years building brands in the US wholesale channel.
             </p>
           </motion.div>
         </div>
