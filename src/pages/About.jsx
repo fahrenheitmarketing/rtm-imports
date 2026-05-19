@@ -140,7 +140,7 @@ export default function About() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Let's find your <GoldUnderline className="italic">route.</GoldUnderline>
             </h2>
-            <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
+            <p className="font-body text-base text-white leading-relaxed mb-8">
               Whether you're an Asian producer evaluating U.S. market entry, or a wholesaler looking to strengthen your portfolio in the fastest-growing beverage category, we'd like to hear from you.
             </p>
             <Link
