@@ -22,10 +22,10 @@ export default function QuoteSection() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <div className="w-12 h-px bg-primary mx-auto mb-10" />
-          <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed italic mb-8">
+          <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed italic mb-8" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)' }}>
             "For at the end of the day, what matters is never the wine, it's always the moment; it's always the people."
           </blockquote>
-          <cite className="font-body text-sm tracking-widest uppercase text-muted-foreground not-italic">
+          <cite className="font-body text-sm tracking-widest uppercase text-muted-foreground not-italic" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}>
             — Olivier Magny
           </cite>
           <div className="w-12 h-px bg-primary mx-auto mt-10" />
