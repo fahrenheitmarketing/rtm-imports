@@ -67,7 +67,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-body text-lg text-muted-foreground leading-relaxed"
+            className="font-body text-lg text-foreground/80 leading-relaxed"
           >
             RTM Imports is a B2B-only specialist. We do not sell to consumers. Our three service areas reflect 30+ years of operating experience in the U.S. wholesale channel — each one a discipline we have built deliberately, and each one available to the right partner.
           </motion.p>
@@ -99,7 +99,7 @@ export default function Services() {
                   <span className="font-body text-xs tracking-widest uppercase text-primary">{service.label}</span>
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">{service.title}</h2>
-                <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
+                <p className="font-body text-base text-foreground/80 leading-relaxed mb-8">
                   {service.description}
                 </p>
                 <Link
@@ -122,7 +122,7 @@ export default function Services() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Have a project <GoldUnderline className="italic">in mind?</GoldUnderline>
             </h2>
-            <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
+            <p className="font-body text-base text-foreground/80 leading-relaxed mb-8">
               We'd love to learn about your brand and explore how our services can serve your goals.
             </p>
             <Link
