@@ -11,7 +11,7 @@ export default function QuoteSection() {
           alt=""
           className="w-full h-full object-cover object-bottom"
         />
-        <div className="absolute inset-0" style={{ backgroundColor: 'hsl(218 73% 12% / 0.55)' }} />
+        <div className="absolute inset-0" style={{ backgroundColor: 'hsl(218 73% 12% / 0.35)' }} />
       </div>
       <Fireflies />
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 text-center">
