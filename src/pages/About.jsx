@@ -46,7 +46,7 @@ export default function About() {
           >
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">About Us</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
-              Thirty years in the category.
+              Thirty years in the space.
               <GoldUnderline className="italic block"> Built to move first.</GoldUnderline>
             </h1>
           </motion.div>
