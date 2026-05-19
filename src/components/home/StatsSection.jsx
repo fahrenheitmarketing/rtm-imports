@@ -33,8 +33,16 @@ function StatItem({ stat, idx }) {
 
 export default function StatsSection() {
   return (
-    <section className="py-20 bg-card border-y border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section
+      className="py-20 border-y border-border relative"
+      style={{
+        backgroundImage: `url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/6eb369566_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)`,
+        backgroundRepeat: 'repeat',
+        backgroundSize: '500px auto',
+      }}
+    >
+      <div className="absolute inset-0 bg-background/70" />
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {STATS.map((stat, idx) => (
             <StatItem key={stat.label} stat={stat} idx={idx} />
