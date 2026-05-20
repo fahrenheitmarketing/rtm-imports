@@ -111,7 +111,7 @@ export default function About() {
   return (
     <>
       {/* Hero */}
-       <section className="relative pt-32 min-h-[60vh] flex items-end pb-8 md:pb-20">
+       <section className="relative min-h-screen flex items-end pb-20 md:pb-28">
         <div className="absolute inset-0">
           <img
             src={ABOUT_HERO}
@@ -126,7 +126,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">About Us</span>
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">About Us</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
               Thirty years in the industry.
               <GoldUnderline className="italic block"> Built to move first.</GoldUnderline>

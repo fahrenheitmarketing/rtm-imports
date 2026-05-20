@@ -28,7 +28,7 @@ export default function News() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 min-h-[50vh] flex items-end overflow-hidden">
+      <section className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/436390659_ChatGPTImageMay20202608_46_33PM.png"
@@ -39,7 +39,7 @@ export default function News() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">News & Insights</span>
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">News & Insights</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
               The beverage import industry, <GoldUnderline className="italic">covered.</GoldUnderline>
             </h1>

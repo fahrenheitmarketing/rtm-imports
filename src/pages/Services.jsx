@@ -44,14 +44,14 @@ export default function Services() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 min-h-[50vh] flex items-end pb-20">
+      <section className="relative min-h-screen flex items-end pb-20 md:pb-28">
         <div className="absolute inset-0">
           <img src={SERVICES_HERO} alt="Premium spirits" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/70" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">What We Bring to Market</span>
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">What We Bring to Market</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
               Three disciplines. <GoldUnderline className="italic">One focus.</GoldUnderline>
             </h1>
