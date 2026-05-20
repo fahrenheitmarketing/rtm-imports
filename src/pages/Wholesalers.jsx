@@ -102,6 +102,7 @@ export default function Wholesalers() {
               <SectionHeading
                 label="In Market"
                 title="Proof of performance"
+                variant="light"
               />
               <div className="space-y-5 font-body text-base text-foreground/80 leading-relaxed">
                 <p>
@@ -155,6 +156,7 @@ export default function Wholesalers() {
             title="Available for wholesale distribution"
             description="Our current Asian beverage portfolio is available to qualified wholesale partners. Portfolio scope is expanding — contact us for a full current brand list."
             align="center"
+            variant="light"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
