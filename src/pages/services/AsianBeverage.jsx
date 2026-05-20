@@ -85,8 +85,9 @@ export default function AsianBeverage() {
       </section>
 
       {/* Categories */}
-      <section className="py-24 md:py-32 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="relative py-24 md:py-32 bg-card border-y border-border overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/802bd1488_Asian.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-background/75" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="What We Bring"
             title="Our Asian beverage portfolio"
