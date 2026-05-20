@@ -120,16 +120,16 @@ export default function AsianBeverage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-2">In Market</h2>
             <p className="font-body text-lg text-foreground/80 italic">From regional to national</p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div>
-              <p className="font-body text-base text-foreground/80 leading-relaxed mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-start">
+            <div className="space-y-6">
+              <p className="font-body text-base text-foreground/80 leading-relaxed">
                 RTM reviewed distributor sales and profit data and identified a wine-based soju brand performing exceptionally well in a single regional market: strong numbers, minimal market penetration, and significant room to grow.
               </p>
               <p className="font-body text-base text-foreground/80 leading-relaxed">
                 After direct meetings with the brand owner, RTM was awarded representation rights in a small number of markets. Within twelve months, RTM tripled its previous sales and expanded its representation to most states nationally.
               </p>
             </div>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-6 pt-1">
               <div className="bg-background border border-border p-6">
                 <div className="font-display text-3xl text-primary mb-2">80,000+ cases</div>
                 <p className="font-body text-sm text-foreground/80">Projected nationwide in 2026</p>
