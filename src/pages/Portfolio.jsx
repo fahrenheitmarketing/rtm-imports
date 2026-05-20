@@ -107,6 +107,7 @@ export default function Portfolio() {
           <SectionHeading
             label="Featured Brands"
             title="RTM's active representation focus — the five below represent our current primary market development effort."
+            variant="light"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -162,7 +163,7 @@ export default function Portfolio() {
           <SectionHeading
             label="Categories"
             title="What we bring to market"
-            variant="light"
+            variant="dark"
           />
 
           <div className="space-y-16">
@@ -216,6 +217,7 @@ export default function Portfolio() {
             label="Sourcing Regions"
             title="Global reach, focused portfolio"
             align="center"
+            variant="dark"
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
