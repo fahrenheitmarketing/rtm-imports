@@ -167,7 +167,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-display text-xl text-foreground mb-6">Get in Touch</h3>
                   <p className="font-body text-sm text-foreground/80 leading-relaxed">
-                    We respond to all inquiries within 24 business hours. For urgent matters, don't hesitate to reach out directly via email.
+                    We respond to all inquiries within 24 business hours. For urgent matters, contact us directly via email.
                   </p>
                 </div>
 
