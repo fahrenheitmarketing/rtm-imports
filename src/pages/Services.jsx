@@ -51,7 +51,7 @@ export default function Services() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Our Products</span>
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">What We Bring to Market</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
               Three disciplines. <GoldUnderline className="italic">One focus.</GoldUnderline>
             </h1>
@@ -65,7 +65,7 @@ export default function Services() {
           <div className="max-w-3xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <p className="font-display text-2xl md:text-3xl text-foreground leading-relaxed italic">
-                RTM Imports is a B2B-only specialist. We do not sell to consumers. Our three service areas reflect 30+ years of operating experience in the U.S. wholesale channel — each one a discipline we have built deliberately, and each one available to the right partner.
+              RTM Imports operates across three disciplines. Every brand in our current focus portfolio is actively distributed through our national wholesale network. Every service we offer is built on decades of doing this well.
               </p>
             </motion.div>
           </div>
