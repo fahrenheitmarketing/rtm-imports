@@ -198,12 +198,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="border-t border-border pt-8">
-                  <p className="font-body text-xs text-muted-foreground leading-relaxed italic">
-                    "For at the end of the day, what matters is never the wine, it's always the moment; it's always the people."
-                  </p>
-                  <p className="font-body text-xs text-muted-foreground mt-2">— Olivier Magny</p>
-                </div>
+
               </div>
             </motion.div>
           </div>
