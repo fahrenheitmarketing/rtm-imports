@@ -218,7 +218,7 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Sourcing Regions"
-            title="Global reach, curated focus"
+            title="Global reach, focused portfolio"
             align="center"
           />
 
