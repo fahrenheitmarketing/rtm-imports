@@ -61,13 +61,13 @@ export default function AsianBeverage() {
               />
               <div className="space-y-5 font-body text-base text-foreground/80 leading-relaxed">
                 <p>
-                  Soju has <strong className="text-foreground">more than doubled in the U.S. over the past five years</strong>, reaching approximately $935 million in 2024. Growth is driven by Gen Z demand, the global reach of K-culture, and accessible pricing — validated by major mainstream players now entering the space. Spirit of Gallo's 2024 partnership with Lotte Chilsung reportedly delivered a 700% surge in volume for Lotte's brands in the year ending March 2025.
+                  Soju has more than doubled in the U.S. over the past five years, reaching approximately $935 million in 2024. Growth is driven by Gen Z and millennial demand, the global reach of K-culture, and accessible pricing, validated by major mainstream players now entering the space. Spirit of Gallo's 2024 partnership with Lotte Chilsung is one indicator of the category's momentum, with reported volume surges across Lotte's US brands in the year following the partnership.
                 </p>
                 <p>
-                  Parallel momentum is visible across the broader portfolio. Sake is seeing consistent double-digit growth as it moves beyond sushi restaurants into fine dining and general retail. Japanese whisky continues to lead at the premium end. Korean beer and Asian RTDs are gaining significant traction across on- and off-premise accounts.
+                  Wine-based RTDs built on authentic Asian flavor profiles are expanding rapidly across retail and on-premise, capturing Gen Z and millennial consumers who want premium, convenient, and culturally distinct. It is the category RTM has moved into ahead of the curve, and it is where our portfolio is most active today.
                 </p>
                 <p>
-                  RTM has operated in these markets for <strong className="text-foreground">more than 30 years</strong> — sourcing from South Korea, Japan, China, Thailand, and Taiwan. We built producer relationships and wholesaler advocacy long before the current mainstream conversation began. That depth of experience is not replicable quickly, and it is the foundation of everything we bring to a partner.
+                  When RTM identified the Asian beverage opportunity, we brought to the category what most new entrants lacked: three decades of import infrastructure, wholesale relationships, and operational experience. Building that from scratch takes years. We already had it. That is the foundation of what we bring to every partner.
                 </p>
               </div>
             </div>
