@@ -98,11 +98,7 @@ export default function Portfolio() {
 
 
       {/* Featured Brands */}
-      <section className="py-24 md:py-32" style={{
-        backgroundImage: `url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/6eb369566_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)`,
-        backgroundRepeat: 'repeat',
-        backgroundSize: '500px auto',
-      }}>
+      <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Featured Brands"
@@ -119,10 +115,10 @@ export default function Portfolio() {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 className="bg-card border border-border p-8 hover:border-primary/40 transition-colors duration-300"
               >
-                <h3 className="font-display text-xl text-[#1a2d4a] mb-2">{brand.name}</h3>
+                <h3 className="font-display text-xl text-foreground mb-2">{brand.name}</h3>
                 <p className="font-body text-xs tracking-widest uppercase text-primary mb-1">{brand.category}</p>
-                <p className="font-body text-xs text-[#1a2d4a]/80 mb-4">{brand.origin}</p>
-                <p className="font-body text-sm text-[#1a2d4a]/80 leading-relaxed mb-6">
+                <p className="font-body text-xs text-muted-foreground mb-4">{brand.origin}</p>
+                <p className="font-body text-sm text-foreground/80 leading-relaxed mb-6">
                   {brand.detail}
                   {brand.bevstackLink && (
                     <>
@@ -150,18 +146,14 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <p className="font-body text-sm text-[#1a2d4a]/80 text-center">
+          <p className="font-body text-sm text-muted-foreground text-center">
             For distributor and retailer availability by state, contact us directly.
           </p>
         </div>
       </section>
 
       {/* Categories */}
-      <section className="pb-24 md:pb-32" style={{
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}>
+      <section className="pb-24 md:pb-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Categories"
@@ -188,9 +180,9 @@ export default function Portfolio() {
                 <div className={`lg:col-span-3 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="flex items-center gap-3 mb-3">
                     <cat.icon className="w-5 h-5 text-primary" />
-                    <h3 className="font-display text-2xl text-[#1a2d4a]">{cat.title}</h3>
+                    <h3 className="font-display text-2xl text-foreground">{cat.title}</h3>
                   </div>
-                  <p className="font-body text-base text-[#1a2d4a]/80 leading-relaxed mb-5">
+                  <p className="font-body text-base text-foreground/80 leading-relaxed mb-5">
                     {cat.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -231,8 +223,8 @@ export default function Portfolio() {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 className="bg-card border border-white/50 p-6 rounded-sm shadow-md hover:border-white/60 hover:shadow-lg transition-all duration-300"
               >
-                <h4 className="font-display text-xl text-[#1a2d4a] mb-2">{region.name}</h4>
-                <p className="font-body text-sm text-[#1a2d4a]/80">{region.specialty}</p>
+                <h4 className="font-display text-xl text-foreground mb-2">{region.name}</h4>
+                <p className="font-body text-sm text-foreground/80">{region.specialty}</p>
               </motion.div>
             ))}
           </div>
@@ -240,17 +232,13 @@ export default function Portfolio() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 text-center" style={{
-        backgroundImage: `url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/6eb369566_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)`,
-        backgroundRepeat: 'repeat',
-        backgroundSize: '500px auto',
-      }}>
+      <section className="py-24 md:py-32 bg-background text-center">
         <div className="max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 className="font-display text-3xl md:text-4xl text-[#1a2d4a] mb-6">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Interested in <GoldUnderline className="italic">our brands?</GoldUnderline>
             </h2>
-            <p className="font-body text-base text-[#1a2d4a]/80 leading-relaxed mb-8">
+            <p className="font-body text-base text-foreground/80 leading-relaxed mb-8">
               Contact us to learn more about our current portfolio or to discuss bringing your brand to market.
             </p>
             <Link
