@@ -105,8 +105,8 @@ export default function Compliance() {
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: '50+', label: 'Active state licenses' },
-                { value: '100+', label: 'Wholesaler relationships' },
+                { value: 'All 50', label: 'All 50 States Served' },
+                { value: '25+', label: 'Active Wholesale Partners' },
                 { value: 'Federal', label: 'TTB importer registration' },
                 { value: 'Years', label: 'Regulatory experience' },
               ].map((stat) => (
