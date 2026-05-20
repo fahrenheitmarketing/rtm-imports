@@ -73,7 +73,7 @@ function FAQItem({ item, idx }) {
   );
 }
 
-const ABOUT_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/0f2f100f9_generated_631bcf9a.png';
+const ABOUT_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/facc46913_generated_image.png';
 
 const VALUES = [
   {
