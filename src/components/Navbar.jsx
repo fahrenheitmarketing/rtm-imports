@@ -52,17 +52,17 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-      scrolled ? 'border-b border-border' : ''
-    }`} style={{
-      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      ...(scrolled && { opacity: 0.95 })
-    }}>
+      scrolled ? 'border-b border-border/20' : ''
+    }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-36">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
+          {/* Logo with washi texture background */}
+          <Link to="/" className="flex items-center px-4 py-3" style={{
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            borderRadius: '4px'
+          }}>
             <img
               src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/71e10e810_image.png"
               alt="RTM Imports Logo"
@@ -78,7 +78,7 @@ export default function Navbar() {
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
                     className={`flex items-center gap-1.5 font-body text-xs tracking-widest uppercase transition-colors duration-300 ${
-                      isServicesActive ? 'text-[#5a9bd4]' : 'text-slate-700 hover:text-slate-900'
+                      isServicesActive ? 'text-[#5a9bd4]' : 'text-white hover:text-white/80'
                     }`}
                   >
                     {link.label}
@@ -125,7 +125,7 @@ export default function Navbar() {
                   className={`font-body text-xs tracking-widest uppercase transition-colors duration-300 ${
                    location.pathname === link.path
                      ? 'text-[#5a9bd4]'
-                     : 'text-slate-700 hover:text-slate-900'
+                     : 'text-white hover:text-white/80'
                   }`}
                 >
                   {link.label}
@@ -137,7 +137,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-slate-700 p-2"
+            className="md:hidden text-white p-2"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
