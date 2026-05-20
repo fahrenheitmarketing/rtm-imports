@@ -61,7 +61,11 @@ export default function Wholesalers() {
       </section>
 
       {/* Why Carry RTM */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32" style={{
+        backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.1), rgba(26, 45, 74, 0.1)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Why Carry RTM Brands"
