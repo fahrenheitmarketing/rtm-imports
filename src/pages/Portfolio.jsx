@@ -5,7 +5,7 @@ import { ArrowRight, Wine, Beer, GlassWater, ExternalLink } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
 
-const PORTFOLIO_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/635a9f96e_generated_16b3013c.png';
+const PORTFOLIO_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/cf1984e2c_image.png';
 
 const BRANDS = [
   {
