@@ -28,7 +28,7 @@ export default function News() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden">
+      <section className="relative pt-32 pb-20 min-h-[60vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/436390659_ChatGPTImageMay20202608_46_33PM.png"

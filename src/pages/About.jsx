@@ -111,7 +111,7 @@ export default function About() {
   return (
     <>
       {/* Hero */}
-       <section className="relative min-h-screen flex items-end pb-20 md:pb-28">
+       <section className="relative pt-32 min-h-[60vh] flex items-end pb-20">
         <div className="absolute inset-0">
           <img
             src={ABOUT_HERO}

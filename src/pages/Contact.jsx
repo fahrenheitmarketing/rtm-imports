@@ -43,7 +43,7 @@ export default function Contact() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-end pb-20 md:pb-28 bg-background relative overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+      <section className="pt-32 pb-16 bg-background relative overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/80" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
