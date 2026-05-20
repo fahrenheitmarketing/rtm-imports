@@ -129,7 +129,7 @@ export default function AsianBeverage() {
                 After direct meetings with the brand owner, RTM was awarded representation rights in a small number of markets. Within twelve months, RTM tripled its previous sales and expanded its representation to most states nationally.
               </p>
             </div>
-            <div className="grid grid-cols-1 gap-6 pt-1">
+            <div className="grid grid-cols-2 gap-4 pt-1">
               <div className="bg-background border border-border p-6">
                 <div className="font-display text-3xl text-primary mb-2">80,000+ cases</div>
                 <p className="font-body text-sm text-foreground/80">Projected nationwide in 2026</p>
