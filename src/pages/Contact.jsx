@@ -43,8 +43,10 @@ export default function Contact() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="relative pt-32 pb-16 bg-background overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a80134b2a_ChatGPTImageMay20202608_26_26PM.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/70 to-background" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Contact</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
