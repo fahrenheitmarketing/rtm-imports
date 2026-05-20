@@ -10,7 +10,7 @@ export default function SectionHeading({ title, description, align = 'left' }) {
       transition={{ duration: 0.6 }}
       className={`mb-12 md:mb-16 ${align === 'center' ? 'text-center' : ''}`}
     >
-      <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-[#1a2d4a] leading-tight mb-4">
+      <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight mb-4">
         {title}
       </h2>
       {description && (
