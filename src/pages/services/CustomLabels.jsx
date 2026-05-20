@@ -54,7 +54,7 @@ const WHY_CUSTOM = [
   {
     icon: Package,
     title: 'Portfolio Flexibility',
-    description: 'A private label program gives you agility — seasonal expressions, limited releases, and category extensions without the long lead times of branded products.',
+    description: 'A private label program gives you agility, seasonal expressions, limited releases, and category extensions without the long lead times of branded products.',
   },
   {
     icon: ShieldCheck,
