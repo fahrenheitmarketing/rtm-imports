@@ -9,14 +9,14 @@ const SERVICES = [
     number: '01',
     title: 'Products We Represent',
     description: 'Thirty years of representing beverages at both ends of the spectrum, from the world\'s finest wine and spirit producers to the fastest-emerging categories in the market. Our producer relationships and wholesale infrastructure span categories and continents. Asian beverage is the newest addition to our portfolio and currently the highest-growth segment in the US market.',
-    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/d3a797d59_image.png',
     path: '/products/asian-beverage',
   },
   {
     number: '02',
     title: 'Custom Labels',
     description: 'Producer relationships across all major producing regions are available to retailers and operators building proprietary brands. From liquid development to label approval to wholesaler onboarding, end-to-end, without the catalog.',
-    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/99ef3b2d5_image.png',
     path: '/products/custom-labels',
   },
   {
