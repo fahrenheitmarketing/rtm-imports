@@ -71,7 +71,6 @@ export default function Wholesalers() {
             label="Why Carry RTM Brands"
             title="What we bring to your portfolio"
             description="RTM operates exclusively in the B2B wholesale channel. We are not a competitor — we are your supplier, your support team, and your category specialist."
-            variant="light"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
