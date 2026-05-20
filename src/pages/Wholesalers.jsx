@@ -90,7 +90,39 @@ export default function Wholesalers() {
         </div>
       </section>
 
-
+      {/* In Market Proof */}
+      <section className="py-24 md:py-32 bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <SectionHeading
+                label="In Market"
+                title="Proof of performance"
+              />
+              <div className="space-y-5 font-body text-base text-foreground/80 leading-relaxed">
+                <p>
+                  Our fastest-growing wine-based soju brand demonstrates what focused national representation can deliver. Since RTM took over national representation in September 2025, the brand has achieved chain authorizations at Total Wine & More, HEB, Circle K, and Albertsons — with 80,000+ cases projected nationwide in 2026.
+                </p>
+                <p>
+                  That growth came from 13,266 cases in a single regional market in 2024. The infrastructure, relationships, and execution model are already in place for your market.
+                </p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              {[
+                { stat: '80,000+', label: 'Cases projected nationwide in 2026' },
+                { stat: '13,266', label: 'Cases in a single regional market (2024)' },
+                { stat: 'Sep 2025', label: 'RTM took over national representation' },
+              ].map((item) => (
+                <div key={item.label} className="bg-background border border-border p-6 flex items-center gap-6">
+                  <div className="font-display text-3xl text-primary min-w-[100px]">{item.stat}</div>
+                  <p className="font-body text-sm text-foreground/80">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Network */}
       <section className="py-24 md:py-32 bg-background">
@@ -100,23 +132,10 @@ export default function Wholesalers() {
             title="National reach. Local relationships."
             align="center"
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {NETWORK_STATS.map((stat, idx) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-card border border-border p-8 text-center"
-              >
-                <div className="font-display text-4xl text-primary mb-3">{stat.value}</div>
-                <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <p className="font-body text-base text-foreground/80 leading-relaxed">
+              RTM's active wholesale partners include some of the largest and most respected names in US beverage distribution.
+            </p>
             <p className="font-body text-base text-foreground/80 leading-relaxed">
               RTM works with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. Our relationships are built on track record and mutual benefit — not cold outreach.
             </p>
