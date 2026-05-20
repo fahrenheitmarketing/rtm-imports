@@ -1,11 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Wine, Beer, GlassWater } from 'lucide-react';
+import { ArrowRight, Wine, Beer, GlassWater, ExternalLink } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
 
 const PORTFOLIO_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/635a9f96e_generated_16b3013c.png';
+
+const BRANDS = [
+  {
+    name: 'Good Friends Soju',
+    category: 'Wine-Based Soju',
+    origin: 'South Korea',
+    detail: 'Nationally distributed. Available at major retail and convenience chains nationwide.',
+  },
+  {
+    name: 'Yobo Spirits / KTown',
+    category: 'Korean-American Spirits',
+    origin: 'Made in the USA',
+    detail: 'Crafted by Korean Americans at Laird & Company in New Jersey — America\'s oldest distillery, established before the United States itself. Available through RTM\'s national wholesale network.',
+    bevstackLink: true,
+  },
+  {
+    name: 'Kpop & KSoju',
+    category: 'Korean Soju',
+    origin: 'South Korea',
+    detail: 'Available through RTM\'s national wholesale network.',
+  },
+  {
+    name: 'Hokkaido Beer',
+    category: 'Craft / Specialty Beer',
+    origin: 'Japan',
+    detail: 'Available through RTM\'s national wholesale network.',
+  },
+  {
+    name: 'Hwayo Soju',
+    category: 'Premium Korean Soju',
+    origin: 'South Korea',
+    detail: 'Available through RTM\'s national wholesale network.',
+  },
+];
 
 const CATEGORIES = [
   {
@@ -64,6 +98,61 @@ export default function Portfolio() {
               </p>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Brands */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <SectionHeading
+            label="Featured Brands"
+            title="RTM's active representation focus — the five below represent our current primary market development effort."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {BRANDS.map((brand, idx) => (
+              <motion.div
+                key={brand.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="bg-card border border-border p-8 hover:border-primary/40 transition-colors duration-300"
+              >
+                <h3 className="font-display text-xl text-foreground mb-2">{brand.name}</h3>
+                <p className="font-body text-xs tracking-widest uppercase text-primary mb-1">{brand.category}</p>
+                <p className="font-body text-xs text-muted-foreground mb-4">{brand.origin}</p>
+                <p className="font-body text-sm text-foreground/80 leading-relaxed mb-6">
+                  {brand.detail}
+                  {brand.bevstackLink && (
+                    <>
+                      {' '}
+                      <a
+                        href="https://www.bevstack.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline inline-flex items-center gap-1"
+                      >
+                        BevStack
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </>
+                  )}
+                </p>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-body text-xs tracking-widest uppercase hover:bg-primary/90 transition-all duration-300"
+                >
+                  Wholesale Inquiry
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="font-body text-sm text-muted-foreground text-center">
+            For distributor and retailer availability by state, contact us directly.
+          </p>
         </div>
       </section>
 
