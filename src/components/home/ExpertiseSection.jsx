@@ -68,7 +68,7 @@ export default function ExpertiseSection() {
               </p>
               <Link
                 to={service.path}
-                className="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-slate-700 hover:text-slate-900 transition-colors duration-300 group/link"
+                className="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-[#5a9bd4] hover:text-[#4a8bc4] transition-colors duration-300 group/link"
               >
                 Learn More
                 <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform duration-300" />
