@@ -113,7 +113,7 @@ export default function About() {
           <img
             src={ABOUT_HERO}
             alt="Sophisticated bar setup with premium spirits"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
         </div>
