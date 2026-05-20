@@ -14,7 +14,7 @@ const CATEGORIES = [
   },
   {
     title: 'Wine-Based RTD',
-    description: 'Ready-to-drink beverages built on Asian flavor profiles are among the fastest-growing SKUs at retail. Our wine-based RTD portfolio captures the Gen Z and millennial consumer who wants premium, convenient, and culturally distinct.',
+    description: 'Ready-to-drink beverages built on Asian flavor profiles are expanding rapidly across retail and on-premise. Our wine-based RTD portfolio captures the Gen Z and millennial consumer who wants premium, convenient, and culturally distinct.',
   },
   {
     title: 'Craft & Specialty Beer',
