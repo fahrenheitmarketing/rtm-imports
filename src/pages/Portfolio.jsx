@@ -98,27 +98,35 @@ export default function Portfolio() {
 
 
       {/* Featured Brands */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <SectionHeading
-            label="Featured Brands"
-            title="RTM's active representation focus — the five below represent our current primary market development effort."
-          />
+      <section
+        className="py-24 md:py-32 relative"
+        style={{
+          backgroundImage: `url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/6eb369566_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '500px auto',
+        }}
+      >
+        <div className="absolute inset-0 bg-[#f5f0e6]/90" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+        <SectionHeading
+          label="Featured Brands"
+          title="RTM's active representation focus — the five below represent our current primary market development effort."
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {BRANDS.map((brand, idx) => (
-              <motion.div
-                key={brand.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-card border border-border p-8 hover:border-primary/40 transition-colors duration-300"
-              >
-                <h3 className="font-display text-xl text-foreground mb-2">{brand.name}</h3>
-                <p className="font-body text-xs tracking-widest uppercase text-primary mb-1">{brand.category}</p>
-                <p className="font-body text-xs text-muted-foreground mb-4">{brand.origin}</p>
-                <p className="font-body text-sm text-foreground/80 leading-relaxed mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {BRANDS.map((brand, idx) => (
+            <motion.div
+              key={brand.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              className="bg-[#f5f0e6] border border-[#1a2d4a]/20 p-8 hover:border-primary/40 transition-colors duration-300"
+            >
+              <h3 className="font-display text-xl text-[#1a2d4a] mb-2">{brand.name}</h3>
+              <p className="font-body text-xs tracking-widest uppercase text-primary mb-1">{brand.category}</p>
+              <p className="font-body text-xs text-[#1a2d4a]/60 mb-4">{brand.origin}</p>
+              <p className="font-body text-sm text-[#1a2d4a]/80 leading-relaxed mb-6">
                   {brand.detail}
                   {brand.bevstackLink && (
                     <>
@@ -153,7 +161,15 @@ export default function Portfolio() {
       </section>
 
       {/* Categories */}
-      <section className="pb-24 md:pb-32 bg-background">
+      <section
+        className="pb-24 md:pb-32 relative"
+        style={{
+          backgroundImage: `url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/6eb369566_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '500px auto',
+        }}
+      >
+        <div className="absolute inset-0 bg-[#f5f0e6]/90" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Categories"
@@ -221,10 +237,10 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-card border border-white/50 p-6 rounded-sm shadow-md hover:border-white/60 hover:shadow-lg transition-all duration-300"
-              >
-                <h4 className="font-display text-xl text-foreground mb-2">{region.name}</h4>
-                <p className="font-body text-sm text-foreground/80">{region.specialty}</p>
+                className="bg-[#f5f0e6] border border-[#1a2d4a]/20 p-6 rounded-sm shadow-md hover:border-[#1a2d4a]/40 hover:shadow-lg transition-all duration-300"
+                >
+                <h4 className="font-display text-xl text-[#1a2d4a] mb-2">{region.name}</h4>
+                <p className="font-body text-sm text-[#1a2d4a]/80">{region.specialty}</p>
               </motion.div>
             ))}
           </div>
@@ -232,7 +248,14 @@ export default function Portfolio() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 bg-background text-center">
+      <section
+        className="py-24 md:py-32 bg-[#f5f0e6] text-center relative"
+        style={{
+          backgroundImage: `url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/6eb369566_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '500px auto',
+        }}
+      >
         <div className="max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
