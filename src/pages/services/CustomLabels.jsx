@@ -96,13 +96,10 @@ export default function CustomLabels() {
               />
               <div className="space-y-5 font-body text-base text-foreground/80 leading-relaxed">
                 <p>
-                  As competition intensifies across every beverage category, the brands that win are the ones that own the relationship with the consumer. <strong className="text-foreground">A private label is not a shortcut — it's a strategic asset.</strong>
+                  A private label is not a shortcut — it is a strategic asset. As competition intensifies across every beverage category, the brands that win own the relationship with the consumer. RTM's custom label program gives you that ownership.
                 </p>
                 <p>
-                  RTM's custom label program is built on years of curated producer relationships across Europe and Asia. We don't work from a catalog. We match producers to programs based on liquid quality, production reliability, and the authentic story that will resonate in the American market.
-                </p>
-                <p>
-                  From a single SKU to a full multi-tier portfolio, we manage every element of the process — so you can focus on selling, not sourcing.
+                  Over the years, we have built deep, personal relationships with vetted producers worldwide. When a client comes to us with a brief, we identify the right production partner based on quality benchmarks, capacity, certifications, and a fit with their vision, then we move forward. Our typical timeline: 3 to 6 months for domestic programs, 6 to 9 months for imports.
                 </p>
               </div>
             </div>
