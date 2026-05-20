@@ -80,7 +80,7 @@ const VALUES = [
     number: '01',
     icon: Compass,
     title: 'Fearless Creativity',
-    description: 'We pursue categories and producers that others overlook. Asian beverage alcohol was a niche before it was a trend — we were already there, and we are already looking at what comes next.',
+    description: 'We pursue categories and producers that others overlook. Asian beverage alcohol was a niche before it was a trend. We were already there, and we are already looking at what comes next.',
   },
   {
     number: '02',
