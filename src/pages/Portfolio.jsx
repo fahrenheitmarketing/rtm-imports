@@ -58,10 +58,10 @@ const CATEGORIES = [
   },
   {
     icon: Beer,
-    title: 'Craft & RTD',
-    description: 'Wine-based ready-to-drink beverages and craft beer selections that capture the attention of new-generation consumers seeking premium, convenient options.',
+    title: 'Craft & Specialty Beer',
+    description: 'Japanese craft and specialty beer for specialty retail and on-premise accounts seeking distinctive, high-quality additions to their beverage programs.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
-    tags: ['Ready-to-Drink', 'Craft Beer', 'Flavored', 'Wine-Based'],
+    tags: ['Craft Beer', 'Specialty Beer'],
   },
 ];
 
