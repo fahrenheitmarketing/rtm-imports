@@ -10,18 +10,28 @@ const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908
 const WHY_CARRY = [
   {
     icon: TrendingUp,
-    title: 'Fastest-Growing Category',
-    description: 'Asian beverage alcohol — led by soju and wine-based RTDs — is one of the few categories showing significant, sustained growth. Adding RTM brands means adding volume in a segment your competitors are scrambling to catch up to.',
+    title: 'Category Momentum',
+    description: 'Soju has more than doubled in the U.S. over the past five years, reaching approximately $935 million in 2024. Wine-based RTDs are among the fastest-growing SKUs at retail. These are not emerging trends — they are established, growing categories with strong margins and an engaged consumer base.',
+  },
+  {
+    icon: CheckCircle,
+    title: 'Proven Velocity',
+    description: "RTM's fastest-growing wine-based soju brand is now stocked in markets across the country, with chain authorizations at major retail and convenience groups. Velocity data and case study details are available on request.",
   },
   {
     icon: Users,
-    title: 'Built for the Wholesale Channel',
-    description: 'We are a B2B-only operation. We do not sell direct to consumers. Every brand we represent is built to move through the wholesale channel, with sell sheets, pricing architecture, and marketing support designed for your sales team.',
+    title: 'National Reach, Focused Portfolio',
+    description: 'RTM sells into all 50 states through an active network of wholesale partners. We maintain a deliberately focused current portfolio, giving your team fewer SKUs to manage, more attention per brand, and better sell-through.',
   },
   {
     icon: Package,
-    title: 'Proven Market Performance',
-    description: "RTM's fastest-growing wine-based soju brand is now stocked in markets across the country, with chain authorizations at major retail and convenience groups. Velocity data and case study details are available on request.",
+    title: 'Sales Support',
+    description: 'We provide tech sheets, sell sheets, chain authorization documentation, and market-level sales support for every brand in our portfolio. Our national sales manager works directly with market leads to drive velocity and solve placement challenges.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Transparent Pricing',
+    description: 'RTM shares full cost and margin data with our wholesale partners. That transparency allows both sides to build programs and pricing structures that work efficiently and without surprises.',
   },
 ];
 
