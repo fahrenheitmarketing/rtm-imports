@@ -45,7 +45,7 @@ export default function Wholesalers() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 min-h-[60vh] flex items-end pb-20">
+      <section className="relative pt-48 min-h-[60vh] flex items-end pb-20">
         <div className="absolute inset-0">
           <img src={HERO_IMAGE} alt="Wholesale distribution network" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
