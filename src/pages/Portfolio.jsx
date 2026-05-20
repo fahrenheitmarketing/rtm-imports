@@ -203,8 +203,9 @@ export default function Portfolio() {
       </section>
 
       {/* Regions */}
-      <section className="py-24 md:py-32 bg-background border-y border-border">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="relative py-24 md:py-32 bg-background border-y border-border overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/55e46eff5_ChatGPTImageMay20202608_13_51PM.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-background/85" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Sourcing Regions"
             title="Global reach, focused portfolio"
