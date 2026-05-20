@@ -9,20 +9,8 @@ const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908
 
 const CATEGORIES = [
   {
-    title: 'Sake',
-    description: 'Japan\'s national beverage has evolved far beyond tradition. From junmai daiginjo to sparkling sake, we source premium expressions that appeal to both connoisseurs and new consumers discovering the category for the first time.',
-  },
-  {
     title: 'Soju',
     description: 'The world\'s best-selling spirit by volume. Soju\'s clean, approachable profile and versatility make it a natural fit for the American on-premise market. We bring authentic Korean-produced soju brands designed for the U.S. palate.',
-  },
-  {
-    title: 'Shochu',
-    description: 'Japan\'s under-the-radar spirit is having a cultural moment. Lower in alcohol and incredibly versatile, shochu pairs naturally with food and fits the growing wellness-conscious consumer trend without sacrificing flavor.',
-  },
-  {
-    title: 'Japanese Whisky',
-    description: 'Demand continues to outpace supply globally. We work with select producers to bring authentic Japanese whisky expressions with transparent provenance — a key differentiator in a category facing credibility scrutiny.',
   },
   {
     title: 'Wine-Based RTD',
