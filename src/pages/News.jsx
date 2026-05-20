@@ -31,7 +31,7 @@ export default function News() {
       <section className="relative pt-32 pb-20 min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/a96deace6_ChatGPTImageMay20202608_40_38PM.png"
+            src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/436390659_ChatGPTImageMay20202608_46_33PM.png"
             alt="News hero"
             className="w-full h-full object-cover blur-sm"
           />
