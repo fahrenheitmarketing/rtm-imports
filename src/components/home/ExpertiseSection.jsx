@@ -31,7 +31,7 @@ const SERVICES = [
 export default function ExpertiseSection() {
   return (
     <section className="py-24 md:py-32" style={{
-      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
+      backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.1), rgba(26, 45, 74, 0.1)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}>
