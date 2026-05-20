@@ -21,7 +21,7 @@ const WHY_CARRY = [
   {
     icon: Package,
     title: 'Proven Market Performance',
-    description: 'Our fastest-growing wine-based soju brand is projected at 80,000+ cases nationwide in 2026, up from 13,266 cases in a single regional market in 2024. Chain authorizations include Total Wine & More, HEB, Circle K, and Albertsons.',
+    description: "RTM's fastest-growing wine-based soju brand is now stocked in markets across the country, with chain authorizations at major retail and convenience groups. Velocity data and case study details are available on request.",
   },
 ];
 
