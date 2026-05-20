@@ -78,7 +78,7 @@ export default function Navbar() {
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
                     className={`flex items-center gap-1.5 font-body text-xs tracking-widest uppercase transition-colors duration-300 ${
-                      isServicesActive ? 'text-[#5a9bd4]' : 'text-white hover:text-white/80'
+                      isServicesActive ? 'text-primary' : 'text-white hover:text-white/80'
                     }`}
                   >
                     {link.label}
@@ -124,7 +124,7 @@ export default function Navbar() {
                   to={link.path}
                   className={`font-body text-xs tracking-widest uppercase transition-colors duration-300 ${
                    location.pathname === link.path
-                     ? 'text-[#5a9bd4]'
+                     ? 'text-primary'
                      : 'text-white hover:text-white/80'
                   }`}
                 >
