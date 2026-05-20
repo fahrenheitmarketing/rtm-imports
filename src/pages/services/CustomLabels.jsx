@@ -70,7 +70,7 @@ export default function CustomLabels() {
       <section className="relative pt-20 min-h-[60vh] flex items-end pb-20">
         <div className="absolute inset-0">
           <img src={HERO_IMAGE} alt="Custom label wine bottles" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/70" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
