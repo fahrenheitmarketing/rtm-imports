@@ -186,7 +186,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="How We Work"
-            title="Why RTM"
+            title="Our Approach"
             description="Three principles define how we work."
             align="center"
           />
