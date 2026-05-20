@@ -159,7 +159,6 @@ export default function Wholesalers() {
             {[
               { category: 'Wine-Based Soju', description: 'The fastest-growing segment. Approachable, versatile, and resonating strongly with Gen Z and millennial consumers.' },
               { category: 'Korean Beer', description: 'Premium import beer from South Korea with strong on-premise velocity and growing off-premise presence.' },
-              { category: 'Sake', description: 'Premium Japanese sake moving beyond sushi restaurants into fine dining and general retail.' },
               { category: 'Soju', description: 'Traditional and flavored soju from authentic Korean producers, positioned for on-premise activation.' },
               { category: 'Asian RTD', description: 'Ready-to-drink formats built on Asian flavor profiles — among the fastest-growing SKUs at retail.' },
               { category: 'Craft Beer', description: 'Distinctive Asian craft beer with compelling stories for specialty retail and on-premise accounts.' },
