@@ -220,7 +220,7 @@ export default function About() {
       </section>
 
       {/* Pull Quote */}
-      <section className="py-24 md:py-32 bg-background relative" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/291358c6a_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+      <section className="py-24 md:py-32 bg-background relative" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/f49050acb_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
         <div className="absolute inset-0 bg-background/85" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-12 text-center">
           <motion.blockquote
@@ -264,7 +264,7 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 text-center relative" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/291358c6a_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+      <section className="py-24 md:py-32 text-center relative" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/f49050acb_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
         <div className="absolute inset-0 bg-background/80" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <motion.div
