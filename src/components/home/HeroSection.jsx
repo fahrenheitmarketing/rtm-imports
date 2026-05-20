@@ -8,7 +8,7 @@ const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden">
+    <section className="relative pt-32 min-h-[60vh] flex items-end pb-20 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -27,7 +27,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-2xl"
         >
-          <span className="font-body text-xs tracking-widest uppercase text-primary block mb-6">
+          <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">
             Route to Market Imports
           </span>
           <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-6">
