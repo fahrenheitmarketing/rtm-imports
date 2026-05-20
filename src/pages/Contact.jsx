@@ -51,7 +51,7 @@ export default function Contact() {
               Let us start the <span className="italic text-primary">conversation.</span>
             </h1>
             <p className="font-body text-lg text-foreground/80 mt-6 max-w-xl leading-relaxed">
-              Whether you're a producer seeking U.S. market entry or a retailer exploring private-label options, we're here to help.
+              Whether you are a producer seeking U.S. market entry, a retailer building a private-label program, or a wholesale partner evaluating your beverage portfolio, we respond to all inquiries within 24 business hours.
             </p>
           </motion.div>
         </div>
