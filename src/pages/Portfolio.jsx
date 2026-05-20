@@ -59,12 +59,8 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mx-auto text-center mb-20">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Our Philosophy</span>
-              <p className="font-display text-2xl md:text-3xl text-foreground leading-relaxed italic">
-                Due to the stringency of our wholesaler partner demands, our focus has and will continue to be on a selection of quality producers rather than a comprehensive portfolio.
-              </p>
-              <p className="font-body text-base text-foreground/80 mt-6">
-                In other words — we stick to what we know we do well.
+              <p className="font-body text-base text-foreground/80 leading-relaxed">
+                RTM's portfolio is built around growth, not breadth. The brands below represent our current primary market development effort. Our operating history spans 1,000+ brands across wine, spirits, and emerging categories.
               </p>
             </motion.div>
           </div>
