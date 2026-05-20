@@ -8,7 +8,7 @@ const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-28 min-h-[60vh] flex items-end pb-20 overflow-hidden">
+    <section className="relative pt-36 min-h-[60vh] flex items-end pb-20 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
