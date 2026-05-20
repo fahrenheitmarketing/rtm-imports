@@ -24,7 +24,7 @@ export default function NewsModal({ post, onClose }) {
         onClick={(e) => e.target === e.currentTarget && onClose()}
       >
         <motion.div
-          className="relative w-full max-w-3xl bg-card border border-border mt-4 mb-4"
+          className="relative w-full max-w-3xl bg-[#f8f9fa] border border-border mt-4 mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
@@ -48,23 +48,23 @@ export default function NewsModal({ post, onClose }) {
               <span className="font-body text-xs tracking-widest uppercase text-primary bg-primary/10 px-3 py-1">
                 {post.category}
               </span>
-              <span className="font-body text-xs text-muted-foreground flex items-center gap-1.5">
+              <span className="font-body text-xs text-[#555] flex items-center gap-1.5">
                 <Calendar className="w-3 h-3" />
                 {new Date(post.published_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
               </span>
               {post.author && (
-                <span className="font-body text-xs text-muted-foreground flex items-center gap-1.5">
+                <span className="font-body text-xs text-[#555] flex items-center gap-1.5">
                   <User className="w-3 h-3" />
                   {post.author}
                 </span>
               )}
             </div>
 
-            <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6 leading-tight">
+            <h2 className="font-display text-2xl md:text-3xl text-[#1a1a1a] mb-6 leading-tight">
               {post.title}
             </h2>
 
-            <div className="prose-custom font-body text-sm text-muted-foreground leading-relaxed">
+            <div className="prose-custom font-body text-sm text-[#333] leading-relaxed">
               <ReactMarkdown>{post.body || post.summary}</ReactMarkdown>
             </div>
 
@@ -81,9 +81,9 @@ export default function NewsModal({ post, onClose }) {
             )}
 
             {post.tags?.length > 0 && (
-              <div className="mt-8 pt-6 border-t border-border flex flex-wrap gap-2">
+              <div className="mt-8 pt-6 border-t border-[#e0e0e0] flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
-                  <span key={tag} className="font-body text-xs text-muted-foreground border border-border px-3 py-1">
+                  <span key={tag} className="font-body text-xs text-[#555] border border-[#e0e0e0] px-3 py-1">
                     #{tag}
                   </span>
                 ))}
