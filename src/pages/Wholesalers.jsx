@@ -151,7 +151,13 @@ export default function Wholesalers() {
       </section>
 
       {/* What's Available */}
-      <section className="py-24 md:py-32 bg-card border-y border-border">
+      <section className="relative py-24 md:py-32 bg-card border-y border-border overflow-hidden" style={{
+        backgroundImage: `url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/c56d4a08c_Yobo.jpg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/70" />
+        <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Featured Brands"
@@ -181,10 +187,11 @@ export default function Wholesalers() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+          </div>
+          </div>
+          </section>
 
-      {/* CTA */}
+          {/* CTA */}
       <section className="py-24 md:py-32 bg-background text-center">
         <div className="max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
