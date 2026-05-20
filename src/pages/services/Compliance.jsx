@@ -11,7 +11,7 @@ const SERVICES_LIST = [
   {
     icon: MapPin,
     title: 'State License Network',
-    description: 'RTM maintains an active importer and wholesaler license network across all 50 states and the District of Columbia. This infrastructure — built over years of careful cultivation — means your brand can go national without waiting months for regulatory setup.',
+    description: 'RTM maintains an active importer and wholesaler license network across all 50 states and the District of Columbia. This infrastructure, built over years of careful cultivation, means your brand can go national without waiting months for regulatory setup.',
   },
   {
     icon: Network,
