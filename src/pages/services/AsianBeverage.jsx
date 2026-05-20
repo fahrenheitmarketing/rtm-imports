@@ -44,7 +44,7 @@ export default function AsianBeverage() {
             </Link>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Asian Beverages</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-3xl">
-              Leading the fastest-growing <GoldUnderline className="italic">category in America.</GoldUnderline>
+              The newest addition to our portfolio. <GoldUnderline className="italic">Our most active growth category in the US market.</GoldUnderline>
             </h1>
           </motion.div>
         </div>
