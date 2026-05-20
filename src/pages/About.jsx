@@ -185,7 +185,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-24 md:py-32 bg-card border-y border-border relative overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/71127eab5_generated_image.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section className="py-24 md:py-32 bg-card border-y border-border relative overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/426cba66c_generated_image.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-background/85" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
