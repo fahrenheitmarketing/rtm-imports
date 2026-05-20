@@ -50,6 +50,13 @@ const CATEGORIES = [
     tags: ['Soju', 'Korean Beer'],
   },
   {
+    icon: Wine,
+    title: 'Wine-Based RTD',
+    description: 'Ready-to-drink beverages built on Asian flavor profiles — a category with access across all US channels and the fastest-growing segment in our current portfolio.',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
+    tags: ['Ready-to-Drink', 'Wine-Based', 'Flavored'],
+  },
+  {
     icon: Beer,
     title: 'Craft & RTD',
     description: 'Wine-based ready-to-drink beverages and craft beer selections that capture the attention of new-generation consumers seeking premium, convenient options.',
