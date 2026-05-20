@@ -118,16 +118,16 @@ export default function Services() {
         <div className="max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              Have a project <GoldUnderline className="italic">in mind?</GoldUnderline>
+              A specialist partner for <GoldUnderline className="italic">serious brands.</GoldUnderline>
             </h2>
             <p className="font-body text-base text-foreground/80 leading-relaxed mb-8">
-              We'd love to learn about your brand and explore how our services can serve your goals.
+              RTM operates exclusively in the B2B wholesale channel. If you are a producer seeking U.S. market entry, or a wholesale partner evaluating your beverage portfolio, we would like to hear from you.
             </p>
             <Link
               to="/contact"
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-body text-sm tracking-widest uppercase hover:bg-primary/90 transition-all duration-300 group"
             >
-              Get in Touch
+              Contact Us
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </motion.div>
