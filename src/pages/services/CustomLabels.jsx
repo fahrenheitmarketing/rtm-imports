@@ -58,7 +58,7 @@ const WHY_CUSTOM = [
   },
   {
     icon: ShieldCheck,
-    title: 'Quality Without Volume',
+    title: 'Quality Without Volume Minimums',
     description: 'Our producer relationships are built on quality first, not minimum order volumes. We find the right fit for your program, not the most convenient one.',
   },
 ];
