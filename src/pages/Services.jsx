@@ -44,7 +44,7 @@ export default function Services() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-20 min-h-[50vh] flex items-end pb-20">
+      <section className="relative pt-32 min-h-[50vh] flex items-end pb-20">
         <div className="absolute inset-0">
           <img src={SERVICES_HERO} alt="Premium spirits" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/70" />

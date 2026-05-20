@@ -77,7 +77,7 @@ export default function Portfolio() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-20 min-h-[50vh] flex items-end pb-20">
+      <section className="relative pt-32 min-h-[50vh] flex items-end pb-20">
         <div className="absolute inset-0">
           <img src={PORTFOLIO_HERO} alt="Wine cellar with premium barrels" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
