@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Target, Zap, Shield, Plus, Minus } from 'lucide-react';
+import { ArrowRight, Compass, ChevronRight, Handshake, Plus, Minus } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
 
@@ -77,17 +77,17 @@ const ABOUT_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908
 
 const VALUES = [
   {
-    icon: Target,
+    icon: Compass,
     title: 'Fearless Creativity',
     description: 'We pursue categories and producers that others overlook. Asian beverage alcohol was a niche before it was a trend — we were already there, and we are already looking at what comes next.',
   },
   {
-    icon: Zap,
+    icon: ChevronRight,
     title: 'Aggressive Adaptability',
     description: 'The U.S. wholesale landscape is consolidating fast. Our independence and lean operating model mean we move faster than any generalist importer — and we have the track record to prove it.',
   },
   {
-    icon: Shield,
+    icon: Handshake,
     title: 'Relationship-First Execution',
     description: 'The relationships we hold with producers and wholesale partners have been built over years, not quarters. We invest in the people behind the brands as much as the brands themselves, and that personal commitment is what keeps those relationships intact when the market shifts.',
   },
