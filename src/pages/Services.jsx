@@ -5,7 +5,7 @@ import { ArrowRight, Globe, Palette, FileCheck } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
 
-const SERVICES_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/1743d0189_generated_69eaa272.png';
+const SERVICES_HERO = 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80';
 
 const SERVICES = [
   {
