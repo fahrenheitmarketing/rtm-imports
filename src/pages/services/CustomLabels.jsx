@@ -5,7 +5,7 @@ import { ArrowRight, Palette, CheckCircle, Layers, Brush, Package, ShieldCheck }
 import SectionHeading from '../../components/SectionHeading';
 import GoldUnderline from '../../components/GoldUnderline';
 
-const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png';
+const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/99ef3b2d5_image.png';
 
 const PROCESS_STEPS = [
   {
