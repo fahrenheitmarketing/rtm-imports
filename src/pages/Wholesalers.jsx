@@ -181,26 +181,18 @@ export default function Wholesalers() {
         <div className="max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              Ready to add RTM to <GoldUnderline className="italic">your portfolio?</GoldUnderline>
+              Ready to add the fastest-growing category to <GoldUnderline className="italic">your portfolio?</GoldUnderline>
             </h2>
             <p className="font-body text-base text-foreground/80 leading-relaxed mb-8">
-              Contact us to discuss current brand availability, pricing, and how RTM can support your sales team in the fastest-growing segment of beverage alcohol.
+              Contact our sales team to discuss brand availability, pricing, and market-specific support. We respond to all wholesale inquiries within 24 business hours.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-body text-sm tracking-widest uppercase hover:bg-primary/90 transition-all duration-300 group"
-              >
-                Contact Us
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-              </Link>
-              <Link
-                to="/portfolio"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-border text-muted-foreground font-body text-sm tracking-widest uppercase hover:border-foreground hover:text-foreground transition-all duration-300"
-              >
-                View Portfolio
-              </Link>
-            </div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-body text-sm tracking-widest uppercase hover:bg-primary/90 transition-all duration-300 group"
+            >
+              Contact the Sales Team
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </motion.div>
         </div>
       </section>
