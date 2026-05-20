@@ -157,7 +157,7 @@ export default function Portfolio() {
       </section>
 
       {/* Categories */}
-      <section className="pb-24 md:pb-32 bg-background">
+      <section className="pt-24 md:pt-32 pb-24 md:pb-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Categories"
