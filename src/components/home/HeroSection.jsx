@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import GoldUnderline from '../GoldUnderline';
 
-const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/0dc108760_generated_image.png';
+const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/238ecefcf_generated_image.png';
 
 export default function HeroSection() {
   return (
