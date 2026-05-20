@@ -25,7 +25,7 @@ const SERVICES = [
     label: 'Custom Labels',
     title: 'Your brand. Our expertise. Their shelf.',
     description: 'Producer relationships across all major producing regions available to retailers and operators building proprietary brands. From liquid development to label approval to wholesaler onboarding, end-to-end, without the catalog.',
-    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/99ef3b2d5_image.png',
     cta: 'Explore Custom Labels',
   },
   {
