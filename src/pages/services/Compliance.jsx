@@ -16,7 +16,7 @@ const SERVICES_LIST = [
   {
     icon: Network,
     title: 'Wholesaler Relationship Management',
-    description: 'Having a license isn\'t enough — you need advocacy. Our wholesaler relationships are built on trust, track record, and mutual benefit. We don\'t cold-call distributors; we leverage long-standing partnerships to get your brand in front of the right buyer.',
+    description: 'Having a license isn\'t enough — you need advocacy. Our wholesale relationships are built on trust, track record, and mutual benefit. We don\'t cold-call distributors; we leverage long-standing partnerships to get your brand in front of the right buyer.',
   },
   {
     icon: BookOpen,
