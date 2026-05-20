@@ -224,7 +224,7 @@ export default function CustomLabels() {
               Ready to build a brand <GoldUnderline className="italic">worth owning?</GoldUnderline>
             </h2>
             <p className="font-body text-base text-foreground/80 leading-relaxed mb-10">
-              Whether you're a retailer exploring your first private label or a hospitality group building a proprietary portfolio, let's talk about what's possible. We'll start with a no-obligation discovery call to assess fit and scope.
+              Start with a discovery call. We will assess your brief, match it against our producer network, and give you a clear picture of timeline, cost, and fit, before any commitment is made.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -235,10 +235,10 @@ export default function CustomLabels() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               <Link
-                to="/services/asian-beverage"
+                to="/products"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-border text-muted-foreground font-body text-sm tracking-widest uppercase hover:border-foreground hover:text-foreground transition-all duration-300"
               >
-                Explore Asian Beverages
+                Explore Our Products
               </Link>
             </div>
           </motion.div>
