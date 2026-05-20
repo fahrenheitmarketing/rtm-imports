@@ -28,6 +28,7 @@ export default function NewsSection() {
           <SectionHeading
             label="News & Insights"
             title="Latest from the category"
+            variant="light"
           />
           <Link
             to="/news"
