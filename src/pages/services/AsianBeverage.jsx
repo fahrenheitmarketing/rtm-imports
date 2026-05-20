@@ -219,8 +219,9 @@ export default function AsianBeverage() {
       </section>
 
       {/* How We Work */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-24 md:py-32 bg-background relative" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+        <div className="absolute inset-0 bg-background/75" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Our Process"
             title="How we bring your brand to the U.S."
