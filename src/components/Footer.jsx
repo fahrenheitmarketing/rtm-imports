@@ -15,7 +15,7 @@ export default function Footer() {
               className="h-24 w-auto mb-6"
             />
             <p className="font-body text-sm text-foreground/80 leading-relaxed max-w-xs">
-              America's dedicated Asian beverage alcohol specialist. More than 30 years of category depth, producer relationships, and national wholesale infrastructure — focused exclusively on the B2B channel.
+              America's specialist beverage importer. Thirty years of category depth, producer relationships, and national wholesale infrastructure, focused exclusively on the B2B channel.
             </p>
           </div>
 
