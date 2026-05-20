@@ -43,8 +43,9 @@ export default function Contact() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="pt-32 pb-16 bg-background relative overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/80" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Contact</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
@@ -58,8 +59,8 @@ export default function Contact() {
       </section>
 
       {/* Form + Info */}
-      <section className="pb-24 md:pb-32 bg-background relative overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
-        <div className="absolute inset-0 bg-background/80" />
+      <section className="pb-24 md:pb-32 relative overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/90" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Form */}
