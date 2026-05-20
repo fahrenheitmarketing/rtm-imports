@@ -28,8 +28,9 @@ export default function News() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="pt-32 pb-20 bg-background relative overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a96deace6_ChatGPTImageMay20202608_40_38PM.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/80" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">News & Insights</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
