@@ -119,10 +119,11 @@ export default function Contact() {
                           <SelectValue placeholder="Select an area" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="Asian Beverage">Asian Beverage</SelectItem>
+                          <SelectItem value="Products & Portfolio">Products & Portfolio</SelectItem>
                           <SelectItem value="Custom Labels">Custom Labels</SelectItem>
                           <SelectItem value="Compliance">Compliance & Licensing</SelectItem>
-                          <SelectItem value="Distribution">Distribution Partnership</SelectItem>
+                          <SelectItem value="Wholesale Partnership">Wholesale Partnership</SelectItem>
+                          <SelectItem value="Distribution">Distribution Inquiry</SelectItem>
                           <SelectItem value="General">General Inquiry</SelectItem>
                         </SelectContent>
                       </Select>
