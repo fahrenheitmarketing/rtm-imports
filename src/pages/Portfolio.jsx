@@ -88,22 +88,14 @@ export default function Portfolio() {
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
               Current focus brands. <GoldUnderline className="italic">National distribution.</GoldUnderline>
             </h1>
+            <p className="font-body text-base text-foreground/80 leading-relaxed max-w-3xl mt-6">
+              RTM's portfolio is built around growth, not breadth. The brands below represent our current primary market development effort. Our operating history spans 1,000+ brands across wine, spirits, and emerging categories.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mx-auto text-center mb-20">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <p className="font-body text-base text-foreground/80 leading-relaxed">
-                RTM's portfolio is built around growth, not breadth. The brands below represent our current primary market development effort. Our operating history spans 1,000+ brands across wine, spirits, and emerging categories.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Featured Brands */}
       <section className="py-24 md:py-32 bg-background">
