@@ -99,7 +99,7 @@ export default function Portfolio() {
 
       {/* Featured Brands */}
       <section className="py-24 md:py-32" style={{
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
+        backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.1), rgba(26, 45, 74, 0.1)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}>
@@ -237,7 +237,7 @@ export default function Portfolio() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 text-center relative" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+      <section className="py-24 md:py-32 text-center relative" style={{ backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.1), rgba(26, 45, 74, 0.1)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-background/75" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
