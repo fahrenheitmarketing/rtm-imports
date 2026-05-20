@@ -71,6 +71,7 @@ export default function Wholesalers() {
             label="Why Carry RTM Brands"
             title="What we bring to your portfolio"
             description="RTM operates exclusively in the B2B wholesale channel. We are not a competitor — we are your supplier, your support team, and your category specialist."
+            variant="light"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -102,6 +103,7 @@ export default function Wholesalers() {
               <SectionHeading
                 label="In Market"
                 title="Proof of performance"
+                variant="dark"
               />
               <div className="space-y-5 font-body text-base text-foreground/80 leading-relaxed">
                 <p>
@@ -135,6 +137,7 @@ export default function Wholesalers() {
             label="Our Wholesale Network"
             title="National reach. Local relationships."
             align="center"
+            variant="dark"
           />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <p className="font-body text-base text-foreground/80 leading-relaxed">
@@ -155,6 +158,7 @@ export default function Wholesalers() {
             title="Available for wholesale distribution"
             description="Our current Asian beverage portfolio is available to qualified wholesale partners. Portfolio scope is expanding — contact us for a full current brand list."
             align="center"
+            variant="dark"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
