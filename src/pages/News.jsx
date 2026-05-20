@@ -33,9 +33,9 @@ export default function News() {
           <img
             src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/a96deace6_ChatGPTImageMay20202608_40_38PM.png"
             alt="News hero"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover blur-sm"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
