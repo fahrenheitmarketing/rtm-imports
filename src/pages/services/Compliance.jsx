@@ -75,7 +75,7 @@ export default function Compliance() {
             </Link>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Compliance & Licensing</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-3xl">
-              The infrastructure that makes <GoldUnderline className="italic">national distribution possible.</GoldUnderline>
+              The infrastructure that <GoldUnderline className="italic">enables national distribution.</GoldUnderline>
             </h1>
           </motion.div>
         </div>
