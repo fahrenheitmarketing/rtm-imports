@@ -108,7 +108,7 @@ export default function Compliance() {
                 { value: 'All 50', label: 'All 50 States Served' },
                 { value: '25+', label: '25+ Active Wholesale Partners' },
                 { value: 'Federal', label: 'TTB importer registration' },
-                { value: 'Years', label: 'Regulatory experience' },
+                { value: '30+', label: 'Years of regulatory experience' },
               ].map((stat) => (
                 <div key={stat.label} className="bg-card border border-border p-8 text-center">
                   <div className="font-display text-3xl text-primary mb-2">{stat.value}</div>
