@@ -150,7 +150,7 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <p className="font-body text-sm text-muted-foreground text-center">
+          <p className="font-body text-base text-[#1a2d4a] text-center">
             For distributor and retailer availability by state, contact us directly.
           </p>
         </div>
