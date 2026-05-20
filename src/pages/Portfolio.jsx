@@ -53,7 +53,7 @@ const CATEGORIES = [
     icon: Wine,
     title: 'Wine-Based RTD',
     description: 'Ready-to-drink beverages built on Asian flavor profiles — a category with access across all US channels and the fastest-growing segment in our current portfolio.',
-    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/6a6599590_ChatGPTImageMay20202608_04_40PM.png',
     tags: ['Ready-to-Drink', 'Wine-Based', 'Flavored'],
   },
   {
