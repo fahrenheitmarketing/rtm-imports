@@ -18,7 +18,7 @@ const CATEGORIES = [
   },
   {
     title: 'Craft & Specialty Beer',
-    description: 'Asian craft beer is a rising category in specialty retail and on-premise. We identify craft breweries with compelling stories and distinctive styles that resonate with an increasingly adventurous American beer drinker.',
+    description: 'Hokkaido Beer represents RTM\'s active position in Japanese craft and specialty beer — a segment gaining traction with an increasingly adventurous American beer drinker.',
   },
 ];
 
