@@ -90,7 +90,7 @@ export default function AsianBeverage() {
           <SectionHeading
             label="What We Bring"
             title="Our Asian beverage portfolio"
-            description="We curate across the full spectrum of Asian beverages, focused on quality producers and authentic stories that resonate with today's consumer."
+            description="RTM represents brands across the full spectrum of Asian beverages, focused on quality producers and authentic stories that resonate with today's consumer."
             align="center"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
