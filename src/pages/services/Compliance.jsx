@@ -98,7 +98,7 @@ export default function Compliance() {
                   Most brands don't fail because their liquid isn't good enough. They fail because they underestimate the complexity of legally obtaining that liquid from a production facility to a consumer's glass. <strong className="text-foreground">Compliance is not a formality — it's the foundation.</strong>
                 </p>
                 <p>
-                  RTM has built this foundation deliberately over years of operating in the market. Our license network, our wholesaler relationships, and our working knowledge of state-by-state regulatory nuance represent infrastructure that cannot be replicated quickly — and we make it available to our partners.
+                  RTM has built this foundation deliberately over years of operating in the market. Our license network, our wholesale relationships, and our working knowledge of state-by-state regulatory nuance represent infrastructure that cannot be replicated quickly, and we make it available to our partners.
                 </p>
               </div>
             </div>
