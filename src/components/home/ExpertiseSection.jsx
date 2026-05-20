@@ -30,10 +30,13 @@ const SERVICES = [
 
 export default function ExpertiseSection() {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-24 md:py-32" style={{
+      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <SectionHeading
-          label="What We Do"
           title="What we do"
           description="Three disciplines. One focus: getting your product to market."
         />
@@ -59,13 +62,13 @@ export default function ExpertiseSection() {
                   {service.number}
                 </span>
               </div>
-              <h3 className="font-display text-2xl text-foreground mb-3">{service.title}</h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
+              <h3 className="font-display text-2xl text-slate-800 mb-3">{service.title}</h3>
+              <p className="font-body text-sm text-slate-600 leading-relaxed mb-4">
                 {service.description}
               </p>
               <Link
                 to={service.path}
-                className="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-primary hover:text-foreground transition-colors duration-300 group/link"
+                className="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-slate-700 hover:text-slate-900 transition-colors duration-300 group/link"
               >
                 Learn More
                 <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform duration-300" />
