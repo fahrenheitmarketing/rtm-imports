@@ -135,7 +135,6 @@ export default function Compliance() {
           <SectionHeading
             label="What We Provide"
             title="Compliance services in full"
-            description="A comprehensive set of regulatory and licensing capabilities, built to eliminate the barriers between your brand and the American market."
             align="center"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
