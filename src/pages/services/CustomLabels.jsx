@@ -128,6 +128,35 @@ export default function CustomLabels() {
         </div>
       </section>
 
+      {/* Time to Market */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <SectionHeading
+            label="Timeline"
+            title="Time to Market"
+            align="center"
+          />
+          <div className="max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {[
+                { label: 'Domestic wine', timeline: 'Under 3 months' },
+                { label: 'Imported wine', timeline: '3 to 6 months' },
+                { label: 'Domestic spirits', timeline: '2 to 3 months' },
+                { label: 'Imported spirits', timeline: '3 to 6 months' },
+              ].map((item) => (
+                <div key={item.label} className="bg-card border border-border p-6 flex items-center justify-between">
+                  <span className="font-body text-base text-foreground/80">{item.label}</span>
+                  <span className="font-display text-lg text-primary">{item.timeline}</span>
+                </div>
+              ))}
+            </div>
+            <p className="font-body text-xs text-muted-foreground text-center italic">
+              Timelines are indicative. The final timeline depends on the category, the state's registration complexity, and the production partner's capacity.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Why Custom */}
       <section className="py-24 md:py-32 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
