@@ -52,8 +52,13 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-      scrolled ? 'bg-background/95 backdrop-blur-md border-b border-border' : 'bg-transparent'
-    }`}>
+      scrolled ? 'border-b border-border' : ''
+    }`} style={{
+      backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      ...(scrolled && { opacity: 0.95 })
+    }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-36">
           {/* Logo */}
@@ -73,7 +78,7 @@ export default function Navbar() {
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
                     className={`flex items-center gap-1.5 font-body text-xs tracking-widest uppercase transition-colors duration-300 ${
-                      isServicesActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                      isServicesActive ? 'text-primary' : 'text-slate-700 hover:text-slate-900'
                     }`}
                   >
                     {link.label}
@@ -118,9 +123,9 @@ export default function Navbar() {
                   key={link.path}
                   to={link.path}
                   className={`font-body text-xs tracking-widest uppercase transition-colors duration-300 ${
-                    location.pathname === link.path
-                      ? 'text-primary'
-                      : 'text-muted-foreground hover:text-foreground'
+                   location.pathname === link.path
+                     ? 'text-primary'
+                     : 'text-slate-700 hover:text-slate-900'
                   }`}
                 >
                   {link.label}
@@ -132,7 +137,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-foreground p-2"
+            className="md:hidden text-slate-700 p-2"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
