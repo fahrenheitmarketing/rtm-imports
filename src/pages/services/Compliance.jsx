@@ -31,7 +31,7 @@ const SERVICES_LIST = [
   {
     icon: ShieldCheck,
     title: 'Ongoing Compliance Monitoring',
-    description: 'Regulatory requirements evolve. We provide proactive monitoring of licensing renewals, reporting obligations, and regulatory changes that could affect your brand — so you stay compliant without dedicating internal resources to it.',
+    description: 'Regulatory requirements evolve. We provide proactive monitoring of licensing renewals, reporting obligations, and regulatory changes that could affect your brand, so you stay compliant without dedicating internal resources.',
   },
   {
     icon: FileCheck,
