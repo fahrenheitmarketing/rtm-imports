@@ -135,7 +135,7 @@ export default function Contact() {
                       required
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      placeholder="Tell us about your project..."
+                      placeholder="Tell us about your brand or inquiry..."
                       rows={6}
                       className="bg-card border-border font-body text-foreground placeholder:text-muted-foreground/50 resize-none"
                     />
