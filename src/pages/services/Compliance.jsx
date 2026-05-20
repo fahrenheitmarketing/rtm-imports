@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, FileCheck, MapPin, Network, BookOpen, ClipboardList, ShieldCheck } from 'lucide-react';
 import SectionHeading from '../../components/SectionHeading';
 import GoldUnderline from '../../components/GoldUnderline';
+import ComplianceFAQSection from '../../components/compliance/ComplianceFAQSection';
 
 const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/bf0be4185_generated_ed6f371b.png';
 
@@ -40,32 +41,7 @@ const SERVICES_LIST = [
   },
 ];
 
-const FAQS = [
-  {
-    q: 'How long does it typically take to get a brand into a new state?',
-    a: 'Timelines vary by state — from a few weeks in cooperative states to several months in control states. Our experience and existing relationships help us anticipate bottlenecks and minimize delays.',
-  },
-  {
-    q: 'What is a COLA, and does every brand need one?',
-    a: 'A Certificate of Label Approval (COLA) is required by the TTB for any alcoholic beverage sold in the US with an ABV above 7%. Most states also require their own state-level COLA in addition to the federal approval. Spirit brands additionally require a formula approval from the TTB before a COLA can be issued. RTM manages the full COLA process for every brand we represent.',
-  },
-  {
-    q: 'What is the difference between a three-tier importer and a broker?',
-    a: 'An importer holds a federal TTB Basic Importer\'s Permit and acquires legal title to the product upon entry into the country. A broker facilitates transactions without taking title. RTM is a licensed importer — we are on the label, we manage compliance, and we are the legal entity responsible for the product from the port of entry through to the wholesale channel. This distinction matters for liability, compliance, and the quality of advocacy your brand receives.',
-  },
-  {
-    q: 'Do you handle compliance for brands you don\'t import?',
-    a: 'In select cases, yes. We offer compliance consulting and license-sharing arrangements for established brands that need network infrastructure without a full import relationship.',
-  },
-  {
-    q: 'What is the benefit of your existing license network versus setting one up independently?',
-    a: 'Years and significant cost. Building a compliant 50-state license infrastructure from scratch typically takes 12 to 24 months and substantial legal fees. Leveraging RTM\'s existing network accelerates market entry dramatically and eliminates the ongoing administrative burden of managing renewals and regulatory changes across 50 jurisdictions.',
-  },
-  {
-    q: 'Can you help with e-commerce or DTC compliance?',
-    a: 'DTC compliance is not a current service area for RTM. We focus exclusively on the B2B wholesale channel. For DTC-specific regulatory needs, we are happy to refer you to specialized legal counsel.',
-  },
-];
+
 
 export default function Compliance() {
   return (
@@ -158,31 +134,7 @@ export default function Compliance() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
-          <SectionHeading
-            label="Common Questions"
-            title="What producers ask us"
-            align="center"
-          />
-          <div className="space-y-6">
-            {FAQS.map((faq, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="border border-border p-8"
-              >
-                <h4 className="font-display text-lg text-foreground mb-3">{faq.q}</h4>
-                <p className="font-body text-sm text-foreground/80 leading-relaxed">{faq.a}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ComplianceFAQSection />
 
       {/* CTA */}
       <section className="py-24 md:py-32 bg-primary/5 border-y border-primary/20">
