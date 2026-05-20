@@ -25,7 +25,7 @@ const CATEGORIES = [
 const STATS = [
   { value: '$935M', label: 'U.S. soju market value in 2024, more than doubled in 5 years' },
   { value: 'Gen Z', label: 'Primary growth demographic driving soju, sake, and Asian RTD demand' },
-  { value: '30+', label: 'Years RTM has operated in Asian beverage alcohol' },
+  { value: '30+', label: 'Years of import infrastructure behind our Asian beverage portfolio' },
 ];
 
 export default function AsianBeverage() {
