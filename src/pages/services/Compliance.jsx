@@ -63,7 +63,7 @@ const FAQS = [
   },
   {
     q: 'Can you help with e-commerce or DTC compliance?',
-    a: 'Direct-to-consumer alcohol commerce is among the most complex regulatory areas in the industry. We can assess your situation and connect you with specialized legal counsel where needed.',
+    a: 'DTC compliance is not a current service area for RTM. We focus exclusively on the B2B wholesale channel. For DTC-specific regulatory needs, we are happy to refer you to specialized legal counsel.',
   },
 ];
 
