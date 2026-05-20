@@ -162,6 +162,7 @@ export default function Portfolio() {
           <SectionHeading
             label="Categories"
             title="What we bring to market"
+            variant="light"
           />
 
           <div className="space-y-16">
