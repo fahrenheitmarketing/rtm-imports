@@ -129,8 +129,9 @@ export default function Compliance() {
       </section>
 
       {/* Services */}
-      <section className="py-24 md:py-32 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="relative py-24 md:py-32 bg-card border-y border-border overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a850dab8d_ChatGPTImageMay20202607_38_54PM.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-background/85" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="What We Provide"
             title="Compliance services in full"
