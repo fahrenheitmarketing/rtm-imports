@@ -48,7 +48,7 @@ export default function Contact() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Contact</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
-              Let's start the <span className="italic text-primary">conversation.</span>
+              Let us start the <span className="italic text-primary">conversation.</span>
             </h1>
             <p className="font-body text-lg text-foreground/80 mt-6 max-w-xl leading-relaxed">
               Whether you're a producer seeking U.S. market entry or a retailer exploring private-label options, we're here to help.
