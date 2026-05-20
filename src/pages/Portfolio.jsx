@@ -44,10 +44,10 @@ const BRANDS = [
 const CATEGORIES = [
   {
     icon: GlassWater,
-    title: 'Asian Spirits',
-    description: 'Premium sake, soju, shochu, and Japanese whisky from artisan producers across Asia. Authentic, high-quality spirits that resonate with modern consumers.',
+    title: 'Soju & Korean Beer',
+    description: 'Premium soju and Korean beer from producers across South Korea. Authentic, high-quality brands that resonate with modern consumers and align with the global momentum of K-culture.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png',
-    tags: ['Sake', 'Soju', 'Shochu', 'Japanese Whisky'],
+    tags: ['Soju', 'Korean Beer'],
   },
   {
     icon: Beer,
