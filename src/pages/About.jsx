@@ -186,7 +186,7 @@ export default function About() {
 
       {/* Values */}
       <section className="py-24 md:py-32 bg-card border-y border-border relative overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/426cba66c_generated_image.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-background/75" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="How We Work"
@@ -221,7 +221,7 @@ export default function About() {
 
       {/* Pull Quote */}
       <section className="py-24 md:py-32 bg-background relative" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-background/75" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-12 text-center">
           <motion.blockquote
             initial={{ opacity: 0, y: 20 }}
