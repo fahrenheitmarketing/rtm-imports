@@ -56,6 +56,16 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-36">
+          
+          {/* Bottom decorative border: washi strip + gold rule */}
+          <div className="absolute bottom-0 left-0 right-0">
+            <div className="h-2 w-full" style={{
+              backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }} />
+            <div className="h-px w-full bg-primary" />
+          </div>
           {/* Logo with washi texture background */}
           <Link to="/" className="flex items-center px-4 py-3" style={{
             backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
