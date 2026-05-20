@@ -16,7 +16,7 @@ const PROCESS_STEPS = [
   {
     step: '02',
     title: 'Producer Matching',
-    description: 'Using our curated network of European and Asian producers, we identify the right production partner based on quality benchmarks, capacity, certifications, and stylistic fit with your vision.',
+    description: 'Using our network of vetted producers across key producing regions, we identify the right production partner based on quality benchmarks, capacity, certifications, and stylistic fit with your vision.',
   },
   {
     step: '03',
