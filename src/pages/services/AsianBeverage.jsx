@@ -5,7 +5,7 @@ import { ArrowRight, Globe, TrendingUp, Users, Star, ShoppingBag, Award } from '
 import SectionHeading from '../../components/SectionHeading';
 import GoldUnderline from '../../components/GoldUnderline';
 
-const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/369a4f0ab_generated_b2886f05.png';
+const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/068e40ec9_image.png';
 
 const CATEGORIES = [
   {
