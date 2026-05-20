@@ -7,15 +7,8 @@ const NETWORK_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb
 
 export default function CTASection() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={NETWORK_IMAGE}
-          alt="Global trade network visualization"
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
-      </div>
+    <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <div className="max-w-2xl">
