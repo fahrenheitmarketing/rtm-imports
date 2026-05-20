@@ -18,7 +18,11 @@ export default function NewsSection() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="py-24 md:py-32 bg-background border-t border-border">
+    <section className="py-24 md:py-32 border-t border-border" style={{
+      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <SectionHeading
@@ -27,7 +31,7 @@ export default function NewsSection() {
           />
           <Link
             to="/news"
-            className="inline-flex items-center gap-2 font-body text-sm tracking-widest uppercase text-primary hover:text-foreground transition-colors duration-300 group flex-shrink-0 mb-16"
+            className="inline-flex items-center gap-2 font-body text-sm tracking-widest uppercase text-[#5a9bd4] hover:text-[#4a8bc4] transition-colors duration-300 group flex-shrink-0 mb-16"
           >
             All Articles
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
