@@ -14,7 +14,7 @@ export default function SectionHeading({ title, description, align = 'left' }) {
         {title}
       </h2>
       {description && (
-        <p className={`font-body text-base text-foreground/80 leading-relaxed max-w-2xl ${align === 'center' ? 'mx-auto' : ''}`}>
+        <p className={`font-body text-base text-[#1a2d4a]/80 leading-relaxed max-w-2xl ${align === 'center' ? 'mx-auto' : ''}`}>
           {description}
         </p>
       )}
