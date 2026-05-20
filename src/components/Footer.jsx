@@ -9,11 +9,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {/* Brand */}
           <div>
-            <img
-              src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/71e10e810_image.png"
-              alt="RTM Imports Logo"
-              className="h-24 w-auto mb-6"
-            />
+            <Link to="/" className="inline-block px-2 py-2 mb-6" style={{
+              backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              borderRadius: '4px'
+            }}>
+              <img
+                src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/71e10e810_image.png"
+                alt="RTM Imports Logo"
+                className="h-24 w-auto"
+              />
+            </Link>
             <p className="font-body text-sm text-foreground/80 leading-relaxed max-w-xs">
               America's specialist beverage importer. Thirty years of category depth, producer relationships, and national wholesale infrastructure, focused exclusively on the B2B channel.
             </p>
