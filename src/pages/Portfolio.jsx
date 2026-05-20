@@ -66,14 +66,11 @@ const CATEGORIES = [
 ];
 
 const REGIONS = [
-  { name: 'South Korea', specialty: 'Soju, Korean Beer, Rice Wine, RTD' },
+  { name: 'South Korea', specialty: 'Soju, Korean Beer, Wine-Based RTD' },
   { name: 'Japan', specialty: 'Craft Beer, Specialty Beer' },
   { name: 'China', specialty: 'Baijiu, Craft Spirits, Wine-Based RTD' },
   { name: 'Thailand', specialty: 'Spirits, RTD, Craft Beer' },
-  { name: 'Taiwan', specialty: 'Whisky, Craft Beer, Spirits' },
-  { name: 'France', specialty: 'Wine, Champagne, Sparkling' },
-  { name: 'Italy', specialty: 'Wine, Prosecco, Amaro' },
-  { name: 'Spain & Portugal', specialty: 'Wine, Cava, Sherry, Port' },
+  { name: 'Taiwan', specialty: 'Craft Beer, Spirits' },
 ];
 
 export default function Portfolio() {
