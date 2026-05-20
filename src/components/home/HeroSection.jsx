@@ -30,7 +30,7 @@ export default function HeroSection() {
           <span className="font-body text-xs tracking-widest uppercase text-primary block mb-6">
             Route to Market Imports
           </span>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-6">
           America's specialist
           <span className="italic block">beverage <GoldUnderline>importer.</GoldUnderline></span>
           </h1>

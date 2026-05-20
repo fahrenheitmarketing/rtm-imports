@@ -55,9 +55,9 @@ export default function Navbar() {
       scrolled ? 'bg-background/95 backdrop-blur-sm' : ''
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-36">
+        <div className="flex items-center justify-between h-24 md:h-36">
           {/* Logo with washi texture background */}
-          <Link to="/" className="flex items-center px-4 py-3" style={{
+          <Link to="/" className="flex items-center px-2 md:px-4 py-2 md:py-3" style={{
             backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -66,7 +66,7 @@ export default function Navbar() {
             <img
               src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/71e10e810_image.png"
               alt="RTM Imports Logo"
-              className="h-20 w-auto"
+              className="h-14 md:h-20 w-auto"
             />
           </Link>
 
