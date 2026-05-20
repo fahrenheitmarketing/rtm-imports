@@ -52,7 +52,7 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-      scrolled ? 'border-b border-border/20' : ''
+      scrolled ? 'bg-background/95 backdrop-blur-sm border-b border-border' : ''
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-36">
