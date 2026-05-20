@@ -161,7 +161,7 @@ export default function About() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-card border border-border p-6 text-center">
                   <div className="font-display text-3xl text-primary mb-2">30+</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Years in Category</p>
+                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Years in the Industry</p>
                 </div>
                 <div className="bg-card border border-border p-6 text-center">
                   <div className="font-display text-3xl text-primary mb-2">25+</div>
