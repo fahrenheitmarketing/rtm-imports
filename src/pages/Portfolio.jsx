@@ -84,7 +84,7 @@ export default function Portfolio() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-6">Our Portfolio</span>
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">Our Portfolio</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
               Current focus brands. <GoldUnderline className="italic">National distribution.</GoldUnderline>
             </h1>

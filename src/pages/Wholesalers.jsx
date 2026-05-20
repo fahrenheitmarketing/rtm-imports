@@ -52,7 +52,7 @@ export default function Wholesalers() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">Wholesale Partners</span>
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">Wholesale Partners</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
               The fastest-growing category in the U.S. market. <GoldUnderline className="italic">The brands, the infrastructure, and the team to move it.</GoldUnderline>
             </h1>
