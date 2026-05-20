@@ -108,8 +108,9 @@ export default function CustomLabels() {
               <h3 className="font-display text-xl text-foreground mb-6">What's included in every program</h3>
               <div className="space-y-4">
                 {[
-                  'Producer identification and vetting',
-                  'Liquid development and sensory review',
+                  'Style and category brief: understanding your price point, product style, and visual direction before anything else',
+                  'Producer matching: identifying the right production partners from our global network based on your brief',
+                  'Sample review and sensory refinement: getting product in front of you and fine-tuning until the liquid and label are right',
                   'Label design and packaging development',
                   'TTB label approval and import compliance',
                   'State-by-state market registration support',
