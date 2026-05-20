@@ -162,7 +162,7 @@ export default function AsianBeverage() {
             {[
               { icon: Globe, step: '01', title: 'Producer Sourcing', description: 'We travel to origin regions, visit facilities, and vet producers on quality, authenticity, and capacity to meet U.S. import standards. This includes regular visits to Asia, with our on-the-ground presence expanding as our portfolio grows.' },
               { icon: TrendingUp, step: '02', title: 'Market Positioning', description: 'We define the right consumer, the right channel, and the right price architecture for each brand before a single bottle enters the country. We identify trends from distributor sales and profit reports before the market publicly confirms them.' },
-              { icon: Users, step: '03', title: 'Wholesaler Activation', description: 'Our national wholesaler network means your brand has advocacy at the distributor level — critical for market penetration and sustainable velocity.' },
+              { icon: Users, step: '03', title: 'Wholesaler Activation', description: 'Our wholesale partner network means your brand has advocacy at the distributor level nationwide, critical for market penetration and sustainable velocity.' },
             ].map((item) => (
               <motion.div
                 key={item.step}
