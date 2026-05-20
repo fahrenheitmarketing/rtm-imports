@@ -15,7 +15,7 @@ const SERVICES = [
     label: 'Products We Represent',
     title: '',
     description: 'Thirty years of representing beverages at both ends of the spectrum, from the world\'s finest wine and spirit producers to the fastest-emerging categories in the market. Our producer relationships and wholesale infrastructure span categories and continents. Asian beverage is the newest addition to our portfolio and currently the highest-growth segment in the US market.',
-    image: 'https://images.unsplash.com/photo-1569156381623-aa66a3c1b357?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    image: 'https://images.unsplash.com/photo-1516594915697-87eb5dc1dc71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     cta: 'Explore Asian Beverages',
   },
   {
