@@ -16,13 +16,6 @@ const CATEGORIES = [
     tags: ['Sake', 'Soju', 'Shochu', 'Japanese Whisky'],
   },
   {
-    icon: Wine,
-    title: 'European Wines',
-    description: 'Curated selections from established producers in France, Italy, Spain, and beyond. Quality-first private-label and branded wines for discerning palates.',
-    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/a02300f19_generated_8b23f0b1.png',
-    tags: ['French', 'Italian', 'Spanish', 'Portuguese'],
-  },
-  {
     icon: Beer,
     title: 'Craft & RTD',
     description: 'Wine-based ready-to-drink beverages and craft beer selections that capture the attention of new-generation consumers seeking premium, convenient options.',
@@ -33,7 +26,7 @@ const CATEGORIES = [
 
 const REGIONS = [
   { name: 'South Korea', specialty: 'Soju, Korean Beer, Rice Wine, RTD' },
-  { name: 'Japan', specialty: 'Sake, Whisky, Shochu, Craft Beer' },
+  { name: 'Japan', specialty: 'Craft Beer, Specialty Beer' },
   { name: 'China', specialty: 'Baijiu, Craft Spirits, Wine-Based RTD' },
   { name: 'Thailand', specialty: 'Spirits, RTD, Craft Beer' },
   { name: 'Taiwan', specialty: 'Whisky, Craft Beer, Spirits' },
