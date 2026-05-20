@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, TrendingUp, Users, Star, ShoppingBag, Award } from 'lucide-react';
 import SectionHeading from '../../components/SectionHeading';
 import GoldUnderline from '../../components/GoldUnderline';
+import FAQSection from '../../components/asian-beverage/FAQSection';
 
 const HERO_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/a1ae5ba92_image.png';
 
@@ -28,7 +29,73 @@ const STATS = [
   { value: '30+', label: 'Years of import infrastructure behind our Asian beverage portfolio' },
 ];
 
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What Asian beverage categories does RTM currently represent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RTM's active portfolio is focused on soju — specifically wine-based soju, which currently comprises the majority of our SKU count — wine-based RTDs, and craft and specialty beer. These are the categories where we have active brands, national distribution, and chain-level retail authorizations. We are continuously evaluating adjacent categories as the market evolves."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is wine-based soju, and why does it matter for US distribution?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wine-based soju is a Korean-origin spirit produced from a wine base rather than a distilled-grain base. In the US regulatory framework, this classification means it can be sold through all licensed channels, including grocery, convenience, and general off-premise — rather than being restricted to spirits-licensed accounts only. This gives wine-based soju a significant distribution advantage over spirit-based alternatives and is one of the primary reasons RTM has prioritized this category."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does RTM identify which Asian brands to represent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RTM uses a data-driven approach: we review distributor depletion reports and margin data to identify underpenetrated categories with strong velocity, then validate with sales team interviews across key markets. We look for brands with low cost-to-serve, strong shelf presence, minimal domestic competition, and an authentic story that resonates with the US consumer. This methodology has consistently led us to categories before they peak — it is how we identified the Asian beverage opportunity, and it is how we will find the next one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can RTM represent a brand that already has some US distribution?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. In many cases, brands that have achieved regional success in the US are seeking a partner to take them national. RTM's network of 25+ active wholesale partners and nationwide reach means we can expand a brand's footprint without requiring it to start from scratch. We have done this successfully — taking regionally proven brands to national distribution within twelve months of taking on representation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does RTM work directly with producers, or only through intermediaries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RTM works directly with producers. We make annual trips to Asia to visit production facilities, vet product quality, and build direct relationships with brand owners and their export teams. These direct relationships are central to how we operate; they allow us to move quickly when a brand is ready to scale, and to manage quality and supply chain issues without layers of intermediaries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the process for a Korean or Japanese producer to begin working with RTM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first step is a conversation — typically initiated through our contact form or an existing relationship. RTM will evaluate the brand against our current portfolio, category fit, and market opportunity. If there is a fit, we move to a formal market positioning process: defining the right consumer, channel, and price architecture before any compliance or import work begins. Full import timelines for a new brand range from 3 to 9 months, depending on category and compliance complexity."
+      }
+    }
+  ]
+};
+
 export default function AsianBeverage() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(FAQ_SCHEMA);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <>
       {/* Hero */}
@@ -183,6 +250,9 @@ export default function AsianBeverage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQSection />
 
       {/* CTA */}
       <section className="py-24 md:py-32 bg-primary/5 border-y border-primary/20">
