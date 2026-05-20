@@ -38,7 +38,7 @@ export default function ExpertiseSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <SectionHeading
           title="What we do"
-          description="Three disciplines. One focus: getting your product to market."
+          description="Three disciplines. Thirty years of doing them well."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
