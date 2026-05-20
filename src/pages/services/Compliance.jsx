@@ -193,7 +193,7 @@ export default function Compliance() {
               Don't let compliance <GoldUnderline className="italic">slow you down.</GoldUnderline>
             </h2>
             <p className="font-body text-base text-foreground/80 leading-relaxed mb-10">
-              We've built the infrastructure. We've cultivated the relationships. We know the rules in every state. Let us put that to work for your brand — so you can focus on what you do best: making great beverages.
+              We have built the infrastructure. We have cultivated the relationships. We know the rules in every state. Let us put that to work for your brand, so you can focus on what you do best: making great beverages.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
