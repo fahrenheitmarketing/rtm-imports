@@ -47,7 +47,7 @@ export default function Services() {
       <section className="relative pt-20 min-h-[50vh] flex items-end pb-20">
         <div className="absolute inset-0">
           <img src={SERVICES_HERO} alt="Premium spirits" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/70" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
