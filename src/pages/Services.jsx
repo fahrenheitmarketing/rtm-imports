@@ -24,7 +24,7 @@ const SERVICES = [
     icon: Palette,
     label: 'Custom Labels',
     title: 'Your brand. Our expertise. Their shelf.',
-    description: 'As competition intensifies, the brands that win own the relationship with the consumer. Our private label program leverages curated producer relationships across Europe and Asia to build proprietary brands from concept to shelf — fully compliant, fully differentiated.',
+    description: 'Producer relationships across all major producing regions available to retailers and operators building proprietary brands. From liquid development to label approval to wholesaler onboarding, end-to-end, without the catalog.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e0f7395d8_generated_bf53f207.png',
     cta: 'Explore Custom Labels',
   },
