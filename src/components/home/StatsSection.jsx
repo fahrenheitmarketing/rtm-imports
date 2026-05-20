@@ -6,7 +6,7 @@ const STATS = [
   { value: '30', suffix: '+', label: 'Years in the Industry' },
   { value: '25', suffix: '+', label: 'Wholesale Partners' },
   { value: '50', suffix: '', label: 'States Served' },
-  { value: '1', suffix: '', label: 'Singular Focus' },
+  { value: '1000', suffix: '+', label: 'Brands Represented' },
 ];
 
 function StatItem({ stat, idx }) {
