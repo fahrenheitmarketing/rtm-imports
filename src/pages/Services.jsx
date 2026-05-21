@@ -47,25 +47,28 @@ export default function Services() {
       <section className="relative pt-32 min-h-[60vh] flex items-end pb-20">
         <div className="absolute inset-0">
           <img src={SERVICES_HERO} alt="Premium spirits" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-rtm-ink via-rtm-ink/90 to-rtm-ink/70" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">What We Bring to Market</span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
-              Three disciplines. <GoldUnderline className="italic">One focus.</GoldUnderline>
+            <span className="font-heading text-xs font-semibold uppercase tracking-[0.15em] text-rtm-yellow-deep block mb-8">What We Bring to Market</span>
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-[0.01em] text-rtm-white leading-tight max-w-2xl">
+              Three disciplines.{' '}
+              <span className="font-display font-normal normal-case italic text-rtm-yellow">
+                <GoldUnderline>One focus.</GoldUnderline>
+              </span>
             </h1>
           </motion.div>
         </div>
       </section>
 
       {/* Overview intro */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 bg-rtm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <p className="font-display text-2xl md:text-3xl text-foreground leading-relaxed italic">
-              RTM Imports operates across three disciplines. Every brand in our current focus portfolio is actively distributed through our national wholesale network. Every service we offer is built on decades of doing this well.
+              <p className="font-display text-2xl md:text-3xl text-rtm-ink leading-relaxed italic">
+                RTM Imports operates across three disciplines. Every brand in our current focus portfolio is actively distributed through our national wholesale network. Every service we offer is built on decades of doing this well.
               </p>
             </motion.div>
           </div>
@@ -73,7 +76,7 @@ export default function Services() {
       </section>
 
       {/* Services */}
-      <section className="pb-24 md:pb-32 bg-background">
+      <section className="pb-24 md:pb-32 bg-rtm-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-32">
           {SERVICES.map((service, idx) => (
             <motion.div
@@ -85,27 +88,26 @@ export default function Services() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
             >
               <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="relative overflow-hidden aspect-[4/3]">
+                <div className="relative overflow-hidden aspect-[4/3]" style={{ borderRadius: '4px' }}>
                   <img src={service.image} alt={service.label} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
                 </div>
               </div>
 
               <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
                 <div className="flex items-center gap-3 mb-4">
-                  <service.icon className="w-5 h-5 text-primary" />
-                  <span className="font-body text-xs tracking-widest uppercase text-primary">{service.label}</span>
+                  <service.icon className="w-5 h-5 text-rtm-cobalt" />
+                  <span className="font-heading text-xs font-semibold uppercase tracking-[0.15em] text-rtm-cobalt">{service.label}</span>
                 </div>
-                <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">{service.title}</h2>
-                <p className="font-body text-base text-foreground/80 leading-relaxed mb-8">
+                <h2 className="font-heading text-2xl md:text-3xl font-bold uppercase tracking-[0.02em] text-rtm-ink mb-6">{service.title}</h2>
+                <p className="font-body text-base text-rtm-ink-soft leading-relaxed mb-8">
                   {service.description}
                 </p>
                 <Link
                   to={service.path}
-                  className="inline-flex items-center gap-3 font-body text-sm tracking-widest uppercase text-primary hover:text-foreground transition-colors duration-300 group"
+                  className="inline-flex items-center gap-3 font-heading text-xs font-semibold uppercase tracking-[0.08em] text-rtm-cobalt hover:text-rtm-cobalt-deep transition-colors duration-200 group"
                 >
                   {service.cta}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </Link>
               </div>
             </motion.div>
@@ -114,21 +116,25 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 bg-card border-t border-border text-center">
+      <section className="py-24 md:py-32 bg-rtm-cream-warm border-t border-rtm-stone-light text-center">
         <div className="max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              A specialist partner for <GoldUnderline className="italic">serious brands.</GoldUnderline>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase tracking-[0.02em] text-rtm-ink mb-6">
+              A specialist partner for{' '}
+              <span className="font-display font-normal normal-case italic text-rtm-cobalt">
+                <GoldUnderline>serious brands.</GoldUnderline>
+              </span>
             </h2>
-            <p className="font-body text-base text-foreground/80 leading-relaxed mb-8">
+            <p className="font-body text-base text-rtm-ink-soft leading-relaxed mb-8">
               RTM operates exclusively in the B2B wholesale channel. If you are a producer seeking U.S. market entry, or a wholesale partner evaluating your beverage portfolio, we would like to hear from you.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-body text-sm tracking-widest uppercase hover:bg-primary/90 transition-all duration-300 group"
+              className="inline-flex items-center gap-3 px-7 py-3.5 bg-rtm-cobalt text-white font-heading text-xs font-semibold uppercase tracking-[0.08em] hover:bg-rtm-cobalt-deep transition-all duration-200 hover:-translate-y-px group"
+              style={{ borderRadius: '2px' }}
             >
               Contact Us
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
         </div>

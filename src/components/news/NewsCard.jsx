@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Calendar } from 'lucide-react';
 
-const CATEGORY_COLORS = {
-  'Industry Trend': 'text-primary bg-primary/10',
-  'Partnership': 'text-green-400 bg-green-400/10',
-  'Press Release': 'text-blue-400 bg-blue-400/10',
-  'Market Data': 'text-orange-400 bg-orange-400/10',
-  'Company Update': 'text-purple-400 bg-purple-400/10',
+const CATEGORY_STYLES = {
+  'Industry Trend': 'bg-rtm-cobalt text-white',
+  'Partnership':    'bg-rtm-success text-white',
+  'Press Release':  'bg-rtm-cobalt-light text-white',
+  'Market Data':    'bg-rtm-warning text-white',
+  'Company Update': 'bg-rtm-ink-soft text-white',
 };
 
 export default function NewsCard({ post, idx, onOpen }) {
@@ -19,6 +19,8 @@ export default function NewsCard({ post, idx, onOpen }) {
     }
   };
 
+  const badgeStyle = CATEGORY_STYLES[post.category] || 'bg-rtm-cobalt text-white';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -26,31 +28,35 @@ export default function NewsCard({ post, idx, onOpen }) {
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: idx * 0.08 }}
       onClick={handleClick}
-      className="bg-card border border-border hover:border-primary/40 transition-colors duration-300 cursor-pointer group flex flex-col"
+      className="bg-rtm-white border border-rtm-stone-light hover:border-rtm-cobalt hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group flex flex-col"
+      style={{ borderRadius: '4px' }}
     >
       {post.image_url && (
-        <div className="aspect-[16/9] overflow-hidden">
+        <div className="aspect-[16/9] overflow-hidden" style={{ borderRadius: '4px 4px 0 0' }}>
           <img src={post.image_url} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>
       )}
-      <div className="p-8 flex flex-col flex-1">
+      <div className="p-6 flex flex-col flex-1">
         <div className="flex items-center gap-3 mb-4">
-          <span className={`font-body text-xs tracking-widest uppercase px-2 py-0.5 ${CATEGORY_COLORS[post.category] || 'text-primary bg-primary/10'}`}>
+          <span
+            className={`font-heading text-[10px] font-semibold uppercase tracking-[0.1em] px-2.5 py-1 ${badgeStyle}`}
+            style={{ borderRadius: '999px' }}
+          >
             {post.category}
           </span>
         </div>
-        <h3 className="font-display text-xl text-foreground mb-3 leading-snug group-hover:text-primary transition-colors duration-200">
+        <h3 className="font-heading text-lg font-bold uppercase tracking-[0.04em] text-rtm-ink mb-3 leading-snug group-hover:text-rtm-cobalt transition-colors duration-200">
           {post.title}
         </h3>
-        <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1">
+        <p className="font-body text-sm text-rtm-ink-soft leading-relaxed flex-1">
           {post.summary}
         </p>
-        <div className="flex items-center justify-between mt-6 pt-5 border-t border-border">
-          <span className="font-body text-xs text-muted-foreground flex items-center gap-1.5">
+        <div className="flex items-center justify-between mt-6 pt-5 border-t border-rtm-stone-light">
+          <span className="font-body text-xs text-rtm-stone flex items-center gap-1.5">
             <Calendar className="w-3 h-3" />
             {new Date(post.published_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
           </span>
-          <span className="font-body text-xs tracking-widest uppercase text-primary flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+          <span className="font-heading text-xs font-semibold uppercase tracking-[0.08em] text-rtm-cobalt flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
             {post.external_url ? <ExternalLink className="w-3 h-3" /> : <ArrowRight className="w-3 h-3" />}
             {post.external_url ? 'Source' : 'Read'}
           </span>

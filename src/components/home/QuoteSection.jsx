@@ -11,7 +11,7 @@ export default function QuoteSection() {
           alt=""
           className="w-full h-full object-cover object-bottom"
         />
-        <div className="absolute inset-0" style={{ backgroundColor: 'hsl(218 73% 12% / 0.35)' }} />
+        <div className="absolute inset-0 bg-rtm-ink/60" />
       </div>
       <Fireflies />
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 text-center">
@@ -21,14 +21,20 @@ export default function QuoteSection() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="w-12 h-px bg-primary mx-auto mb-10" />
-          <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed italic mb-8" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)' }}>
+          <div className="w-12 h-[2px] bg-rtm-cobalt mx-auto mb-10" />
+          <blockquote
+            className="font-display text-2xl md:text-3xl lg:text-4xl text-rtm-white leading-relaxed italic mb-8"
+            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)' }}
+          >
             "For at the end of the day, what matters is never the wine, it's always the moment; it's always the people."
           </blockquote>
-          <cite className="font-body text-sm tracking-widest uppercase text-muted-foreground not-italic" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}>
+          <cite
+            className="font-heading text-xs font-semibold uppercase tracking-[0.12em] text-rtm-stone-light not-italic"
+            style={{ textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}
+          >
             — Olivier Magny
           </cite>
-          <div className="w-12 h-px bg-primary mx-auto mt-10" />
+          <div className="w-12 h-[2px] bg-rtm-cobalt mx-auto mt-10" />
         </motion.div>
       </div>
     </section>

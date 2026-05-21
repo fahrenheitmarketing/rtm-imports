@@ -16,8 +16,8 @@ export default function HeroSection() {
           alt="Premium spirits collection in dramatic lighting"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-rtm-ink via-rtm-ink/70 to-rtm-ink/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-rtm-ink/80 to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
@@ -27,27 +27,31 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-2xl"
         >
-          <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">
+          <span className="font-heading text-xs font-semibold uppercase tracking-[0.15em] text-rtm-yellow-deep block mb-8">
             Route to Market Imports
           </span>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-6">
-          America's specialist
-          <span className="italic block">beverage <GoldUnderline>importer.</GoldUnderline></span>
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-[0.01em] text-rtm-white leading-tight mb-6">
+            America's specialist
+            <span className="block font-display font-normal normal-case italic text-rtm-yellow">
+              beverage <GoldUnderline>importer.</GoldUnderline>
+            </span>
           </h1>
-          <p className="font-body text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
+          <p className="font-body text-lg text-rtm-stone-light leading-relaxed mb-10 max-w-lg">
             A thirty-year track record across wine, spirits, and emerging categories. A national wholesale network and the instinct to find the brands and markets driving the next chapter of beverage alcohol in the U.S.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
               to="/products"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-body text-sm tracking-widest uppercase hover:bg-primary/90 transition-all duration-300 group"
+              className="inline-flex items-center gap-3 px-7 py-3.5 bg-rtm-cobalt text-white font-heading text-xs font-semibold uppercase tracking-[0.08em] hover:bg-rtm-cobalt-deep transition-all duration-200 hover:-translate-y-px group"
+              style={{ borderRadius: '2px' }}
             >
               Our Products
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 border border-border text-foreground font-body text-sm tracking-widest uppercase hover:border-primary hover:text-primary transition-all duration-300"
+              className="inline-flex items-center gap-3 px-7 py-3.5 border-2 border-rtm-stone-light text-rtm-white font-heading text-xs font-semibold uppercase tracking-[0.08em] hover:border-rtm-white transition-all duration-200"
+              style={{ borderRadius: '2px' }}
             >
               Get in Touch
             </Link>
