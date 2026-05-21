@@ -12,7 +12,7 @@ export default function HeroSection() {
         background: '#0A2454',
         backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/67555098b_Group7.jpg)',
         backgroundSize: 'cover',
-        backgroundPosition: 'bottom center',
+        backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat',
       }}
     >
