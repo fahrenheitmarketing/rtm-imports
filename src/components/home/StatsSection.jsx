@@ -22,14 +22,14 @@ function StatItem({ stat, idx }) {
       className="text-center px-4 py-2"
     >
       <div
-        className="font-display text-4xl md:text-5xl mb-2"
+        className="font-display text-5xl md:text-7xl mb-2"
         style={{
-          color: '#F4C430',
+          color: '#F8F3E8',
           textShadow: '1px 1px 2px rgba(0,0,0,0.5), -1px -1px 1px rgba(255,255,255,0.06)',
           filter: 'drop-shadow(0 2px 3px rgba(0,0,0,0.4))',
         }}
       >
-        {count}<span style={{ color: 'rgba(244,196,48,0.5)' }}>{stat.suffix}</span>
+        {count}<span style={{ color: 'rgba(248,243,232,0.5)' }}>{stat.suffix}</span>
       </div>
       <p className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(248,243,232,0.7)' }}>
         {stat.label}
