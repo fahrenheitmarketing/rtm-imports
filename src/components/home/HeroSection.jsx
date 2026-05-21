@@ -8,7 +8,13 @@ export default function HeroSection() {
   return (
     <section
       className="relative pt-44 md:pt-52 pb-24 md:pb-32 overflow-hidden"
-      style={{ background: '#0A2454' }}
+      style={{
+        background: '#0A2454',
+        backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/67555098b_Group7.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center right',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
       {/* Subtle hairline bottom rule */}
       <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'rgba(244,196,48,0.45)' }} />
