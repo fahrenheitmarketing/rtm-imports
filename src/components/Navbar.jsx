@@ -56,7 +56,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-[58px] md:h-[86px]">
         {/* Logo with washi texture background — overflows navbar via negative bottom margin */}
-        <Link to="/" className="flex items-center px-2 md:px-4 py-2 md:py-3 -mb-3 md:-mb-6 relative z-10" style={{
+        <Link to="/" className="flex items-center px-2 md:px-4 py-2 md:py-3 -mb-3 md:-mb-6 relative z-10 mt-[10px]" style={{
             backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
