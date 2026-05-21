@@ -60,8 +60,8 @@ export default function ExpertiseSection() {
                 </span>
               </div>
               <div className="p-6">
-                <h3 className="font-display text-2xl text-rtm-ink mb-3">{service.title}</h3>
-                <p className="font-body text-sm leading-relaxed mb-4" style={{ color: 'rgba(26,24,20,0.7)' }}>
+                <h3 className="font-display text-2xl mb-3" style={{ color: '#0A2454' }}>{service.title}</h3>
+                <p className="font-body text-sm leading-relaxed mb-4" style={{ color: '#0A2454' }}>
                   {service.description}
                 </p>
                 <Link

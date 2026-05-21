@@ -27,11 +27,14 @@ export default function NewsSection() {
           <SectionHeading
             label="News & Insights"
             title="Latest from the category"
-            variant="dark"
+            variant="light"
           />
           <Link
             to="/news"
-            className="inline-flex items-center gap-2 font-eyebrow text-sm tracking-widest uppercase text-rtm-cobalt hover:text-rtm-yellow transition-colors duration-300 group flex-shrink-0 mb-16"
+            className="inline-flex items-center gap-2 font-eyebrow text-sm tracking-widest uppercase transition-colors duration-300 group flex-shrink-0 mb-16"
+            style={{ color: '#0A2454' }}
+            onMouseEnter={e => { e.currentTarget.style.color = '#D9A91A'; }}
+            onMouseLeave={e => { e.currentTarget.style.color = '#0A2454'; }}
           >
             All Articles
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />

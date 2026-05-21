@@ -32,7 +32,7 @@ export default function NewsCard({ post, idx, onOpen }) {
             {post.category}
           </span>
         </div>
-        <h3 className="font-display text-xl text-rtm-ink mb-3 leading-snug group-hover:text-rtm-cobalt transition-colors duration-200">
+        <h3 className="font-display text-xl mb-3 leading-snug group-hover:opacity-70 transition-opacity duration-200" style={{ color: '#0A2454' }}>
           {post.title}
         </h3>
         <p className="font-body text-sm leading-relaxed flex-1" style={{ color: '#0A2454' }}>

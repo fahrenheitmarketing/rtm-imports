@@ -51,7 +51,7 @@ export default function CustomLabels() {
               </div>
             </div>
             <div className="p-10 rounded-[18px] border" style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}>
-              <h3 className="font-display text-xl text-rtm-ink mb-6">What's included in every program</h3>
+              <h3 className="font-display text-xl mb-6" style={{ color: '#0A2454' }}>What's included in every program</h3>
               <div className="space-y-4">
                 {[
                   'Style and category brief: understanding your price point, product style, and visual direction before anything else',
@@ -77,7 +77,7 @@ export default function CustomLabels() {
       {/* Time to Market */}
       <section className="py-24 md:py-32" style={{ background: '#FFFCF5', borderTop: '1px solid rgba(244,196,48,0.45)', borderBottom: '1px solid rgba(244,196,48,0.45)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <SectionHeading label="Timeline" title="Time to Market" align="center" variant="dark" />
+          <SectionHeading label="Timeline" title="Time to Market" align="center" variant="light" />
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {[
@@ -87,7 +87,7 @@ export default function CustomLabels() {
                 { label: 'Imported spirits', timeline: '3 to 6 months' },
               ].map((item) => (
                 <div key={item.label} className="rounded-[18px] border p-6 flex items-center justify-between" style={{ background: '#F2EBDE', borderColor: 'rgba(244,196,48,0.45)' }}>
-                  <span className="font-body text-base" style={{ color: 'rgba(26,24,20,0.75)' }}>{item.label}</span>
+                  <span className="font-body text-base" style={{ color: '#0A2454' }}>{item.label}</span>
                   <span className="font-display text-lg text-rtm-cobalt">{item.timeline}</span>
                 </div>
               ))}
@@ -118,7 +118,7 @@ export default function CustomLabels() {
                   <item.icon className="w-5 h-5 text-rtm-cobalt" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl text-rtm-ink mb-2">{item.title}</h3>
+                  <h3 className="font-display text-xl mb-2" style={{ color: '#0A2454' }}>{item.title}</h3>
                   <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>{item.description}</p>
                 </div>
               </motion.div>
@@ -130,7 +130,7 @@ export default function CustomLabels() {
       {/* Process */}
       <section className="py-24 md:py-32" style={{ background: '#FFFCF5', borderTop: '1px solid rgba(244,196,48,0.45)', borderBottom: '1px solid rgba(244,196,48,0.45)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <SectionHeading label="Our Process" title="From concept to shelf" description="A structured, end-to-end process that eliminates guesswork and accelerates time to market." variant="dark" />
+          <SectionHeading label="Our Process" title="From concept to shelf" description="A structured, end-to-end process that eliminates guesswork and accelerates time to market." variant="light" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {PROCESS_STEPS.map((item, idx) => (
               <motion.div
@@ -143,8 +143,8 @@ export default function CustomLabels() {
                 style={{ background: '#F2EBDE', borderColor: 'rgba(244,196,48,0.45)' }}
               >
                 <span className="font-display text-5xl block mb-4" style={{ color: 'rgba(244,196,48,0.4)' }}>{item.step}</span>
-                <h3 className="font-display text-lg text-rtm-ink mb-3 -mt-6">{item.title}</h3>
-                <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.7)' }}>{item.description}</p>
+                <h3 className="font-display text-lg mb-3 -mt-6" style={{ color: '#0A2454' }}>{item.title}</h3>
+                <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>{item.description}</p>
               </motion.div>
             ))}
           </div>

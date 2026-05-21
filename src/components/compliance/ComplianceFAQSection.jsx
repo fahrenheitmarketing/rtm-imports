@@ -45,7 +45,7 @@ function FAQItem({ faq, index }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-5 flex items-center justify-between text-left transition-colors"
       >
-        <span className="font-body text-sm font-medium text-rtm-ink pr-8">{faq.question}</span>
+        <span className="font-body text-sm font-medium pr-8 text-foreground">{faq.question}</span>
         <ChevronDown
           className={`w-5 h-5 text-rtm-cobalt transition-transform duration-300 flex-shrink-0 ${
             isOpen ? 'rotate-180' : ''
@@ -75,10 +75,10 @@ export default function ComplianceFAQSection() {
     <section className="py-24 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="max-w-3xl mb-12">
-          <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt block mb-4">
+          <span className="font-eyebrow text-xs tracking-widest uppercase block mb-4" style={{ color: 'hsl(var(--primary))' }}>
             Frequently Asked Questions
           </span>
-          <h2 className="font-display text-3xl md:text-4xl text-rtm-ink">
+          <h2 className="font-display text-3xl md:text-4xl text-foreground">
             Common questions about <em>compliance & licensing</em>
           </h2>
         </div>

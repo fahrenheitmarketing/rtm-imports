@@ -58,7 +58,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <p className="font-display text-2xl md:text-3xl text-rtm-ink leading-relaxed italic">
+              <p className="font-display text-2xl md:text-3xl leading-relaxed italic text-foreground">
                 RTM Imports operates across three disciplines. Every brand in our current focus portfolio is actively distributed through our national wholesale network. Every service we offer is built on decades of doing this well.
               </p>
             </motion.div>
@@ -89,8 +89,8 @@ export default function Services() {
                   <service.icon className="w-5 h-5 text-rtm-cobalt" />
                   <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt">{service.label}</span>
                 </div>
-                <h2 className="font-display text-3xl md:text-4xl text-rtm-ink mb-6">{service.title}</h2>
-                <p className="font-body text-base leading-relaxed mb-8" style={{ color: 'rgba(26,24,20,0.75)' }}>
+                <h2 className="font-display text-3xl md:text-4xl mb-6 text-foreground">{service.title}</h2>
+                <p className="font-body text-base leading-relaxed mb-8 text-foreground/80">
                   {service.description}
                 </p>
                 <Link

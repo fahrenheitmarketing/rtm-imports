@@ -74,7 +74,7 @@ export default function Contact() {
               {sent ? (
                 <div className="p-12 text-center rounded-[18px] border" style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}>
                   <CheckCircle className="w-12 h-12 text-rtm-cobalt mx-auto mb-6" />
-                  <h3 className="font-display text-2xl text-rtm-ink mb-3">Message Sent</h3>
+                  <h3 className="font-display text-2xl mb-3" style={{ color: '#0A2454' }}>Message Sent</h3>
                   <p className="font-body text-base" style={{ color: '#0A2454' }}>
                     Thank you for reaching out. We'll get back to you shortly.
                   </p>
@@ -83,7 +83,7 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(26,24,20,0.55)' }}>Full Name</Label>
+                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>Full Name</Label>
                       <Input
                         required
                         value={form.name}
@@ -94,7 +94,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(26,24,20,0.55)' }}>Email</Label>
+                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>Email</Label>
                       <Input
                         type="email"
                         required
@@ -109,7 +109,7 @@ export default function Contact() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(26,24,20,0.55)' }}>Company</Label>
+                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>Company</Label>
                       <Input
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
@@ -119,7 +119,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(26,24,20,0.55)' }}>Interest</Label>
+                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>Interest</Label>
                       <Select onValueChange={(val) => setForm({ ...form, interest: val })}>
                         <SelectTrigger className="font-body text-rtm-ink h-12 rounded-lg" style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}>
                           <SelectValue placeholder="Select an area" />
@@ -137,7 +137,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(26,24,20,0.55)' }}>Message</Label>
+                    <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>Message</Label>
                     <Textarea
                       required
                       value={form.message}
@@ -173,7 +173,7 @@ export default function Contact() {
             >
               <div className="p-8 space-y-8 rounded-[18px] border" style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}>
                 <div>
-                  <h3 className="font-display text-xl text-rtm-ink mb-6">Get in Touch</h3>
+                  <h3 className="font-display text-xl mb-6" style={{ color: '#0A2454' }}>Get in Touch</h3>
                   <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>
                     We respond to all inquiries within 24 business hours. For urgent matters, contact us directly via email.
                   </p>
@@ -185,7 +185,7 @@ export default function Contact() {
                       <MapPin className="w-4 h-4 text-rtm-cobalt" />
                     </div>
                     <div>
-                      <h4 className="font-eyebrow text-xs tracking-widest uppercase text-rtm-ink mb-1">Office</h4>
+                      <h4 className="font-eyebrow text-xs tracking-widest uppercase mb-1" style={{ color: '#0A2454' }}>Office</h4>
                       <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>
                         755 East Mulberry Ave.<br />
                         San Antonio, TX 78212
@@ -198,7 +198,7 @@ export default function Contact() {
                       <Mail className="w-4 h-4 text-rtm-cobalt" />
                     </div>
                     <div>
-                      <h4 className="font-eyebrow text-xs tracking-widest uppercase text-rtm-ink mb-1">Email</h4>
+                      <h4 className="font-eyebrow text-xs tracking-widest uppercase mb-1" style={{ color: '#0A2454' }}>Email</h4>
                       <a
                         href="mailto:contact@rtm-imports.com"
                         className="font-body text-sm text-rtm-cobalt hover:text-rtm-yellow transition-colors duration-300"

@@ -31,7 +31,7 @@ function FAQItem({ item, idx }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-6 py-7 text-left group"
       >
-        <span className="font-display text-lg md:text-xl text-rtm-ink leading-snug group-hover:text-rtm-cobalt transition-colors duration-200">
+        <span className="font-display text-lg md:text-xl text-foreground leading-snug group-hover:opacity-70 transition-opacity duration-200">
           {item.q}
         </span>
         <span className="mt-1 flex-shrink-0 text-rtm-yellow">
@@ -48,7 +48,7 @@ function FAQItem({ item, idx }) {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <p className="font-body text-base leading-relaxed pb-7 pr-10" style={{ color: 'rgba(26,24,20,0.75)' }}>
+            <p className="font-body text-base leading-relaxed pb-7 pr-10 text-foreground/80">
               {item.a}
             </p>
           </motion.div>
@@ -69,8 +69,8 @@ export default function FAQSection() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt block mb-4">FAQ</span>
-          <h2 className="font-display text-3xl md:text-4xl text-rtm-ink leading-tight">
+          <span className="font-eyebrow text-xs tracking-widest uppercase block mb-4" style={{ color: 'hsl(var(--primary))' }}>FAQ</span>
+          <h2 className="font-display text-3xl md:text-4xl text-foreground leading-tight">
             Frequently asked <em>questions</em>
           </h2>
         </motion.div>

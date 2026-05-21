@@ -20,8 +20,8 @@ export default function ProofBlock() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
         >
-          <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt block mb-4">In Market</span>
-          <h2 className="font-display text-3xl md:text-4xl text-rtm-ink mb-3 leading-tight">
+          <span className="font-eyebrow text-xs tracking-widest uppercase block mb-4" style={{ color: '#0A2454' }}>In Market</span>
+          <h2 className="font-display text-3xl md:text-4xl mb-3 leading-tight" style={{ color: '#0A2454' }}>
             Our fastest-growing <em>wine-based soju brand</em>
           </h2>
           <p className="font-footnote text-xs mb-12 tracking-widest uppercase" style={{ color: '#0A2454' }}>

@@ -89,7 +89,7 @@ export default function AsianBeverage() {
               {STATS.map((stat) => (
                 <div key={stat.value} className="rounded-[18px] border p-6 flex items-center gap-6" style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}>
                   <div className="font-display text-4xl text-rtm-cobalt min-w-[80px]">{stat.value}</div>
-                  <p className="font-body text-sm" style={{ color: 'rgba(26,24,20,0.75)' }}>{stat.label}</p>
+                  <p className="font-body text-sm" style={{ color: '#0A2454' }}>{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -148,7 +148,7 @@ export default function AsianBeverage() {
               ].map((item) => (
                 <div key={item.label} className="rounded-[18px] border p-6" style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}>
                   <div className="font-display text-xl text-rtm-cobalt mb-2">{item.value}</div>
-                  <p className="font-body text-sm" style={{ color: 'rgba(26,24,20,0.7)' }}>{item.label}</p>
+                  <p className="font-body text-sm" style={{ color: '#0A2454' }}>{item.label}</p>
                 </div>
               ))}
             </div>

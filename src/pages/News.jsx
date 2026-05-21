@@ -69,10 +69,10 @@ export default function News() {
                       {new Date(featured.published_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                     </span>
                   </div>
-                  <h2 className="font-display text-2xl md:text-3xl text-rtm-ink mb-4 leading-tight">{featured.title}</h2>
+                  <h2 className="font-display text-2xl md:text-3xl mb-4 leading-tight" style={{ color: '#0A2454' }}>{featured.title}</h2>
                   <p className="font-body text-base leading-relaxed" style={{ color: '#0A2454' }}>{featured.summary}</p>
                 </div>
-                <div className="flex items-center gap-2 mt-8 font-eyebrow text-sm tracking-widest uppercase text-rtm-cobalt group-hover:text-rtm-yellow transition-colors duration-300">
+                <div className="flex items-center gap-2 mt-8 font-eyebrow text-sm tracking-widest uppercase transition-colors duration-300" style={{ color: '#0A2454' }}>
                   {featured.external_url ? (
                     <><ExternalLink className="w-4 h-4" /> Read Full Story</>
                   ) : (
@@ -96,7 +96,7 @@ export default function News() {
                 className="font-eyebrow text-xs tracking-widest uppercase px-4 py-2 rounded-full border transition-all duration-200"
                 style={activeCategory === cat
                   ? { background: '#0A2454', color: '#F4C430', borderColor: 'rgba(244,196,48,0.45)' }
-                  : { background: 'transparent', color: 'rgba(26,24,20,0.55)', borderColor: 'rgba(244,196,48,0.45)' }
+                  : { background: 'transparent', color: '#0A2454', borderColor: 'rgba(244,196,48,0.45)' }
                 }
               >
                 {cat}
