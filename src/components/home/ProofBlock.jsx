@@ -47,11 +47,19 @@ export default function ProofBlock() {
               <div className="font-eyebrow text-xs uppercase tracking-widest leading-relaxed" style={{ color: 'rgba(248,243,232,0.75)' }}>
                 {stat.label}
               </div>
-              <stat.icon
-                className="absolute bottom-4 right-4 w-16 h-16 pointer-events-none"
-                style={{ color: 'rgba(244,196,48,0.12)' }}
-                strokeWidth={1.5}
-              />
+              <div
+                className="absolute bottom-4 right-4 w-16 h-16 pointer-events-none rounded-xl flex items-center justify-center"
+                style={{
+                  background: 'linear-gradient(145deg, rgba(255,255,255,0.04), rgba(0,0,0,0.18))',
+                  boxShadow: 'inset 2px 2px 4px rgba(255,255,255,0.06), inset -2px -2px 4px rgba(0,0,0,0.3)',
+                }}
+              >
+                <stat.icon
+                  className="w-9 h-9"
+                  style={{ color: 'rgba(244,196,48,0.18)' }}
+                  strokeWidth={1.5}
+                />
+              </div>
             </motion.div>
           ))}
         </div>
