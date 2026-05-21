@@ -50,7 +50,11 @@ export default function Navbar() {
   const isServicesActive = location.pathname.startsWith('/products');
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40" style={{ background: '#FFFCF5' }}>
+    <nav className="fixed top-0 left-0 right-0 z-40" style={{
+      background: '#FFFCF5',
+      boxShadow: '0 4px 24px 0 rgba(10,36,84,0.13), 0 8px 32px 8px rgba(10,36,84,0.07)',
+      borderRadius: '0 0 32px 32px',
+    }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-[58px] md:h-[86px]">
         {/* Logo with washi texture background — overflows navbar via negative bottom margin */}
