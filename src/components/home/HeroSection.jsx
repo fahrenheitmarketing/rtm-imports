@@ -7,7 +7,7 @@ import GoldUnderline from '../GoldUnderline';
 export default function HeroSection() {
   return (
     <section
-      className="relative pt-28 md:pt-36 pb-24 md:pb-32 overflow-hidden"
+      className="relative pt-44 md:pt-52 pb-24 md:pb-32 overflow-hidden"
       style={{ background: '#0A2454' }}
     >
       {/* Subtle hairline bottom rule */}
