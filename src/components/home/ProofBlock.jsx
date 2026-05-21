@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, TrendingUp, Package, Store, Calendar } from 'lucide-react';
 
 const STATS = [
-  { value: '80,000+', label: 'Cases projected nationwide in 2026' },
-  { value: '13,266', label: 'Cases in a single regional market (2024)' },
-  { value: 'Total Wine & More, HEB, Circle K, Albertsons', label: 'Chain authorizations secured' },
-  { value: 'Sep 2025', label: 'RTM took over national representation' },
+  { value: '80,000+', label: 'Cases projected nationwide in 2026', icon: TrendingUp },
+  { value: '13,266', label: 'Cases in a single regional market (2024)', icon: Package },
+  { value: 'Total Wine & More, HEB, Circle K, Albertsons', label: 'Chain authorizations secured', icon: Store },
+  { value: 'Sep 2025', label: 'RTM took over national representation', icon: Calendar },
 ];
 
 export default function ProofBlock() {
@@ -38,7 +38,7 @@ export default function ProofBlock() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="rounded-[18px] border p-8 flex flex-col gap-4"
+              className="relative rounded-[18px] border p-8 flex flex-col gap-4 overflow-hidden"
               style={{ background: '#0A2454', borderColor: 'rgba(244,196,48,0.45)' }}
             >
               <div className="font-display text-2xl md:text-3xl leading-tight" style={{ color: '#F4C430' }}>
@@ -47,6 +47,11 @@ export default function ProofBlock() {
               <div className="font-eyebrow text-xs uppercase tracking-widest leading-relaxed" style={{ color: 'rgba(248,243,232,0.75)' }}>
                 {stat.label}
               </div>
+              <stat.icon
+                className="absolute bottom-4 right-4 w-16 h-16 pointer-events-none"
+                style={{ color: 'rgba(244,196,48,0.12)' }}
+                strokeWidth={1.5}
+              />
             </motion.div>
           ))}
         </div>
