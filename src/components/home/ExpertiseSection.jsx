@@ -30,16 +30,12 @@ const SERVICES = [
 
 export default function ExpertiseSection() {
   return (
-    <section className="py-24 md:py-32" style={{
-      backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.1), rgba(26, 45, 74, 0.1)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    }}>
+    <section className="py-24 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <SectionHeading
           title="What we do"
           description="Three disciplines. Thirty years of doing them well."
-          variant="light"
+          variant="dark"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -50,30 +46,32 @@ export default function ExpertiseSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="group"
+              className="group rounded-[18px] overflow-hidden border"
+              style={{ borderColor: 'rgba(244,196,48,0.45)', background: '#FFFCF5' }}
             >
-              <div className="relative overflow-hidden mb-6 aspect-[4/3]">
+              <div className="relative overflow-hidden aspect-[4/3]">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                <span className="absolute top-4 left-4 font-display text-4xl text-primary/30 font-bold">
+                <span className="absolute top-4 left-4 font-display text-4xl font-bold" style={{ color: 'rgba(244,196,48,0.5)' }}>
                   {service.number}
                 </span>
               </div>
-              <h3 className="font-display text-2xl text-slate-800 mb-3">{service.title}</h3>
-              <p className="font-body text-sm text-slate-600 leading-relaxed mb-4">
-                {service.description}
-              </p>
-              <Link
-                to={service.path}
-                className="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-[#5a9bd4] hover:text-[#4a8bc4] transition-colors duration-300 group/link"
-              >
-                Learn More
-                <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform duration-300" />
-              </Link>
+              <div className="p-6">
+                <h3 className="font-display text-2xl text-rtm-ink mb-3">{service.title}</h3>
+                <p className="font-body text-sm leading-relaxed mb-4" style={{ color: 'rgba(26,24,20,0.7)' }}>
+                  {service.description}
+                </p>
+                <Link
+                  to={service.path}
+                  className="inline-flex items-center gap-2 font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt hover:text-rtm-yellow transition-colors duration-300 group/link"
+                >
+                  Learn More
+                  <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform duration-300" />
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>

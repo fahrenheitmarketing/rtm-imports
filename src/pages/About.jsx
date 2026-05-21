@@ -42,16 +42,16 @@ function FAQItem({ item, idx }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: idx * 0.08 }}
-      className="border-b border-border"
+      style={{ borderBottom: '1px solid rgba(244,196,48,0.45)' }}
     >
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-6 py-7 text-left group"
       >
-        <span className="font-display text-lg md:text-xl text-foreground leading-snug group-hover:text-primary transition-colors duration-200">
+        <span className="font-display text-lg md:text-xl text-rtm-ink leading-snug group-hover:text-rtm-cobalt transition-colors duration-200">
           {item.q}
         </span>
-        <span className="mt-1 flex-shrink-0 text-primary">
+        <span className="mt-1 flex-shrink-0 text-rtm-yellow">
           {open ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
         </span>
       </button>
@@ -65,15 +65,13 @@ function FAQItem({ item, idx }) {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <p className="font-body text-base text-foreground/80 leading-relaxed pb-7 pr-10">{item.a}</p>
+            <p className="font-body text-base leading-relaxed pb-7 pr-10" style={{ color: 'rgba(26,24,20,0.75)' }}>{item.a}</p>
           </motion.div>
         )}
       </AnimatePresence>
     </motion.div>
   );
 }
-
-const ABOUT_HERO = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/facc46913_generated_image.png';
 
 const VALUES = [
   {
@@ -110,26 +108,18 @@ export default function About() {
 
   return (
     <>
-      {/* Hero */}
-       <section className="relative pt-32 min-h-[60vh] flex items-end pb-20">
-        <div className="absolute inset-0">
-          <img
-            src={ABOUT_HERO}
-            alt="Sophisticated bar setup with premium spirits"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+      {/* Hero — cobalt block, no background image */}
+      <section className="pt-28 md:pt-36 pb-24 min-h-[50vh] flex items-end" style={{ background: '#0A2454' }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">About Us</span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
+            <span className="font-eyebrow text-xs tracking-widest uppercase block mb-8" style={{ color: 'rgba(244,196,48,0.9)' }}>About Us</span>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-tight max-w-2xl" style={{ color: '#F8F3E8' }}>
               Thirty years in the industry.
-              <GoldUnderline className="italic block"> Built to move first.</GoldUnderline>
+              <GoldUnderline className="block"> Built to move first.</GoldUnderline>
             </h1>
           </motion.div>
         </div>
@@ -143,13 +133,14 @@ export default function About() {
               <SectionHeading
                 label="Our Story"
                 title="What RTM stands for"
+                variant="dark"
               />
-              <div className="space-y-6 font-body text-base text-foreground/80 leading-relaxed">
+              <div className="space-y-6 font-body text-base leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
                 <p>
-                  RTM Imports is a San Antonio-based <strong className="text-foreground">specialist beverage importer</strong> with more than 30 years of operational history. Founded in the early 1990s, RTM was formally structured as an independent LLC and has been led by Benjamin Roberts since 2016.
+                  RTM Imports is a San Antonio-based <strong className="text-rtm-ink">specialist beverage importer</strong> with more than 30 years of operational history. Founded in the early 1990s, RTM was formally structured as an independent LLC and has been led by Benjamin Roberts since 2016.
                 </p>
                 <p>
-                  We operate exclusively in the <strong className="text-foreground">B2B wholesale channel</strong> — working with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. We do not sell to consumers. We build the infrastructure, the relationships, and the programs that get brands to shelf.
+                  We operate exclusively in the <strong className="text-rtm-ink">B2B wholesale channel</strong> — working with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. We do not sell to consumers. We build the infrastructure, the relationships, and the programs that get brands to shelf.
                 </p>
                 <p>
                   Our history spans fine wine, spirits, and emerging categories. Asian beverage is the newest addition — soju, wine-based RTDs, and craft beer, sourced from South Korea, Japan, China, Thailand, and Taiwan — and the fastest-growing segment we represent. We identified the opportunity before the mainstream arrived, moved quickly to build the right producer relationships and wholesale infrastructure, and the results speak for themselves.
@@ -162,22 +153,21 @@ export default function About() {
 
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-card border border-border p-6 text-center">
-                  <div className="font-display text-3xl text-primary mb-2">30+</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Years in the Industry</p>
-                </div>
-                <div className="bg-card border border-border p-6 text-center">
-                  <div className="font-display text-3xl text-primary mb-2">25+</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Active Wholesale Partners</p>
-                </div>
-                <div className="bg-card border border-border p-6 text-center">
-                  <div className="font-display text-3xl text-primary mb-2">1,000+</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">Brands Represented</p>
-                </div>
-                <div className="bg-card border border-border p-6 text-center">
-                  <div className="font-display text-3xl text-primary mb-2">All 50</div>
-                  <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">States Served</p>
-                </div>
+                {[
+                  { value: '30+', label: 'Years in the Industry' },
+                  { value: '25+', label: 'Active Wholesale Partners' },
+                  { value: '1,000+', label: 'Brands Represented' },
+                  { value: 'All 50', label: 'States Served' },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="p-6 text-center rounded-[18px] border"
+                    style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}
+                  >
+                    <div className="font-display text-3xl text-rtm-cobalt mb-2">{item.value}</div>
+                    <p className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(26,24,20,0.5)' }}>{item.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -185,14 +175,14 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-24 md:py-32 bg-card border-y border-border relative overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/426cba66c_generated_image.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-background/75" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-24 md:py-32" style={{ background: '#FFFCF5', borderTop: '1px solid rgba(244,196,48,0.45)', borderBottom: '1px solid rgba(244,196,48,0.45)' }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="How We Work"
             title="Our Approach"
             description="Three principles define how we work."
             align="center"
+            variant="dark"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -203,14 +193,15 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="bg-background border border-primary/30 p-8 rounded-sm shadow-md hover:border-primary/60 hover:shadow-lg transition-all duration-300"
+                className="p-8 rounded-[18px] border hover:shadow-lg transition-all duration-300"
+                style={{ background: '#F2EBDE', borderColor: 'rgba(244,196,48,0.45)' }}
               >
-                <div className="font-display text-5xl text-primary opacity-80 mb-4 leading-none">{value.number}</div>
-                <div className="w-14 h-14 mx-auto mb-6 border border-primary/30 rounded-full flex items-center justify-center">
-                  <value.icon className="w-6 h-6 text-primary" />
+                <div className="font-display text-5xl text-rtm-yellow opacity-80 mb-4 leading-none">{value.number}</div>
+                <div className="w-14 h-14 mx-auto mb-6 rounded-full flex items-center justify-center border" style={{ borderColor: 'rgba(244,196,48,0.45)' }}>
+                  <value.icon className="w-6 h-6 text-rtm-cobalt" />
                 </div>
-                <h3 className="font-display text-xl text-foreground mb-3">{value.title}</h3>
-                <p className="font-body text-sm text-foreground/80 leading-relaxed">
+                <h3 className="font-display text-xl text-rtm-ink mb-3">{value.title}</h3>
+                <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.7)' }}>
                   {value.description}
                 </p>
               </motion.div>
@@ -220,20 +211,19 @@ export default function About() {
       </section>
 
       {/* Pull Quote */}
-      <section className="py-24 md:py-32 bg-background relative" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
-        <div className="absolute inset-0 bg-background/75" />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
           <motion.blockquote
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7 }}
           >
-            <span className="block font-display text-3xl md:text-4xl text-primary mb-2">&ldquo;</span>
-            <p className="font-display text-2xl md:text-3xl text-foreground leading-relaxed italic mb-6">
+            <span className="block font-display text-3xl md:text-4xl text-rtm-yellow mb-2">&ldquo;</span>
+            <p className="font-display text-2xl md:text-3xl text-rtm-ink leading-relaxed italic mb-6">
               We spend more time with our partners personally than professionally. That is not a policy. It is how we operate.
             </p>
-            <footer className="font-body text-xs tracking-widest uppercase text-muted-foreground">
+            <footer className="font-footnote text-xs tracking-widest uppercase" style={{ color: 'rgba(26,24,20,0.5)' }}>
               Benjamin Roberts, President, RTM Imports
             </footer>
           </motion.blockquote>
@@ -241,7 +231,7 @@ export default function About() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 md:py-32 bg-card border-t border-border">
+      <section className="py-24 md:py-32" style={{ background: '#FFFCF5', borderTop: '1px solid rgba(244,196,48,0.45)' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -250,12 +240,12 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
-            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">FAQ</span>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground leading-tight">
+            <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt block mb-4">FAQ</span>
+            <h2 className="font-display text-3xl md:text-4xl text-rtm-ink leading-tight">
               Frequently asked <em>questions</em>
             </h2>
           </motion.div>
-          <div className="border-t border-border">
+          <div style={{ borderTop: '1px solid rgba(244,196,48,0.45)' }}>
             {FAQS.map((item, idx) => (
               <FAQItem key={idx} item={item} idx={idx} />
             ))}
@@ -264,24 +254,26 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 text-center relative" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
-        <div className="absolute inset-0 bg-background/80" />
-        <div className="relative z-10 max-w-2xl mx-auto px-6">
+      <section className="py-24 md:py-32 text-center" style={{ background: '#0A2454', borderTop: '1px solid rgba(244,196,48,0.45)' }}>
+        <div className="max-w-2xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              Let's find your <GoldUnderline className="italic">route.</GoldUnderline>
+            <h2 className="font-display text-3xl md:text-4xl mb-6" style={{ color: '#F8F3E8' }}>
+              Let's find your <GoldUnderline>route.</GoldUnderline>
             </h2>
-            <p className="font-body text-base text-white leading-relaxed mb-8">
+            <p className="font-body text-base leading-relaxed mb-8" style={{ color: 'rgba(248,243,232,0.85)' }}>
               Whether you're an Asian producer evaluating U.S. market entry, or a wholesaler looking to strengthen your portfolio in the fastest-growing beverage category, we'd like to hear from you.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-body text-sm tracking-widest uppercase hover:bg-primary/90 transition-all duration-300 group"
+              className="inline-flex items-center gap-3 px-8 py-4 font-eyebrow text-sm tracking-widest uppercase transition-all duration-300 group rounded-lg"
+              style={{ background: '#F4C430', color: '#0A2454' }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#D9A91A'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#F4C430'; }}
             >
               Start the Conversation
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />

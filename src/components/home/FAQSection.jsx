@@ -25,16 +25,16 @@ function FAQItem({ item, idx }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: idx * 0.08 }}
-      className="border-b border-border"
+      style={{ borderBottom: '1px solid rgba(244,196,48,0.45)' }}
     >
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-6 py-7 text-left group"
       >
-        <span className="font-display text-lg md:text-xl text-foreground leading-snug group-hover:text-primary transition-colors duration-200">
+        <span className="font-display text-lg md:text-xl text-rtm-ink leading-snug group-hover:text-rtm-cobalt transition-colors duration-200">
           {item.q}
         </span>
-        <span className="mt-1 flex-shrink-0 text-primary">
+        <span className="mt-1 flex-shrink-0 text-rtm-yellow">
           {open ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
         </span>
       </button>
@@ -48,7 +48,7 @@ function FAQItem({ item, idx }) {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <p className="font-body text-base text-foreground/80 leading-relaxed pb-7 pr-10">
+            <p className="font-body text-base leading-relaxed pb-7 pr-10" style={{ color: 'rgba(26,24,20,0.75)' }}>
               {item.a}
             </p>
           </motion.div>
@@ -69,13 +69,13 @@ export default function FAQSection() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">FAQ</span>
-          <h2 className="font-display text-3xl md:text-4xl text-foreground leading-tight">
+          <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt block mb-4">FAQ</span>
+          <h2 className="font-display text-3xl md:text-4xl text-rtm-ink leading-tight">
             Frequently asked <em>questions</em>
           </h2>
         </motion.div>
 
-        <div className="border-t border-border">
+        <div style={{ borderTop: '1px solid rgba(244,196,48,0.45)' }}>
           {FAQS.map((item, idx) => (
             <FAQItem key={idx} item={item} idx={idx} />
           ))}

@@ -19,12 +19,12 @@ function StatItem({ stat, idx }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: idx * 0.1 }}
-      className="text-center"
+      className="text-center px-4 py-2"
     >
-      <div className="font-display text-4xl md:text-5xl text-primary mb-2">
-        {count}<span className="text-primary/60">{stat.suffix}</span>
+      <div className="font-display text-4xl md:text-5xl mb-2" style={{ color: '#F4C430' }}>
+        {count}<span style={{ color: 'rgba(244,196,48,0.5)' }}>{stat.suffix}</span>
       </div>
-      <p className="font-body text-xs tracking-widest uppercase text-muted-foreground">
+      <p className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(248,243,232,0.7)' }}>
         {stat.label}
       </p>
     </motion.div>
@@ -34,16 +34,13 @@ function StatItem({ stat, idx }) {
 export default function StatsSection() {
   return (
     <section
-      className="py-20 border-y border-border relative"
-      style={{
-        backgroundImage: `url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/6eb369566_Gemini_Generated_Image_6ze67b6ze67b6ze6.png)`,
-        backgroundRepeat: 'repeat',
-        backgroundSize: '500px auto',
-      }}
+      className="py-20 relative"
+      style={{ background: '#0F3470', borderTop: '1px solid rgba(244,196,48,0.45)', borderBottom: '1px solid rgba(244,196,48,0.45)' }}
     >
-      <div className="absolute inset-0 bg-background/70" />
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 divide-x"
+          style={{ '--tw-divide-opacity': 1, borderColor: 'rgba(244,196,48,0.2)' }}
+        >
           {STATS.map((stat, idx) => (
             <StatItem key={stat.label} stat={stat} idx={idx} />
           ))}
