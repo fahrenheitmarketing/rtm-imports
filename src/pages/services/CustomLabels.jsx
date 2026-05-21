@@ -65,7 +65,7 @@ export default function CustomLabels() {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <CheckCircle className="w-4 h-4 text-rtm-cobalt mt-0.5 flex-shrink-0" />
-                    <span className="font-body text-sm" style={{ color: 'rgba(26,24,20,0.75)' }}>{item}</span>
+                    <span className="font-body text-sm" style={{ color: '#0A2454' }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -92,7 +92,7 @@ export default function CustomLabels() {
                 </div>
               ))}
             </div>
-            <p className="font-footnote text-xs text-center italic" style={{ color: 'rgba(26,24,20,0.5)' }}>
+            <p className="font-footnote text-xs text-center italic" style={{ color: '#0A2454' }}>
               Timelines are indicative. The final timeline depends on the category, the state's registration complexity, and the production partner's capacity.
             </p>
           </div>
@@ -119,7 +119,7 @@ export default function CustomLabels() {
                 </div>
                 <div>
                   <h3 className="font-display text-xl text-rtm-ink mb-2">{item.title}</h3>
-                  <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.7)' }}>{item.description}</p>
+                  <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>{item.description}</p>
                 </div>
               </motion.div>
             ))}

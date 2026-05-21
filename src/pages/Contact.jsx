@@ -75,7 +75,7 @@ export default function Contact() {
                 <div className="p-12 text-center rounded-[18px] border" style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}>
                   <CheckCircle className="w-12 h-12 text-rtm-cobalt mx-auto mb-6" />
                   <h3 className="font-display text-2xl text-rtm-ink mb-3">Message Sent</h3>
-                  <p className="font-body text-base" style={{ color: 'rgba(26,24,20,0.75)' }}>
+                  <p className="font-body text-base" style={{ color: '#0A2454' }}>
                     Thank you for reaching out. We'll get back to you shortly.
                   </p>
                 </div>
@@ -174,7 +174,7 @@ export default function Contact() {
               <div className="p-8 space-y-8 rounded-[18px] border" style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}>
                 <div>
                   <h3 className="font-display text-xl text-rtm-ink mb-6">Get in Touch</h3>
-                  <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
+                  <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>
                     We respond to all inquiries within 24 business hours. For urgent matters, contact us directly via email.
                   </p>
                 </div>
@@ -186,7 +186,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-eyebrow text-xs tracking-widest uppercase text-rtm-ink mb-1">Office</h4>
-                      <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
+                      <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>
                         755 East Mulberry Ave.<br />
                         San Antonio, TX 78212
                       </p>

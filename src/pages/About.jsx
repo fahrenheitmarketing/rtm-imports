@@ -165,7 +165,7 @@ export default function About() {
                     style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}
                   >
                     <div className="font-display text-3xl text-rtm-cobalt mb-2">{item.value}</div>
-                    <p className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(26,24,20,0.5)' }}>{item.label}</p>
+                    <p className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>{item.label}</p>
                   </div>
                 ))}
               </div>

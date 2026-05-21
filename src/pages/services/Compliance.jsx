@@ -54,7 +54,7 @@ export default function Compliance() {
               ].map((stat) => (
                 <div key={stat.label} className="rounded-[18px] border p-8 text-center" style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}>
                   <div className="font-display text-3xl text-rtm-cobalt mb-2">{stat.value}</div>
-                  <p className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(26,24,20,0.6)' }}>{stat.label}</p>
+                  <p className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>{stat.label}</p>
                 </div>
               ))}
             </div>

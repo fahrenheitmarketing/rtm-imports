@@ -35,11 +35,11 @@ export default function NewsCard({ post, idx, onOpen }) {
         <h3 className="font-display text-xl text-rtm-ink mb-3 leading-snug group-hover:text-rtm-cobalt transition-colors duration-200">
           {post.title}
         </h3>
-        <p className="font-body text-sm leading-relaxed flex-1" style={{ color: 'rgba(26,24,20,0.7)' }}>
+        <p className="font-body text-sm leading-relaxed flex-1" style={{ color: '#0A2454' }}>
           {post.summary}
         </p>
         <div className="flex items-center justify-between mt-6 pt-5" style={{ borderTop: '1px solid rgba(244,196,48,0.3)' }}>
-          <span className="font-footnote text-xs flex items-center gap-1.5" style={{ color: 'rgba(26,24,20,0.5)' }}>
+          <span className="font-footnote text-xs flex items-center gap-1.5" style={{ color: '#0A2454' }}>
             <Calendar className="w-3 h-3" />
             {new Date(post.published_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
           </span>

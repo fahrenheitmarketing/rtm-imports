@@ -61,7 +61,7 @@ function FAQItem({ faq, index }) {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
             <div className="px-6 pb-5 pt-2" style={{ borderTop: '1px solid rgba(244,196,48,0.2)' }}>
-              <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>{faq.answer}</p>
+              <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>{faq.answer}</p>
             </div>
           </motion.div>
         )}

@@ -73,7 +73,7 @@ export default function Wholesalers() {
                   <item.icon className="w-5 h-5 text-rtm-cobalt" />
                 </div>
                 <h3 className="font-display text-xl text-rtm-ink mb-3">{item.title}</h3>
-                <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.7)' }}>{item.description}</p>
+                <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -107,7 +107,7 @@ export default function Wholesalers() {
               ].map((item) => (
                 <div key={item.label} className="rounded-[18px] border p-6 flex items-center gap-6" style={{ background: '#F2EBDE', borderColor: 'rgba(244,196,48,0.45)' }}>
                   <div className="font-display text-3xl text-rtm-cobalt min-w-[100px]">{item.stat}</div>
-                  <p className="font-body text-sm" style={{ color: 'rgba(26,24,20,0.7)' }}>{item.label}</p>
+                  <p className="font-body text-sm" style={{ color: '#0A2454' }}>{item.label}</p>
                 </div>
               ))}
             </div>

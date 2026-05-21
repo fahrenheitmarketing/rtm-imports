@@ -111,8 +111,8 @@ export default function Portfolio() {
               >
                 <h3 className="font-display text-xl text-rtm-ink mb-2">{brand.name}</h3>
                 <p className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt mb-1">{brand.category}</p>
-                <p className="font-footnote text-xs mb-4" style={{ color: 'rgba(26,24,20,0.5)' }}>{brand.origin}</p>
-                <p className="font-body text-sm leading-relaxed mb-6" style={{ color: 'rgba(26,24,20,0.75)' }}>
+                <p className="font-footnote text-xs mb-4" style={{ color: '#0A2454' }}>{brand.origin}</p>
+                <p className="font-body text-sm leading-relaxed mb-6" style={{ color: '#0A2454' }}>
                   {brand.detail}
                   {brand.bevstackLink && (
                     <>
@@ -178,7 +178,7 @@ export default function Portfolio() {
                     <cat.icon className="w-5 h-5 text-rtm-cobalt" />
                     <h3 className="font-display text-2xl text-rtm-ink">{cat.title}</h3>
                   </div>
-                  <p className="font-body text-base leading-relaxed mb-5" style={{ color: 'rgba(26,24,20,0.75)' }}>
+                  <p className="font-body text-base leading-relaxed mb-5" style={{ color: '#0A2454' }}>
                     {cat.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -186,7 +186,7 @@ export default function Portfolio() {
                       <span
                         key={tag}
                         className="px-4 py-1.5 font-eyebrow text-xs tracking-widest uppercase rounded-full border"
-                        style={{ borderColor: 'rgba(244,196,48,0.45)', color: 'rgba(26,24,20,0.6)' }}
+                        style={{ borderColor: 'rgba(244,196,48,0.45)', color: '#0A2454' }}
                       >
                         {tag}
                       </span>
@@ -221,7 +221,7 @@ export default function Portfolio() {
                 style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}
               >
                 <h4 className="font-display text-xl text-rtm-ink mb-2">{region.name}</h4>
-                <p className="font-body text-sm" style={{ color: 'rgba(26,24,20,0.7)' }}>{region.specialty}</p>
+                <p className="font-body text-sm" style={{ color: '#0A2454' }}>{region.specialty}</p>
               </motion.div>
             ))}
           </div>
