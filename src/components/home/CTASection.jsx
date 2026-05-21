@@ -7,7 +7,7 @@ export default function CTASection() {
   return (
     <section
       className="py-24 md:py-32"
-      style={{ background: '#0A2454', borderTop: '1px solid rgba(244,196,48,0.45)' }}
+      style={{ background: 'linear-gradient(135deg, #081d4a 0%, #0d2e6b 50%, #081d4a 100%)', borderTop: '1px solid rgba(244,196,48,0.45)' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="max-w-2xl">

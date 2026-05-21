@@ -10,7 +10,7 @@ export default function HeroSection() {
       className="relative pt-44 md:pt-52 pb-24 md:pb-32 overflow-hidden"
       style={{
         background: '#0A2454',
-        backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/67555098b_Group7.jpg)',
+        backgroundImage: 'radial-gradient(ellipse at 20% 50%, rgba(20,60,130,0.6) 0%, rgba(8,28,80,0.85) 70%), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/67555098b_Group7.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat',

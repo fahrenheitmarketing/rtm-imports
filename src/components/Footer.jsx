@@ -4,7 +4,7 @@ import { Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="border-t border-border" style={{ background: 'linear-gradient(135deg, #081d4a 0%, #0d2e6b 50%, #081d4a 100%)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {/* Brand */}

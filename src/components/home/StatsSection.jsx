@@ -42,7 +42,7 @@ export default function StatsSection() {
   return (
     <section
       className="py-20 relative"
-      style={{ background: '#0F3470', borderTop: '1px solid rgba(244,196,48,0.45)', borderBottom: '1px solid rgba(244,196,48,0.45)' }}
+      style={{ background: 'linear-gradient(135deg, #0A2454 0%, #0F3470 50%, #0A2454 100%)', borderTop: '1px solid rgba(244,196,48,0.45)', borderBottom: '1px solid rgba(244,196,48,0.45)' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 divide-x"
