@@ -3,17 +3,12 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
+const NETWORK_IMAGE = 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/33f99e170_generated_db9c9aed.png';
+
 export default function CTASection() {
   return (
-    <section
-      className="relative py-24 md:py-32 overflow-hidden"
-      style={{
-        backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)',
-        backgroundRepeat: 'repeat',
-        backgroundSize: '500px',
-      }}
-    >
-      <div className="absolute inset-0 bg-rtm-ink/88" />
+    <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)', backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <div className="max-w-2xl">
@@ -23,23 +18,22 @@ export default function CTASection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="font-heading text-xs font-semibold uppercase tracking-[0.15em] text-rtm-yellow-deep block mb-4">
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">
               Let's Work Together
             </span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-[0.02em] text-rtm-white leading-tight mb-4">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight mb-6">
               A specialist partner
+              <span className="italic text-primary"> for serious brands.</span>
             </h2>
-            <p className="font-display italic text-2xl md:text-3xl text-rtm-yellow mb-6">for serious brands.</p>
-            <p className="font-body text-base text-rtm-stone-light leading-relaxed mb-10">
+            <p className="font-body text-base text-muted-foreground leading-relaxed mb-10">
               RTM operates exclusively in the B2B wholesale channel, working with the largest national beverage wholesalers across on- and off-premise. If you are a producer seeking U.S. market entry or a wholesale partner evaluating your beverage portfolio, we would like to hear from you.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-7 py-3.5 bg-rtm-cobalt text-white font-heading text-xs font-semibold uppercase tracking-[0.08em] hover:bg-rtm-cobalt-deep transition-all duration-200 hover:-translate-y-px group"
-              style={{ borderRadius: '2px' }}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-body text-sm tracking-widest uppercase hover:bg-primary/90 transition-all duration-300 group"
             >
               Contact Us
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </motion.div>
         </div>

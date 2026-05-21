@@ -31,7 +31,7 @@ const SERVICES = [
 export default function ExpertiseSection() {
   return (
     <section className="py-24 md:py-32" style={{
-      backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.15), rgba(26, 45, 74, 0.15)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
+      backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.1), rgba(26, 45, 74, 0.1)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}>
@@ -42,7 +42,7 @@ export default function ExpertiseSection() {
           variant="light"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {SERVICES.map((service, idx) => (
             <motion.div
               key={service.number}
@@ -50,33 +50,30 @@ export default function ExpertiseSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="group bg-rtm-white hover:-translate-y-0.5 transition-transform duration-200"
-              style={{ borderRadius: '4px', border: '1px solid var(--rtm-stone-light)' }}
+              className="group"
             >
-              <div className="relative overflow-hidden aspect-[4/3]">
+              <div className="relative overflow-hidden mb-6 aspect-[4/3]">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  style={{ borderRadius: '4px 4px 0 0' }}
                 />
-                <span className="absolute top-4 left-4 font-display text-4xl text-rtm-yellow/60 italic font-normal">
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                <span className="absolute top-4 left-4 font-display text-4xl text-primary/30 font-bold">
                   {service.number}
                 </span>
               </div>
-              <div className="p-6">
-                <h3 className="font-heading text-lg font-bold uppercase tracking-[0.06em] text-rtm-ink mb-3">{service.title}</h3>
-                <p className="font-body text-sm text-rtm-ink-soft leading-relaxed mb-4">
-                  {service.description}
-                </p>
-                <Link
-                  to={service.path}
-                  className="inline-flex items-center gap-2 font-heading text-xs font-semibold uppercase tracking-[0.08em] text-rtm-cobalt hover:text-rtm-cobalt-deep transition-colors duration-200 group/link"
-                >
-                  Learn More
-                  <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform duration-200" />
-                </Link>
-              </div>
+              <h3 className="font-display text-2xl text-slate-800 mb-3">{service.title}</h3>
+              <p className="font-body text-sm text-slate-600 leading-relaxed mb-4">
+                {service.description}
+              </p>
+              <Link
+                to={service.path}
+                className="inline-flex items-center gap-2 font-body text-xs tracking-widest uppercase text-[#5a9bd4] hover:text-[#4a8bc4] transition-colors duration-300 group/link"
+              >
+                Learn More
+                <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform duration-300" />
+              </Link>
             </motion.div>
           ))}
         </div>

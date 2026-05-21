@@ -80,27 +80,26 @@ export default function Portfolio() {
       <section className="relative pt-32 min-h-[60vh] flex items-end pb-20">
         <div className="absolute inset-0">
           <img src={PORTFOLIO_HERO} alt="Wine cellar with premium barrels" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-rtm-ink via-rtm-ink/80 to-rtm-ink/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <span className="font-heading text-xs font-semibold uppercase tracking-[0.15em] text-rtm-yellow-deep block mb-8">Our Portfolio</span>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-[0.01em] text-rtm-white leading-tight max-w-2xl">
-              Current focus brands.{' '}
-              <span className="font-display font-normal normal-case italic text-rtm-yellow">
-                <GoldUnderline>National distribution.</GoldUnderline>
-              </span>
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">Our Portfolio</span>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
+              Current focus brands. <GoldUnderline className="italic">National distribution.</GoldUnderline>
             </h1>
-            <p className="font-body text-base text-rtm-stone-light leading-relaxed max-w-3xl mt-6">
+            <p className="font-body text-base text-foreground/80 leading-relaxed max-w-3xl mt-6">
               RTM's portfolio is built around growth, not breadth. The brands below represent our current primary market development effort. Our operating history spans 1,000+ brands across wine, spirits, and emerging categories.
             </p>
           </motion.div>
         </div>
       </section>
 
+
+
       {/* Featured Brands */}
       <section className="py-24 md:py-32" style={{
-        backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.12), rgba(26, 45, 74, 0.12)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
+        backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.1), rgba(26, 45, 74, 0.1)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}>
@@ -119,13 +118,12 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-rtm-white border border-rtm-stone-light p-8 hover:-translate-y-0.5 hover:border-rtm-cobalt transition-all duration-200"
-                style={{ borderRadius: '4px' }}
+                className="bg-card border border-border p-8 hover:border-primary/40 transition-colors duration-300"
               >
-                <h3 className="font-heading text-lg font-bold uppercase tracking-[0.04em] text-rtm-ink mb-2">{brand.name}</h3>
-                <p className="font-heading text-xs font-semibold uppercase tracking-[0.1em] text-rtm-cobalt mb-1">{brand.category}</p>
-                <p className="font-body text-xs text-rtm-stone mb-4">{brand.origin}</p>
-                <p className="font-body text-sm text-rtm-ink-soft leading-relaxed mb-6">
+                <h3 className="font-display text-xl text-foreground mb-2">{brand.name}</h3>
+                <p className="font-body text-xs tracking-widest uppercase text-primary mb-1">{brand.category}</p>
+                <p className="font-body text-xs text-muted-foreground mb-4">{brand.origin}</p>
+                <p className="font-body text-sm text-foreground/80 leading-relaxed mb-6">
                   {brand.detail}
                   {brand.bevstackLink && (
                     <>
@@ -134,7 +132,7 @@ export default function Portfolio() {
                         href="https://www.bevstack.com/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-rtm-cobalt hover:underline inline-flex items-center gap-1"
+                        className="text-primary hover:underline inline-flex items-center gap-1"
                       >
                         BevStack
                         <ExternalLink className="w-3 h-3" />
@@ -144,8 +142,7 @@ export default function Portfolio() {
                 </p>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-rtm-cobalt text-white font-heading text-xs font-semibold uppercase tracking-[0.08em] hover:bg-rtm-cobalt-deep transition-all duration-200 hover:-translate-y-px"
-                  style={{ borderRadius: '2px' }}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-body text-xs tracking-widest uppercase hover:bg-primary/90 transition-all duration-300"
                 >
                   Wholesale Inquiry
                   <ArrowRight className="w-3 h-3" />
@@ -154,14 +151,14 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <p className="font-body text-sm text-white/70 text-center">
+          <p className="font-body text-base text-[#1a2d4a] text-center">
             For distributor and retailer availability by state, contact us directly.
           </p>
         </div>
       </section>
 
       {/* Categories */}
-      <section className="pt-24 md:pt-32 pb-24 md:pb-32 bg-rtm-cream">
+      <section className="pt-24 md:pt-32 pb-24 md:pb-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Categories"
@@ -177,27 +174,28 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5 }}
-                className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center"
+                className={`grid grid-cols-1 lg:grid-cols-5 gap-8 items-center ${
+                  idx % 2 === 1 ? '' : ''
+                }`}
               >
                 <div className={`lg:col-span-2 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="relative overflow-hidden aspect-[4/3]" style={{ borderRadius: '4px' }}>
+                  <div className="relative overflow-hidden aspect-[4/3]">
                     <img src={cat.image} alt={cat.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <div className={`lg:col-span-3 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="flex items-center gap-3 mb-3">
-                    <cat.icon className="w-5 h-5 text-rtm-cobalt" />
-                    <h3 className="font-heading text-xl font-bold uppercase tracking-[0.06em] text-rtm-ink">{cat.title}</h3>
+                    <cat.icon className="w-5 h-5 text-primary" />
+                    <h3 className="font-display text-2xl text-foreground">{cat.title}</h3>
                   </div>
-                  <p className="font-body text-base text-rtm-ink-soft leading-relaxed mb-5">
+                  <p className="font-body text-base text-foreground/80 leading-relaxed mb-5">
                     {cat.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {cat.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 border border-rtm-stone-light font-heading text-xs font-semibold uppercase tracking-[0.1em] text-rtm-stone"
-                        style={{ borderRadius: '999px' }}
+                        className="px-3 py-1 border border-border font-body text-xs tracking-wider uppercase text-muted-foreground"
                       >
                         {tag}
                       </span>
@@ -211,21 +209,15 @@ export default function Portfolio() {
       </section>
 
       {/* Regions */}
-      <section
-        className="relative py-24 md:py-32 overflow-hidden"
-        style={{
-          backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/55e46eff5_ChatGPTImageMay20202608_13_51PM.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-rtm-ink/75" />
+      <section className="relative py-24 md:py-32 bg-background overflow-hidden" style={{ backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/55e46eff5_ChatGPTImageMay20202608_13_51PM.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/70 to-background" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading
             label="Sourcing Regions"
             title="Global reach, focused portfolio"
             align="center"
-            variant="light"
+            variant="dark"
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -236,11 +228,10 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="bg-rtm-white/10 border border-white/25 p-6 hover:bg-rtm-white/15 hover:border-white/40 transition-all duration-200"
-                style={{ borderRadius: '4px' }}
+                className="bg-card border border-white/50 p-6 rounded-sm shadow-md hover:border-white/60 hover:shadow-lg transition-all duration-300"
               >
-                <h4 className="font-heading text-lg font-bold uppercase tracking-[0.06em] text-rtm-white mb-2">{region.name}</h4>
-                <p className="font-body text-sm text-white/75">{region.specialty}</p>
+                <h4 className="font-display text-xl text-foreground mb-2">{region.name}</h4>
+                <p className="font-body text-sm text-foreground/80">{region.specialty}</p>
               </motion.div>
             ))}
           </div>
@@ -248,33 +239,22 @@ export default function Portfolio() {
       </section>
 
       {/* CTA */}
-      <section
-        className="py-24 md:py-32 text-center relative"
-        style={{
-          backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.08), rgba(26, 45, 74, 0.08)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)`,
-          backgroundRepeat: 'repeat',
-          backgroundSize: '500px',
-        }}
-      >
-        <div className="absolute inset-0 bg-rtm-cream/80" />
+      <section className="py-24 md:py-32 text-center relative" style={{ backgroundImage: `linear-gradient(rgba(26, 45, 74, 0.1), rgba(26, 45, 74, 0.1)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/4af9a8ea6_generated_image.png)`, backgroundRepeat: 'repeat', backgroundSize: '500px' }}>
+        <div className="absolute inset-0 bg-background/75" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase tracking-[0.02em] text-rtm-ink mb-6">
-              Interested in{' '}
-              <span className="font-display font-normal normal-case italic text-rtm-cobalt">
-                <GoldUnderline>our brands?</GoldUnderline>
-              </span>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
+              Interested in <GoldUnderline className="italic">our brands?</GoldUnderline>
             </h2>
-            <p className="font-body text-base text-rtm-ink-soft leading-relaxed mb-8">
+            <p className="font-body text-base text-foreground/80 leading-relaxed mb-8">
               Contact us to learn more about our current portfolio or to discuss bringing your brand to market.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-7 py-3.5 bg-rtm-cobalt text-white font-heading text-xs font-semibold uppercase tracking-[0.08em] hover:bg-rtm-cobalt-deep transition-all duration-200 hover:-translate-y-px group"
-              style={{ borderRadius: '2px' }}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-body text-sm tracking-widest uppercase hover:bg-primary/90 transition-all duration-300 group"
             >
               Request Portfolio Details
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </motion.div>
         </div>

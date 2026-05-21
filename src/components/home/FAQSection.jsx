@@ -25,16 +25,16 @@ function FAQItem({ item, idx }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: idx * 0.08 }}
-      className="border-b border-rtm-stone-light"
+      className="border-b border-border"
     >
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-6 py-7 text-left group"
       >
-        <span className="font-heading text-base md:text-lg font-semibold uppercase tracking-[0.04em] text-rtm-ink leading-snug group-hover:text-rtm-cobalt transition-colors duration-200">
+        <span className="font-display text-lg md:text-xl text-foreground leading-snug group-hover:text-primary transition-colors duration-200">
           {item.q}
         </span>
-        <span className="mt-1 flex-shrink-0 text-rtm-cobalt">
+        <span className="mt-1 flex-shrink-0 text-primary">
           {open ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
         </span>
       </button>
@@ -45,10 +45,10 @@ function FAQItem({ item, idx }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <p className="font-body text-base text-rtm-ink-soft leading-relaxed pb-7 pr-10">
+            <p className="font-body text-base text-foreground/80 leading-relaxed pb-7 pr-10">
               {item.a}
             </p>
           </motion.div>
@@ -60,7 +60,7 @@ function FAQItem({ item, idx }) {
 
 export default function FAQSection() {
   return (
-    <section className="py-24 md:py-32 bg-rtm-cream">
+    <section className="py-24 md:py-32 bg-background">
       <div className="max-w-3xl mx-auto px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,13 +69,13 @@ export default function FAQSection() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <span className="font-heading text-xs font-semibold uppercase tracking-[0.15em] text-rtm-cobalt block mb-4">FAQ</span>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase tracking-[0.02em] text-rtm-ink leading-tight">
-            Frequently asked <em className="font-display font-normal normal-case italic text-rtm-cobalt">questions</em>
+          <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">FAQ</span>
+          <h2 className="font-display text-3xl md:text-4xl text-foreground leading-tight">
+            Frequently asked <em>questions</em>
           </h2>
         </motion.div>
 
-        <div className="border-t border-rtm-stone-light">
+        <div className="border-t border-border">
           {FAQS.map((item, idx) => (
             <FAQItem key={idx} item={item} idx={idx} />
           ))}

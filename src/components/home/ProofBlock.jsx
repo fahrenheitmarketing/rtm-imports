@@ -12,7 +12,7 @@ const STATS = [
 
 export default function ProofBlock() {
   return (
-    <section className="py-24 md:py-32 bg-rtm-cream-warm border-y border-rtm-stone-light">
+    <section className="py-24 md:py-32 bg-card border-y border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,15 +20,15 @@ export default function ProofBlock() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
         >
-          <span className="font-heading text-xs font-semibold uppercase tracking-[0.15em] text-rtm-cobalt block mb-4">In Market</span>
-          <h2 className="font-heading text-3xl md:text-4xl text-rtm-ink font-bold uppercase tracking-[0.02em] mb-3 leading-tight">
-            Our fastest-growing <em className="font-display font-normal normal-case italic text-rtm-cobalt">wine-based soju brand</em>
+          <span className="font-body text-xs tracking-widest uppercase text-primary block mb-4">In Market</span>
+          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3 leading-tight">
+            Our fastest-growing <em>wine-based soju brand</em>
           </h2>
-          <p className="font-body text-sm text-rtm-stone mb-12 uppercase tracking-widest">
+          <p className="font-body text-sm text-muted-foreground mb-12 tracking-widest uppercase">
             Up from 13,266 cases in a single regional market (2024)
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-rtm-stone-light">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
             {STATS.map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -36,10 +36,10 @@ export default function ProofBlock() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-rtm-white p-8"
+                className="bg-background p-8"
               >
-                <div className="font-display text-xl md:text-2xl text-rtm-cobalt italic mb-2 leading-tight tabular-nums">{stat.value}</div>
-                <div className="font-heading text-xs font-semibold text-rtm-stone uppercase tracking-widest leading-relaxed">{stat.label}</div>
+                <div className="font-display text-xl md:text-2xl text-primary mb-2 leading-tight">{stat.value}</div>
+                <div className="font-body text-xs text-muted-foreground uppercase tracking-widest leading-relaxed">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -47,10 +47,10 @@ export default function ProofBlock() {
           <div className="mt-10">
             <Link
               to="/portfolio"
-              className="inline-flex items-center gap-3 font-heading text-xs font-semibold uppercase tracking-[0.08em] text-rtm-cobalt hover:text-rtm-cobalt-deep transition-colors duration-200 group"
+              className="inline-flex items-center gap-3 font-body text-sm tracking-widest uppercase text-primary hover:text-foreground transition-colors duration-300 group"
             >
               View Portfolio
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
         </motion.div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink, Calendar } from 'lucide-react';
+import { ArrowRight, ExternalLink, Calendar, Tag } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
@@ -35,18 +35,15 @@ export default function News() {
             alt="News hero"
             className="w-full h-full object-cover blur-sm"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-rtm-ink via-rtm-ink/85 to-rtm-ink/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="font-heading text-xs font-semibold uppercase tracking-[0.15em] text-rtm-yellow-deep block mb-8">News & Insights</span>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-[0.01em] text-rtm-white leading-tight max-w-2xl">
-              The beverage import industry,{' '}
-              <span className="font-display font-normal normal-case italic text-rtm-yellow">
-                <GoldUnderline>covered.</GoldUnderline>
-              </span>
+            <span className="font-body text-xs tracking-widest uppercase text-primary block mb-8">News & Insights</span>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-2xl">
+              The beverage import industry, <GoldUnderline className="italic">covered.</GoldUnderline>
             </h1>
-            <p className="font-body text-lg text-rtm-stone-light mt-6 max-w-xl leading-relaxed">
+            <p className="font-body text-lg text-foreground/80 mt-6 max-w-xl leading-relaxed">
               Industry trends, partnership announcements, market data, and perspectives from RTM's years building brands in the US wholesale channel.
             </p>
           </motion.div>
@@ -55,15 +52,14 @@ export default function News() {
 
       {/* Featured Post */}
       {featured && (
-        <section className="pb-16 bg-rtm-cream">
+        <section className="pb-16 bg-background">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-rtm-cobalt/30 cursor-pointer group overflow-hidden"
-              style={{ borderRadius: '4px' }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-primary/30 cursor-pointer group"
               onClick={() => featured.external_url ? window.open(featured.external_url, '_blank') : setSelectedPost(featured)}
             >
               {featured.image_url && (
@@ -71,21 +67,19 @@ export default function News() {
                   <img src={featured.image_url} alt={featured.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
               )}
-              <div className={`p-10 md:p-14 bg-rtm-white flex flex-col justify-between ${!featured.image_url ? 'lg:col-span-2' : ''}`}>
+              <div className={`p-10 md:p-14 bg-card flex flex-col justify-between ${!featured.image_url ? 'lg:col-span-2' : ''}`}>
                 <div>
                   <div className="flex items-center gap-3 mb-5">
-                    <span className="font-heading text-[10px] font-semibold uppercase tracking-[0.1em] text-white bg-rtm-cobalt px-2.5 py-1" style={{ borderRadius: '999px' }}>
-                      {featured.category}
-                    </span>
-                    <span className="font-body text-xs text-rtm-stone flex items-center gap-1">
+                    <span className="font-body text-xs tracking-widest uppercase text-primary bg-primary/10 px-3 py-1">{featured.category}</span>
+                    <span className="font-body text-xs text-muted-foreground flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
                       {new Date(featured.published_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                     </span>
                   </div>
-                  <h2 className="font-heading text-2xl md:text-3xl font-bold uppercase tracking-[0.02em] text-rtm-ink mb-4 leading-tight">{featured.title}</h2>
-                  <p className="font-body text-base text-rtm-ink-soft leading-relaxed">{featured.summary}</p>
+                  <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4 leading-tight">{featured.title}</h2>
+                  <p className="font-body text-base text-foreground/80 leading-relaxed">{featured.summary}</p>
                 </div>
-                <div className="flex items-center gap-2 mt-8 font-heading text-xs font-semibold uppercase tracking-[0.08em] text-rtm-cobalt group-hover:text-rtm-cobalt-deep transition-colors duration-200">
+                <div className="flex items-center gap-2 mt-8 font-body text-sm tracking-widest uppercase text-primary group-hover:text-foreground transition-colors duration-300">
                   {featured.external_url ? (
                     <><ExternalLink className="w-4 h-4" /> Read Full Story</>
                   ) : (
@@ -99,19 +93,18 @@ export default function News() {
       )}
 
       {/* Category Filter */}
-      <section className="py-8 bg-rtm-cream-warm border-y border-rtm-stone-light">
+      <section className="py-10 bg-background border-y border-border">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`font-heading text-xs font-semibold uppercase tracking-[0.08em] px-4 py-2 border transition-all duration-200 ${
+                className={`font-body text-xs tracking-widest uppercase px-4 py-2 border transition-all duration-200 ${
                   activeCategory === cat
-                    ? 'bg-rtm-cobalt text-white border-rtm-cobalt'
-                    : 'border-rtm-stone-light text-rtm-stone hover:border-rtm-cobalt hover:text-rtm-cobalt bg-transparent'
+                    ? 'bg-primary text-primary-foreground border-primary'
+                    : 'border-border text-muted-foreground hover:border-foreground hover:text-foreground'
                 }`}
-                style={{ borderRadius: '2px' }}
               >
                 {cat}
               </button>
@@ -121,23 +114,23 @@ export default function News() {
       </section>
 
       {/* Posts Grid */}
-      <section className="py-20 md:py-28 bg-rtm-cream">
+      <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(6)].map((_, i) => (
-                <div key={i} className="bg-rtm-white border border-rtm-stone-light p-8 animate-pulse" style={{ borderRadius: '4px' }}>
-                  <div className="h-3 bg-rtm-cream-warm rounded w-1/3 mb-4" />
-                  <div className="h-5 bg-rtm-cream-warm rounded w-full mb-2" />
-                  <div className="h-5 bg-rtm-cream-warm rounded w-2/3 mb-6" />
-                  <div className="h-3 bg-rtm-cream-warm rounded w-full mb-2" />
-                  <div className="h-3 bg-rtm-cream-warm rounded w-4/5" />
+                <div key={i} className="bg-card border border-border p-8 animate-pulse">
+                  <div className="h-3 bg-muted rounded w-1/3 mb-4" />
+                  <div className="h-5 bg-muted rounded w-full mb-2" />
+                  <div className="h-5 bg-muted rounded w-2/3 mb-6" />
+                  <div className="h-3 bg-muted rounded w-full mb-2" />
+                  <div className="h-3 bg-muted rounded w-4/5" />
                 </div>
               ))}
             </div>
           ) : filtered.length === 0 ? (
             <div className="text-center py-24">
-              <p className="font-body text-rtm-stone">No posts in this category yet.</p>
+              <p className="font-body text-muted-foreground">No posts in this category yet.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -149,6 +142,7 @@ export default function News() {
         </div>
       </section>
 
+      {/* Post Modal */}
       {selectedPost && <NewsModal post={selectedPost} onClose={() => setSelectedPost(null)} />}
     </>
   );
