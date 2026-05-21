@@ -56,7 +56,7 @@ export default function ProofBlock() {
               >
                 <stat.icon
                   className="w-9 h-9"
-                  style={{ color: 'rgba(244,196,48,0.18)' }}
+                  style={{ color: '#F4C430' }}
                   strokeWidth={1.5}
                 />
               </div>
