@@ -11,11 +11,11 @@ export default function SectionHeading({ title, description, align = 'left', var
       transition={{ duration: 0.6 }}
       className={`mb-12 md:mb-16 ${align === 'center' ? 'text-center' : ''}`}
     >
-      <h2 className={`font-display text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 ${isDark ? 'text-[#1a1814]' : 'text-[#1a2d4a]'}`}>
+      <h2 className={`font-display text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 ${isDark ? 'text-foreground' : 'text-[#1a2d4a]'}`}>
         {title}
       </h2>
       {description && (
-        <p className={`font-body text-base leading-relaxed max-w-2xl ${align === 'center' ? 'mx-auto' : ''} ${isDark ? 'text-[#1a1814]/75' : 'text-[#1a2d4a]/80'}`}>
+        <p className={`font-body text-base leading-relaxed max-w-2xl ${align === 'center' ? 'mx-auto' : ''} ${isDark ? 'text-foreground/80' : 'text-[#1a2d4a]/80'}`}>
           {description}
         </p>
       )}
