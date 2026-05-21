@@ -50,11 +50,9 @@ export default function Navbar() {
   const isServicesActive = location.pathname.startsWith('/products');
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40" style={{
-      background: '#FFFCF5',
-      boxShadow: '0 4px 24px 0 rgba(10,36,84,0.13), 0 8px 32px 8px rgba(10,36,84,0.07)',
-      borderRadius: '0 0 32px 32px',
-    }}>
+    <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+      scrolled ? 'bg-background/95 backdrop-blur-sm' : ''
+    }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-[58px] md:h-[86px]">
         {/* Logo with washi texture background — overflows navbar via negative bottom margin */}
@@ -79,9 +77,8 @@ export default function Navbar() {
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
                     className={`flex items-center gap-1.5 font-body text-xs tracking-widest uppercase transition-colors duration-300 ${
-                      isServicesActive ? 'text-primary' : 'hover:opacity-70'
+                      isServicesActive ? 'text-primary' : 'text-white hover:text-white/80'
                     }`}
-                    style={{ color: isServicesActive ? undefined : '#0A2454' }}
                   >
                     {link.label}
                     <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
@@ -125,9 +122,10 @@ export default function Navbar() {
                   key={link.path}
                   to={link.path}
                   className={`font-body text-xs tracking-widest uppercase transition-colors duration-300 ${
-                   location.pathname === link.path ? 'text-primary' : 'hover:opacity-70'
+                   location.pathname === link.path
+                     ? 'text-primary'
+                     : 'text-white hover:text-white/80'
                   }`}
-                 style={location.pathname !== link.path ? { color: '#0A2454' } : {}}
                 >
                   {link.label}
                 </Link>
@@ -148,7 +146,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2" style={{ color: '#0A2454' }}
+            className="md:hidden text-white p-2"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
