@@ -65,7 +65,7 @@ export default function Compliance() {
       {/* Services */}
       <section className="py-24 md:py-32" style={{ background: '#FFFCF5', borderTop: '1px solid rgba(244,196,48,0.45)', borderBottom: '1px solid rgba(244,196,48,0.45)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <SectionHeading label="What We Provide" title="Compliance services in full" align="center" variant="dark" />
+          <SectionHeading label="What We Provide" title="Compliance services in full" align="center" variant="light" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES_LIST.map((item, idx) => (
               <motion.div
@@ -80,8 +80,8 @@ export default function Compliance() {
                 <div className="w-10 h-10 border rounded-full flex items-center justify-center mb-5" style={{ borderColor: 'rgba(244,196,48,0.45)' }}>
                   <item.icon className="w-4 h-4 text-rtm-cobalt" />
                 </div>
-                <h3 className="font-display text-lg text-rtm-ink mb-3">{item.title}</h3>
-                <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.7)' }}>{item.description}</p>
+                <h3 className="font-display text-lg mb-3" style={{ color: '#0A2454' }}>{item.title}</h3>
+                <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>{item.description}</p>
               </motion.div>
             ))}
           </div>

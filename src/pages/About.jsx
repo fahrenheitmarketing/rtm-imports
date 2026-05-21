@@ -48,7 +48,7 @@ function FAQItem({ item, idx }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-6 py-7 text-left group"
       >
-        <span className="font-display text-lg md:text-xl text-rtm-ink leading-snug group-hover:text-rtm-cobalt transition-colors duration-200">
+        <span className="font-display text-lg md:text-xl leading-snug group-hover:opacity-70 transition-opacity duration-200" style={{ color: '#0A2454' }}>
           {item.q}
         </span>
         <span className="mt-1 flex-shrink-0 text-rtm-yellow">
@@ -65,7 +65,7 @@ function FAQItem({ item, idx }) {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <p className="font-body text-base leading-relaxed pb-7 pr-10" style={{ color: 'rgba(26,24,20,0.75)' }}>{item.a}</p>
+            <p className="font-body text-base leading-relaxed pb-7 pr-10" style={{ color: '#0A2454' }}>{item.a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -182,7 +182,7 @@ export default function About() {
             title="Our Approach"
             description="Three principles define how we work."
             align="center"
-            variant="dark"
+            variant="light"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -200,8 +200,8 @@ export default function About() {
                 <div className="w-14 h-14 mx-auto mb-6 rounded-full flex items-center justify-center border" style={{ borderColor: 'rgba(244,196,48,0.45)' }}>
                   <value.icon className="w-6 h-6 text-rtm-cobalt" />
                 </div>
-                <h3 className="font-display text-xl text-rtm-ink mb-3">{value.title}</h3>
-                <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.7)' }}>
+                <h3 className="font-display text-xl mb-3" style={{ color: '#0A2454' }}>{value.title}</h3>
+                <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>
                   {value.description}
                 </p>
               </motion.div>
@@ -240,8 +240,8 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
-            <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt block mb-4">FAQ</span>
-            <h2 className="font-display text-3xl md:text-4xl text-rtm-ink leading-tight">
+            <span className="font-eyebrow text-xs tracking-widest uppercase block mb-4" style={{ color: '#0A2454' }}>FAQ</span>
+            <h2 className="font-display text-3xl md:text-4xl leading-tight" style={{ color: '#0A2454' }}>
               Frequently asked <em>questions</em>
             </h2>
           </motion.div>

@@ -72,7 +72,7 @@ export default function Wholesalers() {
                 <div className="w-12 h-12 border rounded-full flex items-center justify-center mb-5" style={{ borderColor: 'rgba(244,196,48,0.45)' }}>
                   <item.icon className="w-5 h-5 text-rtm-cobalt" />
                 </div>
-                <h3 className="font-display text-xl text-rtm-ink mb-3">{item.title}</h3>
+                <h3 className="font-display text-xl mb-3" style={{ color: '#0A2454' }}>{item.title}</h3>
                 <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>{item.description}</p>
               </motion.div>
             ))}
@@ -88,7 +88,7 @@ export default function Wholesalers() {
               <SectionHeading
                 label="In Market"
                 title="Proof of performance"
-                variant="dark"
+                variant="light"
               />
               <div className="space-y-5 font-body text-base leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
                 <p>
@@ -122,7 +122,7 @@ export default function Wholesalers() {
             label="Our Wholesale Network"
             title="National reach. Local relationships."
             align="center"
-            variant="dark"
+            variant="light"
           />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
@@ -143,7 +143,7 @@ export default function Wholesalers() {
             title="Available for wholesale distribution"
             description="Our current Asian beverage portfolio is available to qualified wholesale partners. Portfolio scope is expanding — contact us for a full current brand list."
             align="center"
-            variant="dark"
+            variant="light"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -162,7 +162,7 @@ export default function Wholesalers() {
                 className="rounded-[18px] border p-6 hover:shadow-md transition-all duration-300"
                 style={{ background: '#F2EBDE', borderColor: 'rgba(244,196,48,0.45)' }}
               >
-                <h4 className="font-display text-lg text-rtm-ink mb-2">{item.category}</h4>
+                <h4 className="font-display text-lg mb-2" style={{ color: '#0A2454' }}>{item.category}</h4>
                 <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.7)' }}>{item.description}</p>
               </motion.div>
             ))}

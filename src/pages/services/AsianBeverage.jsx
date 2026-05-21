@@ -105,7 +105,7 @@ export default function AsianBeverage() {
             title="Our Asian beverage portfolio"
             description="RTM represents brands across the full spectrum of Asian beverages, focused on quality producers and authentic stories that resonate with today's consumer."
             align="center"
-            variant="dark"
+            variant="light"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {CATEGORIES.map((cat, idx) => (
@@ -118,8 +118,8 @@ export default function AsianBeverage() {
                 className="rounded-[18px] border p-8 hover:shadow-md transition-all duration-300"
                 style={{ background: '#F2EBDE', borderColor: 'rgba(244,196,48,0.45)' }}
               >
-                <h3 className="font-display text-xl text-rtm-ink mb-3">{cat.title}</h3>
-                <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.7)' }}>{cat.description}</p>
+                <h3 className="font-display text-xl mb-3" style={{ color: '#0A2454' }}>{cat.title}</h3>
+                <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>{cat.description}</p>
               </motion.div>
             ))}
           </div>
@@ -162,7 +162,7 @@ export default function AsianBeverage() {
           <SectionHeading
             label="Our Process"
             title="How we bring your brand to the U.S."
-            variant="dark"
+            variant="light"
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -182,9 +182,9 @@ export default function AsianBeverage() {
                 <span className="font-display text-6xl block mb-4" style={{ color: 'rgba(244,196,48,0.2)' }}>{item.step}</span>
                 <div className="flex items-center gap-3 mb-3 -mt-8">
                   <item.icon className="w-5 h-5 text-rtm-cobalt" />
-                  <h3 className="font-display text-xl text-rtm-ink">{item.title}</h3>
+                  <h3 className="font-display text-xl" style={{ color: '#0A2454' }}>{item.title}</h3>
                 </div>
-                <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,24,20,0.7)' }}>{item.description}</p>
+                <p className="font-body text-sm leading-relaxed" style={{ color: '#0A2454' }}>{item.description}</p>
               </motion.div>
             ))}
           </div>
