@@ -15,7 +15,6 @@ const NAV_LINKS = [
   { label: 'Portfolio', path: '/portfolio' },
   { label: 'Wholesalers', path: '/wholesalers' },
   { label: 'News', path: '/news' },
-  { label: 'Contact', path: '/contact' },
 ];
 
 export default function Navbar() {
@@ -134,6 +133,16 @@ export default function Navbar() {
             )}
           </div>
 
+            <Link
+              to="/contact"
+              className="hidden md:inline-flex items-center px-5 py-2 font-body text-xs tracking-widest uppercase rounded transition-all duration-300"
+              style={{ background: '#F4C430', color: '#0A2454' }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#D9A91A'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#F4C430'; }}
+            >
+              Contact
+            </Link>
+
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -230,9 +239,8 @@ export default function Navbar() {
               </Link>
               <Link
                 to="/contact"
-                className={`block font-body text-sm tracking-widest uppercase transition-colors duration-300 ${
-                  location.pathname === '/contact' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
-                }`}
+                className="inline-flex items-center px-5 py-2.5 font-body text-sm tracking-widest uppercase rounded transition-all duration-300"
+                style={{ background: '#F4C430', color: '#0A2454' }}
               >
                 Contact
               </Link>
