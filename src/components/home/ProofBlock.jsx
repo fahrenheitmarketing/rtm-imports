@@ -24,7 +24,7 @@ export default function ProofBlock() {
           <h2 className="font-display text-3xl md:text-4xl text-rtm-ink mb-3 leading-tight">
             Our fastest-growing <em>wine-based soju brand</em>
           </h2>
-          <p className="font-footnote text-xs text-rtm-ink/50 mb-12 tracking-widest uppercase">
+          <p className="font-footnote text-xs mb-12 tracking-widest uppercase" style={{ color: '#0A2454' }}>
             Up from 13,266 cases in a single regional market (2024)
           </p>
 
@@ -40,7 +40,7 @@ export default function ProofBlock() {
                 style={{ background: '#FFFCF5' }}
               >
                 <div className="font-display text-xl md:text-2xl text-rtm-cobalt mb-2 leading-tight">{stat.value}</div>
-                <div className="font-footnote text-xs text-rtm-ink/50 uppercase tracking-widest leading-relaxed">{stat.label}</div>
+                <div className="font-footnote text-xs uppercase tracking-widest leading-relaxed" style={{ color: '#0A2454' }}>{stat.label}</div>
               </motion.div>
             ))}
           </div>
