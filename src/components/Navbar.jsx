@@ -136,7 +136,7 @@ export default function Navbar() {
 
             <Link
               to="/contact"
-              className="hidden md:inline-flex items-center px-5 py-2 font-body text-xs tracking-widest uppercase rounded transition-all duration-300"
+              className="hidden md:inline-flex items-center px-7 py-3 font-body text-xs tracking-widest uppercase rounded transition-all duration-300"
               style={{ background: '#F4C430', color: '#0A2454' }}
               onMouseEnter={e => { e.currentTarget.style.background = '#D9A91A'; }}
               onMouseLeave={e => { e.currentTarget.style.background = '#F4C430'; }}
