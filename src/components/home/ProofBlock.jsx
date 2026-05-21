@@ -12,7 +12,7 @@ const STATS = [
 
 export default function ProofBlock() {
   return (
-    <section className="py-24 md:py-32" style={{ background: '#FFFCF5', backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/fddd80646_paper-texture.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundBlendMode: 'multiply', borderTop: '1px solid rgba(244,196,48,0.45)', borderBottom: '1px solid rgba(244,196,48,0.45)' }}>
+    <section className="py-24 md:py-32" style={{ background: '#FFFCF5', backgroundImage: 'linear-gradient(rgba(255,252,245,0.5), rgba(255,252,245,0.5)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/fddd80646_paper-texture.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', borderTop: '1px solid rgba(244,196,48,0.45)', borderBottom: '1px solid rgba(244,196,48,0.45)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
