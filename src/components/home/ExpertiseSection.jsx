@@ -47,7 +47,7 @@ export default function ExpertiseSection() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               className="group rounded-[18px] overflow-hidden border"
-              style={{ borderColor: 'rgba(244,196,48,0.45)', background: '#FFFCF5' }}
+              style={{ borderColor: 'rgba(244,196,48,0.45)', background: '#FFFCF5', backgroundImage: 'url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/fddd80646_paper-texture.jpg)', backgroundSize: 'cover', backgroundBlendMode: 'multiply' }}
             >
               <div className="relative overflow-hidden aspect-[4/3]">
                 <img
