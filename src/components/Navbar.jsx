@@ -60,7 +60,8 @@ export default function Navbar() {
             backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://media.base44.com/images/public/69dd75d09559acb6fb908761/a988dfd7c_ChatGPTImageMay20202609_37_01PM.png)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            borderRadius: '4px'
+            borderRadius: '4px',
+            boxShadow: '4px 4px 12px rgba(0,0,0,0.5), -1px -1px 4px rgba(255,255,255,0.15), inset 1px 1px 2px rgba(255,255,255,0.2), inset -1px -1px 2px rgba(0,0,0,0.15)',
           }}>
             <img
               src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/71e10e810_image.png"
