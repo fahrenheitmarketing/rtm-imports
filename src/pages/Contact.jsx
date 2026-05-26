@@ -83,7 +83,7 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>Full Name</Label>
+                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(248,243,232,0.85)' }}>Full Name</Label>
                       <Input
                         required
                         value={form.name}
@@ -94,7 +94,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>Email</Label>
+                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(248,243,232,0.85)' }}>Email</Label>
                       <Input
                         type="email"
                         required
@@ -109,7 +109,7 @@ export default function Contact() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>Company</Label>
+                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(248,243,232,0.85)' }}>Company</Label>
                       <Input
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
@@ -119,7 +119,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>Interest</Label>
+                      <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(248,243,232,0.85)' }}>Interest</Label>
                       <Select onValueChange={(val) => setForm({ ...form, interest: val })}>
                         <SelectTrigger className="font-body text-rtm-ink h-12 rounded-lg" style={{ background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' }}>
                           <SelectValue placeholder="Select an area" />
@@ -137,7 +137,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>Message</Label>
+                    <Label className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(248,243,232,0.85)' }}>Message</Label>
                     <Textarea
                       required
                       value={form.message}

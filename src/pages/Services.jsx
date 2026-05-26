@@ -86,8 +86,8 @@ export default function Services() {
 
               <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
                 <div className="flex items-center gap-3 mb-4">
-                  <service.icon className="w-5 h-5 text-rtm-cobalt" />
-                  <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt">{service.label}</span>
+                  <service.icon className="w-5 h-5" style={{ color: 'rgba(244,196,48,0.9)' }} />
+                  <span className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(244,196,48,0.9)' }}>{service.label}</span>
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl mb-6 text-foreground">{service.title}</h2>
                 <p className="font-body text-base leading-relaxed mb-8 text-foreground/80">
@@ -95,7 +95,10 @@ export default function Services() {
                 </p>
                 <Link
                   to={service.path}
-                  className="inline-flex items-center gap-3 font-eyebrow text-sm tracking-widest uppercase text-rtm-cobalt hover:text-rtm-yellow transition-colors duration-300 group"
+                  className="inline-flex items-center gap-3 font-eyebrow text-sm tracking-widest uppercase transition-colors duration-300 group"
+                  style={{ color: '#F4C430' }}
+                  onMouseEnter={e => { e.currentTarget.style.color = '#F8F3E8'; }}
+                  onMouseLeave={e => { e.currentTarget.style.color = '#F4C430'; }}
                 >
                   {service.cta}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />

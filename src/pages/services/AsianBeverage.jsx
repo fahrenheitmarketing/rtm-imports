@@ -72,7 +72,7 @@ export default function AsianBeverage() {
                 title="Why Asian beverages, why now"
                 variant="dark"
               />
-              <div className="space-y-5 font-body text-base leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
+              <div className="space-y-5 font-body text-base leading-relaxed" style={{ color: 'rgba(248,243,232,0.75)' }}>
                 <p>
                   Soju has more than doubled in the U.S. over the past five years, reaching approximately $935 million in 2024. Growth is driven by Gen Z and millennial demand, the global reach of K-culture, and accessible pricing, validated by major mainstream players now entering the space.
                 </p>
@@ -130,12 +130,12 @@ export default function AsianBeverage() {
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-12">
-            <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt block mb-4">Wine-Based Soju — Case Study</span>
-            <h2 className="font-display text-3xl md:text-4xl text-rtm-ink mb-2">In Market</h2>
-            <p className="font-body text-lg text-rtm-ink/60 italic">From regional to national</p>
+            <span className="font-eyebrow text-xs tracking-widest uppercase block mb-4" style={{ color: 'rgba(244,196,48,0.9)' }}>Wine-Based Soju — Case Study</span>
+            <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: '#F8F3E8' }}>In Market</h2>
+            <p className="font-body text-lg italic" style={{ color: 'rgba(248,243,232,0.5)' }}>From regional to national</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-start">
-            <div className="space-y-6 font-body text-base leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
+            <div className="space-y-6 font-body text-base leading-relaxed" style={{ color: 'rgba(248,243,232,0.75)' }}>
               <p>RTM reviewed distributor sales and profit data and identified a wine-based soju brand performing exceptionally well in a single regional market: strong numbers, minimal market penetration, and significant room to grow.</p>
               <p>After direct meetings with the brand owner, RTM was awarded representation rights in a small number of markets. Within twelve months, RTM tripled its previous sales and expanded its representation to most states nationally.</p>
             </div>

@@ -45,7 +45,7 @@ export default function CustomLabels() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionHeading label="Private Label Programs" title="Built on relationships, not catalogs" variant="dark" />
-              <div className="space-y-5 font-body text-base leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
+              <div className="space-y-5 font-body text-base leading-relaxed" style={{ color: 'rgba(248,243,232,0.75)' }}>
                 <p>A private label is not a shortcut — it is a strategic asset. As competition intensifies across every beverage category, the brands that win own the relationship with the consumer. RTM's custom label program gives you that ownership.</p>
                 <p>Over the years, we have built deep, personal relationships with vetted producers worldwide. When a client comes to us with a brief, we identify the right production partner based on quality benchmarks, capacity, certifications, and a fit with their vision, then we move forward. Our typical timeline: 3 to 6 months for domestic programs, 6 to 9 months for imports.</p>
               </div>
@@ -103,6 +103,7 @@ export default function CustomLabels() {
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionHeading label="The Case for Private Label" title="Why leading retailers choose custom" align="center" variant="dark" />
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {WHY_CUSTOM.map((item, idx) => (
               <motion.div

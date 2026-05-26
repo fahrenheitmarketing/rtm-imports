@@ -122,13 +122,13 @@ export default function Wholesalers() {
             label="Our Wholesale Network"
             title="National reach. Local relationships."
             align="center"
-            variant="light"
+            variant="dark"
           />
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
+            <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(248,243,232,0.75)' }}>
               RTM's active wholesale partners include some of the largest and most respected names in US beverage distribution.
             </p>
-            <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
+            <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(248,243,232,0.75)' }}>
               RTM works with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. Our relationships are built on track record and mutual benefit — not cold outreach.
             </p>
           </div>

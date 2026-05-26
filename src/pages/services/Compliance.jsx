@@ -39,9 +39,9 @@ export default function Compliance() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionHeading label="The Regulatory Reality" title="Why compliance is a strategic asset" variant="dark" />
-              <div className="space-y-5 font-body text-base leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
-                <p>The U.S. beverage alcohol market is governed by a <strong className="text-rtm-ink">three-tier system</strong> with federal oversight from the TTB and individual regulatory frameworks in all 50 states. For a foreign producer or a new domestic brand, navigating this landscape is one of the single greatest barriers to market entry.</p>
-                <p>Most brands don't fail because their liquid isn't good enough. They fail because they underestimate the complexity of legally obtaining that liquid from a production facility to a consumer's glass. <strong className="text-rtm-ink">Compliance is not a formality — it's the foundation.</strong></p>
+              <div className="space-y-5 font-body text-base leading-relaxed" style={{ color: 'rgba(248,243,232,0.75)' }}>
+                <p>The U.S. beverage alcohol market is governed by a <strong style={{ color: '#F8F3E8' }}>three-tier system</strong> with federal oversight from the TTB and individual regulatory frameworks in all 50 states. For a foreign producer or a new domestic brand, navigating this landscape is one of the single greatest barriers to market entry.</p>
+                <p>Most brands don't fail because their liquid isn't good enough. They fail because they underestimate the complexity of legally obtaining that liquid from a production facility to a consumer's glass. <strong style={{ color: '#F8F3E8' }}>Compliance is not a formality — it's the foundation.</strong></p>
                 <p>RTM has built this foundation deliberately over years of operating in the market. Our license network, our wholesale relationships, and our working knowledge of state-by-state regulatory nuance represent infrastructure that cannot be replicated quickly, and we make it available to our partners.</p>
               </div>
             </div>
