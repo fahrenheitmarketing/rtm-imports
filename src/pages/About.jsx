@@ -135,12 +135,12 @@ export default function About() {
                 title="What RTM stands for"
                 variant="dark"
               />
-              <div className="space-y-6 font-body text-base leading-relaxed" style={{ color: 'rgba(26,24,20,0.75)' }}>
+              <div className="space-y-6 font-body text-base leading-relaxed" style={{ color: 'rgba(248,243,232,0.75)' }}>
                 <p>
-                  RTM Imports is a San Antonio-based <strong className="text-rtm-ink">specialist beverage importer</strong> with more than 30 years of operational history. Founded in the early 1990s, RTM was formally structured as an independent LLC and has been led by Benjamin Roberts since 2016.
+                  RTM Imports is a San Antonio-based <strong style={{ color: '#F8F3E8' }}>specialist beverage importer</strong> with more than 30 years of operational history. Founded in the early 1990s, RTM was formally structured as an independent LLC and has been led by Benjamin Roberts since 2016.
                 </p>
                 <p>
-                  We operate exclusively in the <strong className="text-rtm-ink">B2B wholesale channel</strong> — working with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. We do not sell to consumers. We build the infrastructure, the relationships, and the programs that get brands to shelf.
+                  We operate exclusively in the <strong style={{ color: '#F8F3E8' }}>B2B wholesale channel</strong> — working with the largest national beverage wholesalers and their chain teams across both on-premise and off-premise. We do not sell to consumers. We build the infrastructure, the relationships, and the programs that get brands to shelf.
                 </p>
                 <p>
                   Our history spans fine wine, spirits, and emerging categories. Asian beverage is the newest addition — soju, wine-based RTDs, and craft beer, sourced from South Korea, Japan, China, Thailand, and Taiwan — and the fastest-growing segment we represent. We identified the opportunity before the mainstream arrived, moved quickly to build the right producer relationships and wholesale infrastructure, and the results speak for themselves.
@@ -220,10 +220,10 @@ export default function About() {
             transition={{ duration: 0.7 }}
           >
             <span className="block font-display text-3xl md:text-4xl text-rtm-yellow mb-2">&ldquo;</span>
-            <p className="font-display text-2xl md:text-3xl text-rtm-ink leading-relaxed italic mb-6">
+            <p className="font-display text-2xl md:text-3xl leading-relaxed italic mb-6" style={{ color: '#F8F3E8' }}>
               We spend more time with our partners personally than professionally. That is not a policy. It is how we operate.
             </p>
-            <footer className="font-footnote text-xs tracking-widest uppercase" style={{ color: 'rgba(26,24,20,0.5)' }}>
+            <footer className="font-footnote text-xs tracking-widest uppercase" style={{ color: 'rgba(248,243,232,0.5)' }}>
               Benjamin Roberts, President, RTM Imports
             </footer>
           </motion.blockquote>
