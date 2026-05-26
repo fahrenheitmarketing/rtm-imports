@@ -95,8 +95,8 @@ export default function News() {
                 onClick={() => setActiveCategory(cat)}
                 className="font-eyebrow text-xs tracking-widest uppercase px-4 py-2 rounded-full border transition-all duration-200"
                 style={activeCategory === cat
-                  ? { background: '#0A2454', color: '#F4C430', borderColor: 'rgba(244,196,48,0.45)' }
-                  : { background: 'transparent', color: '#0A2454', borderColor: 'rgba(244,196,48,0.45)' }
+                  ? { background: '#F4C430', color: '#0A2454', borderColor: '#F4C430' }
+                  : { background: 'transparent', color: 'rgba(248,243,232,0.75)', borderColor: 'rgba(244,196,48,0.45)' }
                 }
               >
                 {cat}
