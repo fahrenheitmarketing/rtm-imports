@@ -143,7 +143,7 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <p className="font-body text-base text-rtm-ink/60 text-center">
+          <p className="font-body text-base text-center" style={{ color: 'rgba(248,243,232,0.6)' }}>
             For distributor and retailer availability by state, contact us directly.
           </p>
         </div>
