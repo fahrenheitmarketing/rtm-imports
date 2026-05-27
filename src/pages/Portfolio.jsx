@@ -170,7 +170,7 @@ export default function Portfolio() {
               
                 <div className={`lg:col-span-2 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="relative overflow-hidden aspect-[4/3] rounded-[18px] border" style={{ borderColor: 'rgba(244,196,48,0.45)' }}>
-                    <img src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/53e3ad579_KTOWN_Yuzu_ColoredBG.jpg" alt={cat.title} className="w-full h-full object-cover" />
+                    <img src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/53e3ad579_KTOWN_Yuzu_ColoredBG.jpg" alt={cat.title} className="w-full h-full object-cover" style={{ objectPosition: 'center bottom' }} />
                   </div>
                 </div>
                 <div className={`lg:col-span-3 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
