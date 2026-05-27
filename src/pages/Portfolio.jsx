@@ -171,7 +171,7 @@ export default function Portfolio() {
                 <div className={`lg:col-span-2 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="relative overflow-hidden aspect-[4/3] rounded-[18px] border" style={{ borderColor: 'rgba(244,196,48,0.45)' }}>
                     <img src={cat.image} alt={cat.title} className="w-full h-full object-cover" loading="lazy" width="800" height="600" />
-                    <div className="absolute inset-0 rounded-[18px]" style={{ background: 'rgba(10,36,84,0.65)' }} />
+
                   </div>
                 </div>
                 <div className={`lg:col-span-3 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
