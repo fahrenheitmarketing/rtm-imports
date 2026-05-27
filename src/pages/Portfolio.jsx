@@ -58,7 +58,7 @@ const CATEGORIES = [
     icon: Beer,
     title: 'Craft & Specialty Beer',
     description: 'Japanese craft and specialty beer for specialty retail and on-premise accounts seeking distinctive, high-quality additions to their beverage programs.',
-    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/21dedb446_ChatGPTImageMay20202608_09_18PM.png',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/e7a78d148_hokkaido-brewing-company-fruit-beer.webp',
     tags: ['Craft Beer', 'Specialty Beer'],
   },
 ];
