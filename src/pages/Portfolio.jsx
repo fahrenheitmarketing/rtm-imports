@@ -44,7 +44,7 @@ const CATEGORIES = [
     icon: GlassWater,
     title: 'Soju & Korean Beer',
     description: 'Premium soju and Korean beer from producers across South Korea. Authentic, high-quality brands that resonate with modern consumers and align with the global momentum of K-culture.',
-    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/63272a87b_KTOWN_Yuzu_ColoredBG.jpg',
+    image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/b0fe77506_KTOWN_Yuzu_BlueColoredBG_1.jpg',
     tags: ['Soju', 'Korean Beer'],
   },
   {
