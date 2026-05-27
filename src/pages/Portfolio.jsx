@@ -45,7 +45,6 @@ const CATEGORIES = [
     title: 'Soju & Korean Beer',
     description: 'Premium soju and Korean beer from producers across South Korea. Authentic, high-quality brands that resonate with modern consumers and align with the global momentum of K-culture.',
     image: 'https://media.base44.com/images/public/69dd75d09559acb6fb908761/63272a87b_KTOWN_Yuzu_ColoredBG.jpg',
-    imagePosition: 'top',
     tags: ['Soju', 'Korean Beer'],
   },
   {
@@ -171,7 +170,7 @@ export default function Portfolio() {
               >
                 <div className={`lg:col-span-2 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="relative overflow-hidden aspect-[4/3] rounded-[18px] border" style={{ borderColor: 'rgba(244,196,48,0.45)' }}>
-                    <img src={cat.image} alt={cat.title} className="w-full h-full object-cover" style={{ objectPosition: cat.imagePosition || 'center' }} loading="lazy" width="800" height="600" />
+                    <img src={cat.image} alt={cat.title} className="w-full h-full object-cover" loading="lazy" width="800" height="600" />
                     <div className="absolute inset-0 rounded-[18px]" style={{ background: 'rgba(10,36,84,0.65)' }} />
                   </div>
                 </div>
