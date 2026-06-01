@@ -81,10 +81,9 @@ export default function Footer() {
           </p>
         </div>
         <div className="pt-4 text-center">
-          <p className="font-body text-xs text-foreground/50">
-            Website Design & Development by{' '}
-            <a href="https://www.fahrenheitmarketing.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300">Fahrenheit Marketing</a>
-          </p>
+          <a href="https://www.fahrenheitmarketing.com" target="_blank" rel="noopener noreferrer" className="font-body text-xs text-foreground/50 hover:text-primary transition-colors duration-300">
+            Website Design & Development by Fahrenheit Marketing
+          </a>
         </div>
       </div>
     </footer>
