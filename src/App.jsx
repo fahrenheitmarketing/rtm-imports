@@ -17,6 +17,7 @@ import Wholesalers from './pages/Wholesalers.jsx';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import News from './pages/News';
+import Suppliers from './pages/Suppliers';
 import NewsDashboard from './pages/admin/NewsDashboard';
 import Wireframe from './pages/Wireframe';
 import ContentDoc from './pages/ContentDoc';
@@ -61,6 +62,7 @@ const AuthenticatedApp = () => {
         <Route path="/products/custom-labels" element={<CustomLabels />} />
         <Route path="/products/compliance" element={<Compliance />} />
         <Route path="/wholesalers" element={<Wholesalers />} />
+        <Route path="/suppliers" element={<Suppliers />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/news" element={<News />} />
