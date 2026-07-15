@@ -32,7 +32,7 @@ export default function Suppliers() {
               Supplier <GoldUnderline>Resources</GoldUnderline>
             </h1>
             <p className="font-body text-base leading-relaxed max-w-2xl mt-6" style={{ color: 'rgba(248,243,232,0.85)' }}>
-              Browse and download the latest documents and presentations.
+              Access RTM's latest brand presentations, sell sheets, and marketing resources — all in one place, ready to download.
             </p>
           </motion.div>
         </div>
