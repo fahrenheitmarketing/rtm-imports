@@ -43,16 +43,8 @@ export default function Suppliers() {
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           {hasDocuments ? (
             <div className="space-y-5">
-              {DOCUMENTS.map((doc, idx) => (
-                <motion.div
-                  key={doc.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.4, delay: idx * 0.06 }}
-                >
-                  <DocumentItem title={doc.title} fileUrl={doc.fileUrl} />
-                </motion.div>
+              {DOCUMENTS.map((doc) => (
+                <DocumentItem key={doc.title} title={doc.title} fileUrl={doc.fileUrl} />
               ))}
             </div>
           ) : (
