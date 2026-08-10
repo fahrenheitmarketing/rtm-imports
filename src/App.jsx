@@ -17,6 +17,7 @@ import Wholesalers from './pages/Wholesalers.jsx';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import News from './pages/News';
+import NewsArticle from './pages/NewsArticle';
 import Suppliers from './pages/Suppliers';
 import NewsDashboard from './pages/admin/NewsDashboard';
 import Wireframe from './pages/Wireframe';
@@ -66,6 +67,7 @@ const AuthenticatedApp = () => {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/news" element={<News />} />
+        <Route path="/news/:id" element={<NewsArticle />} />
         <Route path="/admin/news" element={<NewsDashboard />} />
         <Route path="/wireframe" element={<Wireframe />} />
         <Route path="/content-doc" element={<ContentDoc />} />

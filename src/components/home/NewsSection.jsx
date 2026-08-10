@@ -4,12 +4,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import NewsCard from '../news/NewsCard';
-import NewsModal from '../news/NewsModal';
 import SectionHeading from '../SectionHeading';
 
 export default function NewsSection() {
   const [posts, setPosts] = useState([]);
-  const [selectedPost, setSelectedPost] = useState(null);
 
   useEffect(() => {
     base44.entities.NewsPost.filter({ is_published: true }, '-published_date', 3).then(setPosts);
@@ -43,12 +41,10 @@ export default function NewsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post, idx) => (
-            <NewsCard key={post.id} post={post} idx={idx} onOpen={setSelectedPost} />
+            <NewsCard key={post.id} post={post} idx={idx} />
           ))}
         </div>
       </div>
-
-      {selectedPost && <NewsModal post={selectedPost} onClose={() => setSelectedPost(null)} />}
     </section>
   );
 }

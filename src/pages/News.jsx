@@ -5,7 +5,7 @@ import { base44 } from '@/api/base44Client';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
 import NewsCard from '../components/news/NewsCard';
-import NewsModal from '../components/news/NewsModal';
+import { Link } from 'react-router-dom';
 
 const CATEGORIES = ['All', 'Industry Trend', 'Partnership', 'Press Release', 'Market Data', 'Company Update'];
 
@@ -13,7 +13,6 @@ export default function News() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('All');
-  const [selectedPost, setSelectedPost] = useState(null);
 
   useEffect(() => {
     base44.entities.NewsPost.filter({ is_published: true }, '-published_date').then((data) => {
@@ -46,41 +45,49 @@ export default function News() {
       {featured && (
         <section className="py-16 bg-background">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-[18px] overflow-hidden border cursor-pointer group"
-              style={{ borderColor: 'rgba(244,196,48,0.45)' }}
-              onClick={() => featured.external_url ? window.open(featured.external_url, '_blank') : setSelectedPost(featured)}
-            >
-              {featured.image_url && (
-                <div className="aspect-[4/3] lg:aspect-auto overflow-hidden">
-                  <img src={featured.image_url} alt={featured.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-              )}
-              <div className={`p-10 md:p-14 flex flex-col justify-between ${!featured.image_url ? 'lg:col-span-2' : ''}`} style={{ background: '#FFFCF5' }}>
-                <div>
-                  <div className="flex items-center gap-3 mb-5">
-                    <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt px-3 py-1 rounded-full border" style={{ borderColor: 'rgba(244,196,48,0.45)' }}>{featured.category}</span>
-                    <span className="font-footnote text-xs flex items-center gap-1" style={{ color: '#0A2454' }}>
-                      <Calendar className="w-3 h-3" />
-                      {new Date(featured.published_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                    </span>
-                  </div>
-                  <h2 className="font-display text-2xl md:text-3xl mb-4 leading-tight" style={{ color: '#0A2454' }}>{featured.title}</h2>
-                  <p className="font-body text-base leading-relaxed" style={{ color: '#0A2454' }}>{featured.summary}</p>
-                </div>
-                <div className="flex items-center gap-2 mt-8 font-eyebrow text-sm tracking-widest uppercase transition-colors duration-300" style={{ color: '#0A2454' }}>
-                  {featured.external_url ? (
-                    <><ExternalLink className="w-4 h-4" /> Read Full Story</>
-                  ) : (
-                    <><ArrowRight className="w-4 h-4" /> Read More</>
+            {(() => {
+              const FeaturedCard = (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-[18px] overflow-hidden border cursor-pointer group"
+                  style={{ borderColor: 'rgba(244,196,48,0.45)' }}
+                >
+                  {featured.image_url && (
+                    <div className="aspect-[4/3] lg:aspect-auto overflow-hidden">
+                      <img src={featured.image_url} alt={featured.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
                   )}
-                </div>
-              </div>
-            </motion.div>
+                  <div className={`p-10 md:p-14 flex flex-col justify-between ${!featured.image_url ? 'lg:col-span-2' : ''}`} style={{ background: '#FFFCF5' }}>
+                    <div>
+                      <div className="flex items-center gap-3 mb-5">
+                        <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt px-3 py-1 rounded-full border" style={{ borderColor: 'rgba(244,196,48,0.45)' }}>{featured.category}</span>
+                        <span className="font-footnote text-xs flex items-center gap-1" style={{ color: '#0A2454' }}>
+                          <Calendar className="w-3 h-3" />
+                          {new Date(featured.published_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        </span>
+                      </div>
+                      <h2 className="font-display text-2xl md:text-3xl mb-4 leading-tight" style={{ color: '#0A2454' }}>{featured.title}</h2>
+                      <p className="font-body text-base leading-relaxed" style={{ color: '#0A2454' }}>{featured.summary}</p>
+                    </div>
+                    <div className="flex items-center gap-2 mt-8 font-eyebrow text-sm tracking-widest uppercase transition-colors duration-300" style={{ color: '#0A2454' }}>
+                      {featured.external_url ? (
+                        <><ExternalLink className="w-4 h-4" /> Read Full Story</>
+                      ) : (
+                        <><ArrowRight className="w-4 h-4" /> Read More</>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+              return featured.external_url ? (
+                <a href={featured.external_url} target="_blank" rel="noopener noreferrer" className="block">{FeaturedCard}</a>
+              ) : (
+                <Link to={`/news/${featured.id}`} className="block">{FeaturedCard}</Link>
+              );
+            })()}
           </div>
         </section>
       )}
@@ -126,14 +133,13 @@ export default function News() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((post, idx) => (
-                <NewsCard key={post.id} post={post} idx={idx} onOpen={setSelectedPost} />
+                <NewsCard key={post.id} post={post} idx={idx} />
               ))}
             </div>
           )}
         </div>
       </section>
 
-      {selectedPost && <NewsModal post={selectedPost} onClose={() => setSelectedPost(null)} />}
     </>
   );
 }
