@@ -23,7 +23,7 @@ const EMPTY = {
 };
 
 const slugify = (text = '') =>
-  String(text).toLowerCase().trim().replace(/['"]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+  String(text).toLowerCase().trim().replace(/['"]/g, '').replace(/[^a-z0-9]+/g, ' ').trim().split(/\s+/).slice(0, 6).join('-').slice(0, 45).replace(/-+$/g, '');
 
 export default function NewsPostForm({ post, onSave, onCancel }) {
   const [form, setForm] = useState(post ? { ...post } : { ...EMPTY });

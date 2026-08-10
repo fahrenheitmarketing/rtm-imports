@@ -5,9 +5,13 @@ export function slugify(text = '') {
     .toLowerCase()
     .trim()
     .replace(/['"]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 80);
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .slice(0, 6) // keep only the leading keywords, not the full headline
+    .join('-')
+    .slice(0, 45)
+    .replace(/-+$/g, '');
 }
 
 // Build the public URL path for a post, preferring its slug over the raw id.
