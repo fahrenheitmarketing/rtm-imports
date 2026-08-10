@@ -5,6 +5,7 @@ import { base44 } from '@/api/base44Client';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
 import NewsCard from '../components/news/NewsCard';
+import { articlePath } from '@/lib/newsSlug';
 import { Link } from 'react-router-dom';
 
 const CATEGORIES = ['All', 'Industry Trend', 'Partnership', 'Press Release', 'Market Data', 'Company Update'];
@@ -85,7 +86,7 @@ export default function News() {
               return featured.external_url ? (
                 <a href={featured.external_url} target="_blank" rel="noopener noreferrer" className="block">{FeaturedCard}</a>
               ) : (
-                <Link to={`/news/${featured.id}`} className="block">{FeaturedCard}</Link>
+                <Link to={articlePath(featured)} className="block">{FeaturedCard}</Link>
               );
             })()}
           </div>

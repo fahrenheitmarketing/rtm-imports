@@ -6,6 +6,10 @@
       "type": "string",
       "description": "Headline of the news post"
     },
+    "slug": {
+      "type": "string",
+      "description": "SEO-friendly URL slug (short, keyword-driven). Used in /news/<slug> URLs."
+    },
     "category": {
       "type": "string",
       "enum": [

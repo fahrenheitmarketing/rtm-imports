@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Calendar } from 'lucide-react';
+import { articlePath as buildArticlePath } from '@/lib/newsSlug';
 
 const MotionLink = motion(Link);
 
 export default function NewsCard({ post, idx }) {
   const isExternal = !!post.external_url;
-  const articlePath = `/news/${post.id}`;
+  const articlePath = buildArticlePath(post);
 
   const className = "rounded-[18px] border hover:shadow-md transition-all duration-300 cursor-pointer group flex flex-col overflow-hidden block";
   const style = { background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' };

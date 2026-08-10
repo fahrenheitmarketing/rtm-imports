@@ -9,6 +9,7 @@ const CATEGORIES = ['Industry Trend', 'Partnership', 'Press Release', 'Market Da
 
 const EMPTY = {
   title: '',
+  slug: '',
   category: '',
   summary: '',
   body: '',
@@ -20,6 +21,9 @@ const EMPTY = {
   image_url: '',
   tags: [],
 };
+
+const slugify = (text = '') =>
+  String(text).toLowerCase().trim().replace(/['"]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
 
 export default function NewsPostForm({ post, onSave, onCancel }) {
   const [form, setForm] = useState(post ? { ...post } : { ...EMPTY });
@@ -42,7 +46,9 @@ export default function NewsPostForm({ post, onSave, onCancel }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSaving(true);
-    await onSave(form);
+    // Ensure a slug exists — derive from the title when left blank.
+    const payload = { ...form, slug: form.slug?.trim() ? slugify(form.slug) : slugify(form.title) };
+    await onSave(payload);
     setSaving(false);
   };
 
@@ -63,6 +69,20 @@ export default function NewsPostForm({ post, onSave, onCancel }) {
               <Label className="font-body text-xs uppercase tracking-widest text-muted-foreground">Title *</Label>
               <Input required value={form.title} onChange={(e) => set('title', e.target.value)}
                 placeholder="e.g. Soju Market Hits $935M in the U.S." className="bg-card border-border h-12 font-body text-foreground" />
+            </div>
+
+            <div className="sm:col-span-2 space-y-2">
+              <Label className="font-body text-xs uppercase tracking-widest text-muted-foreground">URL Slug</Label>
+              <div className="flex items-center gap-2">
+                <span className="font-body text-sm text-muted-foreground hidden sm:inline">/news/</span>
+                <Input value={form.slug} onChange={(e) => set('slug', slugify(e.target.value))}
+                  placeholder="auto-generated from title if blank"
+                  className="bg-card border-border h-12 font-body text-foreground flex-1" />
+                <button type="button" onClick={() => set('slug', slugify(form.title))}
+                  className="font-body text-xs uppercase tracking-widest text-muted-foreground border border-border px-3 py-3 hover:border-foreground hover:text-foreground transition-colors whitespace-nowrap">
+                  From Title
+                </button>
+              </div>
             </div>
 
             <div className="space-y-2">

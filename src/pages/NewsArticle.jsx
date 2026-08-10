@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, ExternalLink, User } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { base44 } from '@/api/base44Client';
+import { slugify } from '@/lib/newsSlug';
 import GoldUnderline from '../components/GoldUnderline';
 
 export default function NewsArticle() {
@@ -15,7 +16,12 @@ export default function NewsArticle() {
   useEffect(() => {
     setLoading(true);
     setNotFound(false);
-    base44.entities.NewsPost.get(id)
+    // Resolve by slug first; fall back to the raw id for backward-compatible links.
+    base44.entities.NewsPost.filter({ slug: slugify(id) }, '-published_date', 1)
+      .then(async (results) => {
+        if (results && results.length > 0) return results[0];
+        return base44.entities.NewsPost.get(id);
+      })
       .then((data) => {
         setPost(data);
         setLoading(false);
