@@ -170,10 +170,10 @@ export default function NewsArticle() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="aspect-[16/9] rounded-[18px] overflow-hidden border"
+            className="aspect-[4/3] rounded-[18px] overflow-hidden border"
             style={{ borderColor: 'rgba(244,196,48,0.45)' }}
           >
-            <img src={post.image_url} alt={post.title} className="w-full h-full object-cover" style={{ objectPosition: '25% 80%' }} />
+            <img src={post.image_url} alt={post.title} className="w-full h-full object-cover" style={{ objectPosition: '15% 85%' }} />
           </motion.div>
         </div>
       )}
