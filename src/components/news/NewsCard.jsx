@@ -17,7 +17,7 @@ export default function NewsCard({ post, idx }) {
   <>
       {post.image_url &&
     <div className="aspect-[16/9] overflow-hidden">
-          <img src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/3d1862824_Yobo_winebasedsoju_4x3_web.jpg" alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <img src="https://rtm-imports-staging.fmclients.com/app/uploads/2026/07/article-5-wine-based-soju-1024x536.jpg" alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>
     }
       <div className="p-8 flex flex-col flex-1">
