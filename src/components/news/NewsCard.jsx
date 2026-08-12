@@ -13,13 +13,13 @@ export default function NewsCard({ post, idx }) {
   const className = "rounded-[18px] border hover:shadow-md transition-all duration-300 cursor-pointer group flex flex-col overflow-hidden block";
   const style = { background: '#FFFCF5', borderColor: 'rgba(244,196,48,0.45)' };
 
-  const inner = (
-    <>
-      {post.image_url && (
-        <div className="aspect-[16/9] overflow-hidden">
-          <img src={post.image_url} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+  const inner =
+  <>
+      {post.image_url &&
+    <div className="aspect-[16/9] overflow-hidden">
+          <img src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/3d1862824_Yobo_winebasedsoju_4x3_web.jpg" alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>
-      )}
+    }
       <div className="p-8 flex flex-col flex-1">
         <div className="flex items-center gap-3 mb-4">
           <span className="font-eyebrow text-xs tracking-widest uppercase text-rtm-cobalt px-3 py-1 rounded-full border" style={{ borderColor: 'rgba(244,196,48,0.45)' }}>
@@ -43,8 +43,8 @@ export default function NewsCard({ post, idx }) {
           </span>
         </div>
       </div>
-    </>
-  );
+    </>;
+
 
   if (isExternal) {
     return (
@@ -57,11 +57,11 @@ export default function NewsCard({ post, idx }) {
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: idx * 0.08 }}
         className={className}
-        style={style}
-      >
+        style={style}>
+        
         {inner}
-      </motion.a>
-    );
+      </motion.a>);
+
   }
 
   return (
@@ -72,9 +72,9 @@ export default function NewsCard({ post, idx }) {
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: idx * 0.08 }}
       className={className}
-      style={style}
-    >
+      style={style}>
+      
       {inner}
-    </MotionLink>
-  );
+    </MotionLink>);
+
 }
