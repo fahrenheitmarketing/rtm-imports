@@ -17,19 +17,19 @@ export default function NewsArticle() {
     setLoading(true);
     setNotFound(false);
     // Resolve by slug first; fall back to the raw id for backward-compatible links.
-    base44.entities.NewsPost.filter({ slug: slugify(id) }, '-published_date', 1)
-      .then(async (results) => {
-        if (results && results.length > 0) return results[0];
-        return base44.entities.NewsPost.get(id);
-      })
-      .then((data) => {
-        setPost(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setNotFound(true);
-        setLoading(false);
-      });
+    base44.entities.NewsPost.filter({ slug: slugify(id) }, '-published_date', 1).
+    then(async (results) => {
+      if (results && results.length > 0) return results[0];
+      return base44.entities.NewsPost.get(id);
+    }).
+    then((data) => {
+      setPost(data);
+      setLoading(false);
+    }).
+    catch(() => {
+      setNotFound(true);
+      setLoading(false);
+    });
   }, [id]);
 
   // SEO: document title, meta description, and JSON-LD Article schema
@@ -82,7 +82,7 @@ export default function NewsArticle() {
       publisher: { '@type': 'Organization', name: 'RTM Imports' },
       ...(post.image_url ? { image: post.image_url } : {}),
       articleSection: post.category,
-      keywords: (post.tags || []).join(', '),
+      keywords: (post.tags || []).join(', ')
     };
     const script = document.createElement('script');
     script.type = 'application/ld+json';
@@ -107,8 +107,8 @@ export default function NewsArticle() {
     return (
       <div className="min-h-[60vh] flex items-center justify-center bg-background">
         <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin"></div>
-      </div>
-    );
+      </div>);
+
   }
 
   if (notFound || !post) {
@@ -119,8 +119,8 @@ export default function NewsArticle() {
         <Link to="/news" className="inline-flex items-center gap-2 font-eyebrow text-sm tracking-widest uppercase text-primary hover:opacity-70 transition-opacity">
           <ArrowLeft className="w-4 h-4" /> Back to News
         </Link>
-      </div>
-    );
+      </div>);
+
   }
 
   const formattedDate = new Date(post.published_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -134,8 +134,8 @@ export default function NewsArticle() {
             <Link
               to="/news"
               className="inline-flex items-center gap-2 font-eyebrow text-xs tracking-widest uppercase mb-8 transition-colors duration-300"
-              style={{ color: 'rgba(244,196,48,0.9)' }}
-            >
+              style={{ color: 'rgba(244,196,48,0.9)' }}>
+              
               <ArrowLeft className="w-3 h-3" /> News
             </Link>
             <div className="flex flex-wrap items-center gap-4 mb-6">
@@ -146,12 +146,12 @@ export default function NewsArticle() {
                 <Calendar className="w-3 h-3" />
                 {formattedDate}
               </span>
-              {post.author && (
-                <span className="font-footnote text-xs flex items-center gap-1.5" style={{ color: 'rgba(248,243,232,0.7)' }}>
+              {post.author &&
+              <span className="font-footnote text-xs flex items-center gap-1.5" style={{ color: 'rgba(248,243,232,0.7)' }}>
                   <User className="w-3 h-3" />
                   {post.author}
                 </span>
-              )}
+              }
             </div>
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl leading-tight" style={{ color: '#F8F3E8' }}>
               {post.title}
@@ -164,19 +164,19 @@ export default function NewsArticle() {
       </section>
 
       {/* Featured Image */}
-      {post.image_url && (
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 -mt-8 md:-mt-12 relative z-10">
+      {post.image_url &&
+      <div className="max-w-4xl mx-auto px-6 lg:px-12 -mt-8 md:-mt-12 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="aspect-[4/3] rounded-[18px] overflow-hidden border"
-            style={{ borderColor: 'rgba(244,196,48,0.45)' }}
-          >
-            <img src={post.image_url} alt={post.title} className="w-full h-full object-cover" style={{ objectPosition: 'center center' }} />
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="aspect-[4/3] rounded-[18px] overflow-hidden border"
+          style={{ borderColor: 'rgba(244,196,48,0.45)' }}>
+          
+            <img src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/3d1862824_Yobo_winebasedsoju_4x3_web.jpg" alt={post.title} className="w-full h-full object-cover" style={{ objectPosition: 'center center' }} />
           </motion.div>
         </div>
-      )}
+      }
 
       {/* Body */}
       <section className="py-16 md:py-24 bg-background">
@@ -185,26 +185,26 @@ export default function NewsArticle() {
             <ReactMarkdown>{post.body || post.summary}</ReactMarkdown>
           </article>
 
-          {post.external_url && (
-            <a
-              href={post.external_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-10 font-eyebrow text-sm tracking-widest uppercase text-primary hover:opacity-70 transition-opacity"
-            >
+          {post.external_url &&
+          <a
+            href={post.external_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-10 font-eyebrow text-sm tracking-widest uppercase text-primary hover:opacity-70 transition-opacity">
+            
               <ExternalLink className="w-4 h-4" /> View Original Source
             </a>
-          )}
+          }
 
-          {post.tags?.length > 0 && (
-            <div className="mt-12 pt-8 flex flex-wrap gap-2" style={{ borderTop: '1px solid rgba(244,196,48,0.3)' }}>
-              {post.tags.map((tag) => (
-                <span key={tag} className="font-footnote text-xs rounded-full px-3 py-1" style={{ color: 'rgba(248,243,232,0.6)', border: '1px solid rgba(244,196,48,0.3)' }}>
+          {post.tags?.length > 0 &&
+          <div className="mt-12 pt-8 flex flex-wrap gap-2" style={{ borderTop: '1px solid rgba(244,196,48,0.3)' }}>
+              {post.tags.map((tag) =>
+            <span key={tag} className="font-footnote text-xs rounded-full px-3 py-1" style={{ color: 'rgba(248,243,232,0.6)', border: '1px solid rgba(244,196,48,0.3)' }}>
                   #{tag}
                 </span>
-              ))}
+            )}
             </div>
-          )}
+          }
 
           <div className="mt-16 pt-10 text-center" style={{ borderTop: '1px solid rgba(244,196,48,0.2)' }}>
             <p className="font-body text-base mb-6" style={{ color: 'rgba(248,243,232,0.75)' }}>
@@ -213,13 +213,13 @@ export default function NewsArticle() {
             <Link
               to="/news"
               className="inline-flex items-center gap-2 px-6 py-3 font-eyebrow text-xs tracking-widest uppercase rounded-lg transition-all duration-300"
-              style={{ background: '#F4C430', color: '#0A2454' }}
-            >
+              style={{ background: '#F4C430', color: '#0A2454' }}>
+              
               <ArrowLeft className="w-3 h-3" /> All Articles
             </Link>
           </div>
         </div>
       </section>
-    </>
-  );
+    </>);
+
 }
