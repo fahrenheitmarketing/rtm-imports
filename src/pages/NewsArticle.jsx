@@ -173,7 +173,7 @@ export default function NewsArticle() {
           className="aspect-[4/3] rounded-[18px] overflow-hidden border"
           style={{ borderColor: 'rgba(244,196,48,0.45)' }}>
           
-            <img src={post.image_url} alt={post.title} className="w-full h-full object-cover" style={{ objectPosition: 'center center' }} />
+            <img src="https://media.base44.com/images/public/69dd75d09559acb6fb908761/3d1862824_Yobo_winebasedsoju_4x3_web.jpg" alt={post.title} className="w-full h-full object-cover" style={{ objectPosition: 'center center' }} />
           </motion.div>
         </div>
       }
