@@ -173,7 +173,7 @@ export default function NewsArticle() {
             className="aspect-[16/9] rounded-[18px] overflow-hidden border"
             style={{ borderColor: 'rgba(244,196,48,0.45)' }}
           >
-            <img src={post.image_url} alt={post.title} className="w-full h-full object-cover" />
+            <img src={post.image_url} alt={post.title} className="w-full h-full object-cover" style={{ objectPosition: '25% 80%' }} />
           </motion.div>
         </div>
       )}
