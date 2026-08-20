@@ -14,13 +14,21 @@ export default async function(req) {
       return Response.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // Date range: last 30 days
-    const endDate = new Date();
-    const startDate = new Date();
-    startDate.setDate(startDate.getDate() - 29);
+    // Date range: custom from request, or last 30 days
+    const endDateInput = body.endDate;
+    const startDateInput = body.startDate;
     const fmt = (d) => d.toISOString().split('T')[0];
-    const startDateStr = fmt(startDate);
-    const endDateStr = fmt(endDate);
+    let endDateStr, startDateStr;
+    if (startDateInput && endDateInput) {
+      startDateStr = startDateInput;
+      endDateStr = endDateInput;
+    } else {
+      const endDate = new Date();
+      const startDate = new Date();
+      startDate.setDate(startDate.getDate() - 29);
+      startDateStr = fmt(startDate);
+      endDateStr = fmt(endDate);
+    }
 
     const result = {
       dateRange: { start: startDateStr, end: endDateStr },

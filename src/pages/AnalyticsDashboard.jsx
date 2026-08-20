@@ -5,6 +5,7 @@ import PasswordGate from '@/components/analytics/PasswordGate';
 import StatCard from '@/components/analytics/StatCard';
 import SessionsChart from '@/components/analytics/SessionsChart';
 import DataTable from '@/components/analytics/DataTable';
+import DateRangeSelector from '@/components/analytics/DateRangeSelector';
 
 const SESSION_KEY = 'rtm_analytics_pw';
 
@@ -21,12 +22,18 @@ export default function AnalyticsDashboard() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [selectedRange, setSelectedRange] = useState({ startDate: null, endDate: null });
 
-  const fetchData = useCallback(async (pw) => {
+  const fetchData = useCallback(async (pw, range) => {
     setLoading(true);
     setError(null);
     try {
-      const res = await base44.functions.invoke('analyticsDashboard', { password: pw });
+      const payload = { password: pw };
+      if (range?.startDate && range?.endDate) {
+        payload.startDate = range.startDate;
+        payload.endDate = range.endDate;
+      }
+      const res = await base44.functions.invoke('analyticsDashboard', payload);
       setData(res.data);
     } catch (err) {
       if (err.response?.status === 401) {
@@ -41,18 +48,23 @@ export default function AnalyticsDashboard() {
     }
   }, []);
 
+  const handleDateChange = (startDate, endDate) => {
+    setSelectedRange({ startDate, endDate });
+    fetchData(password, { startDate, endDate });
+  };
+
   useEffect(() => {
     const stored = sessionStorage.getItem(SESSION_KEY);
     if (stored) {
       setPassword(stored);
-      fetchData(stored);
+      fetchData(stored, selectedRange);
     }
   }, [fetchData]);
 
   const handleAuth = (pw) => {
     sessionStorage.setItem(SESSION_KEY, pw);
     setPassword(pw);
-    fetchData(pw);
+    fetchData(pw, selectedRange);
   };
 
   const handleLogout = () => {
@@ -60,6 +72,7 @@ export default function AnalyticsDashboard() {
     setPassword(null);
     setData(null);
     setError(null);
+    setSelectedRange({ startDate: null, endDate: null });
   };
 
   if (!password) {
@@ -102,8 +115,14 @@ export default function AnalyticsDashboard() {
             )}
           </div>
           <div className="flex items-center gap-3">
+            <DateRangeSelector
+              startDate={selectedRange.startDate}
+              endDate={selectedRange.endDate}
+              onApply={handleDateChange}
+              loading={loading}
+            />
             <button
-              onClick={() => fetchData(password)}
+              onClick={() => fetchData(password, selectedRange)}
               disabled={loading}
               className="flex items-center gap-2 px-4 py-2 rounded-lg font-body text-sm transition-opacity disabled:opacity-50"
               style={{ border: '1px solid rgba(244,196,48,0.3)', color: '#F4C430' }}
@@ -156,7 +175,7 @@ export default function AnalyticsDashboard() {
 
             {ga.daily?.length > 0 && (
               <div className="rounded-xl p-5 border mb-6" style={{ background: 'rgba(10,36,84,0.6)', borderColor: 'rgba(244,196,48,0.25)' }}>
-                <h3 className="font-display text-base mb-4" style={{ color: '#F8F3E8' }}>Sessions Trend (30 Days)</h3>
+                <h3 className="font-display text-base mb-4" style={{ color: '#F8F3E8' }}>Sessions Trend</h3>
                 <SessionsChart data={ga.daily} />
               </div>
             )}
