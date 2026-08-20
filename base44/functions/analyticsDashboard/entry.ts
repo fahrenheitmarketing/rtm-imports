@@ -60,6 +60,12 @@ export default async function(req) {
           if (propertyId) break;
         }
 
+        // Fallback to known RTM Imports property ID
+        if (!propertyId) {
+          propertyId = '538463420';
+          propertyName = 'RTM Imports';
+        }
+
         if (!propertyId) {
           result.errors.push('No GA4 property for rtm-imports.com found. Create a GA4 property for rtm-imports.com and share access with the connected Google account.');
         } else {
