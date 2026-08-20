@@ -22,6 +22,7 @@ import Suppliers from './pages/Suppliers';
 import NewsDashboard from './pages/admin/NewsDashboard';
 import Wireframe from './pages/Wireframe';
 import ContentDoc from './pages/ContentDoc';
+import AnalyticsDashboard from './pages/AnalyticsDashboard';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -52,6 +53,7 @@ const AuthenticatedApp = () => {
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/analytics-dashboard" element={<AnalyticsDashboard />} />
       <Route element={<Layout />}>
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
