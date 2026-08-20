@@ -199,15 +199,6 @@ export default function AnalyticsDashboard() {
                   { label: 'Sessions', key: 'sessions', format: fmtNum }
                 ]}
               />
-              <DataTable
-                title="Blog Pages"
-                data={ga.blogPages}
-                columns={[
-                  { label: 'Page', key: 'title', primary: true },
-                  { label: 'Views', key: 'pageViews', format: fmtNum },
-                  { label: 'Sessions', key: 'sessions', format: fmtNum }
-                ]}
-              />
             </div>
           </section>
         )}

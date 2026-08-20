@@ -133,7 +133,7 @@ export default async function(req) {
             }));
           }
 
-          // Top pages (fetch more so we can separate blog pages)
+          // Top pages
           const pagesRes = await fetch(gaUrl, {
             method: 'POST', headers,
             body: JSON.stringify({
@@ -141,22 +141,19 @@ export default async function(req) {
               dimensions: [{ name: 'pageTitle' }, { name: 'pagePath' }],
               metrics: [{ name: 'screenPageViews' }, { name: 'sessions' }],
               orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }],
-              limit: 50
+              limit: 10
             })
           });
 
           let topPages = [];
-          let blogPages = [];
           if (pagesRes.ok) {
             const pData = await pagesRes.json();
-            const allPages = (pData.rows || []).map(r => ({
+            topPages = (pData.rows || []).map(r => ({
               title: r.dimensionValues[0].value,
               path: r.dimensionValues[1].value,
               pageViews: parseInt(r.metricValues[0].value) || 0,
               sessions: parseInt(r.metricValues[1].value) || 0
             }));
-            blogPages = allPages.filter(p => p.path.toLowerCase().includes('/blog/'));
-            topPages = allPages.filter(p => !p.path.toLowerCase().includes('/blog/')).slice(0, 10);
           }
 
           // Top traffic sources
@@ -181,7 +178,7 @@ export default async function(req) {
             }));
           }
 
-          result.ga = { propertyName, propertyId, overview, daily, topPages, blogPages, topSources };
+          result.ga = { propertyName, propertyId, overview, daily, topPages, topSources };
         }
       }
     } catch (e) {
