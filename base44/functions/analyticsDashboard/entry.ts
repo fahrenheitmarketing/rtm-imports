@@ -46,17 +46,22 @@ export default async function(req) {
         let propertyId = null;
         let propertyName = null;
 
+        // Look for RTM Imports property by name
         for (const acct of accounts) {
           for (const prop of (acct.propertySummaries || [])) {
-            propertyId = prop.property.replace('properties/', '');
-            propertyName = prop.displayName;
-            break;
+            const name = (prop.displayName || '').toLowerCase();
+            const acctName = (acct.displayName || '').toLowerCase();
+            if (name.includes('rtm') || acctName.includes('rtm')) {
+              propertyId = prop.property.replace('properties/', '');
+              propertyName = prop.displayName;
+              break;
+            }
           }
           if (propertyId) break;
         }
 
         if (!propertyId) {
-          result.errors.push('No GA4 properties found');
+          result.errors.push('No GA4 property for rtm-imports.com found. Create a GA4 property for rtm-imports.com and share access with the connected Google account.');
         } else {
           const gaUrl = `https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:runReport`;
           const headers = { 'Authorization': `Bearer ${accessToken}`, 'Content-Type': 'application/json' };
@@ -184,7 +189,8 @@ export default async function(req) {
         if (sites.length === 0) {
           result.errors.push('No Search Console sites found');
         } else {
-          const siteUrl = sites[0].siteUrl;
+          const rtmSite = sites.find(s => s.siteUrl.toLowerCase().includes('rtm-imports'));
+          const siteUrl = rtmSite ? rtmSite.siteUrl : sites[0].siteUrl;
           const encodedSite = encodeURIComponent(siteUrl);
           const scUrl = `https://www.googleapis.com/webmasters/v3/sites/${encodedSite}/searchAnalytics/query`;
           const headers = { 'Authorization': `Bearer ${accessToken}`, 'Content-Type': 'application/json' };
