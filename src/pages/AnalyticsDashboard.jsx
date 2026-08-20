@@ -192,7 +192,7 @@ export default function AnalyticsDashboard() {
               />
               <DataTable
                 title="Top Pages"
-                data={ga.topPages}
+                data={ga.topPages?.filter((p) => !p.path?.includes('/news/'))}
                 columns={[
                   { label: 'Page', key: 'title', primary: true },
                   { label: 'Views', key: 'pageViews', format: fmtNum },
@@ -200,6 +200,19 @@ export default function AnalyticsDashboard() {
                 ]}
               />
             </div>
+
+            {ga.topPages?.some((p) => p.path?.includes('/news/')) && (
+              <DataTable
+                title="Blog Pages"
+                data={ga.topPages?.filter((p) => p.path?.includes('/news/'))}
+                columns={[
+                  { label: 'Article', key: 'title', primary: true },
+                  { label: 'Path', key: 'path' },
+                  { label: 'Views', key: 'pageViews', format: fmtNum },
+                  { label: 'Sessions', key: 'sessions', format: fmtNum }
+                ]}
+              />
+            )}
           </section>
         )}
 
@@ -233,7 +246,7 @@ export default function AnalyticsDashboard() {
               />
               <DataTable
                 title="Top Pages"
-                data={gsc.topPages}
+                data={gsc.topPages?.filter((p) => !p.page?.includes('/news/'))}
                 columns={[
                   { label: 'Page', key: 'page', primary: true },
                   { label: 'Clicks', key: 'clicks', format: fmtNum },
@@ -242,6 +255,20 @@ export default function AnalyticsDashboard() {
                 ]}
               />
             </div>
+
+            {gsc.topPages?.some((p) => p.page?.includes('/news/')) && (
+              <DataTable
+                title="Blog Pages (Search)"
+                data={gsc.topPages?.filter((p) => p.page?.includes('/news/'))}
+                columns={[
+                  { label: 'Article', key: 'page', primary: true },
+                  { label: 'Clicks', key: 'clicks', format: fmtNum },
+                  { label: 'Impr.', key: 'impressions', format: fmtNum },
+                  { label: 'CTR', key: 'ctr', format: (v) => fmtPct(v * 100) },
+                  { label: 'Pos.', key: 'position', format: (v) => (v || 0).toFixed(1) }
+                ]}
+              />
+            )}
           </section>
         )}
 
