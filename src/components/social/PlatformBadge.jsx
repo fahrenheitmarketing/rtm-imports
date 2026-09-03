@@ -1,11 +1,12 @@
 import React from "react";
-import { Facebook, Instagram, Twitter, MapPin } from "lucide-react";
+import { Facebook, Instagram, Twitter, MapPin, Linkedin } from "lucide-react";
 
 const CONFIG = {
   facebook: { label: "Facebook", icon: Facebook, classes: "bg-blue-600 text-white" },
   instagram: { label: "Instagram", icon: Instagram, classes: "bg-gradient-to-tr from-purple-600 via-pink-600 to-orange-400 text-white" },
   twitter: { label: "Twitter/X", icon: Twitter, classes: "bg-gray-900 text-white" },
   google_business: { label: "Google Business", icon: MapPin, classes: "bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 text-white" },
+  linkedin: { label: "LinkedIn", icon: Linkedin, classes: "bg-[#0a66c2] text-white" },
 };
 
 export default function PlatformBadge({ platform }) {

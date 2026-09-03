@@ -38,6 +38,10 @@
       "type": "string",
       "description": "Postiz integration ID for the client's Google Business profile"
     },
+    "postiz_linkedin_id": {
+      "type": "string",
+      "description": "Postiz integration ID for the client's LinkedIn account or company page"
+    },
     "short_links": {
       "type": "array",
       "description": "Short links per page and platform, used when linking generated posts to landing pages",
@@ -54,6 +58,7 @@
               "facebook",
               "instagram",
               "twitter",
+              "linkedin",
               "google_business",
               "all"
             ],

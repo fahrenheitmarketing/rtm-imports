@@ -7,6 +7,7 @@ const PLATFORMS = [
   { value: "facebook", label: "Facebook" },
   { value: "instagram", label: "Instagram" },
   { value: "twitter", label: "Twitter/X" },
+  { value: "linkedin", label: "LinkedIn" },
   { value: "google_business", label: "Google Business" },
 ];
 

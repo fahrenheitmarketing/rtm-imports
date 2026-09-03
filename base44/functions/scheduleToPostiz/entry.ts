@@ -6,6 +6,7 @@ const PLATFORM_TO_SETTINGS_FIELD = {
   facebook: 'postiz_facebook_id',
   instagram: 'postiz_instagram_id',
   twitter: 'postiz_x_id',
+  linkedin: 'postiz_linkedin_id',
   google_business: 'postiz_gmb_id',
 };
 

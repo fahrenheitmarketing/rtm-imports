@@ -7,6 +7,7 @@ export const PLATFORM_DIMENSIONS = {
   facebook: { width: 1080, height: 1350, hint: 'composed for a 4:5 portrait crop — keep key subjects centered' },
   instagram: { width: 1080, height: 1350, hint: 'composed for a 4:5 portrait crop — keep key subjects centered' },
   twitter: { width: 1600, height: 900, hint: 'composed for a 16:9 landscape crop — keep key subjects centered horizontally' },
+  linkedin: { width: 1200, height: 627, hint: 'composed for a 1.91:1 landscape crop — keep key subjects centered horizontally' },
   google_business: { width: 1200, height: 900, hint: 'composed for a 4:3 landscape crop — keep key subjects centered' },
 };
 

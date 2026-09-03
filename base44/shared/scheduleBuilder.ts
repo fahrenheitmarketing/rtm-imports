@@ -5,6 +5,7 @@ export const PLATFORM_TONE = {
   facebook: "Conversational, community-focused, and trade-partner friendly.",
   instagram: "Trendy, visual-first, premium product and K-culture moments, punchy hooks, no links in the copy.",
   twitter: "Professional thought-leadership, beverage industry insights, import and distribution updates.",
+  linkedin: "Professional B2B voice for trade partners, distributors, and industry peers — wholesale, import, retail, and category insights.",
   google_business: "Local business updates, clear calls to action, trade and retail partner focused.",
 };
 
@@ -12,10 +13,11 @@ export const PLATFORM_LABEL = {
   facebook: "FACEBOOK",
   instagram: "INSTAGRAM",
   twitter: "TWITTER / X",
+  linkedin: "LINKEDIN",
   google_business: "GOOGLE BUSINESS",
 };
 
-export const PLATFORM_ORDER = ['facebook', 'instagram', 'twitter', 'google_business'];
+export const PLATFORM_ORDER = ['facebook', 'instagram', 'twitter', 'linkedin', 'google_business'];
 
 const SHORT_LINK_PAGE_LABELS = {
   '/': 'Home page',
@@ -126,7 +128,7 @@ export function buildHashtagInstruction(platform) {
 
 export function getPlatformsForDate(dayOfWeek) {
   const platforms = [];
-  if (dayOfWeek === 2 || dayOfWeek === 4) { platforms.push('twitter'); platforms.push('facebook'); platforms.push('instagram'); }
+  if (dayOfWeek === 2 || dayOfWeek === 4) { platforms.push('twitter'); platforms.push('facebook'); platforms.push('instagram'); platforms.push('linkedin'); }
   if (dayOfWeek === 4) platforms.push('google_business');
   return platforms;
 }

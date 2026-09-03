@@ -85,7 +85,7 @@ export default async function (req) {
 
     // 9. Postiz integration IDs
     const postizIds = settings
-      ? [settings.postiz_facebook_id, settings.postiz_instagram_id, settings.postiz_x_id, settings.postiz_gmb_id].filter(Boolean)
+      ? [settings.postiz_facebook_id, settings.postiz_instagram_id, settings.postiz_x_id, settings.postiz_linkedin_id, settings.postiz_gmb_id].filter(Boolean)
       : [];
     add('postiz_integrations', 'Postiz integrations', postizIds.length > 0, 'warn',
       postizIds.length > 0 ? `${postizIds.length} platform(s) connected` : 'Add Postiz integration IDs in Settings to enable scheduling', 'settings');

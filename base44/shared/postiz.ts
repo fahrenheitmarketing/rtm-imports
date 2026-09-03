@@ -15,6 +15,7 @@ const PLATFORM_SETTINGS = {
   facebook: { __type: 'facebook' },
   instagram: { __type: 'instagram-standalone', post_type: 'post' },
   twitter: { __type: 'x', who_can_reply_post: 'everyone' },
+  linkedin: { __type: 'linkedin' },
   google_business: { __type: 'gmb', topicType: 'STANDARD' },
 };
 

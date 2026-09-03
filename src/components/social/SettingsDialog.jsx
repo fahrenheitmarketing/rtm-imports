@@ -15,7 +15,7 @@ export default function SettingsDialog({ open, onOpenChange }) {
   useEffect(() => {
     if (open) {
       base44.entities.SocialMediaSettings.list().then((list) => {
-        setSettings(list[0] || { clickup_list_id: "", clickup_workspace_id: "", clickup_brand_doc_url: "", brand_guide_text: "", site_url: "", postiz_facebook_id: "", postiz_instagram_id: "", postiz_x_id: "", postiz_gmb_id: "", short_links: [] });
+        setSettings(list[0] || { clickup_list_id: "", clickup_workspace_id: "", clickup_brand_doc_url: "", brand_guide_text: "", site_url: "", postiz_facebook_id: "", postiz_instagram_id: "", postiz_x_id: "", postiz_gmb_id: "", postiz_linkedin_id: "", short_links: [] });
       });
     }
   }, [open]);
@@ -84,6 +84,10 @@ export default function SettingsDialog({ open, onOpenChange }) {
               <div>
                 <Label className="text-xs">Google Business</Label>
                 <Input value={settings.postiz_gmb_id || ""} onChange={(e) => setSettings({ ...settings, postiz_gmb_id: e.target.value })} placeholder="cmp..." />
+              </div>
+              <div>
+                <Label className="text-xs">LinkedIn</Label>
+                <Input value={settings.postiz_linkedin_id || ""} onChange={(e) => setSettings({ ...settings, postiz_linkedin_id: e.target.value })} placeholder="cmp..." />
               </div>
             </div>
           </div>
