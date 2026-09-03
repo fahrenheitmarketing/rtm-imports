@@ -23,7 +23,7 @@ export default function StudioHeader({
         <h1 className="text-2xl font-heading font-bold text-foreground">Social Media Studio</h1>
         <p className="text-sm text-muted-foreground">Generate, review, and publish RTM Imports' monthly content.</p>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         <div className="flex items-center gap-1 mr-1">
           <Button
             variant="outline"
