@@ -20,6 +20,7 @@ import News from './pages/News';
 import NewsArticle from './pages/NewsArticle';
 import Suppliers from './pages/Suppliers';
 import NewsDashboard from './pages/admin/NewsDashboard';
+import SocialMediaStudio from './pages/SocialMediaStudio';
 import Wireframe from './pages/Wireframe';
 import ContentDoc from './pages/ContentDoc';
 import AnalyticsDashboard from './pages/AnalyticsDashboard';
@@ -71,6 +72,7 @@ const AuthenticatedApp = () => {
         <Route path="/news" element={<News />} />
         <Route path="/news/:id" element={<NewsArticle />} />
         <Route path="/admin/news" element={<NewsDashboard />} />
+        <Route path="/social-media-studio" element={<SocialMediaStudio />} />
         <Route path="/wireframe" element={<Wireframe />} />
         <Route path="/content-doc" element={<ContentDoc />} />
       </Route>
