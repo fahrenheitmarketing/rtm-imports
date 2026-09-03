@@ -121,7 +121,7 @@ export default function BulkActionBar({ campaignMonth, onCampaignMonthChange, fi
           {isBusy("Approve All") ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : <CheckCheck className="w-4 h-4 mr-1" />}
           Approve All ({filteredPendingIds.length})
         </Button>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <input
             type="url"
             placeholder="Paste ClickUp task URL…"
