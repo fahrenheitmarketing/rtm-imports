@@ -17,7 +17,7 @@ export const PLATFORM_LABEL = {
   google_business: "GOOGLE BUSINESS",
 };
 
-export const PLATFORM_ORDER = ['facebook', 'instagram', 'twitter', 'linkedin', 'google_business'];
+export const PLATFORM_ORDER = ['facebook', 'instagram', 'linkedin'];
 
 const SHORT_LINK_PAGE_LABELS = {
   '/': 'Home page',
@@ -128,8 +128,7 @@ export function buildHashtagInstruction(platform) {
 
 export function getPlatformsForDate(dayOfWeek) {
   const platforms = [];
-  if (dayOfWeek === 2 || dayOfWeek === 4) { platforms.push('twitter'); platforms.push('facebook'); platforms.push('instagram'); platforms.push('linkedin'); }
-  if (dayOfWeek === 4) platforms.push('google_business');
+  if (dayOfWeek === 2 || dayOfWeek === 4) { platforms.push('facebook'); platforms.push('instagram'); platforms.push('linkedin'); }
   return platforms;
 }
 
