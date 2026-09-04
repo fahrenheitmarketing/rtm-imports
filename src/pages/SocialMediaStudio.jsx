@@ -143,7 +143,7 @@ export default function SocialMediaStudio() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8">
+    <div className="max-w-7xl mx-auto px-6 pt-28 pb-8">
       <StudioHeader
         pendingFeedbackCount={pendingCount}
         onGenerate={() => setShowGenerate(true)}
