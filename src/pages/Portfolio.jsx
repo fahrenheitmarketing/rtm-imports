@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Wine, Beer, GlassWater, ExternalLink } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
+import Seo from '../components/Seo';
 
 const BRANDS = [
   {
@@ -74,6 +75,12 @@ const REGIONS = [
 export default function Portfolio() {
   return (
     <>
+      <Seo
+        title="Brand Portfolio"
+        description="Current focus brands from RTM Imports — wine-based soju, Korean spirits, and craft beer with national wholesale distribution."
+        path="/portfolio"
+        breadcrumb={[{ name: 'Home', path: '/' }, { name: 'Portfolio', path: '/portfolio' }]}
+      />
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-24 min-h-[50vh] flex items-end" style={{ background: '#0A2454' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Globe, Palette, FileCheck } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
+import Seo from '../components/Seo';
 
 const SERVICES = [
   {
@@ -41,6 +42,12 @@ const SERVICES = [
 export default function Services() {
   return (
     <>
+      <Seo
+        title="Products & Services"
+        description="Three disciplines, one focus: Asian beverage sourcing, custom label development, and compliance & licensing infrastructure covering all 50 states."
+        path="/services"
+        breadcrumb={[{ name: 'Home', path: '/' }, { name: 'Products', path: '/services' }]}
+      />
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-24 min-h-[45vh] flex items-end" style={{ background: '#0A2454' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">

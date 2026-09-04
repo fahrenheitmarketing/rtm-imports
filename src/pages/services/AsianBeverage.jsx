@@ -5,6 +5,7 @@ import { ArrowRight, Globe, TrendingUp, Users, Award } from 'lucide-react';
 import SectionHeading from '../../components/SectionHeading';
 import GoldUnderline from '../../components/GoldUnderline';
 import FAQSection from '../../components/asian-beverage/FAQSection';
+import Seo from '../../components/Seo';
 
 const CATEGORIES = [
   {
@@ -47,6 +48,12 @@ export default function AsianBeverage() {
 
   return (
     <>
+      <Seo
+        title="Asian Beverage Sourcing & Import"
+        description="RTM's Asian beverage portfolio — wine-based soju, RTDs, and craft beer, backed by 30 years of import infrastructure and national wholesale reach."
+        path="/products/asian-beverage"
+        breadcrumb={[{ name: 'Home', path: '/' }, { name: 'Products', path: '/services' }, { name: 'Asian Beverages', path: '/products/asian-beverage' }]}
+      />
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-24 min-h-[50vh] flex items-end" style={{ background: '#0A2454' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">

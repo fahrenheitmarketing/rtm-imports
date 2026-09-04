@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, TrendingUp, Users, Package } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
+import Seo from '../components/Seo';
 
 const WHY_CARRY = [
   {
@@ -36,6 +37,12 @@ const WHY_CARRY = [
 export default function Wholesalers() {
   return (
     <>
+      <Seo
+        title="Wholesale Beverage Partners"
+        description="Wholesale partnership with RTM Imports: category momentum, proven velocity, national reach across all 50 states, and full sales support for every brand."
+        path="/wholesalers"
+        breadcrumb={[{ name: 'Home', path: '/' }, { name: 'Wholesalers', path: '/wholesalers' }]}
+      />
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-24 min-h-[50vh] flex items-end" style={{ background: '#0A2454' }}>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">

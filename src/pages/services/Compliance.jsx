@@ -5,6 +5,7 @@ import { ArrowRight, FileCheck, MapPin, Network, BookOpen, ClipboardList, Shield
 import SectionHeading from '../../components/SectionHeading';
 import GoldUnderline from '../../components/GoldUnderline';
 import ComplianceFAQSection from '../../components/compliance/ComplianceFAQSection';
+import Seo from '../../components/Seo';
 
 const SERVICES_LIST = [
   { icon: MapPin, title: 'State License Network', description: 'RTM maintains an active importer and wholesaler license network across all 50 states and the District of Columbia. This infrastructure, built over years of careful cultivation, means your brand can go national without waiting months for regulatory setup.' },
@@ -18,6 +19,12 @@ const SERVICES_LIST = [
 export default function Compliance() {
   return (
     <>
+      <Seo
+        title="Beverage Compliance & Licensing — All 50 States"
+        description="Importer and wholesaler license network covering all 50 states, plus TTB label approval, state registration, and ongoing compliance monitoring."
+        path="/products/compliance"
+        breadcrumb={[{ name: 'Home', path: '/' }, { name: 'Products', path: '/services' }, { name: 'Compliance & Licensing', path: '/products/compliance' }]}
+      />
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-24 min-h-[50vh] flex items-end" style={{ background: '#0A2454' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">

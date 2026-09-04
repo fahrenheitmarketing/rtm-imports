@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Palette, CheckCircle, Layers, Brush, Package, ShieldCheck } from 'lucide-react';
 import SectionHeading from '../../components/SectionHeading';
 import GoldUnderline from '../../components/GoldUnderline';
+import Seo from '../../components/Seo';
 
 const PROCESS_STEPS = [
   { step: '01', title: 'Strategic Brief', description: 'We begin with a deep discovery session — understanding your customer, your competitive set, your price point, and the story you want to tell. A clear brief is the foundation of a compelling brand.' },
@@ -24,6 +25,12 @@ const WHY_CUSTOM = [
 export default function CustomLabels() {
   return (
     <>
+      <Seo
+        title="Custom Label & Private Label Beverage Programs"
+        description="End-to-end private label beverage development: producer matching, liquid development, label design, TTB approval, and wholesaler onboarding."
+        path="/products/custom-labels"
+        breadcrumb={[{ name: 'Home', path: '/' }, { name: 'Products', path: '/services' }, { name: 'Custom Labels', path: '/products/custom-labels' }]}
+      />
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-24 min-h-[50vh] flex items-end" style={{ background: '#0A2454' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">

@@ -8,6 +8,7 @@ import ProofBlock from '../components/home/ProofBlock';
 import FAQSection from '../components/home/FAQSection';
 import CTASection from '../components/home/CTASection';
 import NewsSection from '../components/home/NewsSection';
+import Seo from '../components/Seo';
 
 const FAQ_SCHEMA = {
   "@context": "https://schema.org",
@@ -57,6 +58,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Seo
+        title="RTM Imports | Specialist Beverage Importer — San Antonio, TX"
+        description="RTM Imports is a San Antonio-based specialist beverage importer with 30+ years in the B2B wholesale channel — Asian beverages, custom labels, and compliance & licensing across all 50 states."
+        path="/"
+      />
       <Navbar />
       <main className="flex-1">
         <HeroSection />

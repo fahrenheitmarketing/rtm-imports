@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Compass, ChevronRight, Handshake, Plus, Minus } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import GoldUnderline from '../components/GoldUnderline';
+import Seo from '../components/Seo';
 
 const FAQS = [
   {
@@ -108,6 +109,13 @@ export default function About() {
 
   return (
     <>
+      <Seo
+        title="About"
+        description="RTM Imports is an independent, San Antonio-based specialist beverage importer with 30+ years of history, led by Benjamin Roberts and operating exclusively in the B2B wholesale channel."
+        path="/about"
+        pageType="AboutPage"
+        breadcrumb={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]}
+      />
       {/* Hero — cobalt block, no background image */}
       <section className="pt-28 md:pt-36 pb-24 min-h-[50vh] flex items-end" style={{ background: '#0A2454' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">

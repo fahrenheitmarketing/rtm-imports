@@ -7,6 +7,7 @@ import GoldUnderline from '../components/GoldUnderline';
 import NewsCard from '../components/news/NewsCard';
 import { articlePath } from '@/lib/newsSlug';
 import { Link } from 'react-router-dom';
+import Seo from '../components/Seo';
 
 const CATEGORIES = ['All', 'Industry Trend', 'Partnership', 'Press Release', 'Market Data', 'Company Update'];
 
@@ -27,6 +28,13 @@ export default function News() {
 
   return (
     <>
+      <Seo
+        title="News & Insights"
+        description="Industry trends, partnership announcements, market data, and perspectives from RTM's years building brands in the US wholesale channel."
+        path="/news"
+        pageType="CollectionPage"
+        breadcrumb={[{ name: 'Home', path: '/' }, { name: 'News & Insights', path: '/news' }]}
+      />
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-24 min-h-[45vh] flex items-end" style={{ background: '#0A2454' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">

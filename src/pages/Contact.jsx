@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { base44 } from '@/api/base44Client';
+import Seo from '@/components/Seo';
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -42,6 +43,13 @@ export default function Contact() {
 
   return (
     <>
+      <Seo
+        title="Contact"
+        description="Contact RTM Imports — producers seeking US market entry, retailers building private-label programs, and wholesale partners. 755 East Mulberry Ave., San Antonio, TX."
+        path="/contact"
+        pageType="ContactPage"
+        breadcrumb={[{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]}
+      />
       {/* Hero */}
       <section
         className="pt-28 md:pt-36 pb-20 min-h-[40vh] flex items-end"

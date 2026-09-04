@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FolderOpen } from 'lucide-react';
 import GoldUnderline from '../components/GoldUnderline';
 import DocumentItem from '../components/suppliers/DocumentItem';
+import Seo from '../components/Seo';
 
 // Prototype seed data — titles and URLs will come from uploaded files (managed in WordPress).
 const DOCUMENTS = [
@@ -21,6 +22,12 @@ export default function Suppliers() {
 
   return (
     <>
+      <Seo
+        title="Wholesaler Portal — Brand Resources"
+        description="RTM Wholesaler Portal — download brand presentations, sell sheets, and marketing resources for RTM Imports' portfolio."
+        path="/suppliers"
+        breadcrumb={[{ name: 'Home', path: '/' }, { name: 'Supplier Portal', path: '/suppliers' }]}
+      />
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-20 min-h-[40vh] flex items-end" style={{ background: '#0A2454' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
