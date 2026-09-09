@@ -22,6 +22,39 @@
       "type": "string",
       "description": "Base site URL used to build GBP Learn More button URLs with UTM tracking"
     },
+    "partner_brand_name": {
+      "type": "string",
+      "description": "Name of the partner brand whose media library imagery is available for post creation (e.g. a soju brand RTM represents)"
+    },
+    "media_kit_url": {
+      "type": "string",
+      "description": "URL of the partner brand's media kit (brand guidelines, downloadable assets, etc.)"
+    },
+    "media_library": {
+      "type": "array",
+      "description": "Uploaded partner-brand imagery (bottle shots, lifestyle/look images) that can be used in posts",
+      "items": {
+        "type": "object",
+        "properties": {
+          "file_url": {
+            "type": "string",
+            "description": "Uploaded image URL"
+          },
+          "label": {
+            "type": "string",
+            "description": "What this image is (e.g. 'Bottle shot \u2014 front', 'Lifestyle \u2014 bar scene')"
+          },
+          "usage_notes": {
+            "type": "string",
+            "description": "Notes on how/when to use this image in posts (e.g. 'Use for Soju posts, keep bottle unobstructed')"
+          }
+        },
+        "required": [
+          "file_url"
+        ]
+      },
+      "default": []
+    },
     "postiz_facebook_id": {
       "type": "string",
       "description": "Postiz integration ID for the client's Facebook account"

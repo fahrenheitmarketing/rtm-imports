@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Loader2 } from "lucide-react";
 import ShortLinksEditor from "./ShortLinksEditor";
+import MediaLibraryEditor from "./MediaLibraryEditor";
 
 export default function SettingsDialog({ open, onOpenChange }) {
   const [settings, setSettings] = useState(null);
@@ -15,7 +16,7 @@ export default function SettingsDialog({ open, onOpenChange }) {
   useEffect(() => {
     if (open) {
       base44.entities.SocialMediaSettings.list().then((list) => {
-        setSettings(list[0] || { clickup_list_id: "", clickup_workspace_id: "", clickup_brand_doc_url: "", brand_guide_text: "", site_url: "", postiz_facebook_id: "", postiz_instagram_id: "", postiz_x_id: "", postiz_gmb_id: "", postiz_linkedin_id: "", short_links: [] });
+        setSettings(list[0] || { clickup_list_id: "", clickup_workspace_id: "", clickup_brand_doc_url: "", brand_guide_text: "", site_url: "", partner_brand_name: "", media_kit_url: "", media_library: [], postiz_facebook_id: "", postiz_instagram_id: "", postiz_x_id: "", postiz_gmb_id: "", postiz_linkedin_id: "", short_links: [] });
       });
     }
   }, [open]);
@@ -89,6 +90,23 @@ export default function SettingsDialog({ open, onOpenChange }) {
                 <Label className="text-xs">LinkedIn</Label>
                 <Input value={settings.postiz_linkedin_id || ""} onChange={(e) => setSettings({ ...settings, postiz_linkedin_id: e.target.value })} placeholder="cmp..." />
               </div>
+            </div>
+          </div>
+          <div className="border-t border-border pt-4">
+            <h4 className="text-sm font-semibold mb-1 text-foreground">Partner Brand Media Library</h4>
+            <p className="text-xs text-muted-foreground mb-3">Partner brand imagery (not RTM Imports) — bottle shots, product look, and lifestyle assets available for use in posts.</p>
+            <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <Label className="text-xs">Partner brand name</Label>
+                  <Input value={settings.partner_brand_name || ""} onChange={(e) => setSettings({ ...settings, partner_brand_name: e.target.value })} placeholder="e.g. Good Friends Soju" />
+                </div>
+                <div>
+                  <Label className="text-xs">Media kit URL</Label>
+                  <Input value={settings.media_kit_url || ""} onChange={(e) => setSettings({ ...settings, media_kit_url: e.target.value })} placeholder="https://partner-brand.com/media-kit" />
+                </div>
+              </div>
+              <MediaLibraryEditor value={settings.media_library || []} onChange={(library) => setSettings({ ...settings, media_library: library })} />
             </div>
           </div>
           <div className="border-t border-border pt-4">
