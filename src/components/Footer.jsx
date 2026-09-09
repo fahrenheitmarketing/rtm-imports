@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin } from 'lucide-react';
+import FooterSocialLinks from './FooterSocialLinks';
 
 export default function Footer() {
   return (
@@ -67,6 +68,9 @@ export default function Footer() {
                 >
                   contact@rtm-imports.com
                 </a>
+              </div>
+              <div className="pt-2">
+                <FooterSocialLinks />
               </div>
             </div>
           </div>
