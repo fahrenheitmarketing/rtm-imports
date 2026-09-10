@@ -58,11 +58,20 @@ export default async function (req) {
     });
     const topics = trendsRes.topics || [];
 
-    // 2. Generate all copy in one call
+    // 2. Build the schedule and collapse it into CORE dates (two per week).
+    // Each core date = ONE post published on all platforms as slight variations.
     const schedule = buildSchedule(month, year);
+    const slotMap = {}; // `${date}|${platform}` -> full ISO datetime
+    const dateSet = new Set();
+    for (const s of schedule) {
+      slotMap[`${s.date.slice(0, 10)}|${s.platform}`] = s.date;
+      dateSet.add(s.date.slice(0, 10));
+    }
+    const coreDates = [...dateSet].sort();
     const monthName = new Date(Date.UTC(year, month - 1, 1)).toLocaleString('en-US', { month: 'long', timeZone: 'UTC' });
     const campaignMonth = `${monthName} ${year}`;
 
+    // 3. Generate the core posts (one per date) with platform variations in one call
     const genRes = await base44.asServiceRole.integrations.Core.InvokeLLM({
       prompt: `${buildBrandIntro(brandProfile)}
 
@@ -75,6 +84,11 @@ ${topics.map((t) => `- ${t}`).join('\n')}
 Topics already used in previous months — do NOT repeat these or create near-duplicates:
 ${usedTopics.map((t) => `- ${t}`).join('\n')}
 
+CONTENT MODEL — IMPORTANT: Each calendar date below is ONE core post that gets published on all three platforms as slight variations of the SAME message. Do NOT create separate unique posts per platform. Every platform's copy must cover the same topic and the same core facts, only adapted to that platform's audience and format.
+
+Core dates (two per week):
+${coreDates.map((d, i) => `${i + 1}. ${d}`).join('\n')}
+
 Platform tone/identity rules:
 ${PLATFORM_ORDER.map((pl) => `- ${pl}: ${PLATFORM_TONE[pl]}`).join('\n')}
 
@@ -84,12 +98,9 @@ ${PLATFORM_ORDER.map((pl) => `- ${pl}: ${HASHTAG_RULES[pl]}`).join('\n')}
 Short link CTA rules (if no rule is given for a platform, do NOT include any URL in that platform's posts):
 ${PLATFORM_ORDER.map((pl) => buildShortLinkCtaInstruction(settings, pl)).filter(Boolean).join('\n') || 'No short links configured — do not include any URLs.'}
 
-Generate one post for EACH of the following (date, platform) slots, in the same order. Every post must be friendly and match its platform's tone and include the right number of hashtags for its platform.
 ${CONTENT_RULES}
-Slots:
-${schedule.map((s, i) => `${i + 1}. ${s.date} - ${s.platform}`).join('\n')}
 
-For each slot return: date, platform, topic (short theme), content (the actual post copy matching platform tone and length norms), image_prompt (${IMAGE_PROMPT_INSTRUCTION}${audienceRef ? ' ' + audienceRef : ''}).`,
+For each core date return: date, topic (ONE short theme shared by ALL platforms), facebook_content, instagram_content, linkedin_content (each a platform-specific variation of the same core message, applying that platform's tone, hashtag rule, and CTA rule), image_prompt (${IMAGE_PROMPT_INSTRUCTION}${audienceRef ? ' ' + audienceRef : ''}).`,
       model: 'gemini_3_flash',
       response_json_schema: {
         type: 'object',
@@ -100,14 +111,13 @@ For each slot return: date, platform, topic (short theme), content (the actual p
               type: 'object',
               properties: {
                 date: { type: 'string' },
-                platform: { type: 'string' },
                 topic: { type: 'string' },
-                content: { type: 'string' },
+                facebook_content: { type: 'string' },
+                instagram_content: { type: 'string' },
+                linkedin_content: { type: 'string' },
                 image_prompt: { type: 'string' },
-                cta_page_path: { type: 'string' },
-                cta_button_type: { type: 'string' },
               },
-              required: ['date', 'platform', 'topic', 'content', 'image_prompt'],
+              required: ['date', 'topic', 'facebook_content', 'instagram_content', 'linkedin_content', 'image_prompt'],
             },
           },
         },
@@ -115,46 +125,57 @@ For each slot return: date, platform, topic (short theme), content (the actual p
       },
     });
 
-    const posts = genRes.posts || [];
+    const cores = (genRes.posts || []).filter((c) => c.topic && c.image_prompt && coreDates.includes((c.date || '').slice(0, 10)));
 
-    // Save SocialPost records as pending. They are NOT sent to ClickUp yet —
-    // content is only added to the ClickUp task when approved in the Studio dashboard.
-    // Prefer the exact datetime from our computed schedule (by index) so the
-    // random spread times are preserved even if the LLM truncates the time.
-    const records = posts.map((post, i) => ({
-      platform: post.platform,
-      topic: post.topic,
-      content: appendAiDisclaimer(post.content, i),
-      status: 'pending',
-      scheduled_date: (schedule[i] && schedule[i].date) || post.date,
-      campaign_month: campaignMonth,
-      clickup_list_id: settings.clickup_list_id,
-      brand_compliance_notes: post.image_prompt,
-      cta_page_path: post.platform === 'google_business' ? post.cta_page_path : undefined,
-      cta_button_type: post.platform === 'google_business' ? post.cta_button_type : undefined,
-    }));
+    // 4. Create one SocialPost record per platform per core date.
+    const records = [];
+    const coreGroups = []; // { core, indices } — indices into `records`
+    for (const [i, core] of cores.entries()) {
+      const dateKey = (core.date || '').slice(0, 10);
+      const indices = [];
+      for (const pl of PLATFORM_ORDER) {
+        const when = slotMap[`${dateKey}|${pl}`];
+        if (!when) continue;
+        records.push({
+          platform: pl,
+          topic: core.topic,
+          content: appendAiDisclaimer(core[`${pl}_content`] || '', i),
+          status: 'pending',
+          scheduled_date: when,
+          campaign_month: campaignMonth,
+          clickup_list_id: settings.clickup_list_id,
+          brand_compliance_notes: core.image_prompt,
+        });
+        indices.push(records.length - 1);
+      }
+      coreGroups.push({ core, indices });
+    }
     const created = await base44.asServiceRole.entities.SocialPost.bulkCreate(records);
 
-    // Generate all images concurrently (stored on each post; attached to ClickUp on approval)
+    // 5. Generate ONE image per core post (4:5, the Facebook/Instagram size —
+    // LinkedIn gets the same visual cover-cropped to 16:9 at resize time) and
+    // share it across that core post's platform records.
     let imagesGenerated = 0;
     let imagesFailed = 0;
 
-    await runConcurrent(created, async (post) => {
+    await runConcurrent(coreGroups, async ({ core, indices }) => {
       try {
-        const prompt = buildImagePrompt(post, brandGuide, audienceRef);
-        const bottleRefs = getYoboBottleRefs(post);
+        const imgPost = { platform: 'facebook', topic: core.topic, content: core.facebook_content, image_prompt: core.image_prompt };
+        const prompt = buildImagePrompt(imgPost, brandGuide, audienceRef);
+        const bottleRefs = getYoboBottleRefs(imgPost);
         const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt, existing_image_urls: bottleRefs.length ? bottleRefs : undefined });
-        await base44.asServiceRole.entities.SocialPost.update(post.id, { image_url: url });
+        await base44.asServiceRole.entities.SocialPost.bulkUpdate(indices.map((idx) => ({ id: created[idx].id, image_url: url })));
         imagesGenerated++;
       } catch (imgErr) {
-        console.error('Image generation failed for post', post.id, imgErr.message);
+        console.error('Image generation failed for core post', core.topic, imgErr.message);
         imagesFailed++;
       }
-    }, 4);
+    }, 3);
 
     return Response.json({
       success: true,
       campaign_month: campaignMonth,
+      core_posts: cores.length,
       posts_created: created.length,
       images_generated: imagesGenerated,
       images_failed: imagesFailed,

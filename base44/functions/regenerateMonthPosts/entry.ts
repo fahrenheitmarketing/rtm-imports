@@ -1,6 +1,6 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
 import { getBrandGuideText } from '../../shared/clickup.ts';
-import { PLATFORM_TONE, PLATFORM_ORDER, CONTENT_RULES, buildShortLinkCtaInstruction } from '../../shared/scheduleBuilder.ts';
+import { PLATFORM_TONE, PLATFORM_ORDER, CONTENT_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction } from '../../shared/scheduleBuilder.ts';
 import { buildImagePrompt, IMAGE_PROMPT_INSTRUCTION, getYoboBottleRefs } from '../../shared/imageRules.ts';
 import { getBrandProfile, buildBrandIntro, buildAudienceRef } from '../../shared/brandContext.ts';
 
@@ -51,9 +51,20 @@ export default async function (req) {
     const targetIds = new Set(targets.map((p) => p.id));
     const usedTopics = [...new Set(all.filter((p) => !targetIds.has(p.id)).map((p) => p.topic).filter(Boolean))].slice(0, 80);
 
+    // Group targets by calendar date — each date is ONE core post shared
+    // across its platforms, regenerated as slight platform variations.
+    const groups = {};
+    for (const p of targets) {
+      const key = (p.scheduled_date || '').slice(0, 10);
+      (groups[key] = groups[key] || []).push(p);
+    }
+    const dateKeys = Object.keys(groups).sort();
+
     const ctaBlock = PLATFORM_ORDER.map((pl) =>
       `### ${pl}\nTone: ${PLATFORM_TONE[pl] || 'friendly, premium, and welcoming'}\n${buildShortLinkCtaInstruction(settings, pl) || '(no short link CTA configured for this platform)'}`
     ).join('\n\n');
+
+    const hashtagBlock = PLATFORM_ORDER.map((pl) => `- ${pl}: ${HASHTAG_RULES[pl]}`).join('\n');
 
     const genRes = await base44.asServiceRole.integrations.Core.InvokeLLM({
       prompt: `${buildBrandIntro(brandProfile)}
@@ -61,19 +72,23 @@ export default async function (req) {
 Brand Reference Guide (must strictly follow):
 ${brandGuide}
 
+CONTENT MODEL — IMPORTANT: Each calendar date below is ONE core post that gets published on all its platforms as slight variations of the SAME message. Do NOT create separate unique posts per platform. Every platform's copy must cover the same topic and the same core facts, only adapted to that platform's audience and format.
+
 Platform tone and short-link CTA rules:
 ${ctaBlock}
+
+Hashtag rules (append hashtags on the final line of each post):
+${hashtagBlock}
 
 Topics already used in approved posts or other months — do NOT repeat these or create near-duplicates:
 ${usedTopics.map((t) => `- ${t}`).join('\n') || '(none)'}
 
-Regenerate ONE fresh post for EACH slot below, in the same order. Each must be friendly, match its platform's tone and length norms, and follow that platform's CTA rule above. Produce a NEW, different topic (not the previous one).
 ${CONTENT_RULES}
 
-Slots:
-${targets.map((t, i) => `${i + 1}. ${(t.scheduled_date || '').slice(0, 10)} - ${t.platform} (previous topic to avoid: "${t.topic || 'n/a'}")`).join('\n')}
+Regenerate ONE fresh core post for EACH date below, in the same order. Produce a NEW, different topic per date (not the previous ones).
+${dateKeys.map((d, i) => `${i + 1}. ${d} — platforms: ${[...new Set(groups[d].map((p) => p.platform))].join(', ')} (previous topics to avoid: ${groups[d].map((p) => `"${p.topic || 'n/a'}"`).join('; ')})`).join('\n')}
 
-For each slot return: date, platform, topic (short new theme), content (post copy with the platform's CTA), image_prompt (${IMAGE_PROMPT_INSTRUCTION}${audienceRef ? ' ' + audienceRef : ''}).`,
+For each date return: date, topic (ONE short new theme shared by ALL platforms), facebook_content, instagram_content, linkedin_content (each a platform-specific variation of the same core message, applying that platform's tone, hashtag rule, and CTA rule), image_prompt (${IMAGE_PROMPT_INSTRUCTION}${audienceRef ? ' ' + audienceRef : ''}).`,
       model: 'gemini_3_flash',
       response_json_schema: {
         type: 'object',
@@ -84,12 +99,13 @@ For each slot return: date, platform, topic (short new theme), content (post cop
               type: 'object',
               properties: {
                 date: { type: 'string' },
-                platform: { type: 'string' },
                 topic: { type: 'string' },
-                content: { type: 'string' },
+                facebook_content: { type: 'string' },
+                instagram_content: { type: 'string' },
+                linkedin_content: { type: 'string' },
                 image_prompt: { type: 'string' },
               },
-              required: ['date', 'platform', 'topic', 'content', 'image_prompt'],
+              required: ['date', 'topic', 'facebook_content', 'instagram_content', 'linkedin_content', 'image_prompt'],
             },
           },
         },
@@ -97,47 +113,54 @@ For each slot return: date, platform, topic (short new theme), content (post cop
       },
     });
 
-    const results = genRes.posts || [];
-    const byKey = {};
-    for (const r of results) byKey[`${r.date}|${r.platform}`] = r;
+    const byDate = {};
+    for (const r of (genRes.posts || [])) byDate[(r.date || '').slice(0, 10)] = r;
 
     const imageTasks = [];
     let regenerated = 0;
-    for (const post of targets) {
-      const key = `${(post.scheduled_date || '').slice(0, 10)}|${post.platform}`;
-      const r = byKey[key];
-      if (!r) continue;
-      await base44.asServiceRole.entities.SocialPost.update(post.id, {
-        topic: r.topic,
-        content: r.content,
-        brand_compliance_notes: r.image_prompt,
-        status: 'pending',
-        final_image_url: null,
-        resized_image_url: null,
-        postiz_post_id: null,
-      });
-      imageTasks.push({ id: post.id, platform: post.platform, topic: r.topic, content: r.content, image_prompt: r.image_prompt });
-      regenerated++;
+    for (const dateKey of dateKeys) {
+      const r = byDate[dateKey];
+      if (!r || !r.topic) continue;
+      let variantIndex = 0;
+      for (const post of groups[dateKey]) {
+        const variant = r[`${post.platform}_content`];
+        if (!variant) continue;
+        await base44.asServiceRole.entities.SocialPost.update(post.id, {
+          topic: r.topic,
+          content: appendAiDisclaimer(variant, variantIndex++),
+          brand_compliance_notes: r.image_prompt,
+          status: 'pending',
+          final_image_url: null,
+          resized_image_url: null,
+          postiz_post_id: null,
+        });
+        regenerated++;
+      }
+      imageTasks.push({ core: r, posts: groups[dateKey] });
     }
 
+    // One image per core date (4:5 Facebook/Instagram size — LinkedIn gets the
+    // same visual cover-cropped to 16:9 at resize time), shared across the date's posts.
     let imagesGenerated = 0;
     let imagesFailed = 0;
-    await runConcurrent(imageTasks, async (post) => {
+    await runConcurrent(imageTasks, async ({ core, posts }) => {
       try {
-        const prompt = buildImagePrompt(post, brandGuide, audienceRef);
-        const bottleRefs = getYoboBottleRefs(post);
+        const imgPost = { platform: 'facebook', topic: core.topic, content: core.facebook_content, image_prompt: core.image_prompt };
+        const prompt = buildImagePrompt(imgPost, brandGuide, audienceRef);
+        const bottleRefs = getYoboBottleRefs(imgPost);
         const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt, existing_image_urls: bottleRefs.length ? bottleRefs : undefined });
-        await base44.asServiceRole.entities.SocialPost.update(post.id, { image_url: url });
+        await base44.asServiceRole.entities.SocialPost.bulkUpdate(posts.map((p) => ({ id: p.id, image_url: url })));
         imagesGenerated++;
       } catch (e) {
-        console.error('image gen failed for post', post.id, e.message);
+        console.error('image gen failed for core post', core.topic, e.message);
         imagesFailed++;
       }
-    }, 4);
+    }, 3);
 
     return Response.json({
       success: true,
       campaign_month: campaignMonth,
+      core_posts: imageTasks.length,
       regenerated,
       images_generated: imagesGenerated,
       images_failed: imagesFailed,
