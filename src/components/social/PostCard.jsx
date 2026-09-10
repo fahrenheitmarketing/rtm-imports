@@ -46,7 +46,18 @@ export default function PostCard({ post, onAction }) {
   };
 
   const handleRegenerateImage = () =>
-    runAction("Regenerate Image", () => base44.functions.invoke("regeneratePostImage", { postId: post.id }));
+    runAction("Regenerate Image", async () => {
+      const res = await base44.functions.invoke("regeneratePostImage", { postId: post.id });
+      const data = res?.data || res;
+      const updated = Array.isArray(data?.updated_posts) ? data.updated_posts : [];
+      toast({
+        title: "Image regenerated",
+        description: updated.length > 1
+          ? `Updated for all ${updated.length} platforms: ${updated.map((p) => p.platform).join(", ")}.`
+          : "This post's image was updated.",
+      });
+      return res;
+    });
 
   const handleCreateNew = () =>
     runAction("Create New Post", () =>

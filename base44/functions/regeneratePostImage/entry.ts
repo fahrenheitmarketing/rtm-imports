@@ -27,18 +27,34 @@ export default async function (req) {
     const brandProfile = await getBrandProfile(base44);
     const audienceRef = buildAudienceRef(brandProfile);
 
-    const prompt = `${buildImagePrompt(post, brandGuide, audienceRef)}${instruction ? ` Additional instruction: ${instruction}` : ''}`;
+    // Shared core-post image: build the prompt at the 4:5 Facebook/Instagram
+    // size — LinkedIn gets its 16:9 cover-crop later at resize/scheduling time.
+    const prompt = `${buildImagePrompt({ ...post, platform: 'facebook' }, brandGuide, audienceRef)}${instruction ? ` Additional instruction: ${instruction}` : ''}`;
 
     const bottleRefs = getYoboBottleRefs(post);
     const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt, existing_image_urls: bottleRefs.length ? bottleRefs : undefined });
 
-    // Resize to the platform's exact dimensions so the designer receives a correctly-sized creative.
+    // Resize once to the shared 4:5 dimensions so every platform variant of
+    // this core post receives the same correctly-sized creative.
     const safeTopic = (post.topic || 'creative').replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase().slice(0, 40);
-    const resizedUrl = await resizeAndUploadImage(base44, Jimp, post.platform, url, `${postId}-${post.platform}-${safeTopic}`);
+    const resizedUrl = await resizeAndUploadImage(base44, Jimp, 'facebook', url, `${postId}-core-${safeTopic}`);
 
-    await base44.asServiceRole.entities.SocialPost.update(postId, { image_url: resizedUrl });
+    // Apply the new image to this post AND its platform siblings (same campaign
+    // month + same calendar date) so the whole trio stays in sync.
+    const dateKey = (post.scheduled_date || '').slice(0, 10);
+    let targets = [post];
+    if (post.campaign_month && dateKey) {
+      const monthPosts = await base44.asServiceRole.entities.SocialPost.filter({ campaign_month: post.campaign_month }, 'scheduled_date', 200);
+      targets = monthPosts.filter((p) => (p.scheduled_date || '').slice(0, 10) === dateKey);
+      if (targets.length === 0) targets = [post];
+    }
+    await base44.asServiceRole.entities.SocialPost.bulkUpdate(targets.map((p) => ({ id: p.id, image_url: resizedUrl })));
 
-    return Response.json({ success: true, image_url: resizedUrl });
+    return Response.json({
+      success: true,
+      image_url: resizedUrl,
+      updated_posts: targets.map((p) => ({ id: p.id, platform: p.platform })),
+    });
   } catch (error) {
     return Response.json({ error: error.message }, { status: 500 });
   }
