@@ -1,7 +1,7 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
 import { Jimp } from 'npm:jimp@1.6.0';
 import { getBrandGuideText } from '../../shared/clickup.ts';
-import { buildImagePrompt, resizeAndUploadImage } from '../../shared/imageRules.ts';
+import { buildImagePrompt, resizeAndUploadImage, getYoboBottleRefs } from '../../shared/imageRules.ts';
 import { getBrandProfile, buildAudienceRef } from '../../shared/brandContext.ts';
 
 export default async function (req) {
@@ -29,7 +29,8 @@ export default async function (req) {
 
     const prompt = `${buildImagePrompt(post, brandGuide, audienceRef)}${instruction ? ` Additional instruction: ${instruction}` : ''}`;
 
-    const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt });
+    const bottleRefs = getYoboBottleRefs(post);
+    const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt, existing_image_urls: bottleRefs.length ? bottleRefs : undefined });
 
     // Resize to the platform's exact dimensions so the designer receives a correctly-sized creative.
     const safeTopic = (post.topic || 'creative').replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase().slice(0, 40);

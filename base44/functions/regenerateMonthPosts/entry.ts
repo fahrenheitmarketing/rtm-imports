@@ -1,7 +1,7 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
 import { getBrandGuideText } from '../../shared/clickup.ts';
 import { PLATFORM_TONE, PLATFORM_ORDER, CONTENT_RULES, buildShortLinkCtaInstruction } from '../../shared/scheduleBuilder.ts';
-import { buildImagePrompt, IMAGE_PROMPT_INSTRUCTION } from '../../shared/imageRules.ts';
+import { buildImagePrompt, IMAGE_PROMPT_INSTRUCTION, getYoboBottleRefs } from '../../shared/imageRules.ts';
 import { getBrandProfile, buildBrandIntro, buildAudienceRef } from '../../shared/brandContext.ts';
 
 // Run async tasks with a concurrency cap to avoid overwhelming the image API.
@@ -125,7 +125,8 @@ For each slot return: date, platform, topic (short new theme), content (post cop
     await runConcurrent(imageTasks, async (post) => {
       try {
         const prompt = buildImagePrompt(post, brandGuide, audienceRef);
-        const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt });
+        const bottleRefs = getYoboBottleRefs(post);
+        const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt, existing_image_urls: bottleRefs.length ? bottleRefs : undefined });
         await base44.asServiceRole.entities.SocialPost.update(post.id, { image_url: url });
         imagesGenerated++;
       } catch (e) {

@@ -1,7 +1,7 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
 import { Jimp } from 'npm:jimp@1.6.0';
 import { getBrandGuideText, uploadAttachmentToClickUpTask } from '../../shared/clickup.ts';
-import { buildImagePrompt, resizeAndUploadImage } from '../../shared/imageRules.ts';
+import { buildImagePrompt, resizeAndUploadImage, getYoboBottleRefs } from '../../shared/imageRules.ts';
 
 async function runConcurrent(items, fn, concurrency = 4) {
   let index = 0;
@@ -46,7 +46,8 @@ export default async function (req) {
     await runConcurrent(posts, async (post) => {
       try {
         const prompt = buildImagePrompt(post, brandGuide);
-        const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt });
+        const bottleRefs = getYoboBottleRefs(post);
+        const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt, existing_image_urls: bottleRefs.length ? bottleRefs : undefined });
         // Resize to the platform's exact dimensions so the designer receives a correctly-sized creative.
         const safeTopic = (post.topic || 'creative').replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase().slice(0, 40);
         const resizedUrl = await resizeAndUploadImage(base44, Jimp, post.platform, url, `${post.id}-${post.platform}-${safeTopic}`);
