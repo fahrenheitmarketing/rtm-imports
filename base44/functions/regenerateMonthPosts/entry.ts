@@ -1,6 +1,6 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
 import { getBrandGuideText } from '../../shared/clickup.ts';
-import { PLATFORM_TONE, PLATFORM_ORDER, CONTENT_RULES, CONTENT_MODEL_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction } from '../../shared/scheduleBuilder.ts';
+import { PLATFORM_TONE, PLATFORM_ORDER, CONTENT_RULES, CONTENT_MODEL_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction, buildStrategicTopicsInstruction } from '../../shared/scheduleBuilder.ts';
 import { buildImagePrompt, IMAGE_PROMPT_INSTRUCTION, getYoboBottleRefs } from '../../shared/imageRules.ts';
 import { getBrandProfile, buildBrandIntro, buildAudienceRef } from '../../shared/brandContext.ts';
 
@@ -80,12 +80,14 @@ ${ctaBlock}
 Hashtag rules (append hashtags on the final line of each post):
 ${hashtagBlock}
 
-${preserveTopics ? `REGENERATION MODE — KEEP TOPICS: For each date, keep the given topic EXACTLY as written. Draw the core message from the existing copy provided for that date, then express that ONE message nearly identically on every platform per the content model rules, applying each platform's hashtag and CTA rules. Do NOT invent new claims, statistics, or links — reuse the substance and any short links from the existing copy.` : `Topics already used in approved posts or other months — do NOT repeat these or create near-duplicates:
+${preserveTopics ? `REGENERATION MODE — KEEP TOPICS: For each date, keep the given topic EXACTLY as written. Draw the core message from the existing copy provided for that date, then express that ONE message nearly identically on every platform per the content model rules, applying each platform's hashtag and CTA rules. Do NOT invent new claims, statistics, or links — reuse the substance and any short links from the existing copy.` : `${buildStrategicTopicsInstruction()}
+
+Topics already used in approved posts or other months — do NOT repeat these or create near-duplicates, EXCEPT the strategic topics above, which take priority: if a used topic closely matches a strategic topic, reuse that strategic angle with fresh wording rather than skipping it:
 ${usedTopics.map((t) => `- ${t}`).join('\n') || '(none)'}`}
 
 ${CONTENT_RULES}
 
-${preserveTopics ? 'Rewrite ONE core post for EACH date below, keeping its topic exactly.' : 'Regenerate ONE fresh core post for EACH date below, in the same order. Produce a NEW, different topic per date (not the previous ones).'}
+${preserveTopics ? 'Rewrite ONE core post for EACH date below, keeping its topic exactly.' : 'Regenerate ONE fresh core post for EACH date below, in the same order. Produce a NEW, different topic per date (not the previous ones), drawn from the strategic topics list where possible.'}
 ${dateKeys.map((d, i) => {
   const platforms = [...new Set(groups[d].map((p) => p.platform))].join(', ');
   if (preserveTopics) {

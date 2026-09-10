@@ -1,6 +1,6 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
 import { getBrandGuideText } from '../../shared/clickup.ts';
-import { PLATFORM_TONE, PLATFORM_ORDER, buildSchedule, CONTENT_RULES, CONTENT_MODEL_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction } from '../../shared/scheduleBuilder.ts';
+import { PLATFORM_TONE, PLATFORM_ORDER, buildSchedule, CONTENT_RULES, CONTENT_MODEL_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction, buildStrategicTopicsInstruction } from '../../shared/scheduleBuilder.ts';
 import { buildImagePrompt, IMAGE_PROMPT_INSTRUCTION, getYoboBottleRefs } from '../../shared/imageRules.ts';
 import { getBrandProfile, buildBrandIntro, buildAudienceRef } from '../../shared/brandContext.ts';
 
@@ -78,7 +78,9 @@ export default async function (req) {
 Brand Reference Guide (must strictly follow):
 ${brandGuide}
 
-Trending topics to draw from:
+${buildStrategicTopicsInstruction()}
+
+Trending topics (use ONLY to fill any slots beyond the strategic topics):
 ${topics.map((t) => `- ${t}`).join('\n')}
 
 Topics already used in previous months — do NOT repeat these or create near-duplicates:
@@ -100,7 +102,7 @@ ${PLATFORM_ORDER.map((pl) => buildShortLinkCtaInstruction(settings, pl)).filter(
 
 ${CONTENT_RULES}
 
-For each core date return: date, topic (ONE short theme shared by ALL platforms), facebook_content, instagram_content, linkedin_content (each expressing the SAME core message nearly identically, applying only that platform's hashtag rule, CTA rule, and light tone touch-ups), image_prompt (${IMAGE_PROMPT_INSTRUCTION}${audienceRef ? ' ' + audienceRef : ''}).`,
+For each core date return: date, topic (ONE short theme shared by ALL platforms, drawn from the strategic topics list), facebook_content, instagram_content, linkedin_content (each expressing the SAME core message nearly identically, applying only that platform's hashtag rule, CTA rule, and light tone touch-ups), image_prompt (${IMAGE_PROMPT_INSTRUCTION}${audienceRef ? ' ' + audienceRef : ''}).`,
       model: 'gemini_3_flash',
       response_json_schema: {
         type: 'object',

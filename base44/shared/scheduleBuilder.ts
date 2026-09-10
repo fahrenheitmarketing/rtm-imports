@@ -84,6 +84,57 @@ STYLE RULES: Use the em dash ("—") sparingly — at most once per post, and pr
 // all platforms as the SAME message with only platform-specific adjustments.
 export const CONTENT_MODEL_RULES = `CONTENT MODEL — IMPORTANT: Each calendar date is ONE core post published on all its platforms as the SAME post with only platform-specific adjustments. The platform copies must be VERY SIMILAR — near-identical wording: same hook, same sentences, same facts, same structure. Do NOT write different angles or different messages per platform. The ONLY differences allowed: (1) hashtags per platform rule, (2) link handling (Facebook/LinkedIn keep the short link at the end; Instagram uses "link in bio" wording and never a URL), (3) light tone touch-ups at most (Instagram slightly punchier, LinkedIn slightly more formal) without changing the actual sentences.`;
 
+// RTM's approved strategic content topics. All social content generators draw
+// their topics from this list first; trending research only fills leftover slots.
+// Status 'hold' topics are documented but excluded from generation.
+export const STRATEGIC_TOPICS = [
+  {
+    title: "Gen Z Isn't Drinking Less — They're Drinking Differently",
+    status: 'active',
+    angle: "Flagship thought-leadership angle: Gen Z consumption is sessionable and event-based — they show up for a night out, a campus social, or a party, not a quiet glass at home like older generations. Premium, event-ready formats win. ABSOLUTELY NEVER reference THC, cannabis, or any crossover trend in any form.",
+  },
+  {
+    title: "Why Asian Beverages Are America's Fastest-Growing Import Category",
+    status: 'active',
+    angle: "Category-growth piece: soju growth stats, the K-culture tailwind, and the Gen Z crossover (sessionable, event-based drinking). Position the momentum of the whole category rather than any single brand.",
+  },
+  {
+    title: "Soju 101 for US Retailers: Wine-Based, Sparkling, Premium, and What's Next",
+    status: 'active',
+    angle: "Expert-positioning, educational piece: walk US retailers through soju styles — wine-based, sparkling, regular, and the upcoming super-premium lines. Keep it strictly educational — never reveal proprietary data, pricing strategy, or supplier terms that competitors could use.",
+  },
+  {
+    title: "What 'Three-Tier Distribution' Actually Means for Importers Like RTM",
+    status: 'active',
+    angle: "Foundational, definitional piece written for a wholesale buyer who doesn't already know the term: explain producers/importers, distributors, and retailers in plain language with zero industry jargon.",
+  },
+  {
+    title: "From Warehouse to Shelf: How Three-Tier Distribution Gets Your Product to Market",
+    status: 'active',
+    angle: "Process-level follow-up to the three-tier explainer: follow a product's journey from warehouse to shelf. Reference and build on the 'what three-tier distribution actually means' theme, and point to the Wholesalers page as the natural next step.",
+  },
+  {
+    title: "The Convenience Store Opportunity: Why Asian RTDs Belong in the Cooler",
+    status: 'active',
+    angle: "Directly targets convenience retail (7-Eleven, Circle K): why Asian RTDs belong in the cooler, using the Gen Z campus/social-event angle as the 'why now' hook. Stay general about placement strategy — no internal product or placement data.",
+  },
+  {
+    title: "RTM vs. the Generalist Importer: What a Specialist Distribution Partner Offers",
+    status: 'hold',
+    angle: "Search-authority comparison of specialist vs. generalist importers — an authority play, not a takedown. ON HOLD until the competitor framing is confirmed internally; do not use yet.",
+  },
+];
+
+// Prompt instruction for the LLM: strategic topics are the primary source of
+// every generated topic; anything else only fills the remaining slots.
+export function buildStrategicTopicsInstruction() {
+  const active = STRATEGIC_TOPICS.filter((t) => t.status === 'active');
+  const list = active.map((t, i) => `${i + 1}. ${t.title}\n   Angle: ${t.angle}`).join('\n');
+  return `STRATEGIC TOPICS — PRIMARY SOURCE FOR ALL TOPICS: Build the content around these strategic topics first. Use each active strategic topic at least once before drawing from any trending-topic list, and express each one as a short, social-friendly theme line that keeps its angle intact.
+${list}
+Only fill any remaining slots with topics from the trending list, and never let a filler topic overlap with a strategic one.`;
+}
+
 export const GBP_LENGTH_RULE = "GBP (google_business) length: Aim for 150 to 300 words. Google allows up to 1,500 characters, but shorter text is easier to read. Write a substantive local business update with a few useful details for the reader, and keep the relevant CTA chosen via the GBP CTA rule (never put a URL in the copy).";
 
 // Mandatory AI disclosure appended to the bottom of every social post (all platforms).

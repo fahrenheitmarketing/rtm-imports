@@ -1,6 +1,6 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
 import { getBrandGuideText } from '../../shared/clickup.ts';
-import { PLATFORM_TONE, PLATFORM_ORDER, buildSchedule, CONTENT_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction } from '../../shared/scheduleBuilder.ts';
+import { PLATFORM_TONE, PLATFORM_ORDER, buildSchedule, CONTENT_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction, buildStrategicTopicsInstruction } from '../../shared/scheduleBuilder.ts';
 import { IMAGE_PROMPT_INSTRUCTION } from '../../shared/imageRules.ts';
 import { getBrandProfile, buildBrandIntro, buildAudienceRef } from '../../shared/brandContext.ts';
 
@@ -55,7 +55,9 @@ export default async function (req) {
 Brand Reference Guide (must strictly follow):
 ${brandGuide}
 
-Trending topics to draw from:
+${buildStrategicTopicsInstruction()}
+
+Trending topics (use ONLY to fill any slots beyond the strategic topics):
 ${topics.map((t) => `- ${t}`).join('\n')}
 
 Topics already used in previous months — do NOT repeat these or create near-duplicates:
