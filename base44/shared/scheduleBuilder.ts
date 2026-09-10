@@ -132,7 +132,7 @@ export function buildStrategicTopicsInstruction() {
   const list = active.map((t, i) => `${i + 1}. ${t.title}\n   Angle: ${t.angle}`).join('\n');
   return `STRATEGIC TOPICS — PRIMARY SOURCE FOR ALL TOPICS: Build the content around these strategic topics first. Use each active strategic topic at least once before drawing from any trending-topic list, and express each one as a short, social-friendly theme line that keeps its angle intact.
 ${list}
-Only fill any remaining slots with topics from the trending list, and never let a filler topic overlap with a strategic one.`;
+If there are more slots than active strategic topics, FIRST reuse a strategic topic with a fresh, distinct angle (a different facet or audience of the same theme). Only fall back to the trending list if every strategic topic has already been used twice, and never let a filler topic overlap with a strategic one.`;
 }
 
 export const GBP_LENGTH_RULE = "GBP (google_business) length: Aim for 150 to 300 words. Google allows up to 1,500 characters, but shorter text is easier to read. Write a substantive local business update with a few useful details for the reader, and keep the relevant CTA chosen via the GBP CTA rule (never put a URL in the copy).";
