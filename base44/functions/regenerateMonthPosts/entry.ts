@@ -1,6 +1,6 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
 import { getBrandGuideText } from '../../shared/clickup.ts';
-import { PLATFORM_TONE, PLATFORM_ORDER, CONTENT_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction } from '../../shared/scheduleBuilder.ts';
+import { PLATFORM_TONE, PLATFORM_ORDER, CONTENT_RULES, CONTENT_MODEL_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction } from '../../shared/scheduleBuilder.ts';
 import { buildImagePrompt, IMAGE_PROMPT_INSTRUCTION, getYoboBottleRefs } from '../../shared/imageRules.ts';
 import { getBrandProfile, buildBrandIntro, buildAudienceRef } from '../../shared/brandContext.ts';
 
@@ -26,7 +26,7 @@ export default async function (req) {
       return Response.json({ error: 'Admin access required' }, { status: 403 });
     }
 
-    const { campaignMonth } = await req.json();
+    const { campaignMonth, preserveTopics = false } = await req.json();
     if (!campaignMonth) {
       return Response.json({ error: 'campaignMonth is required' }, { status: 400 });
     }
@@ -72,7 +72,7 @@ export default async function (req) {
 Brand Reference Guide (must strictly follow):
 ${brandGuide}
 
-CONTENT MODEL — IMPORTANT: Each calendar date below is ONE core post that gets published on all its platforms as slight variations of the SAME message. Do NOT create separate unique posts per platform. Every platform's copy must cover the same topic and the same core facts, only adapted to that platform's audience and format.
+${CONTENT_MODEL_RULES}
 
 Platform tone and short-link CTA rules:
 ${ctaBlock}
@@ -80,15 +80,25 @@ ${ctaBlock}
 Hashtag rules (append hashtags on the final line of each post):
 ${hashtagBlock}
 
-Topics already used in approved posts or other months — do NOT repeat these or create near-duplicates:
-${usedTopics.map((t) => `- ${t}`).join('\n') || '(none)'}
+${preserveTopics ? `REGENERATION MODE — KEEP TOPICS: For each date, keep the given topic EXACTLY as written. Draw the core message from the existing copy provided for that date, then express that ONE message nearly identically on every platform per the content model rules, applying each platform's hashtag and CTA rules. Do NOT invent new claims, statistics, or links — reuse the substance and any short links from the existing copy.` : `Topics already used in approved posts or other months — do NOT repeat these or create near-duplicates:
+${usedTopics.map((t) => `- ${t}`).join('\n') || '(none)'}`}
 
 ${CONTENT_RULES}
 
-Regenerate ONE fresh core post for EACH date below, in the same order. Produce a NEW, different topic per date (not the previous ones).
-${dateKeys.map((d, i) => `${i + 1}. ${d} — platforms: ${[...new Set(groups[d].map((p) => p.platform))].join(', ')} (previous topics to avoid: ${groups[d].map((p) => `"${p.topic || 'n/a'}"`).join('; ')})`).join('\n')}
+${preserveTopics ? 'Rewrite ONE core post for EACH date below, keeping its topic exactly.' : 'Regenerate ONE fresh core post for EACH date below, in the same order. Produce a NEW, different topic per date (not the previous ones).'}
+${dateKeys.map((d, i) => {
+  const platforms = [...new Set(groups[d].map((p) => p.platform))].join(', ');
+  if (preserveTopics) {
+    const existingCopy = groups[d].map((p) => `   - ${p.platform}: ${(p.content || '').trim()}`).join('\n');
+    return `${i + 1}. ${d} — platforms: ${platforms}
+   Topic (KEEP EXACTLY): "${groups[d][0].topic || 'n/a'}"
+   Existing copy to draw the core message from:
+${existingCopy}`;
+  }
+  return `${i + 1}. ${d} — platforms: ${platforms} (previous topics to avoid: ${groups[d].map((p) => `"${p.topic || 'n/a'}"`).join('; ')})`;
+}).join('\n')}
 
-For each date return: date, topic (ONE short new theme shared by ALL platforms), facebook_content, instagram_content, linkedin_content (each a platform-specific variation of the same core message, applying that platform's tone, hashtag rule, and CTA rule), image_prompt (${IMAGE_PROMPT_INSTRUCTION}${audienceRef ? ' ' + audienceRef : ''}).`,
+For each date return: date, topic (${preserveTopics ? 'the SAME topic given for that date' : 'ONE short new theme shared by ALL platforms'}), facebook_content, instagram_content, linkedin_content (each expressing the SAME core message nearly identically, applying only that platform's hashtag rule, CTA rule, and light tone touch-ups), image_prompt (${IMAGE_PROMPT_INSTRUCTION}${audienceRef ? ' ' + audienceRef : ''}).`,
       model: 'gemini_3_flash',
       response_json_schema: {
         type: 'object',

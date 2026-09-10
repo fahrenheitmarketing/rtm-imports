@@ -1,6 +1,6 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.40';
 import { getBrandGuideText } from '../../shared/clickup.ts';
-import { PLATFORM_TONE, PLATFORM_ORDER, buildSchedule, CONTENT_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction } from '../../shared/scheduleBuilder.ts';
+import { PLATFORM_TONE, PLATFORM_ORDER, buildSchedule, CONTENT_RULES, CONTENT_MODEL_RULES, HASHTAG_RULES, appendAiDisclaimer, buildShortLinkCtaInstruction } from '../../shared/scheduleBuilder.ts';
 import { buildImagePrompt, IMAGE_PROMPT_INSTRUCTION, getYoboBottleRefs } from '../../shared/imageRules.ts';
 import { getBrandProfile, buildBrandIntro, buildAudienceRef } from '../../shared/brandContext.ts';
 
@@ -84,7 +84,7 @@ ${topics.map((t) => `- ${t}`).join('\n')}
 Topics already used in previous months — do NOT repeat these or create near-duplicates:
 ${usedTopics.map((t) => `- ${t}`).join('\n')}
 
-CONTENT MODEL — IMPORTANT: Each calendar date below is ONE core post that gets published on all three platforms as slight variations of the SAME message. Do NOT create separate unique posts per platform. Every platform's copy must cover the same topic and the same core facts, only adapted to that platform's audience and format.
+${CONTENT_MODEL_RULES}
 
 Core dates (two per week):
 ${coreDates.map((d, i) => `${i + 1}. ${d}`).join('\n')}
@@ -100,7 +100,7 @@ ${PLATFORM_ORDER.map((pl) => buildShortLinkCtaInstruction(settings, pl)).filter(
 
 ${CONTENT_RULES}
 
-For each core date return: date, topic (ONE short theme shared by ALL platforms), facebook_content, instagram_content, linkedin_content (each a platform-specific variation of the same core message, applying that platform's tone, hashtag rule, and CTA rule), image_prompt (${IMAGE_PROMPT_INSTRUCTION}${audienceRef ? ' ' + audienceRef : ''}).`,
+For each core date return: date, topic (ONE short theme shared by ALL platforms), facebook_content, instagram_content, linkedin_content (each expressing the SAME core message nearly identically, applying only that platform's hashtag rule, CTA rule, and light tone touch-ups), image_prompt (${IMAGE_PROMPT_INSTRUCTION}${audienceRef ? ' ' + audienceRef : ''}).`,
       model: 'gemini_3_flash',
       response_json_schema: {
         type: 'object',

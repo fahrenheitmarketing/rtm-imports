@@ -80,6 +80,10 @@ export const CONTENT_RULES = `CONTENT RULES — strictly enforced: Do NOT make a
 
 STYLE RULES: Use the em dash ("—") sparingly — at most once per post, and prefer regular punctuation (commas, periods, colons) instead. Do NOT use the sparkles emoji ("✨") at all. Limit emojis in general to one or two per post maximum, and only use common, natural ones (a toast, a cocktail glass, a bowl of food) when they fit the tone — never force them.`;
 
+// Content model for unified core posts: one post per calendar date, published on
+// all platforms as the SAME message with only platform-specific adjustments.
+export const CONTENT_MODEL_RULES = `CONTENT MODEL — IMPORTANT: Each calendar date is ONE core post published on all its platforms as the SAME post with only platform-specific adjustments. The platform copies must be VERY SIMILAR — near-identical wording: same hook, same sentences, same facts, same structure. Do NOT write different angles or different messages per platform. The ONLY differences allowed: (1) hashtags per platform rule, (2) link handling (Facebook/LinkedIn keep the short link at the end; Instagram uses "link in bio" wording and never a URL), (3) light tone touch-ups at most (Instagram slightly punchier, LinkedIn slightly more formal) without changing the actual sentences.`;
+
 export const GBP_LENGTH_RULE = "GBP (google_business) length: Aim for 150 to 300 words. Google allows up to 1,500 characters, but shorter text is easier to read. Write a substantive local business update with a few useful details for the reader, and keep the relevant CTA chosen via the GBP CTA rule (never put a URL in the copy).";
 
 // Mandatory AI disclosure appended to the bottom of every social post (all platforms).
