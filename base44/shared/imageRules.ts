@@ -49,28 +49,34 @@ export const IMAGE_PROMPT_INSTRUCTION = `a short, SPECIFIC description of a bran
 // Matched by keyword against a post's topic/copy/brief and passed to image
 // generation as reference images so Yobo/Soju posts depict the REAL bottles.
 export const YOBO_BOTTLE_PRODUCTS = [
-  { label: 'Yobo Soju Luxe 375ml', keywords: ['yobo', 'soju'], url: 'https://yobospirits.com/cdn/shop/files/luxe-375.jpg?v=1695306100&width=1200' },
-  { label: 'Yobo Soju Luxe 750ml', keywords: ['luxe'], url: 'https://yobospirits.com/cdn/shop/files/luxe-750.jpg?v=1695306071&width=1200' },
-  { label: 'KTOWN Soju Yuzu + Elderflower', keywords: ['yuzu', 'elderflower'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN-Yuzu.jpg?v=1694531749&width=1200' },
-  { label: 'KTOWN Soju Korean Pear + Perilla', keywords: ['korean pear', 'perilla'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN-Pear.jpg?v=1694532022&width=1200' },
-  { label: 'KTOWN Soju Peach + Chili', keywords: ['peach', 'chili'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN-Peach.jpg?v=1694532098&width=1200' },
-  { label: 'KTOWN Soju Grape + Ginger', keywords: ['grape', 'ginger'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN-Grape.jpg?v=1694531948&width=1200' },
-  { label: 'KTOWN Soju Watermelon Cooler', keywords: ['watermelon'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN_newflavors_Watermelon_0.jpg?v=1784643956&width=1200' },
-  { label: 'KTOWN Soju Tropical Colada', keywords: ['tropical', 'colada', 'coconut', 'pineapple'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN_newflavors_Tropical_0.jpg?v=1784644226&width=1200' },
-  { label: 'KTOWN Soju Dalgona Coffee', keywords: ['dalgona', 'coffee'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN_newflavors_Coffee_0.jpg?v=1784644594&width=1200' },
-  { label: 'KTOWN Soju Blueberry Lychee', keywords: ['blueberry', 'lychee'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN_newflavors_Blueberry_0.jpg?v=1784644796&width=1200' },
-  { label: 'Kish Earth — Smoked Mushroom, Umami', keywords: ['kish', 'mushroom', 'umami'], url: 'https://yobospirits.com/cdn/shop/files/KishProductEarth.jpg?v=1728861586&width=1200' },
-  { label: 'Kish Shine — Kumquat, Rose', keywords: ['kumquat'], url: 'https://yobospirits.com/cdn/shop/files/KishProductShine.jpg?v=1728861685&width=1200' },
-  { label: 'Kish Bliss — Sour Cherry, Licorice', keywords: ['sour cherry', 'licorice'], url: 'https://yobospirits.com/cdn/shop/files/KishProductBliss.jpg?v=1728861653&width=1200' },
-  { label: 'Kish Seoul — Hibiscus, Lemon Balm', keywords: ['hibiscus', 'lemon balm'], url: 'https://yobospirits.com/cdn/shop/files/KishProductSeoul_bfc9c647-9ad7-4651-9e68-bb18396c8da7.jpg?v=1728861548&width=1200' },
+  { line: 'yobo', label: 'Yobo Soju Luxe 375ml', keywords: ['yobo', 'soju'], url: 'https://yobospirits.com/cdn/shop/files/luxe-375.jpg?v=1695306100&width=1200' },
+  { line: 'yobo', label: 'Yobo Soju Luxe 750ml', keywords: ['luxe'], url: 'https://yobospirits.com/cdn/shop/files/luxe-750.jpg?v=1695306071&width=1200' },
+  { line: 'ktown', label: 'KTOWN Soju Yuzu + Elderflower', keywords: ['yuzu', 'elderflower', 'ktown', 'k-town', 'k town'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN-Yuzu.jpg?v=1694531749&width=1200' },
+  { line: 'ktown', label: 'KTOWN Soju Korean Pear + Perilla', keywords: ['korean pear', 'perilla', 'ktown', 'k-town', 'k town'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN-Pear.jpg?v=1694532022&width=1200' },
+  { line: 'ktown', label: 'KTOWN Soju Peach + Chili', keywords: ['peach', 'chili', 'ktown', 'k-town', 'k town'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN-Peach.jpg?v=1694532098&width=1200' },
+  { line: 'ktown', label: 'KTOWN Soju Grape + Ginger', keywords: ['grape', 'ginger', 'ktown', 'k-town', 'k town'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN-Grape.jpg?v=1694531948&width=1200' },
+  { line: 'ktown', label: 'KTOWN Soju Watermelon Cooler', keywords: ['watermelon', 'ktown', 'k-town', 'k town'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN_newflavors_Watermelon_0.jpg?v=1784643956&width=1200' },
+  { line: 'ktown', label: 'KTOWN Soju Tropical Colada', keywords: ['tropical', 'colada', 'coconut', 'pineapple', 'ktown', 'k-town', 'k town'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN_newflavors_Tropical_0.jpg?v=1784644226&width=1200' },
+  { line: 'ktown', label: 'KTOWN Soju Dalgona Coffee', keywords: ['dalgona', 'coffee', 'ktown', 'k-town', 'k town'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN_newflavors_Coffee_0.jpg?v=1784644594&width=1200' },
+  { line: 'ktown', label: 'KTOWN Soju Blueberry Lychee', keywords: ['blueberry', 'lychee', 'ktown', 'k-town', 'k town'], url: 'https://yobospirits.com/cdn/shop/files/KTOWN_newflavors_Blueberry_0.jpg?v=1784644796&width=1200' },
+  { line: 'kish', label: 'Kish Earth — Smoked Mushroom, Umami', keywords: ['kish', 'mushroom', 'umami'], url: 'https://yobospirits.com/cdn/shop/files/KishProductEarth.jpg?v=1728861586&width=1200' },
+  { line: 'kish', label: 'Kish Shine — Kumquat, Rose', keywords: ['kumquat'], url: 'https://yobospirits.com/cdn/shop/files/KishProductShine.jpg?v=1728861685&width=1200' },
+  { line: 'kish', label: 'Kish Bliss — Sour Cherry, Licorice', keywords: ['sour cherry', 'licorice'], url: 'https://yobospirits.com/cdn/shop/files/KishProductBliss.jpg?v=1728861653&width=1200' },
+  { line: 'kish', label: 'Kish Seoul — Hibiscus, Lemon Balm', keywords: ['hibiscus', 'lemon balm'], url: 'https://yobospirits.com/cdn/shop/files/KishProductSeoul_bfc9c647-9ad7-4651-9e68-bb18396c8da7.jpg?v=1728861548&width=1200' },
 ];
 
 // Returns up to 3 authentic bottle image URLs relevant to this post, or [] if
 // the post doesn't mention Yobo/Soju/any Yobo family product.
+// When the post references KTOWN (in any spelling), only KTOWN collection
+// bottles (yobospirits.com/collections/k-town-soju) are used as references.
 export function getYoboBottleRefs(post) {
   const text = `${post.topic || ''} ${post.content || ''} ${post.image_prompt || post.brand_compliance_notes || ''}`.toLowerCase();
+  const isKtown = text.includes('ktown') || text.includes('k-town') || text.includes('k town');
   const urls = [];
-  for (const product of YOBO_BOTTLE_PRODUCTS) {
+  // Flavor-specific matches first, so a named flavor beats the generic set.
+  const flavorFirst = (a, b) => (b.keywords.some((k) => !['ktown', 'k-town', 'k town'].includes(k) && text.includes(k)) ? 1 : -1);
+  const products = isKtown ? YOBO_BOTTLE_PRODUCTS.filter((p) => p.line === 'ktown') : YOBO_BOTTLE_PRODUCTS;
+  for (const product of [...products].sort(flavorFirst)) {
     if (product.keywords.some((k) => text.includes(k)) && !urls.includes(product.url)) {
       urls.push(product.url);
       if (urls.length >= 3) break;
