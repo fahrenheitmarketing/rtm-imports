@@ -87,7 +87,11 @@ export function getYoboBottleRefs(post) {
 
 export const YOBO_REF_SUFFIX = `AUTHENTIC PRODUCT EXCEPTION: reference photos of the actual Yobo/KTOWN/Kish bottles are attached. You MUST depict the EXACT bottles shown in the attached reference images — reproduce their real shapes, colors, and label designs faithfully; do NOT alter, redesign, or invent bottles or labels for them. The "blank/unreadable labels" rule applies only to any OTHER bottles in the scene, not to these authentic products.`;
 
-export const IMAGE_SUBJECT_RULE = `IMAGE SUBJECT RULE: Do NOT make a lone bottle or product-only shot the main subject — a single bottle on a surface is NOT acceptable unless the brief explicitly calls for a product highlight. Prefer a lived-in lifestyle scene where the beverage plays a supporting role: adults of legal drinking age sharing a meal or a toast, a high-end bar moment, a stocked and tidy retail shelf, a trendy Korean café or dining scene, a beautifully set table. Any bottles in the scene must be part of a wider composition with people, food, or ambiance — not the isolated focal point.`;
+export const IMAGE_SUBJECT_RULE = `IMAGE SUBJECT RULE: Do NOT make a lone bottle or product-only shot the main subject — a single bottle on a surface is NOT acceptable unless the brief explicitly calls for a product highlight. Prefer a lived-in lifestyle scene where the beverage plays a supporting role: adults of legal drinking age sharing a meal or a toast, a high-end bar moment, a stocked and tidy retail shelf, a trendy Korean café or dining scene, a beautifully set table. Any bottles in the scene must be part of a wider composition with people, food, or ambiance — not the isolated focal point. If the scene includes glassware, it must be Korean/Asian-style soju glasses or tumbler glasses — never wine glasses or other stemmed Western glassware.`;
+
+// Glassware rule: every scene must use Korean/Asian-style glassware, never
+// Western stemware. Applies to all generated social post imagery.
+export const GLASSWARE_RULE = `GLASSWARE RULE: Any glassware in the image must be Korean/Asian-style — traditional soju glasses (small, clear, short, straight-sided tumbler cups, like those used in Korean bars, restaurants, and pocha street-food scenes) and simple tumbler-style glasses. Do NOT use Western stemware — no wine glasses, coupe glasses, martini glasses, champagne flutes, or any stemmed glass.`;
 
 export function buildImagePrompt(post, brandGuide, audienceRef) {
   const brief = post.image_prompt || post.brand_compliance_notes || '';
@@ -95,5 +99,5 @@ export function buildImagePrompt(post, brandGuide, audienceRef) {
   const dims = PLATFORM_DIMENSIONS[post.platform];
   const cropHint = dims ? `The image will be cropped to ${dims.width}x${dims.height}px — ${dims.hint}. ` : '';
   const yoboRefs = getYoboBottleRefs(post);
-  return `${imageDirection}A premium lifestyle photo for a ${post.platform} social media post by an Asian beverage importer about "${post.topic}". The post copy is: "${post.content}". Create an image that VISUALLY REPRESENTS this content — the image must directly reflect the message, not be a generic stock photo. ${cropHint}${MOODBOARD_STYLE} ${IMAGE_FORBIDDEN_SUFFIX} ${IMAGE_SUBJECT_RULE}${yoboRefs.length ? ` ${YOBO_REF_SUFFIX}` : ''} ${brandGuide}${audienceRef ? ' ' + audienceRef : ''}`;
+  return `${imageDirection}A premium lifestyle photo for a ${post.platform} social media post by an Asian beverage importer about "${post.topic}". The post copy is: "${post.content}". Create an image that VISUALLY REPRESENTS this content — the image must directly reflect the message, not be a generic stock photo. ${cropHint}${MOODBOARD_STYLE} ${IMAGE_FORBIDDEN_SUFFIX} ${IMAGE_SUBJECT_RULE} ${GLASSWARE_RULE}${yoboRefs.length ? ` ${YOBO_REF_SUFFIX}` : ''} ${brandGuide}${audienceRef ? ' ' + audienceRef : ''}`;
 }

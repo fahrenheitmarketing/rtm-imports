@@ -22,7 +22,7 @@ export default async function (req) {
       return Response.json({ error: 'Admin access required' }, { status: 403 });
     }
 
-    const { campaignMonth, regenerate } = await req.json();
+    const { campaignMonth, regenerate, editExisting } = await req.json();
     if (!campaignMonth) {
       return Response.json({ error: 'campaignMonth is required' }, { status: 400 });
     }
@@ -31,8 +31,47 @@ export default async function (req) {
     const brandGuide = settingsList[0] ? await getBrandGuideText(base44, settingsList[0]) : '';
 
     let posts = await base44.asServiceRole.entities.SocialPost.filter({ campaign_month: campaignMonth }, 'scheduled_date', 200);
-    if (!regenerate) {
+    if (editExisting) {
+      posts = posts.filter((p) => p.image_url);
+    } else if (!regenerate) {
       posts = posts.filter((p) => !p.image_url);
+    }
+
+    // EDIT EXISTING MODE: keep the current creatives but change one aspect
+    // (e.g. glassware) — one edit per calendar date, shared by all platform
+    // siblings of that date so the trio stays in sync.
+    if (editExisting) {
+      const groups = {};
+      for (const p of posts) {
+        const key = (p.scheduled_date || '').slice(0, 10);
+        (groups[key] = groups[key] || []).push(p);
+      }
+      const groupList = Object.entries(groups).sort(([a], [b]) => a.localeCompare(b)).map(([date, group]) => ({ date, posts: group }));
+      if (groupList.length === 0) {
+        return Response.json({ success: true, message: 'No posts with existing images to edit.', edited: 0, failed: 0 });
+      }
+
+      const EDIT_INSTRUCTION = `EDIT EXISTING IMAGE: The first attached image is the current creative. Recreate this EXACT same scene, composition, subjects, lighting, and mood, changing ONLY the glassware: replace any wine glasses, stemware, coupe glasses, champagne flutes, or other Western glasses with traditional Korean soju glasses (small, clear, short, straight-sided tumbler cups) and simple Asian-style tumbler glasses, like those used in Korean bars and pocha dining scenes. Keep everything else in the image identical — same people, food, setting, colors, and bottles.`;
+
+      let edited = 0;
+      let failed = 0;
+      await runConcurrent(groupList, async ({ posts: group }) => {
+        try {
+          const primary = group[0];
+          const prompt = `${buildImagePrompt({ ...primary, platform: 'facebook' }, brandGuide)} ${EDIT_INSTRUCTION}`;
+          const bottleRefs = getYoboBottleRefs(primary);
+          const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt, existing_image_urls: [primary.image_url, ...bottleRefs] });
+          const safeTopic = (primary.topic || 'creative').replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase().slice(0, 40);
+          const resizedUrl = await resizeAndUploadImage(base44, Jimp, 'facebook', url, `${primary.id}-core-${safeTopic}`);
+          await base44.asServiceRole.entities.SocialPost.bulkUpdate(group.map((p) => ({ id: p.id, image_url: resizedUrl })));
+          edited++;
+        } catch (e) {
+          console.error('image edit failed for date group', e.message);
+          failed++;
+        }
+      }, 3);
+
+      return Response.json({ success: true, mode: 'edit_existing', campaign_month: campaignMonth, core_posts: groupList.length, edited, failed });
     }
 
     if (posts.length === 0) {
