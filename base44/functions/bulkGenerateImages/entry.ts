@@ -22,7 +22,7 @@ export default async function (req) {
       return Response.json({ error: 'Admin access required' }, { status: 403 });
     }
 
-    const { campaignMonth, regenerate, editExisting, dates } = await req.json();
+    const { campaignMonth, regenerate, editExisting, dates, dateInstructions } = await req.json();
     if (!campaignMonth) {
       return Response.json({ error: 'campaignMonth is required' }, { status: 400 });
     }
@@ -58,10 +58,11 @@ export default async function (req) {
 
       let edited = 0;
       let failed = 0;
-      await runConcurrent(groupList, async ({ posts: group }) => {
+      await runConcurrent(groupList, async ({ date, posts: group }) => {
         try {
           const primary = group[0];
-          const prompt = `${buildImagePrompt({ ...primary, platform: 'facebook' }, brandGuide)} ${EDIT_INSTRUCTION}`;
+          const instruction = (dateInstructions && dateInstructions[date]) ? `EDIT EXISTING IMAGE — SPECIFIC CORRECTION: The first attached image is the current creative. Recreate this EXACT same scene, composition, subjects, lighting, and mood, applying ONLY this requested change and keeping everything else in the image identical — same people, food, setting, colors, and bottles. Requested change: ${dateInstructions[date]}` : EDIT_INSTRUCTION;
+          const prompt = `${buildImagePrompt({ ...primary, platform: 'facebook' }, brandGuide)} ${instruction}`;
           const bottleRefs = getYoboBottleRefs(primary);
           const { url } = await base44.asServiceRole.integrations.Core.GenerateImage({ prompt, existing_image_urls: [primary.image_url, ...bottleRefs] });
           const safeTopic = (primary.topic || 'creative').replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase().slice(0, 40);
