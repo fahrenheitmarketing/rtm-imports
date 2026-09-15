@@ -182,7 +182,16 @@ export default function NewsArticle() {
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <article className="font-body text-base md:text-lg leading-relaxed prose-rtm" style={{ color: 'rgba(248,243,232,0.9)' }}>
-            <ReactMarkdown>{post.body || post.summary}</ReactMarkdown>
+            <ReactMarkdown
+              components={{
+                a: ({ href, children }) =>
+                  /^https?:\/\//.test(href || '') ? (
+                    <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>
+                  ) : (
+                    <Link to={href}>{children}</Link>
+                  ),
+              }}
+            >{post.body || post.summary}</ReactMarkdown>
           </article>
 
           {post.external_url &&
