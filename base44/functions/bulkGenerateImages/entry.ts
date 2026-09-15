@@ -22,7 +22,7 @@ export default async function (req) {
       return Response.json({ error: 'Admin access required' }, { status: 403 });
     }
 
-    const { campaignMonth, regenerate, editExisting } = await req.json();
+    const { campaignMonth, regenerate, editExisting, dates } = await req.json();
     if (!campaignMonth) {
       return Response.json({ error: 'campaignMonth is required' }, { status: 400 });
     }
@@ -33,6 +33,9 @@ export default async function (req) {
     let posts = await base44.asServiceRole.entities.SocialPost.filter({ campaign_month: campaignMonth }, 'scheduled_date', 200);
     if (editExisting) {
       posts = posts.filter((p) => p.image_url);
+      if (Array.isArray(dates) && dates.length > 0) {
+        posts = posts.filter((p) => dates.includes((p.scheduled_date || '').slice(0, 10)));
+      }
     } else if (!regenerate) {
       posts = posts.filter((p) => !p.image_url);
     }
@@ -51,7 +54,7 @@ export default async function (req) {
         return Response.json({ success: true, message: 'No posts with existing images to edit.', edited: 0, failed: 0 });
       }
 
-      const EDIT_INSTRUCTION = `EDIT EXISTING IMAGE: The first attached image is the current creative. Recreate this EXACT same scene, composition, subjects, lighting, and mood, changing ONLY the glassware: replace any wine glasses, stemware, coupe glasses, champagne flutes, or other Western glasses with traditional Korean soju glasses (small, clear, short, straight-sided tumbler cups) and simple Asian-style tumbler glasses, like those used in Korean bars and pocha dining scenes. Keep everything else in the image identical — same people, food, setting, colors, and bottles.`;
+      const EDIT_INSTRUCTION = `EDIT EXISTING IMAGE — CRITICAL GLASSWARE CORRECTION: The first attached image is the current creative. A previous edit attempt FAILED to fix the glassware, so apply this change aggressively. Recreate this EXACT same scene, composition, subjects, lighting, and mood, changing ONLY the glassware. REMOVE every stemmed glass completely: no wine glasses, no stemware, no coupe glasses, no champagne flutes, no martini glasses, no glasses on stems of any kind — these are FORBIDDEN. Every drinking glass in the scene MUST be a traditional Korean soju glass: a small, short, squat, straight-sided CLEAR tumbler cup, roughly 2 to 4 inches tall, with NO stem, NO taper, flat bottom — the kind served in Korean bars, Korean restaurants, and pocha street-food scenes. If a hand is shown holding or raising a glass, that glass must also be a stemless soju tumbler. Keep everything else in the image identical — same people, food, setting, colors, and bottles.`;
 
       let edited = 0;
       let failed = 0;
