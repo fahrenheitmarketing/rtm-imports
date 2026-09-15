@@ -110,8 +110,27 @@ export default async function(req) {
 
     const authHeader = 'Basic ' + btoa(`${wpUser}:${wpPass}`);
 
-    // Get all published app articles (source of truth)
-    const appPosts = await base44.asServiceRole.entities.NewsPost.filter({ is_published: true }, '-published_date', 100);
+    // Optional draft mode: push specific (possibly unpublished) posts to
+    // staging as WordPress drafts for review, instead of the default behavior
+    // of syncing all published app articles.
+    let draftPostIds = [];
+    try {
+      const body = await req.json();
+      if (body && Array.isArray(body.draft_post_ids)) {
+        draftPostIds = body.draft_post_ids.map(String);
+      }
+    } catch { /* no body — default sync mode */ }
+    const isDraftMode = draftPostIds.length > 0;
+
+    // Get all published app articles (source of truth), or the requested
+    // draft posts in draft mode.
+    let appPosts;
+    if (isDraftMode) {
+      const allPosts = await base44.asServiceRole.entities.NewsPost.filter({}, '-published_date', 200);
+      appPosts = allPosts.filter((p) => draftPostIds.includes(p.id));
+    } else {
+      appPosts = await base44.asServiceRole.entities.NewsPost.filter({ is_published: true }, '-published_date', 100);
+    }
 
     // Get existing staging posts (any status) to match by slug
     const stagingListRes = await fetch(`${siteUrl}/wp-json/wp/v2/posts?status=publish,future,draft,pending&per_page=100`, {
@@ -146,7 +165,7 @@ export default async function(req) {
           slug,
           content: contentHtml,
           excerpt: post.summary || '',
-          status: isFuture ? 'future' : 'publish',
+          status: isDraftMode ? 'draft' : (isFuture ? 'future' : 'publish'),
           date: publishDate.toISOString(),
           ...(categoryId ? { categories: [categoryId] } : {}),
           ...(featuredMediaId ? { featured_media: featuredMediaId } : {})
