@@ -23,6 +23,7 @@ import NewsDashboard from './pages/admin/NewsDashboard';
 import SocialMediaStudio from './pages/SocialMediaStudio';
 import Wireframe from './pages/Wireframe';
 import ContentDoc from './pages/ContentDoc';
+import OAuthConsent from './pages/OAuthConsent';
 import AnalyticsDashboard from './pages/AnalyticsDashboard';
 
 const AuthenticatedApp = () => {
@@ -55,6 +56,7 @@ const AuthenticatedApp = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/analytics-dashboard" element={<AnalyticsDashboard />} />
+      <Route path="/oauth/consent" element={<OAuthConsent />} />
       <Route element={<Layout />}>
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
