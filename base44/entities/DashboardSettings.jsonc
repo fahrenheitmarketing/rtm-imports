@@ -1,0 +1,32 @@
+{
+  "name": "DashboardSettings",
+  "type": "object",
+  "properties": {
+    "brand_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "rtm"
+      ],
+      "description": "Brand terms used to split Search Console data into brand vs non-brand"
+    },
+    "blog_path_prefix": {
+      "type": "string",
+      "default": "/news/",
+      "description": "URL path prefix that identifies blog/news posts"
+    },
+    "digital_assets_path": {
+      "type": "string",
+      "default": "/digital-assets/",
+      "description": "URL path of the password-protected Digital Assets page"
+    },
+    "tracking_start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date file-level download and unlock tracking started, shown as a note under Digital Assets"
+    }
+  },
+  "required": []
+}

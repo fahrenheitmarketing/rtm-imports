@@ -1,0 +1,17 @@
+{
+  "name": "PriorityKeyword",
+  "type": "object",
+  "properties": {
+    "keyword": {
+      "type": "string",
+      "description": "Priority SEO keyword to track on the Performance Dashboard"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional notes about intent or target page for this keyword"
+    }
+  },
+  "required": [
+    "keyword"
+  ]
+}
