@@ -57,11 +57,12 @@ async function gaQuery(headers, range, dimensions, metrics, opts = {}) {
     method: 'POST', headers, body: JSON.stringify(body),
     signal: typeof AbortSignal !== 'undefined' && AbortSignal.timeout ? AbortSignal.timeout(45000) : undefined,
   });
-  if (!res.ok) { const t = await res.text().catch(() => ''); throw new Error(`GA ${res.status}: ${t.slice(0, 200)}`); }
+  if (!res.ok) { const t = await res.text().catch(() => ''); throw new Error(`GA ${res.status}: ${t.slice(0, 300)}`); }
   const data = await res.json();
-  return (data.rows || []).map((r) => ({
-    dims: r.dimensionValues.map((d) => d.value),
-    m: r.metricValues.map((mv) => mv.value),
+  if (!data.rows) return [];
+  return data.rows.map((r) => ({
+    dims: (r.dimensionValues || []).map((d) => d.value),
+    m: (r.metricValues || []).map((mv) => mv.value),
   }));
 }
 
