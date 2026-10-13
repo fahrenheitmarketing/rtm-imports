@@ -1,4 +1,4 @@
-import { createClientFromRequest } from 'npm:@base44/sdk@0.8.52';
+import { createClientFromRequest } from 'npm:@base44/sdk@0.8.53';
 import { secrets } from 'base44:runtime';
 
 const GA_PROPERTY_ID = '538463420';
@@ -55,7 +55,7 @@ async function gaQuery(headers, range, dimensions, metrics, opts = {}) {
   if (opts.limit) body.limit = opts.limit;
   const res = await fetch(GA_URL, {
     method: 'POST', headers, body: JSON.stringify(body),
-    signal: AbortSignal.timeout(45000),
+    signal: typeof AbortSignal !== 'undefined' && AbortSignal.timeout ? AbortSignal.timeout(45000) : undefined,
   });
   if (!res.ok) { const t = await res.text().catch(() => ''); throw new Error(`GA ${res.status}: ${t.slice(0, 200)}`); }
   const data = await res.json();
@@ -82,8 +82,11 @@ const fBegins = (field, value) => ({ filter: { fieldName: field, stringFilter: {
 const fContains = (field, value) => ({ filter: { fieldName: field, stringFilter: { matchType: 'CONTAINS', value } } });
 const andGroup = (filters) => ({ andGroup: { expressions: filters } });
 
-async function safe(promise, fallback) {
-  try { return await promise; } catch (e) { return fallback; }
+async function safe(promise, fallback, errors, label) {
+  try { return await promise; } catch (e) {
+    if (errors && label) errors.push(`${label}: ${e.message}`);
+    return fallback;
+  }
 }
 
 function isBrandQuery(query, brandTerms) {
@@ -107,8 +110,7 @@ export default async function (req) {
     const body = await req.json().catch(() => ({}));
     const password = body.password || '';
     const expected = secrets.get('ANALYTICS_DASHBOARD_PASSWORD');
-    const isDebug = body.action === '__debug';
-    if (!isDebug && (!expected || password !== expected)) {
+    if (!expected || password !== expected) {
       return Response.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
@@ -162,17 +164,6 @@ export default async function (req) {
     }
 
     // ---- Fetch dashboard data ----
-    if (isDebug) {
-      try {
-        const gaConn = await base44.asServiceRole.connectors.getConnection('google_analytics');
-        const gaHeaders = { Authorization: `Bearer ${gaConn.accessToken}`, 'Content-Type': 'application/json' };
-        const rows = await gaQuery(gaHeaders, { start: '2026-09-01', end: '2026-09-30' }, [], ['sessions', 'totalUsers', 'screenPageViews']);
-        return Response.json({ debug: true, connKeys: Object.keys(gaConn || {}), accessTokenLen: gaConn.accessToken?.length, rows });
-      } catch (e) {
-        return Response.json({ debugError: e.message, stack: e.stack }, { status: 500 });
-      }
-    }
-
     const compareMode = body.compareMode || 'previous';
     const { current, comparison } = resolveRanges(body.preset || 'last_month', body.customStart, body.customEnd, compareMode);
     const cacheKey = `${current.start}|${current.end}|${comparison ? comparison.start + '|' + comparison.end : 'none'}`;
@@ -212,8 +203,8 @@ export default async function (req) {
     // ===== GA4 QUERIES (current) =====
     const gaMetricsOverview = ['sessions', 'totalUsers', 'newUsers', 'screenPageViews', 'engagedSessions', 'engagementRate', 'bounceRate', 'averageSessionDuration', 'keyEvents'];
     const gaBatch1 = [
-      safe(gaQuery(gaHeaders, current, [], gaMetricsOverview), []).then((r) => ({ k: 'overviewCur', r })),
-      comp ? safe(gaQuery(gaHeaders, comp, [], gaMetricsOverview), []).then((r) => ({ k: 'overviewComp', r })) : Promise.resolve({ k: 'overviewComp', r: [] }),
+      safe(gaQuery(gaHeaders, current, [], gaMetricsOverview), [], errors, 'GA Overview (current)').then((r) => ({ k: 'overviewCur', r })),
+      comp ? safe(gaQuery(gaHeaders, comp, [], gaMetricsOverview), [], errors, 'GA Overview (comparison)').then((r) => ({ k: 'overviewComp', r })) : Promise.resolve({ k: 'overviewComp', r: [] }),
       safe(gaQuery(gaHeaders, current, ['date'], ['sessions'], { orderBy: [{ dimension: { dimensionName: 'date' } }], limit: 400 }), []).then((r) => ({ k: 'dailyCur', r })),
       comp ? safe(gaQuery(gaHeaders, comp, ['date'], ['sessions'], { orderBy: [{ dimension: { dimensionName: 'date' } }], limit: 400 }), []).then((r) => ({ k: 'dailyComp', r })) : Promise.resolve({ k: 'dailyComp', r: [] }),
       safe(gaQuery(gaHeaders, current, ['sessionDefaultChannelGroup', 'sessionSource'], ['sessions', 'totalUsers', 'engagementRate', 'keyEvents'], { orderBy: [{ metric: { metricName: 'sessions' }, desc: true }], limit: 500 }), []).then((r) => ({ k: 'channelsCur', r })),
@@ -260,7 +251,11 @@ export default async function (req) {
       const settled = await Promise.allSettled(batch);
       for (const res of settled) {
         if (res.status === 'fulfilled' && res.value) gaResults[res.value.k] = res.value.r;
+        else if (res.status === 'rejected') errors.push(`GA batch rejected: ${res.reason?.message || res.reason}`);
       }
+    }
+    if (!gaResults.overviewCur || gaResults.overviewCur.length === 0) {
+      if (!errors.some((e) => e.includes('GA Overview'))) errors.push('GA Overview: query returned no rows');
     }
 
     // ===== GSC QUERIES =====
