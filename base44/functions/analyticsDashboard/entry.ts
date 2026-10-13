@@ -70,7 +70,7 @@ async function gscQuery(headers, range, dimensions, opts = {}) {
   if (opts.filter) body.dimensionFilterGroups = [{ groupType: 'and', filters: opts.filter }];
   const res = await fetch(GSC_URL, {
     method: 'POST', headers, body: JSON.stringify(body),
-    signal: AbortSignal.timeout(45000),
+    signal: typeof AbortSignal !== 'undefined' && AbortSignal.timeout ? AbortSignal.timeout(45000) : undefined,
   });
   if (!res.ok) { const t = await res.text().catch(() => ''); throw new Error(`GSC ${res.status}: ${t.slice(0, 200)}`); }
   const data = await res.json();
