@@ -114,11 +114,11 @@ export default function AnalyticsDashboard() {
                 </p>
               )}
             </div>
-            <button onClick={handleLogout} className="flex items-center gap-2 px-3 py-2 rounded-lg font-body text-sm" style={{ border: '1px solid rgba(248,243,232,0.2)', color: 'rgba(248,243,232,0.7)' }}>
+            <button onClick={handleLogout} className="print:hidden flex items-center gap-2 px-3 py-2 rounded-lg font-body text-sm" style={{ border: '1px solid rgba(248,243,232,0.2)', color: 'rgba(248,243,232,0.7)' }}>
               <LogOut className="w-4 h-4" /> Exit
             </button>
           </div>
-          <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div className="print:hidden flex items-center justify-between gap-3 flex-wrap">
             <GlobalControls
               preset={preset} customStart={customStart} customEnd={customEnd} compareMode={compareMode}
               onApply={handleApply} onCompare={handleCompare} onRefresh={handleRefresh} onExport={handleExport}

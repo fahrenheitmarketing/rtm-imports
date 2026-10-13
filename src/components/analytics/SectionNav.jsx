@@ -14,7 +14,7 @@ export default function SectionNav() {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
   return (
-    <div className="sticky top-[73px] z-20 border-b" style={{ background: 'rgba(10,36,84,0.92)', borderColor: 'rgba(244,196,48,0.15)', backdropFilter: 'blur(8px)' }}>
+    <div className="print:hidden sticky top-[73px] z-20 border-b" style={{ background: 'rgba(10,36,84,0.92)', borderColor: 'rgba(244,196,48,0.15)', backdropFilter: 'blur(8px)' }}>
       <div className="max-w-7xl mx-auto px-6 py-2 flex gap-1 overflow-x-auto">
         {SECTIONS.map((s) => (
           <button key={s.id} onClick={() => go(s.id)} className="px-3 py-1.5 rounded-lg font-body text-sm whitespace-nowrap transition-colors hover:bg-white/5" style={{ color: 'rgba(248,243,232,0.75)' }}>

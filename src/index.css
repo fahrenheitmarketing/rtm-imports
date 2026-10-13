@@ -185,3 +185,12 @@ h1 i, h2 i, h3 i, h4 i, h5 i, h6 i,
   border-radius: var(--radius);
   margin: 1.5rem 0;
 }
+
+/* Performance Dashboard print (Export PDF) */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body { background: #0A2454 !important; }
+}
