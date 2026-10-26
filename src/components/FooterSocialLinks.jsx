@@ -2,9 +2,9 @@ import React from 'react';
 import { Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const SOCIAL_LINKS = [
-  { name: 'Instagram', url: 'https://b.link/IG-rtm.imports_', Icon: Instagram },
-  { name: 'Facebook', url: 'https://b.link/FB-RouteToMarketImports', Icon: Facebook },
-  { name: 'LinkedIn', url: 'https://b.link/LI-RTM-Imports', Icon: Linkedin },
+  { name: 'Instagram', url: 'https://www.instagram.com/rtm.imports_/', Icon: Instagram },
+  { name: 'Facebook', url: 'https://www.facebook.com/RouteToMarketImports', Icon: Facebook },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/company/rtm-imports', Icon: Linkedin },
 ];
 
 export default function FooterSocialLinks() {
