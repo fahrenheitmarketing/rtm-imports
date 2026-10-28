@@ -1,37 +1,44 @@
 import { useState, useEffect, useRef } from 'react';
 
 export default function useCountUp(target, duration = 1500, startOnView = true) {
-  const [count, setCount] = useState(0);
+  const numTarget = parseInt(target, 10);
+  const finalValue = isNaN(numTarget) ? 0 : numTarget;
+
+  // The final number is what renders first, so it stays put if the animation
+  // never runs (no JavaScript, no IntersectionObserver, reduced motion).
+  const [count, setCount] = useState(finalValue);
   const [hasStarted, setHasStarted] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
-    if (!startOnView) {
-      setHasStarted(true);
-      return;
+    const el = ref.current;
+    if (!el || !startOnView) return;
+    if (typeof IntersectionObserver === 'undefined') return;
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     }
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setHasStarted(true); },
       { threshold: 0.3 }
     );
-    const el = ref.current;
-    if (el) observer.observe(el);
-    return () => { if (el) observer.unobserve(el); };
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [startOnView]);
 
   useEffect(() => {
     if (!hasStarted) return;
-    const numTarget = parseInt(target, 10);
-    if (isNaN(numTarget) || numTarget === 0) { setCount(numTarget || 0); return; }
-    let start = 0;
-    const increment = numTarget / (duration / 16);
+    if (finalValue === 0) { setCount(0); return; }
+
+    setCount(0);
+    let current = 0;
+    const increment = finalValue / (duration / 16);
     const timer = setInterval(() => {
-      start += increment;
-      if (start >= numTarget) { setCount(numTarget); clearInterval(timer); }
-      else setCount(Math.floor(start));
+      current += increment;
+      if (current >= finalValue) { setCount(finalValue); clearInterval(timer); }
+      else setCount(Math.floor(current));
     }, 16);
     return () => clearInterval(timer);
-  }, [hasStarted, target, duration]);
+  }, [hasStarted, finalValue, duration]);
 
   return { count, ref };
 }

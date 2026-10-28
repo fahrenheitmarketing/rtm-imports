@@ -29,7 +29,7 @@ function StatItem({ stat, idx }) {
           filter: 'drop-shadow(0 2px 3px rgba(0,0,0,0.4))',
         }}
       >
-        {count}<span style={{ color: 'rgba(248,243,232,0.5)' }}>{stat.suffix}</span>
+        {count.toLocaleString('en-US')}<span style={{ color: 'rgba(248,243,232,0.5)' }}>{stat.suffix}</span>
       </div>
       <p className="font-eyebrow text-xs tracking-widest uppercase" style={{ color: 'rgba(248,243,232,0.7)' }}>
         {stat.label}
