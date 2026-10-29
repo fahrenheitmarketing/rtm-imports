@@ -1,13 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, TrendingUp, Package, Store, Calendar } from 'lucide-react';
+import { ArrowRight, Store, Calendar } from 'lucide-react';
 
 const STATS = [
-  { value: '80,000+', label: 'Cases projected nationwide in 2026', icon: TrendingUp },
-  { value: '13,266', label: 'Cases in a single regional market (2024)', icon: Package },
-  { value: 'Total Wine & More, HEB, Circle K, Albertsons', label: 'Chain authorizations secured', icon: Store },
   { value: 'Sep 2025', label: 'RTM took over national representation', icon: Calendar },
+  { value: 'Total Wine & More, HEB, Circle K, Albertsons', label: 'Chain authorizations secured', icon: Store },
 ];
 
 export default function ProofBlock() {
@@ -30,7 +28,7 @@ export default function ProofBlock() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {STATS.map((stat, idx) => (
             <motion.div
               key={idx}
