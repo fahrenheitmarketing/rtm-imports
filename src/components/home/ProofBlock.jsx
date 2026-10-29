@@ -26,7 +26,7 @@ export default function ProofBlock() {
             The fastest-growing <em style={{ color: '#F4C430' }}>wine-based soju brand</em> in our portfolio
           </h2>
           <p className="font-footnote text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>
-            Up from 13,266 cases in a single regional market (2024)
+            From 13,266 cases in one regional market in 2024 to more than 80,000 projected nationwide in 2026
           </p>
         </motion.div>
 
