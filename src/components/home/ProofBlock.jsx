@@ -6,7 +6,7 @@ import { ArrowRight, TrendingUp, Store, Calendar } from 'lucide-react';
 const STATS = [
   { value: 'Sep 2025', label: 'RTM took over national representation', icon: Calendar },
   { value: '~6x', label: 'Projected growth', icon: TrendingUp },
-  { value: 'Total Wine & More, HEB, Circle K, Albertsons', label: 'Chain authorizations secured', icon: Store },
+  { value: 'Chain authorizations secured', label: 'Total Wine & More, HEB, Circle K, Albertsons', icon: Store },
 ];
 
 export default function ProofBlock() {
