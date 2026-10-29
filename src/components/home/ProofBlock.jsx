@@ -23,7 +23,7 @@ export default function ProofBlock() {
         >
           <span className="font-eyebrow text-xs tracking-widest uppercase block mb-4" style={{ color: '#0A2454' }}>In Market</span>
           <h2 className="font-display text-3xl md:text-4xl mb-3 leading-tight" style={{ color: '#0A2454' }}>
-            Our fastest-growing <em style={{ color: '#F4C430' }}>wine-based soju brand</em>
+            The fastest-growing <em style={{ color: '#F4C430' }}>wine-based soju brand</em> in our portfolio
           </h2>
           <p className="font-footnote text-xs tracking-widest uppercase" style={{ color: '#0A2454' }}>
             Up from 13,266 cases in a single regional market (2024)
